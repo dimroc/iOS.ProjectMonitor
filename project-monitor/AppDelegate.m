@@ -21,6 +21,13 @@
 {
     [ParseHelper initialize:launchOptions];
     [ParseHelper saveTestObjectInBackground];
+
+    [self launchMasterDetailView];
+    return YES;
+}
+
+- (BOOL)launchMasterDetailView
+{
     // Override point for customization after application launch.
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
         UISplitViewController *splitViewController = (UISplitViewController *)self.window.rootViewController;
