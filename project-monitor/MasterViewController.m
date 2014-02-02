@@ -6,7 +6,6 @@
 //  Copyright (c) 2014 Dimitri Roche. All rights reserved.
 //
 
-#import <Parse/Parse.h>
 #import "MasterViewController.h"
 
 #import "DetailViewController.h"

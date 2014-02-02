@@ -6,7 +6,6 @@
 //  Copyright (c) 2014 Dimitri Roche. All rights reserved.
 //
 
-#import <Parse/Parse.h>
 #import "ParseHelper.h"
 #import "AppDelegate.h"
 
