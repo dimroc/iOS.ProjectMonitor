@@ -15,7 +15,6 @@
 		5E3ED10E1899F14F00632144 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E3ED10D1899F14F00632144 /* main.m */; };
 		5E3ED1121899F14F00632144 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E3ED1111899F14F00632144 /* AppDelegate.m */; };
 		5E3ED1151899F14F00632144 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E3ED1131899F14F00632144 /* Main_iPhone.storyboard */; };
-		5E3ED1181899F14F00632144 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E3ED1161899F14F00632144 /* Main_iPad.storyboard */; };
 		5E3ED11B1899F14F00632144 /* project_monitor.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5E3ED1191899F14F00632144 /* project_monitor.xcdatamodeld */; };
 		5E3ED11E1899F14F00632144 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E3ED11D1899F14F00632144 /* MasterViewController.m */; };
 		5E3ED1211899F14F00632144 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E3ED1201899F14F00632144 /* DetailViewController.m */; };
@@ -34,9 +33,10 @@
 		5E3ED14F1899F45500632144 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E3ED1461899F45500632144 /* MobileCoreServices.framework */; };
 		5E3ED1501899F45500632144 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E3ED1471899F45500632144 /* QuartzCore.framework */; };
 		5E3ED1511899F45500632144 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E3ED1481899F45500632144 /* Security.framework */; };
-		5E3ED1521899F45500632144 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E3ED1491899F45500632144 /* StoreKit.framework */; };
 		5E3ED1531899F45500632144 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E3ED14A1899F45500632144 /* SystemConfiguration.framework */; };
 		5E3ED156189A089E00632144 /* ParseHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E3ED155189A089E00632144 /* ParseHelper.m */; };
+		5EBF478B18A08DE200175065 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EBF478918A08DE200175065 /* HomeViewController.m */; };
+		5EBF478C18A08DE200175065 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5EBF478A18A08DE200175065 /* HomeViewController.xib */; };
 		5ED0A996189EC75100A56A27 /* Credentials.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5ED0A995189EC75100A56A27 /* Credentials.plist */; };
 		5ED0A998189EC81000A56A27 /* Credentials.example.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5ED0A997189EC81000A56A27 /* Credentials.example.plist */; };
 /* End PBXBuildFile section */
@@ -64,7 +64,6 @@
 		5E3ED1101899F14F00632144 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		5E3ED1111899F14F00632144 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		5E3ED1141899F14F00632144 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
-		5E3ED1171899F14F00632144 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
 		5E3ED11A1899F14F00632144 /* project_monitor.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = project_monitor.xcdatamodel; sourceTree = "<group>"; };
 		5E3ED11C1899F14F00632144 /* MasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
 		5E3ED11D1899F14F00632144 /* MasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
@@ -84,10 +83,12 @@
 		5E3ED1461899F45500632144 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		5E3ED1471899F45500632144 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		5E3ED1481899F45500632144 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
-		5E3ED1491899F45500632144 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		5E3ED14A1899F45500632144 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		5E3ED154189A089E00632144 /* ParseHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParseHelper.h; sourceTree = "<group>"; };
 		5E3ED155189A089E00632144 /* ParseHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParseHelper.m; sourceTree = "<group>"; };
+		5EBF478818A08DE200175065 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		5EBF478918A08DE200175065 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		5EBF478A18A08DE200175065 /* HomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		5ED0A995189EC75100A56A27 /* Credentials.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Credentials.plist; sourceTree = "<group>"; };
 		5ED0A997189EC81000A56A27 /* Credentials.example.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Credentials.example.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -104,7 +105,6 @@
 				5E3ED14F1899F45500632144 /* MobileCoreServices.framework in Frameworks */,
 				5E3ED1501899F45500632144 /* QuartzCore.framework in Frameworks */,
 				5E3ED1511899F45500632144 /* Security.framework in Frameworks */,
-				5E3ED1521899F45500632144 /* StoreKit.framework in Frameworks */,
 				5E3ED1531899F45500632144 /* SystemConfiguration.framework in Frameworks */,
 				5E3ED1021899F14F00632144 /* CoreGraphics.framework in Frameworks */,
 				5E3ED1061899F14F00632144 /* CoreData.framework in Frameworks */,
@@ -157,7 +157,6 @@
 				5E3ED1461899F45500632144 /* MobileCoreServices.framework */,
 				5E3ED1471899F45500632144 /* QuartzCore.framework */,
 				5E3ED1481899F45500632144 /* Security.framework */,
-				5E3ED1491899F45500632144 /* StoreKit.framework */,
 				5E3ED14A1899F45500632144 /* SystemConfiguration.framework */,
 				5E3ED1401899F3DF00632144 /* Parse.framework */,
 				5E3ED0FF1899F14F00632144 /* Foundation.framework */,
@@ -175,7 +174,6 @@
 				5E3ED1101899F14F00632144 /* AppDelegate.h */,
 				5E3ED1111899F14F00632144 /* AppDelegate.m */,
 				5E3ED1131899F14F00632144 /* Main_iPhone.storyboard */,
-				5E3ED1161899F14F00632144 /* Main_iPad.storyboard */,
 				5E3ED11C1899F14F00632144 /* MasterViewController.h */,
 				5E3ED11D1899F14F00632144 /* MasterViewController.m */,
 				5E3ED11F1899F14F00632144 /* DetailViewController.h */,
@@ -185,6 +183,9 @@
 				5E3ED1081899F14F00632144 /* Supporting Files */,
 				5E3ED154189A089E00632144 /* ParseHelper.h */,
 				5E3ED155189A089E00632144 /* ParseHelper.m */,
+				5EBF478818A08DE200175065 /* HomeViewController.h */,
+				5EBF478918A08DE200175065 /* HomeViewController.m */,
+				5EBF478A18A08DE200175065 /* HomeViewController.xib */,
 			);
 			path = "project-monitor";
 			sourceTree = "<group>";
@@ -267,6 +268,14 @@
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "Dimitri Roche";
 				TargetAttributes = {
+					5E3ED0FB1899F14F00632144 = {
+						DevelopmentTeam = 5R23V2RJ26;
+						SystemCapabilities = {
+							com.apple.InAppPurchase = {
+								enabled = 0;
+							};
+						};
+					};
 					5E3ED1271899F15000632144 = {
 						TestTargetID = 5E3ED0FB1899F14F00632144;
 					};
@@ -296,11 +305,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5E3ED1181899F14F00632144 /* Main_iPad.storyboard in Resources */,
 				5E3ED1231899F14F00632144 /* Images.xcassets in Resources */,
 				5ED0A996189EC75100A56A27 /* Credentials.plist in Resources */,
 				5E3ED1151899F14F00632144 /* Main_iPhone.storyboard in Resources */,
 				5E3ED10C1899F14F00632144 /* InfoPlist.strings in Resources */,
+				5EBF478C18A08DE200175065 /* HomeViewController.xib in Resources */,
 				5ED0A998189EC81000A56A27 /* Credentials.example.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -325,6 +334,7 @@
 				5E3ED11E1899F14F00632144 /* MasterViewController.m in Sources */,
 				5E3ED11B1899F14F00632144 /* project_monitor.xcdatamodeld in Sources */,
 				5E3ED1121899F14F00632144 /* AppDelegate.m in Sources */,
+				5EBF478B18A08DE200175065 /* HomeViewController.m in Sources */,
 				5E3ED10E1899F14F00632144 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -362,14 +372,6 @@
 				5E3ED1141899F14F00632144 /* Base */,
 			);
 			name = Main_iPhone.storyboard;
-			sourceTree = "<group>";
-		};
-		5E3ED1161899F14F00632144 /* Main_iPad.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				5E3ED1171899F14F00632144 /* Base */,
-			);
-			name = Main_iPad.storyboard;
 			sourceTree = "<group>";
 		};
 		5E3ED1331899F15000632144 /* InfoPlist.strings */ = {
@@ -469,7 +471,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "project-monitor/project-monitor-Prefix.pch";
 				INFOPLIST_FILE = "project-monitor/project-monitor-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -486,7 +490,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "project-monitor/project-monitor-Prefix.pch";
 				INFOPLIST_FILE = "project-monitor/project-monitor-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
