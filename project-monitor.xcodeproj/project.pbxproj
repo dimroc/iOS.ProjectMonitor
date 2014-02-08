@@ -35,8 +35,6 @@
 		5E3ED1511899F45500632144 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E3ED1481899F45500632144 /* Security.framework */; };
 		5E3ED1531899F45500632144 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E3ED14A1899F45500632144 /* SystemConfiguration.framework */; };
 		5E3ED156189A089E00632144 /* ParseHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E3ED155189A089E00632144 /* ParseHelper.m */; };
-		5EBF478B18A08DE200175065 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EBF478918A08DE200175065 /* HomeViewController.m */; };
-		5EBF478C18A08DE200175065 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5EBF478A18A08DE200175065 /* HomeViewController.xib */; };
 		5ED0A996189EC75100A56A27 /* Credentials.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5ED0A995189EC75100A56A27 /* Credentials.plist */; };
 		5ED0A998189EC81000A56A27 /* Credentials.example.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5ED0A997189EC81000A56A27 /* Credentials.example.plist */; };
 /* End PBXBuildFile section */
@@ -86,9 +84,6 @@
 		5E3ED14A1899F45500632144 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		5E3ED154189A089E00632144 /* ParseHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParseHelper.h; sourceTree = "<group>"; };
 		5E3ED155189A089E00632144 /* ParseHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParseHelper.m; sourceTree = "<group>"; };
-		5EBF478818A08DE200175065 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
-		5EBF478918A08DE200175065 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
-		5EBF478A18A08DE200175065 /* HomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		5ED0A995189EC75100A56A27 /* Credentials.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Credentials.plist; sourceTree = "<group>"; };
 		5ED0A997189EC81000A56A27 /* Credentials.example.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Credentials.example.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -183,9 +178,6 @@
 				5E3ED1081899F14F00632144 /* Supporting Files */,
 				5E3ED154189A089E00632144 /* ParseHelper.h */,
 				5E3ED155189A089E00632144 /* ParseHelper.m */,
-				5EBF478818A08DE200175065 /* HomeViewController.h */,
-				5EBF478918A08DE200175065 /* HomeViewController.m */,
-				5EBF478A18A08DE200175065 /* HomeViewController.xib */,
 			);
 			path = "project-monitor";
 			sourceTree = "<group>";
@@ -309,7 +301,6 @@
 				5ED0A996189EC75100A56A27 /* Credentials.plist in Resources */,
 				5E3ED1151899F14F00632144 /* Main_iPhone.storyboard in Resources */,
 				5E3ED10C1899F14F00632144 /* InfoPlist.strings in Resources */,
-				5EBF478C18A08DE200175065 /* HomeViewController.xib in Resources */,
 				5ED0A998189EC81000A56A27 /* Credentials.example.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -334,7 +325,6 @@
 				5E3ED11E1899F14F00632144 /* MasterViewController.m in Sources */,
 				5E3ED11B1899F14F00632144 /* project_monitor.xcdatamodeld in Sources */,
 				5E3ED1121899F14F00632144 /* AppDelegate.m in Sources */,
-				5EBF478B18A08DE200175065 /* HomeViewController.m in Sources */,
 				5E3ED10E1899F14F00632144 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
