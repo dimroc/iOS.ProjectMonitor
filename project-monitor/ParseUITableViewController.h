@@ -10,4 +10,6 @@
 
 @interface ParseUITableViewController : UITableViewController <PFLogInViewControllerDelegate, PFSignUpViewControllerDelegate>
 
+- (void)showLogIn;
+
 @end

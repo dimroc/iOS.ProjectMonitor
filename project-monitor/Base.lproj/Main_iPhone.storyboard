@@ -52,6 +52,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Master" id="tQt-TN-PWz">
+                        <barButtonItem key="leftBarButtonItem" title="Sign out" id="Nlv-zB-b68">
+                            <connections>
+                                <action selector="signOut:" destination="pGg-6v-bdr" id="VMB-02-OGh"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="KwZ-PZ-W25">
                             <connections>
                                 <segue destination="4qe-4p-4Fa" kind="modal" id="ewX-fh-HRa"/>

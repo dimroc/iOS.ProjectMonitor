@@ -8,6 +8,9 @@
 
 #import "ParseUITableViewController.h"
 
+#import "ProjectMonitorLogInViewController.h"
+#import "ProjectMonitorSignUpViewController.h"
+
 @interface ParseUITableViewController ()
 
 @end
@@ -19,20 +22,25 @@
     [super viewDidAppear:animated];
     
     if (![PFUser currentUser]) { // No user logged in
-        // Create the log in view controller
-        PFLogInViewController *logInViewController = [[PFLogInViewController alloc] init];
-        [logInViewController setDelegate:self]; // Set ourselves as the delegate
-        
-        // Create the sign up view controller
-        PFSignUpViewController *signUpViewController = [[PFSignUpViewController alloc] init];
-        [signUpViewController setDelegate:self]; // Set ourselves as the delegate
-        
-        // Assign our sign up controller to be displayed from the login controller
-        [logInViewController setSignUpController:signUpViewController];
-        
-        // Present the log in view controller
-        [self presentViewController:logInViewController animated:YES completion:NULL];
+        [self showLogIn];
     }
+}
+
+-(void)showLogIn
+{
+    // Create the log in view controller
+    ProjectMonitorLogInViewController *logInViewController = [[ProjectMonitorLogInViewController alloc] init];
+    [logInViewController setDelegate:self]; // Set ourselves as the delegate
+    
+    // Create the sign up view controller
+    ProjectMonitorSignUpViewController *signUpViewController = [[ProjectMonitorSignUpViewController alloc] init];
+    [signUpViewController setDelegate:self]; // Set ourselves as the delegate
+    
+    // Assign our sign up controller to be displayed from the login controller
+    [logInViewController setSignUpController:signUpViewController];
+    
+    // Present the log in view controller
+    [self presentViewController:logInViewController animated:YES completion:NULL];
 }
 
 #pragma mark - Parse Login callbacks
