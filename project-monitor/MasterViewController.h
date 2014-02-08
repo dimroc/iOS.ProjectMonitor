@@ -11,8 +11,9 @@
 @class DetailViewController;
 
 #import <CoreData/CoreData.h>
+#import "ParseUITableViewController.h"
 
-@interface MasterViewController : UITableViewController <NSFetchedResultsControllerDelegate, PFLogInViewControllerDelegate, PFSignUpViewControllerDelegate>
+@interface MasterViewController : ParseUITableViewController <NSFetchedResultsControllerDelegate>
 
 @property (strong, nonatomic) DetailViewController *detailViewController;
 
