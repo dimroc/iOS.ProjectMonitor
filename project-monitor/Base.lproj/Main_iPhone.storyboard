@@ -51,7 +51,7 @@
                             <outlet property="delegate" destination="pGg-6v-bdr" id="Y6K-Cp-Qkv"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Master" id="tQt-TN-PWz">
+                    <navigationItem key="navigationItem" title="Builds" id="tQt-TN-PWz">
                         <barButtonItem key="leftBarButtonItem" title="Sign out" id="Nlv-zB-b68">
                             <connections>
                                 <action selector="signOut:" destination="pGg-6v-bdr" id="VMB-02-OGh"/>
@@ -59,7 +59,7 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="KwZ-PZ-W25">
                             <connections>
-                                <segue destination="4qe-4p-4Fa" kind="modal" id="ewX-fh-HRa"/>
+                                <segue destination="fya-Z9-VvV" kind="push" id="Lvp-z2-KHr"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -68,21 +68,30 @@
             </objects>
             <point key="canvasLocation" x="1649" y="-266"/>
         </scene>
-        <!--Table View Controller - Add Build-->
+        <!--Add Build View Controller - Add Build-->
         <scene sceneID="4c8-9n-lUT">
             <objects>
-                <tableViewController id="fya-Z9-VvV" sceneMemberID="viewController">
+                <tableViewController id="fya-Z9-VvV" customClass="AddBuildViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Hpe-hx-XMZ">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="7hz-eL-1Uq">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SourceCell" textLabel="Sia-hb-C1S" style="IBUITableViewCellStyleDefault" id="7hz-eL-1Uq">
                                 <rect key="frame" x="0.0" y="86" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="7hz-eL-1Uq" id="F2M-ac-gYg">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Sia-hb-C1S">
+                                            <rect key="frame" x="15" y="0.0" width="290" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
@@ -91,22 +100,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vm6-L6-9XE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2500" y="-981"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="iW3-4r-0rn">
-            <objects>
-                <navigationController definesPresentationContext="YES" id="4qe-4p-4Fa" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="At7-Pr-XDR">
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="fya-Z9-VvV" kind="relationship" relationship="rootViewController" id="sMe-cg-al2"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Fy8-5g-aBG" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1966" y="-981"/>
+            <point key="canvasLocation" x="2186" y="-773"/>
         </scene>
         <!--Detail View Controller - Detail-->
         <scene sceneID="Cn3-H9-jdl">
@@ -133,7 +127,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lrm-kH-fPn" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2186" y="-266"/>
+            <point key="canvasLocation" x="2186" y="-44"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="0i4-pQ-Tjb">
