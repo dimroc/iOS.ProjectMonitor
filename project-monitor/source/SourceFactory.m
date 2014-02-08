@@ -7,7 +7,7 @@
 //
 
 #import "SourceFactory.h"
-#import "SemaphoreSource.h"
+#import "SemaphoreSourceViewController.h"
 
 @implementation SourceFactory
 
@@ -19,7 +19,7 @@ static NSArray* sources;
     {
         initialized = YES;
         sources = [[NSArray alloc] initWithObjects:
-                   [[SemaphoreSource alloc] init],
+                   [[SemaphoreSourceViewController alloc] init],
                    nil
         ];
     }

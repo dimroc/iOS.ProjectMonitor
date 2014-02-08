@@ -67,6 +67,13 @@
     return cell;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    id<BuildSource> source = SourceFactory.sources[indexPath.row];
+    NSLog(@"Selected %@", [source name]);
+    [[self navigationController] pushViewController:[source controller] animated:YES];
+}
+
 /*
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
