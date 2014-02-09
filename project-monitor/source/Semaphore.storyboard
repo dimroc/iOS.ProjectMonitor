@@ -13,7 +13,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <sections>
-                            <tableViewSection headerTitle="Authentication Token" footerTitle="We will not share this info!" id="YPE-le-cqa">
+                            <tableViewSection headerTitle="Authentication Token" id="YPE-le-cqa">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="n7p-qn-R6o">
                                         <rect key="frame" x="0.0" y="55" width="320" height="44"/>

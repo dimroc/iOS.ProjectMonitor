@@ -59,7 +59,11 @@
 - (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender
 {
     if ([self authenticationFieldValid]) {
-        NSArray *builds = [BuildFactory fetchFromSemaphore: self.authenticationTokenTextField.text];
+        FetchBuildCallback callback = ^(NSArray* builds){
+            NSLog(@"Callback invoked!");
+        };
+        
+        [BuildFactory fetchFromSemaphore: self.authenticationTokenTextField.text withCallback: callback];
         return YES;
     }
     else {
