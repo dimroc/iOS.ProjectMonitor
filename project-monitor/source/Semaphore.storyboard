@@ -28,7 +28,8 @@
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="done"/>
                                                     <connections>
-                                                        <outlet property="delegate" destination="ukv-iu-BD1" id="tz0-Nc-kJ5"/>
+                                                        <outlet property="delegate" destination="ukv-iu-BD1" id="EAw-ST-Qye"/>
+                                                        <segue destination="Jic-GX-z5B" kind="push" identifier="toAvailableSemaphoreBuilds" id="DlP-bZ-M2F"/>
                                                     </connections>
                                                 </textField>
                                             </subviews>
@@ -38,6 +39,8 @@
                             </tableViewSection>
                         </sections>
                     </tableView>
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="authenticationTokenTextField" destination="Rk5-DA-upW" id="l9q-XU-fdH"/>
                     </connections>

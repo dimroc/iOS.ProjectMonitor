@@ -13,7 +13,6 @@
 @interface SemaphoreSourceViewController ()
 
 @property (weak, nonatomic) IBOutlet UITextField *authenticationTokenTextField;
-@property (weak, nonatomic) IBOutlet UIBarButtonItem *doneButton;
 
 @end
 
@@ -27,28 +26,19 @@
     return self;
 }
 
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
-    self.navigationItem.title = @"Semaphore";
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-- (BOOL)textFieldShouldEndEditing:(UITextField *)textField {
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
     if ([self authenticationFieldValid]) {
-        self.doneButton.enabled = YES;
+        [textField resignFirstResponder];
+        return YES;
     }
     else {
-        self.doneButton.enabled = NO;
+        [[[UIAlertView alloc] initWithTitle:@"Missing Information"
+                                    message:@"Please fill in all information."
+                                   delegate:nil
+                          cancelButtonTitle:@"ok"
+                          otherButtonTitles:nil] show];
+        return NO;
     }
-    
-    return YES;
 }
 
 - (BOOL)authenticationFieldValid
