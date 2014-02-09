@@ -7,10 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "BuildSource.h"
+#import "Source.h"
 
 @interface SourceFactory : NSObject
 
-+ (id<BuildSource>)fetch:(NSString*)name;
++ (id<Source>)fetch:(NSString*)name;
 
 @end

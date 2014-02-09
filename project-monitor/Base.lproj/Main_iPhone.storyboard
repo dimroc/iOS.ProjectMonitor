@@ -77,7 +77,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <sections>
-                            <tableViewSection headerTitle="Sources" id="O8J-3y-NnV">
+                            <tableViewSection headerTitle="Cloud Continuous Integration" id="O8J-3y-NnV">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="Sia-hb-C1S" style="IBUITableViewCellStyleDefault" id="7hz-eL-1Uq">
                                         <rect key="frame" x="0.0" y="119" width="320" height="44"/>
@@ -97,6 +97,9 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </cells>
+                            </tableViewSection>
+                            <tableViewSection headerTitle="Personal Continuous Integration" footerTitle="TeamCity and Jenkins coming soon" id="nBO-w6-U5U">
+                                <cells/>
                             </tableViewSection>
                         </sections>
                     </tableView>

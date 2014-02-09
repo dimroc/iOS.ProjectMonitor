@@ -42,6 +42,8 @@
 		5EBF47E618A6DAE100175065 /* SourceFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EBF47E518A6DAE100175065 /* SourceFactory.m */; };
 		5EBF47F818A6F14500175065 /* SemaphoreSourceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EBF47F618A6F14500175065 /* SemaphoreSourceViewController.m */; };
 		5EBF480018A7007400175065 /* Semaphore.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5EBF47FF18A7007400175065 /* Semaphore.storyboard */; };
+		5EBF480618A7B1C700175065 /* SemaphoreBuildsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EBF480518A7B1C700175065 /* SemaphoreBuildsViewController.m */; };
+		5EBF480A18A7B3B500175065 /* BuildFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EBF480918A7B3B500175065 /* BuildFactory.m */; };
 		5ED0A996189EC75100A56A27 /* Credentials.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5ED0A995189EC75100A56A27 /* Credentials.plist */; };
 		5ED0A998189EC81000A56A27 /* Credentials.example.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5ED0A997189EC81000A56A27 /* Credentials.example.plist */; };
 /* End PBXBuildFile section */
@@ -101,10 +103,14 @@
 		5EBF47E218A6AE7E00175065 /* AddBuildViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddBuildViewController.m; sourceTree = "<group>"; };
 		5EBF47E418A6DAE100175065 /* SourceFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SourceFactory.h; path = source/SourceFactory.h; sourceTree = "<group>"; };
 		5EBF47E518A6DAE100175065 /* SourceFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SourceFactory.m; path = source/SourceFactory.m; sourceTree = "<group>"; };
-		5EBF47F118A6E15E00175065 /* BuildSource.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = BuildSource.h; path = source/BuildSource.h; sourceTree = "<group>"; };
 		5EBF47F518A6F14500175065 /* SemaphoreSourceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SemaphoreSourceViewController.h; path = source/SemaphoreSourceViewController.h; sourceTree = "<group>"; };
 		5EBF47F618A6F14500175065 /* SemaphoreSourceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SemaphoreSourceViewController.m; path = source/SemaphoreSourceViewController.m; sourceTree = "<group>"; };
 		5EBF47FF18A7007400175065 /* Semaphore.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Semaphore.storyboard; path = source/Semaphore.storyboard; sourceTree = "<group>"; };
+		5EBF480418A7B1C700175065 /* SemaphoreBuildsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SemaphoreBuildsViewController.h; path = source/SemaphoreBuildsViewController.h; sourceTree = "<group>"; };
+		5EBF480518A7B1C700175065 /* SemaphoreBuildsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SemaphoreBuildsViewController.m; path = source/SemaphoreBuildsViewController.m; sourceTree = "<group>"; };
+		5EBF480718A7B34100175065 /* Source.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Source.h; path = source/Source.h; sourceTree = "<group>"; };
+		5EBF480818A7B3B500175065 /* BuildFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BuildFactory.h; path = build/BuildFactory.h; sourceTree = "<group>"; };
+		5EBF480918A7B3B500175065 /* BuildFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BuildFactory.m; path = build/BuildFactory.m; sourceTree = "<group>"; };
 		5ED0A995189EC75100A56A27 /* Credentials.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Credentials.plist; sourceTree = "<group>"; };
 		5ED0A997189EC81000A56A27 /* Credentials.example.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Credentials.example.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -187,20 +193,21 @@
 		5E3ED1071899F14F00632144 /* project-monitor */ = {
 			isa = PBXGroup;
 			children = (
+				5EBF47E118A6AE7E00175065 /* AddBuildViewController.h */,
+				5EBF47E218A6AE7E00175065 /* AddBuildViewController.m */,
 				5E3ED1101899F14F00632144 /* AppDelegate.h */,
 				5E3ED1111899F14F00632144 /* AppDelegate.m */,
-				5E3ED1131899F14F00632144 /* Main_iPhone.storyboard */,
-				5E3ED11C1899F14F00632144 /* MasterViewController.h */,
-				5E3ED11D1899F14F00632144 /* MasterViewController.m */,
 				5E3ED11F1899F14F00632144 /* DetailViewController.h */,
 				5E3ED1201899F14F00632144 /* DetailViewController.m */,
 				5E3ED1221899F14F00632144 /* Images.xcassets */,
-				5E3ED1191899F14F00632144 /* project_monitor.xcdatamodeld */,
-				5E3ED1081899F14F00632144 /* Supporting Files */,
+				5E3ED1131899F14F00632144 /* Main_iPhone.storyboard */,
+				5E3ED11C1899F14F00632144 /* MasterViewController.h */,
+				5E3ED11D1899F14F00632144 /* MasterViewController.m */,
 				5EBF47DA18A6A37300175065 /* Parse */,
-				5EBF47E118A6AE7E00175065 /* AddBuildViewController.h */,
-				5EBF47E218A6AE7E00175065 /* AddBuildViewController.m */,
+				5E3ED1191899F14F00632144 /* project_monitor.xcdatamodeld */,
 				5EBF47E718A6DAE800175065 /* Source */,
+				5E3ED1081899F14F00632144 /* Supporting Files */,
+				5EBF480B18A7B3BB00175065 /* Build */,
 			);
 			path = "project-monitor";
 			sourceTree = "<group>";
@@ -254,14 +261,25 @@
 		5EBF47E718A6DAE800175065 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				5EBF480718A7B34100175065 /* Source.h */,
 				5EBF47E418A6DAE100175065 /* SourceFactory.h */,
 				5EBF47E518A6DAE100175065 /* SourceFactory.m */,
-				5EBF47F118A6E15E00175065 /* BuildSource.h */,
 				5EBF47F518A6F14500175065 /* SemaphoreSourceViewController.h */,
 				5EBF47F618A6F14500175065 /* SemaphoreSourceViewController.m */,
 				5EBF47FF18A7007400175065 /* Semaphore.storyboard */,
+				5EBF480418A7B1C700175065 /* SemaphoreBuildsViewController.h */,
+				5EBF480518A7B1C700175065 /* SemaphoreBuildsViewController.m */,
 			);
 			name = Source;
+			sourceTree = "<group>";
+		};
+		5EBF480B18A7B3BB00175065 /* Build */ = {
+			isa = PBXGroup;
+			children = (
+				5EBF480818A7B3B500175065 /* BuildFactory.h */,
+				5EBF480918A7B3B500175065 /* BuildFactory.m */,
+			);
+			name = Build;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -372,6 +390,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5EBF480618A7B1C700175065 /* SemaphoreBuildsViewController.m in Sources */,
+				5EBF480A18A7B3B500175065 /* BuildFactory.m in Sources */,
 				5EBF47F818A6F14500175065 /* SemaphoreSourceViewController.m in Sources */,
 				5E3ED1211899F14F00632144 /* DetailViewController.m in Sources */,
 				5EBF47D018A69E4C00175065 /* ParseUITableViewController.m in Sources */,

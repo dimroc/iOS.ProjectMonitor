@@ -8,7 +8,7 @@
 
 #import "AddBuildViewController.h"
 #import "SourceFactory.h"
-#import "Source/BuildSource.h"
+#import "Source/Source.h"
 
 @interface AddBuildViewController ()
 
@@ -50,7 +50,7 @@
     NSString *source_name = cell.textLabel.text;
     
     NSLog(@"Selected %@", source_name);
-    id<BuildSource> source = [SourceFactory fetch:source_name];
+    id<Source> source = [SourceFactory fetch:source_name];
 
     [[self navigationController] pushViewController:[source controller] animated:YES];
 }

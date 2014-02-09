@@ -7,9 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "BuildSource.h"
+#import "Source.h"
 
-@interface SemaphoreSourceViewController : UITableViewController <BuildSource>
+@interface SemaphoreSourceViewController : UITableViewController <Source, UITextFieldDelegate>
 
 @property (nonatomic, copy) NSString* name;
 @property (nonatomic, weak) UIViewController* controller;

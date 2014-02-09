@@ -11,11 +11,11 @@
 
 @implementation SourceFactory
 
-+ (id<BuildSource>)fetch:(NSString*)name
++ (id<Source>)fetch:(NSString*)name
 {
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:name bundle:nil];
     UIViewController *source = [storyboard instantiateInitialViewController];
-    return (id<BuildSource>)source;
+    return (id<Source>)source;
 }
 
 @end
