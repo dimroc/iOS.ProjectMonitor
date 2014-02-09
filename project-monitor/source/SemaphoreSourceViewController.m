@@ -17,38 +17,17 @@
 
 -(id)initWithCoder:(NSCoder *)aDecoder
 {
-    NSLog(@"INITING");
+    self = [super initWithCoder:aDecoder];
     [self setName:@"Semaphore"];
     [self setController:self];
     return self;
 }
-//
-//- (id)initWithStyle:(UITableViewStyle)style
-//{
-//    self = [super initWithStyle:style];
-//    if (self) {
-//        // Custom initialization
-//    }
-//    return self;
-//}
-
-//- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-//{
-//    NSLog(@"Loading nib: %@", nibNameOrNil);
-//    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-//    if (self) {
-//        [self setName:@"Semaphore"];
-//        [self setController:self];
-//    }
-//    return self;
-//}
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     self.navigationItem.title = @"Semaphore";
-    NSLog(@"view did load for semaphore source view controller");
 }
 
 - (void)didReceiveMemoryWarning
@@ -58,28 +37,6 @@
 }
 
 #pragma mark - Table view data source
-
-//- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-//{
-//    // Return the number of sections.
-//    return 1;
-//}
-//
-//- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-//{
-//    // Return the number of rows in the section.
-//    return 1;
-//}
-
-//- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-//{
-//    static NSString *CellIdentifier = @"Cell";
-//    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
-//    
-//    // Configure the cell...
-//    
-//    return cell;
-//}
 
 /*
  // Override to support conditional editing of the table view.

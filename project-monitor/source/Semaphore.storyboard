@@ -36,7 +36,6 @@
                         </sections>
                     </tableView>
                     <connections>
-                        <outlet property="authenticationTokenField" destination="Rk5-DA-upW" id="uL9-LX-UZI"/>
                         <outlet property="authenticationTokenTextField" destination="Rk5-DA-upW" id="l9q-XU-fdH"/>
                     </connections>
                 </tableViewController>

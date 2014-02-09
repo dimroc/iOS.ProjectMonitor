@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 
 @protocol BuildSource <NSObject>
+
 @property (nonatomic, copy) NSString* name;
 @property (nonatomic, weak) UIViewController* controller;
+
 @end
