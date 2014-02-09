@@ -44,33 +44,41 @@
 
 #pragma mark - Table view data source
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-    // Return the number of sections.
-    return 1;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-    // Return the number of rows in the section.
-    return [[SourceFactory sources] count];
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    static NSString *CellIdentifier = @"SourceCell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
-    
-    id<BuildSource> source = SourceFactory.sources[indexPath.row];
-    cell.textLabel.text = [source name];
-    
-    return cell;
-}
+//- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+//{
+//    // Return the number of sections.
+//    return 1;
+//}
+//
+//- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+//{
+//    // Return the number of rows in the section.
+//    return [[SourceFactory sources] count];
+//}
+//
+//- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+//{
+//    static NSString *CellIdentifier = @"SourceCell";
+//    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+//    
+//    id<BuildSource> source = SourceFactory.sources[indexPath.row];
+//    cell.textLabel.text = [source name];
+//    
+//    return cell;
+//}
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    id<BuildSource> source = SourceFactory.sources[indexPath.row];
-    NSLog(@"Selected %@", [source name]);
+    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+    NSString *source_name = cell.textLabel.text;
+    
+    NSLog(@"Selected %@", source_name);
+    id<BuildSource> source = [SourceFactory fetch:source_name];
+//    
+//    UIStoryboard *tableViewStoryboard = [UIStoryboard storyboardWithName:[source name] bundle:nil];
+//    controller = [tableViewStoryboard instantiateInitialViewController:;
+//    
+    //[self presentViewController:vc animated:YES completion:NULL];
     [[self navigationController] pushViewController:[source controller] animated:YES];
 }
 

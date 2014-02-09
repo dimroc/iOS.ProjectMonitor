@@ -11,23 +11,11 @@
 
 @implementation SourceFactory
 
-static NSArray* sources;
-+ (void)initialize
++ (id<BuildSource>)fetch:(NSString*)name
 {
-    static BOOL initialized = NO;
-    if(!initialized)
-    {
-        initialized = YES;
-        sources = [[NSArray alloc] initWithObjects:
-                   [[SemaphoreSourceViewController alloc] init],
-                   nil
-        ];
-    }
-}
-
-+ (NSArray*) sources
-{
-    return sources.copy;
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:name bundle:nil];
+    UIViewController *source = [storyboard instantiateInitialViewController];
+    return (id<BuildSource>)source;
 }
 
 @end

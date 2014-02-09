@@ -7,9 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "BuildSource.h"
 
 @interface SourceFactory : NSObject
 
-+ (NSArray*)sources;
++ (id<BuildSource>)fetch:(NSString*)name;
 
 @end

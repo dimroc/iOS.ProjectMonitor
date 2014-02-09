@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "BuildSource.h"
 
-@interface SemaphoreSourceViewController : UIViewController <BuildSource>
+@interface SemaphoreSourceViewController : UITableViewController <BuildSource>
 
 @property (nonatomic, copy) NSString* name;
 @property (nonatomic, weak) UIViewController* controller;
