@@ -47,7 +47,7 @@
 
 - (void) loadWithToken:(NSString*) authenticationToken
 {
-    [BuildFactory fetchFromSemaphore: authenticationToken withCallback: ^(NSArray* builds){
+    [Build fetchFromSemaphore: authenticationToken withCallback: ^(NSArray* builds){
         [self handleBuilds:builds];
     }];
 }

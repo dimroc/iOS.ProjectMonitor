@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "BuildFactory.h"
+#import "Build.h"
 
 @interface SemaphoreBuildsViewController : UITableViewController
 

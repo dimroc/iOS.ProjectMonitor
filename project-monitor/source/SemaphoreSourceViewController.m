@@ -8,7 +8,7 @@
 
 #import "SemaphoreSourceViewController.h"
 #import "SemaphoreBuildsViewController.h"
-#import "BuildFactory.h"
+#import "Build.h"
 
 @interface SemaphoreSourceViewController ()
 

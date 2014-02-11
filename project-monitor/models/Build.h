@@ -8,8 +8,11 @@
 
 #import <Foundation/Foundation.h>
 
+typedef void (^FetchBuildCallback)(NSArray *);
+
 @interface Build : NSObject
 
++ (void) fetchFromSemaphore:(NSString*)authenticationToken withCallback:(FetchBuildCallback)callbackBlock;
 + (NSArray *)arrayFromJson:(id)json;
 + (Build *) fromJson:(NSDictionary*)json;
 
