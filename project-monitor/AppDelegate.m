@@ -20,8 +20,6 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     [ParseHelper initialize:launchOptions];
-    [ParseHelper saveTestObjectInBackground];
-
     [self launchMasterDetailView];
     return YES;
 }

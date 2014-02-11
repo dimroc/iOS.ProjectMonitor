@@ -8,7 +8,7 @@
 
 #import "AddBuildViewController.h"
 #import "SourceFactory.h"
-#import "Source/Source.h"
+#import "Source.h"
 
 @interface AddBuildViewController ()
 

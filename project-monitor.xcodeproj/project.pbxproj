@@ -34,15 +34,15 @@
 		5E3ED1511899F45500632144 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E3ED1481899F45500632144 /* Security.framework */; };
 		5E3ED1531899F45500632144 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E3ED14A1899F45500632144 /* SystemConfiguration.framework */; };
 		5E3ED156189A089E00632144 /* ParseHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E3ED155189A089E00632144 /* ParseHelper.m */; };
-		5E79F1C518A9A50B005BF986 /* Build.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E79F1C418A9A50B005BF986 /* Build.m */; };
+		5E79F1CA18AA4FA0005BF986 /* Semaphore.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E79F1C918AA4FA0005BF986 /* Semaphore.storyboard */; };
+		5E79F1D018AA4FBB005BF986 /* Build.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E79F1CC18AA4FBB005BF986 /* Build.m */; };
+		5E79F1D118AA4FBB005BF986 /* SourceFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E79F1CF18AA4FBB005BF986 /* SourceFactory.m */; };
+		5E79F1D618AA4FD4005BF986 /* SemaphoreBuildsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E79F1D318AA4FD4005BF986 /* SemaphoreBuildsViewController.m */; };
+		5E79F1D718AA4FD4005BF986 /* SemaphoreSourceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E79F1D518AA4FD4005BF986 /* SemaphoreSourceViewController.m */; };
 		5EBF47D018A69E4C00175065 /* ParseUITableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EBF47CF18A69E4C00175065 /* ParseUITableViewController.m */; };
 		5EBF47DD18A6A3A600175065 /* ProjectMonitorSignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EBF47DC18A6A3A600175065 /* ProjectMonitorSignUpViewController.m */; };
 		5EBF47E018A6A41000175065 /* ProjectMonitorLogInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EBF47DF18A6A41000175065 /* ProjectMonitorLogInViewController.m */; };
 		5EBF47E318A6AE7E00175065 /* AddBuildViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EBF47E218A6AE7E00175065 /* AddBuildViewController.m */; };
-		5EBF47E618A6DAE100175065 /* SourceFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EBF47E518A6DAE100175065 /* SourceFactory.m */; };
-		5EBF47F818A6F14500175065 /* SemaphoreSourceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EBF47F618A6F14500175065 /* SemaphoreSourceViewController.m */; };
-		5EBF480018A7007400175065 /* Semaphore.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5EBF47FF18A7007400175065 /* Semaphore.storyboard */; };
-		5EBF480618A7B1C700175065 /* SemaphoreBuildsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EBF480518A7B1C700175065 /* SemaphoreBuildsViewController.m */; };
 		5ED0A996189EC75100A56A27 /* Credentials.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5ED0A995189EC75100A56A27 /* Credentials.plist */; };
 		5ED0A998189EC81000A56A27 /* Credentials.example.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5ED0A997189EC81000A56A27 /* Credentials.example.plist */; };
 		B0AAF3F887094253A411DE84 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 23FE4D8672254D658D67C16D /* libPods.a */; };
@@ -94,8 +94,16 @@
 		5E3ED14A1899F45500632144 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		5E3ED154189A089E00632144 /* ParseHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParseHelper.h; sourceTree = "<group>"; };
 		5E3ED155189A089E00632144 /* ParseHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParseHelper.m; sourceTree = "<group>"; };
-		5E79F1C318A9A50B005BF986 /* Build.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Build.h; path = models/Build.h; sourceTree = "<group>"; };
-		5E79F1C418A9A50B005BF986 /* Build.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Build.m; path = models/Build.m; sourceTree = "<group>"; };
+		5E79F1C918AA4FA0005BF986 /* Semaphore.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Semaphore.storyboard; sourceTree = "<group>"; };
+		5E79F1CB18AA4FBB005BF986 /* Build.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Build.h; sourceTree = "<group>"; };
+		5E79F1CC18AA4FBB005BF986 /* Build.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Build.m; sourceTree = "<group>"; };
+		5E79F1CD18AA4FBB005BF986 /* Source.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Source.h; sourceTree = "<group>"; };
+		5E79F1CE18AA4FBB005BF986 /* SourceFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SourceFactory.h; sourceTree = "<group>"; };
+		5E79F1CF18AA4FBB005BF986 /* SourceFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SourceFactory.m; sourceTree = "<group>"; };
+		5E79F1D218AA4FD4005BF986 /* SemaphoreBuildsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SemaphoreBuildsViewController.h; sourceTree = "<group>"; };
+		5E79F1D318AA4FD4005BF986 /* SemaphoreBuildsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SemaphoreBuildsViewController.m; sourceTree = "<group>"; };
+		5E79F1D418AA4FD4005BF986 /* SemaphoreSourceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SemaphoreSourceViewController.h; sourceTree = "<group>"; };
+		5E79F1D518AA4FD4005BF986 /* SemaphoreSourceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SemaphoreSourceViewController.m; sourceTree = "<group>"; };
 		5EBF47CE18A69E4C00175065 /* ParseUITableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParseUITableViewController.h; sourceTree = "<group>"; };
 		5EBF47CF18A69E4C00175065 /* ParseUITableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParseUITableViewController.m; sourceTree = "<group>"; };
 		5EBF47DB18A6A3A600175065 /* ProjectMonitorSignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProjectMonitorSignUpViewController.h; sourceTree = "<group>"; };
@@ -104,14 +112,6 @@
 		5EBF47DF18A6A41000175065 /* ProjectMonitorLogInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProjectMonitorLogInViewController.m; sourceTree = "<group>"; };
 		5EBF47E118A6AE7E00175065 /* AddBuildViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddBuildViewController.h; sourceTree = "<group>"; };
 		5EBF47E218A6AE7E00175065 /* AddBuildViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddBuildViewController.m; sourceTree = "<group>"; };
-		5EBF47E418A6DAE100175065 /* SourceFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SourceFactory.h; path = source/SourceFactory.h; sourceTree = "<group>"; };
-		5EBF47E518A6DAE100175065 /* SourceFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SourceFactory.m; path = source/SourceFactory.m; sourceTree = "<group>"; };
-		5EBF47F518A6F14500175065 /* SemaphoreSourceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SemaphoreSourceViewController.h; path = source/SemaphoreSourceViewController.h; sourceTree = "<group>"; };
-		5EBF47F618A6F14500175065 /* SemaphoreSourceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SemaphoreSourceViewController.m; path = source/SemaphoreSourceViewController.m; sourceTree = "<group>"; };
-		5EBF47FF18A7007400175065 /* Semaphore.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Semaphore.storyboard; path = source/Semaphore.storyboard; sourceTree = "<group>"; };
-		5EBF480418A7B1C700175065 /* SemaphoreBuildsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SemaphoreBuildsViewController.h; path = source/SemaphoreBuildsViewController.h; sourceTree = "<group>"; };
-		5EBF480518A7B1C700175065 /* SemaphoreBuildsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SemaphoreBuildsViewController.m; path = source/SemaphoreBuildsViewController.m; sourceTree = "<group>"; };
-		5EBF480718A7B34100175065 /* Source.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Source.h; path = source/Source.h; sourceTree = "<group>"; };
 		5ED0A995189EC75100A56A27 /* Credentials.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Credentials.plist; sourceTree = "<group>"; };
 		5ED0A997189EC81000A56A27 /* Credentials.example.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Credentials.example.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -195,20 +195,12 @@
 		5E3ED1071899F14F00632144 /* project-monitor */ = {
 			isa = PBXGroup;
 			children = (
+				5E79F1C718AA4B52005BF986 /* Controllers */,
 				5E79F1C218A9A4DD005BF986 /* Models */,
-				5EBF47E118A6AE7E00175065 /* AddBuildViewController.h */,
-				5EBF47E218A6AE7E00175065 /* AddBuildViewController.m */,
-				5E3ED1101899F14F00632144 /* AppDelegate.h */,
-				5E3ED1111899F14F00632144 /* AppDelegate.m */,
-				5E3ED11F1899F14F00632144 /* DetailViewController.h */,
-				5E3ED1201899F14F00632144 /* DetailViewController.m */,
-				5E3ED1221899F14F00632144 /* Images.xcassets */,
-				5E3ED1131899F14F00632144 /* Main_iPhone.storyboard */,
-				5E3ED11C1899F14F00632144 /* MasterViewController.h */,
-				5E3ED11D1899F14F00632144 /* MasterViewController.m */,
+				5E79F1C618AA4B4B005BF986 /* Views */,
 				5EBF47DA18A6A37300175065 /* Parse */,
+				5E79F1C818AA4B82005BF986 /* User Interface */,
 				5E3ED1191899F14F00632144 /* project_monitor.xcdatamodeld */,
-				5EBF47E718A6DAE800175065 /* Source */,
 				5E3ED1081899F14F00632144 /* Supporting Files */,
 			);
 			path = "project-monitor";
@@ -248,40 +240,64 @@
 		5E79F1C218A9A4DD005BF986 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				5E79F1C318A9A50B005BF986 /* Build.h */,
-				5E79F1C418A9A50B005BF986 /* Build.m */,
+				5E79F1CB18AA4FBB005BF986 /* Build.h */,
+				5E79F1CC18AA4FBB005BF986 /* Build.m */,
+				5E79F1CD18AA4FBB005BF986 /* Source.h */,
+				5E79F1CE18AA4FBB005BF986 /* SourceFactory.h */,
+				5E79F1CF18AA4FBB005BF986 /* SourceFactory.m */,
 			);
 			name = Models;
+			sourceTree = "<group>";
+		};
+		5E79F1C618AA4B4B005BF986 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		5E79F1C718AA4B52005BF986 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				5EBF47E118A6AE7E00175065 /* AddBuildViewController.h */,
+				5EBF47E218A6AE7E00175065 /* AddBuildViewController.m */,
+				5E3ED1101899F14F00632144 /* AppDelegate.h */,
+				5E3ED1111899F14F00632144 /* AppDelegate.m */,
+				5E3ED11F1899F14F00632144 /* DetailViewController.h */,
+				5E3ED1201899F14F00632144 /* DetailViewController.m */,
+				5E3ED11C1899F14F00632144 /* MasterViewController.h */,
+				5E3ED11D1899F14F00632144 /* MasterViewController.m */,
+				5E79F1D218AA4FD4005BF986 /* SemaphoreBuildsViewController.h */,
+				5E79F1D318AA4FD4005BF986 /* SemaphoreBuildsViewController.m */,
+				5E79F1D418AA4FD4005BF986 /* SemaphoreSourceViewController.h */,
+				5E79F1D518AA4FD4005BF986 /* SemaphoreSourceViewController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		5E79F1C818AA4B82005BF986 /* User Interface */ = {
+			isa = PBXGroup;
+			children = (
+				5E79F1C918AA4FA0005BF986 /* Semaphore.storyboard */,
+				5E3ED1221899F14F00632144 /* Images.xcassets */,
+				5E3ED1131899F14F00632144 /* Main_iPhone.storyboard */,
+			);
+			name = "User Interface";
 			sourceTree = "<group>";
 		};
 		5EBF47DA18A6A37300175065 /* Parse */ = {
 			isa = PBXGroup;
 			children = (
-				5EBF47DE18A6A41000175065 /* ProjectMonitorLogInViewController.h */,
-				5EBF47DF18A6A41000175065 /* ProjectMonitorLogInViewController.m */,
 				5E3ED154189A089E00632144 /* ParseHelper.h */,
 				5E3ED155189A089E00632144 /* ParseHelper.m */,
 				5EBF47CE18A69E4C00175065 /* ParseUITableViewController.h */,
 				5EBF47CF18A69E4C00175065 /* ParseUITableViewController.m */,
+				5EBF47DE18A6A41000175065 /* ProjectMonitorLogInViewController.h */,
+				5EBF47DF18A6A41000175065 /* ProjectMonitorLogInViewController.m */,
 				5EBF47DB18A6A3A600175065 /* ProjectMonitorSignUpViewController.h */,
 				5EBF47DC18A6A3A600175065 /* ProjectMonitorSignUpViewController.m */,
 			);
 			name = Parse;
-			sourceTree = "<group>";
-		};
-		5EBF47E718A6DAE800175065 /* Source */ = {
-			isa = PBXGroup;
-			children = (
-				5EBF480718A7B34100175065 /* Source.h */,
-				5EBF47E418A6DAE100175065 /* SourceFactory.h */,
-				5EBF47E518A6DAE100175065 /* SourceFactory.m */,
-				5EBF47F518A6F14500175065 /* SemaphoreSourceViewController.h */,
-				5EBF47F618A6F14500175065 /* SemaphoreSourceViewController.m */,
-				5EBF47FF18A7007400175065 /* Semaphore.storyboard */,
-				5EBF480418A7B1C700175065 /* SemaphoreBuildsViewController.h */,
-				5EBF480518A7B1C700175065 /* SemaphoreBuildsViewController.m */,
-			);
-			name = Source;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -373,9 +389,9 @@
 				5E3ED1231899F14F00632144 /* Images.xcassets in Resources */,
 				5ED0A996189EC75100A56A27 /* Credentials.plist in Resources */,
 				5E3ED1151899F14F00632144 /* Main_iPhone.storyboard in Resources */,
+				5E79F1CA18AA4FA0005BF986 /* Semaphore.storyboard in Resources */,
 				5E3ED10C1899F14F00632144 /* InfoPlist.strings in Resources */,
 				5ED0A998189EC81000A56A27 /* Credentials.example.plist in Resources */,
-				5EBF480018A7007400175065 /* Semaphore.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -427,18 +443,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5EBF480618A7B1C700175065 /* SemaphoreBuildsViewController.m in Sources */,
-				5EBF47F818A6F14500175065 /* SemaphoreSourceViewController.m in Sources */,
+				5E79F1D618AA4FD4005BF986 /* SemaphoreBuildsViewController.m in Sources */,
 				5E3ED1211899F14F00632144 /* DetailViewController.m in Sources */,
 				5EBF47D018A69E4C00175065 /* ParseUITableViewController.m in Sources */,
 				5E3ED156189A089E00632144 /* ParseHelper.m in Sources */,
-				5EBF47E618A6DAE100175065 /* SourceFactory.m in Sources */,
+				5E79F1D118AA4FBB005BF986 /* SourceFactory.m in Sources */,
 				5E3ED11E1899F14F00632144 /* MasterViewController.m in Sources */,
 				5E3ED11B1899F14F00632144 /* project_monitor.xcdatamodeld in Sources */,
 				5EBF47E318A6AE7E00175065 /* AddBuildViewController.m in Sources */,
+				5E79F1D718AA4FD4005BF986 /* SemaphoreSourceViewController.m in Sources */,
 				5EBF47DD18A6A3A600175065 /* ProjectMonitorSignUpViewController.m in Sources */,
 				5E3ED1121899F14F00632144 /* AppDelegate.m in Sources */,
-				5E79F1C518A9A50B005BF986 /* Build.m in Sources */,
+				5E79F1D018AA4FBB005BF986 /* Build.m in Sources */,
 				5E3ED10E1899F14F00632144 /* main.m in Sources */,
 				5EBF47E018A6A41000175065 /* ProjectMonitorLogInViewController.m in Sources */,
 			);
