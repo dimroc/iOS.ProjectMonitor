@@ -34,6 +34,7 @@
 		5E3ED1511899F45500632144 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E3ED1481899F45500632144 /* Security.framework */; };
 		5E3ED1531899F45500632144 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E3ED14A1899F45500632144 /* SystemConfiguration.framework */; };
 		5E3ED156189A089E00632144 /* ParseHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E3ED155189A089E00632144 /* ParseHelper.m */; };
+		5E79F1C518A9A50B005BF986 /* Build.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E79F1C418A9A50B005BF986 /* Build.m */; };
 		5EBF47D018A69E4C00175065 /* ParseUITableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EBF47CF18A69E4C00175065 /* ParseUITableViewController.m */; };
 		5EBF47DD18A6A3A600175065 /* ProjectMonitorSignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EBF47DC18A6A3A600175065 /* ProjectMonitorSignUpViewController.m */; };
 		5EBF47E018A6A41000175065 /* ProjectMonitorLogInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EBF47DF18A6A41000175065 /* ProjectMonitorLogInViewController.m */; };
@@ -94,6 +95,8 @@
 		5E3ED14A1899F45500632144 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		5E3ED154189A089E00632144 /* ParseHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParseHelper.h; sourceTree = "<group>"; };
 		5E3ED155189A089E00632144 /* ParseHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParseHelper.m; sourceTree = "<group>"; };
+		5E79F1C318A9A50B005BF986 /* Build.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Build.h; path = models/Build.h; sourceTree = "<group>"; };
+		5E79F1C418A9A50B005BF986 /* Build.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Build.m; path = models/Build.m; sourceTree = "<group>"; };
 		5EBF47CE18A69E4C00175065 /* ParseUITableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParseUITableViewController.h; sourceTree = "<group>"; };
 		5EBF47CF18A69E4C00175065 /* ParseUITableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParseUITableViewController.m; sourceTree = "<group>"; };
 		5EBF47DB18A6A3A600175065 /* ProjectMonitorSignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProjectMonitorSignUpViewController.h; sourceTree = "<group>"; };
@@ -195,6 +198,7 @@
 		5E3ED1071899F14F00632144 /* project-monitor */ = {
 			isa = PBXGroup;
 			children = (
+				5E79F1C218A9A4DD005BF986 /* Models */,
 				5EBF47E118A6AE7E00175065 /* AddBuildViewController.h */,
 				5EBF47E218A6AE7E00175065 /* AddBuildViewController.m */,
 				5E3ED1101899F14F00632144 /* AppDelegate.h */,
@@ -243,6 +247,15 @@
 				5E3ED1331899F15000632144 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5E79F1C218A9A4DD005BF986 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				5E79F1C318A9A50B005BF986 /* Build.h */,
+				5E79F1C418A9A50B005BF986 /* Build.m */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 		5EBF47DA18A6A37300175065 /* Parse */ = {
@@ -439,6 +452,7 @@
 				5EBF47E318A6AE7E00175065 /* AddBuildViewController.m in Sources */,
 				5EBF47DD18A6A3A600175065 /* ProjectMonitorSignUpViewController.m in Sources */,
 				5E3ED1121899F14F00632144 /* AppDelegate.m in Sources */,
+				5E79F1C518A9A50B005BF986 /* Build.m in Sources */,
 				5E3ED10E1899F14F00632144 /* main.m in Sources */,
 				5EBF47E018A6A41000175065 /* ProjectMonitorLogInViewController.m in Sources */,
 			);

@@ -16,4 +16,7 @@
   #import <CoreData/CoreData.h>
   #import <Parse/Parse.h>
   #import <QuartzCore/QuartzCore.h>
+  #import <AFNetworking/AFNetworking.h>
+  #import "Underscore.h"
+  #define _ Underscore
 #endif

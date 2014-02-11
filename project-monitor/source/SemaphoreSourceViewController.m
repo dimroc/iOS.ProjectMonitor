@@ -13,6 +13,7 @@
 @interface SemaphoreSourceViewController ()
 
 @property (weak, nonatomic) IBOutlet UITextField *authenticationTokenTextField;
+@property (nonatomic, copy) NSArray *builds;
 
 @end
 
@@ -59,11 +60,6 @@
 - (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender
 {
     if ([self authenticationFieldValid]) {
-        FetchBuildCallback callback = ^(NSArray* builds){
-            NSLog(@"Callback invoked!");
-        };
-        
-        [BuildFactory fetchFromSemaphore: self.authenticationTokenTextField.text withCallback: callback];
         return YES;
     }
     else {
@@ -79,9 +75,8 @@
 // In a story board-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    // Get the new view controller using [segue destinationViewController].
     SemaphoreBuildsViewController *buildsController = [segue destinationViewController];
-    // Pass the selected object to the new view controller.
+    [buildsController loadWithToken:_authenticationTokenTextField.text];
 }
 
 @end

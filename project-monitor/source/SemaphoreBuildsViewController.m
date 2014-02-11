@@ -7,19 +7,23 @@
 //
 
 #import "SemaphoreBuildsViewController.h"
+#import "Build.h"
 
 @interface SemaphoreBuildsViewController ()
+
+@property (nonatomic, copy) NSArray* builds;
 
 @end
 
 @implementation SemaphoreBuildsViewController
 
-- (id)initWithStyle:(UITableViewStyle)style
+-(id)initWithCoder:(NSCoder *)aDecoder
 {
-    self = [super initWithStyle:style];
+    self = [super initWithCoder:aDecoder];
     if (self) {
-        // Custom initialization
+        [self setBuilds:[NSArray array]];
     }
+
     return self;
 }
 
@@ -40,28 +44,44 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void) loadWithToken:(NSString*) authenticationToken
+{
+    [BuildFactory fetchFromSemaphore: authenticationToken withCallback: ^(NSArray* builds){
+        [self handleBuilds:builds];
+    }];
+}
+
+- (void) handleBuilds:(NSArray *)builds
+{
+    [self setBuilds:builds];
+    [self.tableView reloadData];
+    [self.activityIndicator stopAnimating];
+}
+
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
-    // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
-    // Return the number of rows in the section.
-    return 0;
+    return [_builds count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
-    // Configure the cell...
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
+    }
+    
+    Build *build = [_builds objectAtIndex:indexPath.row];
+    cell.textLabel.text = build.project;
+    cell.detailTextLabel.text = build.branch;
     
     return cell;
 }

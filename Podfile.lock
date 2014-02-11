@@ -20,14 +20,17 @@ PODS:
   - Facebook-iOS-SDK (3.12.0)
   - Parse (1.2.18):
     - Facebook-iOS-SDK (~> 3.11)
+  - Underscore.m (0.2.1)
 
 DEPENDENCIES:
   - AFNetworking (~> 2.0)
   - Parse
+  - Underscore.m
 
 SPEC CHECKSUMS:
   AFNetworking: c7d7901a83f631414c7eda1737261f696101a5cd
   Facebook-iOS-SDK: c09f7d80db5c48170ff834bc03ebe774c49d1f5b
   Parse: 6dd57f2af9f89dc6facc755cec4e96f8b739b1fb
+  Underscore.m: 593ea54a19d3cc4439387a83d36eb7ba6ffd1707
 
 COCOAPODS: 0.29.0
