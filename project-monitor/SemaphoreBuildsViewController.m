@@ -8,6 +8,7 @@
 
 #import "SemaphoreBuildsViewController.h"
 #import "Build.h"
+#import "BuildCell.h"
 
 @interface SemaphoreBuildsViewController ()
 
@@ -73,16 +74,11 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
-    }
+    static NSString *CellIdentifier = @"BuildCell";
+    BuildCell *cell = (BuildCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
     Build *build = [_builds objectAtIndex:indexPath.row];
-    cell.textLabel.text = build.project;
-    cell.detailTextLabel.text = build.branch;
+    [cell setFromBuild:build];
     
     return cell;
 }

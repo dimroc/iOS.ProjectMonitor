@@ -39,6 +39,13 @@
 		5E79F1D118AA4FBB005BF986 /* SourceFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E79F1CF18AA4FBB005BF986 /* SourceFactory.m */; };
 		5E79F1D618AA4FD4005BF986 /* SemaphoreBuildsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E79F1D318AA4FD4005BF986 /* SemaphoreBuildsViewController.m */; };
 		5E79F1D718AA4FD4005BF986 /* SemaphoreSourceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E79F1D518AA4FD4005BF986 /* SemaphoreSourceViewController.m */; };
+		5E79F1DA18AA5085005BF986 /* BuildCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E79F1D918AA5085005BF986 /* BuildCell.m */; };
+		5E79F1E218AA584A005BF986 /* icon-fail-changing.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E79F1DC18AA584A005BF986 /* icon-fail-changing.png */; };
+		5E79F1E318AA584A005BF986 /* icon-fail.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E79F1DD18AA584A005BF986 /* icon-fail.png */; };
+		5E79F1E418AA584A005BF986 /* icon-ok-changing.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E79F1DE18AA584A005BF986 /* icon-ok-changing.png */; };
+		5E79F1E518AA584A005BF986 /* icon-ok.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E79F1DF18AA584A005BF986 /* icon-ok.png */; };
+		5E79F1E618AA584A005BF986 /* icon-undetermined-changing.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E79F1E018AA584A005BF986 /* icon-undetermined-changing.png */; };
+		5E79F1E718AA584A005BF986 /* icon-undetermined.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E79F1E118AA584A005BF986 /* icon-undetermined.png */; };
 		5EBF47D018A69E4C00175065 /* ParseUITableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EBF47CF18A69E4C00175065 /* ParseUITableViewController.m */; };
 		5EBF47DD18A6A3A600175065 /* ProjectMonitorSignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EBF47DC18A6A3A600175065 /* ProjectMonitorSignUpViewController.m */; };
 		5EBF47E018A6A41000175065 /* ProjectMonitorLogInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EBF47DF18A6A41000175065 /* ProjectMonitorLogInViewController.m */; };
@@ -104,6 +111,14 @@
 		5E79F1D318AA4FD4005BF986 /* SemaphoreBuildsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SemaphoreBuildsViewController.m; sourceTree = "<group>"; };
 		5E79F1D418AA4FD4005BF986 /* SemaphoreSourceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SemaphoreSourceViewController.h; sourceTree = "<group>"; };
 		5E79F1D518AA4FD4005BF986 /* SemaphoreSourceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SemaphoreSourceViewController.m; sourceTree = "<group>"; };
+		5E79F1D818AA5085005BF986 /* BuildCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuildCell.h; sourceTree = "<group>"; };
+		5E79F1D918AA5085005BF986 /* BuildCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BuildCell.m; sourceTree = "<group>"; };
+		5E79F1DC18AA584A005BF986 /* icon-fail-changing.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon-fail-changing.png"; path = "Images/icon-fail-changing.png"; sourceTree = "<group>"; };
+		5E79F1DD18AA584A005BF986 /* icon-fail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon-fail.png"; path = "Images/icon-fail.png"; sourceTree = "<group>"; };
+		5E79F1DE18AA584A005BF986 /* icon-ok-changing.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon-ok-changing.png"; path = "Images/icon-ok-changing.png"; sourceTree = "<group>"; };
+		5E79F1DF18AA584A005BF986 /* icon-ok.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon-ok.png"; path = "Images/icon-ok.png"; sourceTree = "<group>"; };
+		5E79F1E018AA584A005BF986 /* icon-undetermined-changing.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon-undetermined-changing.png"; path = "Images/icon-undetermined-changing.png"; sourceTree = "<group>"; };
+		5E79F1E118AA584A005BF986 /* icon-undetermined.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon-undetermined.png"; path = "Images/icon-undetermined.png"; sourceTree = "<group>"; };
 		5EBF47CE18A69E4C00175065 /* ParseUITableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParseUITableViewController.h; sourceTree = "<group>"; };
 		5EBF47CF18A69E4C00175065 /* ParseUITableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParseUITableViewController.m; sourceTree = "<group>"; };
 		5EBF47DB18A6A3A600175065 /* ProjectMonitorSignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProjectMonitorSignUpViewController.h; sourceTree = "<group>"; };
@@ -252,6 +267,8 @@
 		5E79F1C618AA4B4B005BF986 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				5E79F1D818AA5085005BF986 /* BuildCell.h */,
+				5E79F1D918AA5085005BF986 /* BuildCell.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -278,11 +295,25 @@
 		5E79F1C818AA4B82005BF986 /* User Interface */ = {
 			isa = PBXGroup;
 			children = (
+				5E79F1DB18AA543D005BF986 /* Images */,
 				5E79F1C918AA4FA0005BF986 /* Semaphore.storyboard */,
 				5E3ED1221899F14F00632144 /* Images.xcassets */,
 				5E3ED1131899F14F00632144 /* Main_iPhone.storyboard */,
 			);
 			name = "User Interface";
+			sourceTree = "<group>";
+		};
+		5E79F1DB18AA543D005BF986 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				5E79F1DC18AA584A005BF986 /* icon-fail-changing.png */,
+				5E79F1DD18AA584A005BF986 /* icon-fail.png */,
+				5E79F1DE18AA584A005BF986 /* icon-ok-changing.png */,
+				5E79F1DF18AA584A005BF986 /* icon-ok.png */,
+				5E79F1E018AA584A005BF986 /* icon-undetermined-changing.png */,
+				5E79F1E118AA584A005BF986 /* icon-undetermined.png */,
+			);
+			name = Images;
 			sourceTree = "<group>";
 		};
 		5EBF47DA18A6A37300175065 /* Parse */ = {
@@ -386,12 +417,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5E79F1E218AA584A005BF986 /* icon-fail-changing.png in Resources */,
 				5E3ED1231899F14F00632144 /* Images.xcassets in Resources */,
+				5E79F1E718AA584A005BF986 /* icon-undetermined.png in Resources */,
+				5E79F1E318AA584A005BF986 /* icon-fail.png in Resources */,
 				5ED0A996189EC75100A56A27 /* Credentials.plist in Resources */,
 				5E3ED1151899F14F00632144 /* Main_iPhone.storyboard in Resources */,
 				5E79F1CA18AA4FA0005BF986 /* Semaphore.storyboard in Resources */,
+				5E79F1E518AA584A005BF986 /* icon-ok.png in Resources */,
+				5E79F1E618AA584A005BF986 /* icon-undetermined-changing.png in Resources */,
 				5E3ED10C1899F14F00632144 /* InfoPlist.strings in Resources */,
 				5ED0A998189EC81000A56A27 /* Credentials.example.plist in Resources */,
+				5E79F1E418AA584A005BF986 /* icon-ok-changing.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -457,6 +494,7 @@
 				5E79F1D018AA4FBB005BF986 /* Build.m in Sources */,
 				5E3ED10E1899F14F00632144 /* main.m in Sources */,
 				5EBF47E018A6A41000175065 /* ProjectMonitorLogInViewController.m in Sources */,
+				5E79F1DA18AA5085005BF986 /* BuildCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

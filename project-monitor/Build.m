@@ -54,6 +54,19 @@
     [build setBranch:json[@"branch_name"]];
     [build setStatus:json[@"result"]];
     [build setBranchStatusUrl:json[@"branch_status_url"]];
+    
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setTimeZone:[NSTimeZone timeZoneWithName:@"UTC"]];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd'T'HH:mm:ssZZZ"];
+    
+    NSDate *startedAt = [dateFormatter dateFromString:json[@"started_at"]];
+    [build setStartedAt:startedAt];
+    
+    if (json[@"finished_at"]) {
+        NSDate *finishedAt = [dateFormatter dateFromString:json[@"finished_at"]];
+        [build setFinishedAt:finishedAt];
+    }
+    
     return build;
 }
 
