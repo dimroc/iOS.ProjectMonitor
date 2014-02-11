@@ -30,6 +30,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
 
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -55,7 +56,7 @@
 {
     [self setBuilds:builds];
     [self.tableView reloadData];
-    [self.activityIndicator stopAnimating];
+    [MBProgressHUD hideHUDForView:self.view animated:YES];
 }
 
 #pragma mark - Table view data source

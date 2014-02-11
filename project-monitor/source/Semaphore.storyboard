@@ -57,11 +57,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <activityIndicatorView key="tableFooterView" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" id="TF7-WW-LKi">
-                            <rect key="frame" x="0.0" y="66" width="320" height="37"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <color key="color" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                        </activityIndicatorView>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="Bx7-fd-VYf" detailTextLabel="jQC-no-4GM" style="IBUITableViewCellStyleSubtitle" id="Czl-zl-8fk">
                                 <rect key="frame" x="0.0" y="22" width="320" height="44"/>
@@ -94,9 +89,6 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Builds" id="M9l-wn-aZr"/>
-                    <connections>
-                        <outlet property="activityIndicator" destination="TF7-WW-LKi" id="2Mo-4Q-OaM"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oDm-vf-LeG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

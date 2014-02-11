@@ -18,5 +18,7 @@
   #import <QuartzCore/QuartzCore.h>
   #import <AFNetworking/AFNetworking.h>
   #import "Underscore.h"
+  #import <MBProgressHUD/MBProgressHUD.h>
+
   #define _ Underscore
 #endif

@@ -11,8 +11,6 @@
 
 @interface SemaphoreBuildsViewController : UITableViewController
 
-@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
-
 - (void) loadWithToken:(NSString*) authenticationToken;
 
 @end
