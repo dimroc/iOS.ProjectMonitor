@@ -10,6 +10,15 @@
 
 @implementation Build
 
+static NSDateFormatter *dateFormatter;
+
++ (void) initialize
+{
+    dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setTimeZone:[NSTimeZone timeZoneWithName:@"UTC"]];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd'T'HH:mm:ssZZZ"];
+}
+
 + (void) fetchFromSemaphore:(NSString*)authenticationToken withCallback:(void (^)(NSArray *))callbackBlock
 {
     NSString *URLString = @"https://semaphoreapp.com/api/v1/projects";
@@ -55,24 +64,25 @@
     [build setStatus:json[@"result"]];
     [build setBranchStatusUrl:json[@"branch_status_url"]];
     
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setTimeZone:[NSTimeZone timeZoneWithName:@"UTC"]];
-    [dateFormatter setDateFormat:@"yyyy-MM-dd'T'HH:mm:ssZZZ"];
-    
-    NSDate *startedAt = [dateFormatter dateFromString:json[@"started_at"]];
-    [build setStartedAt:startedAt];
-    
-    if (json[@"finished_at"] && json[@"finished_at"] != (id)[NSNull null]) {
-        @try {
-            NSDate *finishedAt = [dateFormatter dateFromString:json[@"finished_at"]];
-            [build setFinishedAt:finishedAt];
-        }
-        @catch (NSException *exception) {
-            NSLog(@"Failed to parse %@", json[@"finished_at"]);
-        }
-    }
+    [build setStartedAt: [Build safeParseDateFrom:json withKey:@"started_at"]];
+    [build setFinishedAt: [Build safeParseDateFrom:json withKey:@"finished_at"]];
     
     return build;
+}
+
++ (NSDate *) safeParseDateFrom:(NSDictionary*)json withKey:(NSString*)key
+{
+    if (json[key] && json[key] != (id)[NSNull null]) {
+        @try {
+            NSDate *date = [dateFormatter dateFromString:json[key]];
+            return date;
+        }
+        @catch (NSException *exception) {
+            NSLog(@"Failed to parse %@", json[key]);
+        }
+    }
+
+    return nil;
 }
 
 - (NSString *)description
