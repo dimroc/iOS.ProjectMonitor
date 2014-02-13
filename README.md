@@ -14,7 +14,7 @@ Project Setup
 
 The iPhone app uses Parse as its backend and therefore requires credentials.
 
-Copy `project-monitor/Credentials.example.plist` to `project-monitor/Credentials.plist`,
+Copy `ProjectMonitor/Credentials.example.plist` to `ProjectMonitor/Credentials.plist`,
 enter your Parse credentials and you're good to go.
 
 Thanks

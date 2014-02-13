@@ -18,6 +18,11 @@ PODS:
   - AFNetworking/UIKit (2.1.0):
     - AFNetworking/NSURLConnection
   - Facebook-iOS-SDK (3.12.0)
+  - Kiwi/ARC (2.2.3)
+  - Kiwi/NonARC (2.2.3)
+  - Kiwi/XCTest (2.2.3):
+    - Kiwi/ARC
+    - Kiwi/NonARC
   - MBProgressHUD (0.8)
   - Parse (1.2.18):
     - Facebook-iOS-SDK (~> 3.11)
@@ -25,6 +30,7 @@ PODS:
 
 DEPENDENCIES:
   - AFNetworking (~> 2.0)
+  - Kiwi/XCTest
   - MBProgressHUD (~> 0.8)
   - Parse
   - Underscore.m
@@ -32,6 +38,7 @@ DEPENDENCIES:
 SPEC CHECKSUMS:
   AFNetworking: c7d7901a83f631414c7eda1737261f696101a5cd
   Facebook-iOS-SDK: c09f7d80db5c48170ff834bc03ebe774c49d1f5b
+  Kiwi: 04c51e880831d291748ec702d42c4101f7eb95c9
   MBProgressHUD: 2bbc6f470111daf7f3eaa4eb12b8cbf01c4c0622
   Parse: 6dd57f2af9f89dc6facc755cec4e96f8b739b1fb
   Underscore.m: 593ea54a19d3cc4439387a83d36eb7ba6ffd1707
