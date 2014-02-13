@@ -53,7 +53,6 @@
 		5EBF47E318A6AE7E00175065 /* AddBuildViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EBF47E218A6AE7E00175065 /* AddBuildViewController.m */; };
 		5ED0A996189EC75100A56A27 /* Credentials.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5ED0A995189EC75100A56A27 /* Credentials.plist */; };
 		5ED0A998189EC81000A56A27 /* Credentials.example.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5ED0A997189EC81000A56A27 /* Credentials.example.plist */; };
-		9F50CC2CB0F944DCA082EDC5 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 23FE4D8672254D658D67C16D /* libPods.a */; };
 		A808C67AAD954B00B7CCF868 /* libPods-ProjectMonitor.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 841A53FDA145460EA60ED4BF /* libPods-ProjectMonitor.a */; };
 /* End PBXBuildFile section */
 
@@ -68,7 +67,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		23FE4D8672254D658D67C16D /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B0FF487CBEA473C8D7D223C /* libPods-ProjectMonitorTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ProjectMonitorTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DC397F864E74853B41B48C1 /* Pods-ProjectMonitor.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProjectMonitor.xcconfig"; path = "Pods/Pods-ProjectMonitor.xcconfig"; sourceTree = "<group>"; };
 		5E3ED0FC1899F14F00632144 /* ProjectMonitor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProjectMonitor.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -164,7 +162,6 @@
 				5E3ED12D1899F15000632144 /* CoreData.framework in Frameworks */,
 				5E3ED12C1899F15000632144 /* UIKit.framework in Frameworks */,
 				5E3ED12B1899F15000632144 /* Foundation.framework in Frameworks */,
-				9F50CC2CB0F944DCA082EDC5 /* libPods.a in Frameworks */,
 				20A950CD295D4BD99D563FD3 /* libPods-ProjectMonitorTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -208,7 +205,6 @@
 				5E3ED1031899F14F00632144 /* UIKit.framework */,
 				5E3ED1051899F14F00632144 /* CoreData.framework */,
 				5E3ED1291899F15000632144 /* XCTest.framework */,
-				23FE4D8672254D658D67C16D /* libPods.a */,
 				2B0FF487CBEA473C8D7D223C /* libPods-ProjectMonitorTests.a */,
 				841A53FDA145460EA60ED4BF /* libPods-ProjectMonitor.a */,
 			);
@@ -397,6 +393,9 @@
 								enabled = 0;
 							};
 						};
+					};
+					5E3ED1271899F15000632144 = {
+						TestTargetID = 5E3ED0FB1899F14F00632144;
 					};
 				};
 			};
@@ -701,6 +700,7 @@
 			baseConfigurationReference = 4DC397F864E74853B41B48C1 /* Pods-ProjectMonitor.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/ProjectMonitor.app/ProjectMonitor";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -714,6 +714,7 @@
 				);
 				INFOPLIST_FILE = "ProjectMonitorTests/ProjectMonitorTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
 			name = Debug;
@@ -723,6 +724,7 @@
 			baseConfigurationReference = 4DC397F864E74853B41B48C1 /* Pods-ProjectMonitor.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/ProjectMonitor.app/ProjectMonitor";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -732,6 +734,7 @@
 				GCC_PREFIX_HEADER = "ProjectMonitor/ProjectMonitor-Prefix.pch";
 				INFOPLIST_FILE = "ProjectMonitorTests/ProjectMonitorTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
 			name = Release;
