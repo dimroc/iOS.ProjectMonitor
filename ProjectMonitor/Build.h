@@ -19,7 +19,7 @@ typedef void (^FetchBuildCallback)(NSArray *);
 @property (nonatomic, strong) NSString* project;
 @property (nonatomic, strong) NSString* branch;
 @property (nonatomic, strong) NSString* status;
-@property (nonatomic, strong) NSString* branchStatusUrl;
+@property (nonatomic, strong) NSString* url;
 @property (nonatomic, strong) NSDate* startedAt;
 @property (nonatomic, strong) NSDate* finishedAt;
 

@@ -62,7 +62,7 @@ static NSDateFormatter *dateFormatter;
     [build setProject:json[@"project_name"]];
     [build setBranch:json[@"branch_name"]];
     [build setStatus:json[@"result"]];
-    [build setBranchStatusUrl:json[@"branch_status_url"]];
+    [build setUrl:json[@"branch_status_url"]];
     
     [build setStartedAt: [Build safeParseDateFrom:json withKey:@"started_at"]];
     [build setFinishedAt: [Build safeParseDateFrom:json withKey:@"finished_at"]];
@@ -87,7 +87,7 @@ static NSDateFormatter *dateFormatter;
 
 - (NSString *)description
 {
-    return [NSString stringWithFormat: @"Build: Project=%@ Branch=%@ Status=%@ BranchStatusUrl=%@", _project, _branch, _status, _branchStatusUrl];
+    return [NSString stringWithFormat: @"Build: Project=%@ Branch=%@ Status=%@ Url=%@", _project, _branch, _status, _url];
 }
 
 @end
