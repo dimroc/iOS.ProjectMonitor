@@ -15,6 +15,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *branchLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *statusImageView;
 @property (weak, nonatomic) IBOutlet UILabel *timeLabel;
+@property (weak, nonatomic) Build *build;
 
 - (void)setFromBuild:(Build*)build;
 

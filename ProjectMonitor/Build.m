@@ -14,9 +14,14 @@ static NSDateFormatter *dateFormatter;
 
 + (void) initialize
 {
-    dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setTimeZone:[NSTimeZone timeZoneWithName:@"UTC"]];
-    [dateFormatter setDateFormat:@"yyyy-MM-dd'T'HH:mm:ssZZZ"];
+    static BOOL initialized = NO;
+    if(!initialized)
+    {
+        initialized = YES;
+        dateFormatter = [[NSDateFormatter alloc] init];
+        [dateFormatter setTimeZone:[NSTimeZone timeZoneWithName:@"UTC"]];
+        [dateFormatter setDateFormat:@"yyyy-MM-dd'T'HH:mm:ssZZZ"];
+    }
 }
 
 + (void) fetchFromSemaphore:(NSString*)authenticationToken withCallback:(void (^)(NSArray *))callbackBlock
@@ -59,6 +64,8 @@ static NSDateFormatter *dateFormatter;
 + (Build *) fromJson:(NSDictionary*)json
 {
     Build *build = [[Build alloc] init];
+    // To be used alongside NSClassFromString
+    [build setType:@"SemaphoreBuild"];
     [build setProject:json[@"project_name"]];
     [build setBranch:json[@"branch_name"]];
     [build setStatus:json[@"result"]];
@@ -88,6 +95,29 @@ static NSDateFormatter *dateFormatter;
 - (NSString *)description
 {
     return [NSString stringWithFormat: @"Build: Project=%@ Branch=%@ Status=%@ Url=%@", _project, _branch, _status, _url];
+}
+
+- (void)saveInBackgroundWithBlock:(void (^)(BOOL))mainThreadCallback
+{
+    NSLog(@"Saving project %@ with branch %@ of type %@", self.project, self.branch, self.type);
+    
+    PFObject *buildObject = [PFObject objectWithClassName:@"Build"];
+    buildObject[@"type"] = self.type;
+    buildObject[@"project"] = self.project;
+    buildObject[@"branch"] = self.branch;
+    buildObject[@"url"] = self.url;
+    buildObject[@"status"] = self.status;
+    buildObject[@"startedAt"] = self.startedAt;
+    buildObject[@"finishedAt"] = self.finishedAt;
+    
+    buildObject[@"user"] = [PFUser currentUser];
+    buildObject.ACL = [PFACL ACLWithUser:[PFUser currentUser]];
+    
+    [buildObject saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            mainThreadCallback(succeeded);
+        });
+    }];
 }
 
 @end

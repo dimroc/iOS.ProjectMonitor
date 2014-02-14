@@ -19,7 +19,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    [ParseHelper initialize:launchOptions];
+    [ParseHelper launch:launchOptions];
     [self launchMasterDetailView];
     return YES;
 }

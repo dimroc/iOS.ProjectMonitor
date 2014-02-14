@@ -10,20 +10,6 @@
 
 @implementation ParseHelper
 
-+(void)initialize:(NSDictionary *)launchOptions     {
-    [Parse setApplicationId: [credentials objectForKey: @"ParseApplicationId"]
-                  clientKey: [credentials objectForKey: @"ParseClientKey"]];
-    
-    [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
-}
-
-+(void)saveTestObjectInBackground
-{
-    PFObject *testObject = [PFObject objectWithClassName:@"TestObject"];
-    testObject[@"foo"] = @"bar";
-    [testObject saveInBackground];
-}
-
 // Class Singleton
 // http://stackoverflow.com/questions/145154/what-should-my-objective-c-singleton-look-like
 static NSDictionary *credentials;
@@ -38,4 +24,12 @@ static NSDictionary *credentials;
         credentials =[[NSMutableDictionary alloc] initWithContentsOfFile:path];
     }
 }
+
++(void)launch:(NSDictionary *)launchOptions     {
+    [Parse setApplicationId: [credentials objectForKey: @"ParseApplicationId"]
+                  clientKey: [credentials objectForKey: @"ParseClientKey"]];
+    
+    [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
+}
+
 @end

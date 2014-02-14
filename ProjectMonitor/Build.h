@@ -16,6 +16,7 @@ typedef void (^FetchBuildCallback)(NSArray *);
 + (NSArray *)arrayFromJson:(id)json;
 + (Build *) fromJson:(NSDictionary*)json;
 
+@property (nonatomic, strong) NSString* type;
 @property (nonatomic, strong) NSString* project;
 @property (nonatomic, strong) NSString* branch;
 @property (nonatomic, strong) NSString* status;
@@ -24,5 +25,6 @@ typedef void (^FetchBuildCallback)(NSArray *);
 @property (nonatomic, strong) NSDate* finishedAt;
 
 - (NSString *)description;
+- (void)saveInBackgroundWithBlock: (void (^)(BOOL))mainThreadCallback;
 
 @end

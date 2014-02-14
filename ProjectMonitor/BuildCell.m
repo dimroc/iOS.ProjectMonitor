@@ -11,8 +11,6 @@
 
 @interface BuildCell ()
 
-@property (weak, nonatomic) Build *build;
-
 @end
 
 @implementation BuildCell

@@ -10,7 +10,6 @@
 
 @interface ParseHelper : NSObject
 
-+ (void)initialize:(NSDictionary *)launchOptions;
-+ (void)saveTestObjectInBackground;
++ (void)launch:(NSDictionary *)launchOptions;
 
 @end
