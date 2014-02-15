@@ -2,13 +2,23 @@
 //  Build.m
 //  ProjectMonitor
 //
-//  Created by Dimitri Roche on 2/10/14.
+//  Created by Dimitri Roche on 2/14/14.
 //  Copyright (c) 2014 Dimitri Roche. All rights reserved.
 //
 
 #import "Build.h"
 
+
 @implementation Build
+
+@dynamic project;
+@dynamic branch;
+@dynamic type;
+@dynamic url;
+@dynamic startedAt;
+@dynamic finishedAt;
+@dynamic status;
+@dynamic objectId;
 
 static NSDateFormatter *dateFormatter;
 
@@ -45,6 +55,13 @@ static NSDateFormatter *dateFormatter;
     dispatch_async(dispatch_get_main_queue(), ^{
         callback(array);
     });
+}
+
++ (NSArray *)arrayFromCoreData:(NSManagedObjectContext *)context;
+{
+    NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"Build"];
+    NSError *error;
+    return [context executeFetchRequest:fetchRequest error:&error];
 }
 
 + (NSArray *)arrayFromJson:(id)json
@@ -88,13 +105,13 @@ static NSDateFormatter *dateFormatter;
             NSLog(@"Failed to parse %@", json[key]);
         }
     }
-
+    
     return nil;
 }
 
 - (NSString *)description
 {
-    return [NSString stringWithFormat: @"Build: Project=%@ Branch=%@ Status=%@ Url=%@", _project, _branch, _status, _url];
+    return [NSString stringWithFormat: @"Build: Project=%@ Branch=%@ Status=%@ Url=%@", self.project, self.branch, self.status, self.url];
 }
 
 - (void)saveInBackgroundWithBlock:(void (^)(BOOL))mainThreadCallback
