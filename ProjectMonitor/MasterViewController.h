@@ -13,11 +13,9 @@
 #import <CoreData/CoreData.h>
 #import "ParseUITableViewController.h"
 
-@interface MasterViewController : ParseUITableViewController <NSFetchedResultsControllerDelegate>
+@interface MasterViewController : ParseUITableViewController
 
 @property (strong, nonatomic) DetailViewController *detailViewController;
-
-@property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 
 @end
