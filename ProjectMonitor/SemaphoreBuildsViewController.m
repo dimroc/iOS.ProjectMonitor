@@ -32,6 +32,8 @@
 {
     [super viewDidLoad];
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    UINib *nib = [UINib nibWithNibName:@"BuildCell" bundle:nil];
+    [[self tableView] registerNib:nib forCellReuseIdentifier:@"BuildCell"];
 }
 
 - (void)didReceiveMemoryWarning

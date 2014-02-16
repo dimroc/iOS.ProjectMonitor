@@ -25,6 +25,9 @@
 	// Do any additional setup after loading the view, typically from a nib.
     self.detailViewController = (DetailViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
     self.builds = [Build MR_findAll];
+    
+    UINib *nib = [UINib nibWithNibName:@"BuildCell" bundle:nil];
+    [[self tableView] registerNib:nib forCellReuseIdentifier:@"BuildCell"];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -62,9 +65,14 @@
     return cell;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [self performSegueWithIdentifier: @"toDetailsView" sender: self];
+}
+
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if ([[segue identifier] isEqualToString:@"showDetail"]) {
+    if ([[segue identifier] isEqualToString:@"toDetailsView"]) {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         Build *build = [[self builds] objectAtIndex:indexPath.row];
         [[segue destinationViewController] setBuild:build];
