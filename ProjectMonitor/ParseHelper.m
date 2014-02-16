@@ -32,4 +32,16 @@ static NSDictionary *credentials;
     [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
 }
 
++ (NSDictionary *)toDictionary:(PFObject*)message
+{
+    NSArray * allKeys = [message allKeys];
+    NSMutableDictionary * retDict = [[NSMutableDictionary alloc] init];
+    
+    for (NSString * key in allKeys) {
+        [retDict setObject:[message objectForKey:key] forKey:key];
+    }
+    
+    return retDict;
+}
+
 @end

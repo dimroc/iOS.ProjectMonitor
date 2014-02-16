@@ -7,7 +7,7 @@
 //
 
 #import "Build.h"
-
+#import "ParseHelper.h"
 
 @implementation Build
 
@@ -22,6 +22,9 @@
 
 static NSDateFormatter *dateFormatter;
 
+// Thread safe: https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/Multithreading/ThreadSafetySummary/ThreadSafetySummary.html
+static NSArray* whitelistedKeys;
+
 + (void) initialize
 {
     static BOOL initialized = NO;
@@ -31,6 +34,9 @@ static NSDateFormatter *dateFormatter;
         dateFormatter = [[NSDateFormatter alloc] init];
         [dateFormatter setTimeZone:[NSTimeZone timeZoneWithName:@"UTC"]];
         [dateFormatter setDateFormat:@"yyyy-MM-dd'T'HH:mm:ssZZZ"];
+        whitelistedKeys = [NSArray arrayWithObjects:
+                           @"type", @"project", @"branch", @"status", @"url", @"startedAt", @"finishedAt", nil];
+        
     }
 }
 
@@ -57,12 +63,6 @@ static NSDateFormatter *dateFormatter;
     });
 }
 
-+ (NSArray *)arrayFromCoreData:(NSManagedObjectContext *)context;
-{
-    NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"Build"];
-    NSError *error;
-    return [context executeFetchRequest:fetchRequest error:&error];
-}
 
 + (NSArray *)arrayFromJson:(id)json
 {
@@ -80,17 +80,18 @@ static NSDateFormatter *dateFormatter;
 
 + (Build *) fromJson:(NSDictionary*)json
 {
-    Build *build = [[Build alloc] init];
-    // To be used alongside NSClassFromString
-    [build setType:@"SemaphoreBuild"];
-    [build setProject:json[@"project_name"]];
-    [build setBranch:json[@"branch_name"]];
-    [build setStatus:json[@"result"]];
-    [build setUrl:json[@"branch_status_url"]];
+    NSMutableDictionary *dic = [NSMutableDictionary dictionary];
     
-    [build setStartedAt: [Build safeParseDateFrom:json withKey:@"started_at"]];
-    [build setFinishedAt: [Build safeParseDateFrom:json withKey:@"finished_at"]];
-    
+    [dic setValue:@"SemaphoreBuild" forKey:@"type"];
+    [dic setValue:json[@"project_name"] forKey:@"project"];
+    [dic setValue:json[@"branch_name"] forKey:@"branch"];
+    [dic setValue:json[@"result"] forKey:@"status"];
+    [dic setValue:json[@"branch_status_url"] forKey:@"url"];
+    [dic setValue:[Build safeParseDateFrom:json withKey:@"started_at"] forKey:@"startedAt"];
+    [dic setValue:[Build safeParseDateFrom:json withKey:@"finished_at"] forKey:@"finishedAt"];
+
+    Build *build = [Build MR_createEntity];
+    [build setFromDictionary: dic];
     return build;
 }
 
@@ -114,23 +115,33 @@ static NSDateFormatter *dateFormatter;
     return [NSString stringWithFormat: @"Build: Project=%@ Branch=%@ Status=%@ Url=%@", self.project, self.branch, self.status, self.url];
 }
 
+- (void)setFromDictionary:(NSDictionary*)dic
+{
+    for (NSString* key in whitelistedKeys) {
+        [self setValue:dic[key] forKey:key];
+    }
+}
+
 - (void)saveInBackgroundWithBlock:(void (^)(BOOL))mainThreadCallback
 {
     NSLog(@"Saving project %@ with branch %@ of type %@", self.project, self.branch, self.type);
     
     PFObject *buildObject = [PFObject objectWithClassName:@"Build"];
-    buildObject[@"type"] = self.type;
-    buildObject[@"project"] = self.project;
-    buildObject[@"branch"] = self.branch;
-    buildObject[@"url"] = self.url;
-    buildObject[@"status"] = self.status;
-    buildObject[@"startedAt"] = self.startedAt;
-    buildObject[@"finishedAt"] = self.finishedAt;
+    for (NSString* key in whitelistedKeys) {
+        buildObject[key] = [self valueForKey:key];
+    }
     
     buildObject[@"user"] = [PFUser currentUser];
     buildObject.ACL = [PFACL ACLWithUser:[PFUser currentUser]];
     
     [buildObject saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        [MagicalRecord saveWithBlock:^(NSManagedObjectContext *localContext) {
+            Build *localBuild = [Build MR_createInContext:localContext];
+            assert(localBuild != nil);
+            [localBuild setFromDictionary: [ParseHelper toDictionary:buildObject]];
+            localBuild.objectId = buildObject.objectId;
+        }];
+        
         dispatch_async(dispatch_get_main_queue(), ^{
             mainThreadCallback(succeeded);
         });

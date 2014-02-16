@@ -11,5 +11,6 @@
 @interface ParseHelper : NSObject
 
 + (void)launch:(NSDictionary *)launchOptions;
++ (NSDictionary *)toDictionary:(PFObject*)message;
 
 @end

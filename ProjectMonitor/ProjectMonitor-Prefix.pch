@@ -20,5 +20,8 @@
   #import "Underscore.h"
   #import <MBProgressHUD/MBProgressHUD.h>
 
+  //#define MR_SHORTHAND
+  #import "CoreData+MagicalRecord.h"
+
   #define _ Underscore
 #endif

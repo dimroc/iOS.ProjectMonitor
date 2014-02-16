@@ -8,8 +8,12 @@
 
 #import "MasterViewController.h"
 #import "DetailViewController.h"
+#import "Build.h"
+#import "BuildCell.h"
 
 @interface MasterViewController ()
+
+@property (strong, nonatomic) NSArray *builds;
 
 @end
 
@@ -20,12 +24,12 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     self.detailViewController = (DetailViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
+    self.builds = [Build MR_findAll];
 }
 
-- (void)didReceiveMemoryWarning
+- (void)viewDidAppear:(BOOL)animated
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    [super viewDidAppear:animated];
 }
 
 - (IBAction)signOut:(id)sender
@@ -44,21 +48,26 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 0;
+    return [self.builds count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"BuildCell" forIndexPath:indexPath];
+    static NSString *CellIdentifier = @"BuildCell";
+    BuildCell *cell = (BuildCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    
+    Build *build = [_builds objectAtIndex:indexPath.row];
+    [cell setFromBuild:build];
+    
     return cell;
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([[segue identifier] isEqualToString:@"showDetail"]) {
-//        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-//        NSManagedObject *object = [[self fetchedResultsController] objectAtIndexPath:indexPath];
-//        [[segue destinationViewController] setDetailItem:object];
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        Build *build = [[self builds] objectAtIndex:indexPath.row];
+        [[segue destinationViewController] setBuild:build];
     }
 }
 

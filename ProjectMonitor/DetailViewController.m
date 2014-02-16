@@ -17,10 +17,10 @@
 
 #pragma mark - Managing the detail item
 
-- (void)setDetailItem:(id)newDetailItem
+- (void)setDetailItem:(id)newBuild
 {
-    if (_detailItem != newDetailItem) {
-        _detailItem = newDetailItem;
+    if (_build != newBuild) {
+        _build = newBuild;
         
         // Update the view.
         [self configureView];
@@ -35,8 +35,8 @@
 {
     // Update the user interface for the detail item.
 
-  if (self.detailItem) {
-      self.detailDescriptionLabel.text = [[self.detailItem valueForKey:@"timeStamp"] description];
+  if (self.build) {
+      self.detailDescriptionLabel.text = [[self.build valueForKey:@"project"] description];
   }
 }
 

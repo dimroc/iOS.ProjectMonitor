@@ -14,7 +14,6 @@ typedef void (^FetchBuildCallback)(NSArray *);
 @interface Build : NSManagedObject
 
 + (void) fetchFromSemaphore:(NSString*)authenticationToken withCallback:(FetchBuildCallback)callbackBlock;
-+ (NSArray *)arrayFromCoreData:(NSManagedObjectContext *)context;
 + (NSArray *)arrayFromJson:(id)json;
 + (Build *) fromJson:(NSDictionary*)json;
 
@@ -23,7 +22,7 @@ typedef void (^FetchBuildCallback)(NSArray *);
 @property (nonatomic, retain) NSString * type;
 @property (nonatomic, retain) NSString * url;
 @property (nonatomic, retain) NSDate * startedAt;
-@property (nonatomic, retain) NSString * finishedAt;
+@property (nonatomic, retain) NSDate * finishedAt;
 @property (nonatomic, retain) NSString * status;
 @property (nonatomic, retain) NSString * objectId;
 
