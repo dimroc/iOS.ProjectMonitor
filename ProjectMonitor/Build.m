@@ -64,7 +64,11 @@ static NSArray* whitelistedKeys;
 
 + (void)successCallback:(AFHTTPRequestOperation *)operation with: (id) responseObject andRespondWith: (FetchBuildCallback) callback
 {
-    NSArray *array = [Build arrayFromJson:responseObject];
+    NSMutableArray *array = [NSMutableArray arrayWithArray:[Build arrayFromJson:responseObject]];
+    [array sortUsingComparator:^NSComparisonResult(id obj1, id obj2) {
+        return [[obj1 project] localizedCaseInsensitiveCompare:[obj2 project]];
+    }];
+    
     dispatch_async(dispatch_get_main_queue(), ^{
         callback(array);
     });
