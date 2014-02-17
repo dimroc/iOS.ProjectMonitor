@@ -30,6 +30,13 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="7QL-Cp-Szt">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <attributedString key="attributedTitle"/>
+                        <connections>
+                            <action selector="triggerRefresh:" destination="pGg-6v-bdr" eventType="valueChanged" id="UTz-4W-82X"/>
+                        </connections>
+                    </refreshControl>
                     <connections>
                         <segue destination="Ah7-4n-0Wa" kind="push" identifier="toDetailsView" id="LGa-62-w5t"/>
                     </connections>

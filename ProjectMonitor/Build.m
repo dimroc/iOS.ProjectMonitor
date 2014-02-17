@@ -25,7 +25,7 @@ static NSDateFormatter *dateFormatter;
 // Thread safe: https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/Multithreading/ThreadSafetySummary/ThreadSafetySummary.html
 static NSArray* whitelistedKeys;
 
-+ (void) initialize
++ (void)initialize
 {
     static BOOL initialized = NO;
     if(!initialized)
@@ -40,7 +40,7 @@ static NSArray* whitelistedKeys;
     }
 }
 
-+ (void) fetchFromSemaphore:(NSString*)authenticationToken withCallback:(void (^)(NSArray *))callbackBlock
++ (void)fetchFromSemaphore:(NSString*)authenticationToken withCallback:(void (^)(NSArray *))callbackBlock
 {
     NSString *URLString = @"https://semaphoreapp.com/api/v1/projects";
     NSDictionary *parameters = @{@"auth_token": authenticationToken};
@@ -55,7 +55,7 @@ static NSArray* whitelistedKeys;
     }];
 }
 
-+ (void) successCallback:(AFHTTPRequestOperation *)operation with: (id) responseObject andRespondWith: (FetchBuildCallback) callback
++ (void)successCallback:(AFHTTPRequestOperation *)operation with: (id) responseObject andRespondWith: (FetchBuildCallback) callback
 {
     NSArray *array = [Build arrayFromJson:responseObject];
     dispatch_async(dispatch_get_main_queue(), ^{
@@ -63,6 +63,29 @@ static NSArray* whitelistedKeys;
     });
 }
 
++ (void)refreshSavedBuildsInBackground:(void (^)(BOOL, NSArray *))callback
+{
+    // Retrieve from parse
+    PFQuery *query = [PFQuery queryWithClassName:@"Build"];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (!error) {
+            // Save in Core Data
+            [MagicalRecord saveWithBlockAndWait:^(NSManagedObjectContext *localContext) {
+                [Build MR_truncateAllInContext:localContext];
+                for (PFObject *parseBuild in objects) {
+                    Build *build = [Build MR_createInContext:localContext];
+                    [build setFromDictionary: [ParseHelper toDictionary: parseBuild]];
+                }
+            }];
+            
+            // invoke callback with new builds
+            callback(YES, [Build MR_findAll]);
+        } else {
+            NSLog(@"Failed to refresh saved builds\n%@", error);
+            callback(NO, nil);
+        }
+    }];
+}
 
 + (NSArray *)arrayFromJson:(id)json
 {

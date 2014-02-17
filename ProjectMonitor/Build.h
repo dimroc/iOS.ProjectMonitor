@@ -13,9 +13,10 @@ typedef void (^FetchBuildCallback)(NSArray *);
 
 @interface Build : NSManagedObject
 
-+ (void) fetchFromSemaphore:(NSString*)authenticationToken withCallback:(FetchBuildCallback)callbackBlock;
++ (void)fetchFromSemaphore:(NSString*)authenticationToken withCallback:(FetchBuildCallback)callbackBlock;
++ (void)refreshSavedBuildsInBackground:(void (^)(BOOL, NSArray*))callback;
 + (NSArray *)arrayFromJson:(id)json;
-+ (Build *) fromJson:(NSDictionary*)json;
++ (Build *)fromJson:(NSDictionary*)json;
 
 @property (nonatomic, retain) NSString * project;
 @property (nonatomic, retain) NSString * branch;

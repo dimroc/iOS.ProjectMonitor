@@ -42,6 +42,30 @@
     [self showLogIn];
 }
 
+- (IBAction)triggerRefresh:(id)sender
+{
+    NSLog(@"triggered a refresh");
+    UIRefreshControl *refreshControl = (UIRefreshControl*)sender;
+    __weak MasterViewController *that = self;
+    
+    [Build refreshSavedBuildsInBackground:^(BOOL succeeded, NSArray *builds) {
+        if (succeeded) {
+            [that setBuilds:builds];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                NSLog(@"Finished refresh");
+                [that.tableView reloadData];
+                [refreshControl endRefreshing];
+            });
+        } else {
+            [[[UIAlertView alloc] initWithTitle:@"Failed to refresh"
+                                        message:@"Please try again later."
+                                       delegate:nil
+                              cancelButtonTitle:@"ok"
+                              otherButtonTitles:nil] show];
+        }
+    }];
+}
+
 #pragma mark - Table View
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
