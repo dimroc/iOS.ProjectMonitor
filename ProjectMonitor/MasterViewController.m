@@ -22,12 +22,28 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+    
     self.detailViewController = (DetailViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
     self.builds = [Build all];
     
     UINib *nib = [UINib nibWithNibName:@"BuildCell" bundle:nil];
     [[self tableView] registerNib:nib forCellReuseIdentifier:@"BuildCell"];
+    
+    NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
+    [center addObserver:self selector:@selector(handleNewBuild:) name:PMBuildDidSavedNotication object:nil];
+    
+    [self forceRefresh];
+}
+
+- (void)forceRefresh
+{
+    [self.refreshControl beginRefreshing];
+    [self triggerRefresh:self.refreshControl];
+}
+
+- (void)handleNewBuild:(NSNotification *)notification
+{
+    [self forceRefresh];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -54,7 +70,6 @@
             dispatch_async(dispatch_get_main_queue(), ^{
                 NSLog(@"Finished refresh");
                 [that.tableView reloadData];
-                [refreshControl endRefreshing];
             });
         } else {
             [[[UIAlertView alloc] initWithTitle:@"Failed to refresh"
@@ -63,6 +78,8 @@
                               cancelButtonTitle:@"ok"
                               otherButtonTitles:nil] show];
         }
+        
+        [refreshControl endRefreshing];
     }];
 }
 

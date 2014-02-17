@@ -20,6 +20,8 @@
 @dynamic status;
 @dynamic objectId;
 
+// [Name of associated class] + [Did | Will] + [UniquePartOfName] + Notification
+NSString * const PMBuildDidSavedNotication = @"PMBuildDidSavedNotication";
 static NSDateFormatter *dateFormatter;
 
 // Thread safe: https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/Multithreading/ThreadSafetySummary/ThreadSafetySummary.html
@@ -177,9 +179,16 @@ static NSArray* whitelistedKeys;
         }];
         
         dispatch_async(dispatch_get_main_queue(), ^{
+            [self notifyBuildSaved];
             mainThreadCallback(succeeded);
         });
     }];
+}
+
+- (void)notifyBuildSaved
+{
+    NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
+    [center postNotificationName:PMBuildDidSavedNotication object:self];
 }
 
 - (void)deleteInBackground
