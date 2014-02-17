@@ -45,11 +45,11 @@
 - (void) loadWithToken:(NSString*) authenticationToken
 {
     [Build fetchFromSemaphore: authenticationToken withCallback: ^(NSArray* builds){
-        [self handleBuilds:builds];
+        [self populateWithBuilds:builds];
     }];
 }
 
-- (void) handleBuilds:(NSArray *)builds
+- (void) populateWithBuilds:(NSArray *)builds
 {
     [self setBuilds:builds];
     [self.tableView reloadData];
