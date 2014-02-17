@@ -47,6 +47,17 @@ static NSArray* whitelistedKeys;
     return [Build MR_findAllSortedBy:@"project" ascending:YES];
 }
 
++ (NSArray *)saved
+{
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"NOT objectId = nil"];
+    return [Build MR_findAllSortedBy:@"project" ascending:YES withPredicate:predicate];
+}
+
++ (NSArray *)allInContext:(NSManagedObjectContext *)context
+{
+    return [Build MR_findAllSortedBy:@"project" ascending:YES inContext:context];
+}
+
 + (void)fetchFromSemaphore:(NSString*)authenticationToken withCallback:(void (^)(NSArray *))callbackBlock
 {
     NSString *URLString = @"https://semaphoreapp.com/api/v1/projects";
@@ -56,15 +67,28 @@ static NSArray* whitelistedKeys;
     
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     [manager GET:URLString parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        [self successCallback:operation with:responseObject andRespondWith:callbackBlock];
+        [self handleSemaphoreResponseWith:responseObject andRespondWith:callbackBlock];
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"Error: %@", error);
     }];
 }
 
-+ (void)successCallback:(AFHTTPRequestOperation *)operation with: (id) responseObject andRespondWith: (FetchBuildCallback) callback
++ (void)handleSemaphoreResponseWith:(id)responseObject andRespondWith:(FetchBuildCallback)callback
 {
-    NSMutableArray *array = [NSMutableArray arrayWithArray:[Build arrayFromJson:responseObject]];
+    NSArray *semaphoreBuilds = [Build arrayFromJson:responseObject];
+    NSMutableSet *savedBuilds = [NSMutableSet setWithArray: [Build saved]];
+    
+    // Remove saved builds
+    NSArray *exclusiveBuilds = _.filter(semaphoreBuilds, ^BOOL(Build* build) {
+        NSInteger overlaps = [[savedBuilds objectsPassingTest: ^BOOL(id savedBuild, BOOL *stop) {
+            return [savedBuild isSimilarTo:build];
+        }] count];
+        
+        return overlaps == 0;
+    });
+    
+    // Sort by project
+    NSMutableArray *array = [NSMutableArray arrayWithArray:exclusiveBuilds];
     [array sortUsingComparator:^NSComparisonResult(id obj1, id obj2) {
         return [[obj1 project] localizedCaseInsensitiveCompare:[obj2 project]];
     }];
@@ -91,7 +115,7 @@ static NSArray* whitelistedKeys;
                     [build setObjectId:parseBuild.objectId];
                 }
                 
-                refreshedBuilds = [Build all];
+                refreshedBuilds = [Build allInContext:localContext];
             }];
             
             // invoke callback with new builds
@@ -153,6 +177,13 @@ static NSArray* whitelistedKeys;
 - (NSString *)description
 {
     return [NSString stringWithFormat: @"Build: ObjectId=%@ Project=%@ Branch=%@ Status=%@ Url=%@", self.objectId, self.project, self.branch, self.status, self.url];
+}
+
+- (BOOL)isSimilarTo:(Build *)build
+{
+    return [[self project] isEqualToString:[build project]] &&
+        [[self branch] isEqualToString: [build branch]] &&
+        [[self type] isEqualToString: [build type]];
 }
 
 - (void)setFromDictionary:(NSDictionary*)dic

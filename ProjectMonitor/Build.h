@@ -30,6 +30,7 @@ extern NSString * const PMBuildDidSaveNotication;
 @property (nonatomic, retain) NSString * objectId;
 
 - (NSString *)description;
+- (BOOL)isSimilarTo:(Build *)build;
 - (void)saveInBackgroundWithBlock: (void (^)(BOOL))mainThreadCallback;
 - (void)deleteInBackground;
 

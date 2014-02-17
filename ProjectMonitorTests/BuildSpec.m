@@ -65,4 +65,46 @@ describe(@".fromJson", ^{
     });
 });
 
+describe(@"isSimilarTo:", ^{
+    context(@"when similar", ^{
+        it(@"should be true", ^{
+            NSDictionary *json = [NSDictionary dictionaryWithObjectsAndKeys:
+                                  @"TestProject", @"project_name",
+                                  @"Test Branch", @"branch_name",
+                                  @"pending", @"result",
+                                  @"www.something.com", @"branch_status_url",
+                                  nil];
+            
+            Build *build1 = [Build fromJson:json];
+            Build *build2 = [Build MR_createEntity];
+            [build2 setProject:@"TestProject"];
+            [build2 setBranch:@"Test Branch"];
+            [build2 setType:@"SemaphoreBuild"];
+            
+            [[theValue([build1 isSimilarTo:build2]) should] equal:theValue(YES)];
+            [[theValue([build2 isSimilarTo:build1]) should] equal:theValue(YES)];
+        });
+    });
+    
+    context(@"when not similar", ^{
+        it(@"should be false", ^{
+            NSDictionary *json = [NSDictionary dictionaryWithObjectsAndKeys:
+                                  @"Another Project", @"project_name",
+                                  @"Test Branch", @"branch_name",
+                                  @"pending", @"result",
+                                  @"www.something.com", @"branch_status_url",
+                                  nil];
+            
+            Build *build1 = [Build fromJson:json];
+            Build *build2 = [Build MR_createEntity];
+            [build2 setProject:@"TestProject"];
+            [build2 setBranch:@"Test Branch"];
+            [build2 setType:@"SemaphoreBuild"];
+            
+            [[theValue([build1 isSimilarTo:build2]) should] equal:theValue(NO)];
+            [[theValue([build2 isSimilarTo:build1]) should] equal:theValue(NO)];
+        });
+    });
+});
+
 SPEC_END
