@@ -24,7 +24,7 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     self.detailViewController = (DetailViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
-    self.builds = [Build MR_findAll];
+    self.builds = [Build all];
     
     UINib *nib = [UINib nibWithNibName:@"BuildCell" bundle:nil];
     [[self tableView] registerNib:nib forCellReuseIdentifier:@"BuildCell"];
@@ -92,6 +92,21 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [self performSegueWithIdentifier: @"toDetailsView" sender: self];
+}
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    Build *build = [self.builds objectAtIndex:indexPath.row];
+    [build deleteInBackground];
+    NSMutableArray *mutableCopy = [NSMutableArray arrayWithArray:self.builds];
+    [mutableCopy removeObjectAtIndex:indexPath.row];
+    [self setBuilds: [NSArray arrayWithArray:mutableCopy]];
+    [self.tableView reloadData];
+}
+
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return YES;
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender

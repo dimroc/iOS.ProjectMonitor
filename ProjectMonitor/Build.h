@@ -17,6 +17,7 @@ typedef void (^FetchBuildCallback)(NSArray *);
 + (void)refreshSavedBuildsInBackground:(void (^)(BOOL, NSArray*))callback;
 + (NSArray *)arrayFromJson:(id)json;
 + (Build *)fromJson:(NSDictionary*)json;
++ (NSArray *)all;
 
 @property (nonatomic, retain) NSString * project;
 @property (nonatomic, retain) NSString * branch;
@@ -29,5 +30,6 @@ typedef void (^FetchBuildCallback)(NSArray *);
 
 - (NSString *)description;
 - (void)saveInBackgroundWithBlock: (void (^)(BOOL))mainThreadCallback;
+- (void)deleteInBackground;
 
 @end

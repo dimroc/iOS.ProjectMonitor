@@ -40,6 +40,11 @@ static NSArray* whitelistedKeys;
     }
 }
 
++ (NSArray *)all
+{
+    return [Build MR_findAllSortedBy:@"project" ascending:YES];
+}
+
 + (void)fetchFromSemaphore:(NSString*)authenticationToken withCallback:(void (^)(NSArray *))callbackBlock
 {
     NSString *URLString = @"https://semaphoreapp.com/api/v1/projects";
@@ -67,19 +72,24 @@ static NSArray* whitelistedKeys;
 {
     // Retrieve from parse
     PFQuery *query = [PFQuery queryWithClassName:@"Build"];
+    [query orderByAscending:@"project"];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (!error) {
+            __block NSArray *refreshedBuilds;
             // Save in Core Data
-            [MagicalRecord saveWithBlockAndWait:^(NSManagedObjectContext *localContext) {
+            [MagicalRecord saveUsingCurrentThreadContextWithBlockAndWait:^(NSManagedObjectContext *localContext) {
                 [Build MR_truncateAllInContext:localContext];
                 for (PFObject *parseBuild in objects) {
                     Build *build = [Build MR_createInContext:localContext];
                     [build setFromDictionary: [ParseHelper toDictionary: parseBuild]];
+                    [build setObjectId:parseBuild.objectId];
                 }
+                
+                refreshedBuilds = [Build all];
             }];
             
             // invoke callback with new builds
-            callback(YES, [Build MR_findAll]);
+            callback(YES, refreshedBuilds);
         } else {
             NSLog(@"Failed to refresh saved builds\n%@", error);
             callback(NO, nil);
@@ -101,10 +111,11 @@ static NSArray* whitelistedKeys;
     return builds;
 }
 
-+ (Build *) fromJson:(NSDictionary*)json
++ (Build *)fromJson:(NSDictionary*)json
 {
     NSMutableDictionary *dic = [NSMutableDictionary dictionary];
     
+    // Right now, only support semaphore.
     [dic setValue:@"SemaphoreBuild" forKey:@"type"];
     [dic setValue:json[@"project_name"] forKey:@"project"];
     [dic setValue:json[@"branch_name"] forKey:@"branch"];
@@ -118,7 +129,7 @@ static NSArray* whitelistedKeys;
     return build;
 }
 
-+ (NSDate *) safeParseDateFrom:(NSDictionary*)json withKey:(NSString*)key
++ (NSDate *)safeParseDateFrom:(NSDictionary*)json withKey:(NSString*)key
 {
     if (json[key] && json[key] != (id)[NSNull null]) {
         @try {
@@ -135,7 +146,7 @@ static NSArray* whitelistedKeys;
 
 - (NSString *)description
 {
-    return [NSString stringWithFormat: @"Build: Project=%@ Branch=%@ Status=%@ Url=%@", self.project, self.branch, self.status, self.url];
+    return [NSString stringWithFormat: @"Build: ObjectId=%@ Project=%@ Branch=%@ Status=%@ Url=%@", self.objectId, self.project, self.branch, self.status, self.url];
 }
 
 - (void)setFromDictionary:(NSDictionary*)dic
@@ -169,6 +180,12 @@ static NSArray* whitelistedKeys;
             mainThreadCallback(succeeded);
         });
     }];
+}
+
+- (void)deleteInBackground
+{
+    PFObject *object = [PFObject objectWithoutDataWithClassName:@"Build" objectId:[self objectId]];
+    [object deleteInBackground];
 }
 
 @end
