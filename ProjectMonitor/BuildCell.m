@@ -36,7 +36,11 @@
     [self setBuild:build];
     self.projectLabel.text = self.build.project;
     self.branchLabel.text = self.build.branch;
-    self.timeLabel.text = self.build.startedAt.description;
+    
+    NSDateFormatter *format = [[NSDateFormatter alloc] init];
+    [format setDateFormat:@"MMM dd, yyyy hh:mm a"];
+    self.timeLabel.text = [format stringFromDate: self.build.startedAt];
+    
     self.statusImageView.image = [self imageForStatus];
 }
 
