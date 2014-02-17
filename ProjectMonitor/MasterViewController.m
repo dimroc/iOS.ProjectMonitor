@@ -30,7 +30,7 @@
     [[self tableView] registerNib:nib forCellReuseIdentifier:@"BuildCell"];
     
     NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
-    [center addObserver:self selector:@selector(handleNewBuild:) name:PMBuildDidSavedNotication object:nil];
+    [center addObserver:self selector:@selector(handleNewBuild:) name:PMBuildDidSaveNotication object:nil];
     
     [self forceRefresh];
 }

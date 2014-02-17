@@ -10,7 +10,7 @@
 #import <CoreData/CoreData.h>
 
 typedef void (^FetchBuildCallback)(NSArray *);
-extern NSString * const PMBuildDidSavedNotication;
+extern NSString * const PMBuildDidSaveNotication;
 
 @interface Build : NSManagedObject
 
