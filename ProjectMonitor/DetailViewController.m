@@ -7,13 +7,22 @@
 //
 
 #import "DetailViewController.h"
+#import "Build.h"
 
 @interface DetailViewController ()
-@property (strong, nonatomic) UIPopoverController *masterPopoverController;
+@property NSDateFormatter *dateFormatter;
 - (void)configureView;
 @end
 
 @implementation DetailViewController
+
+-(id)initWithCoder:(NSCoder *)aDecoder
+{
+    self = [super initWithCoder:aDecoder];
+    self.dateFormatter = [[NSDateFormatter alloc] init];
+    [self.dateFormatter setDateFormat:@"MMM dd, yyyy h:mm a"];
+    return self;
+}
 
 #pragma mark - Managing the detail item
 
@@ -24,10 +33,6 @@
         
         // Update the view.
         [self configureView];
-    }
-
-    if (self.masterPopoverController != nil) {
-        [self.masterPopoverController dismissPopoverAnimated:YES];
     }        
 }
 
@@ -36,7 +41,16 @@
     // Update the user interface for the detail item.
 
   if (self.build) {
-      self.detailDescriptionLabel.text = [[self.build valueForKey:@"project"] description];
+      self.nagivationItem.title = [self.build project];
+      self.branchLabel.text = [[self.build valueForKey:@"branch"] description];
+      
+      if ([self.build finishedAt]) {
+          self.finishedAtLabel.text =
+            [self.dateFormatter stringFromDate:[self.build valueForKey:@"finishedAt"]];
+      }
+
+      self.statusLabel.text = [[self.build valueForKey:@"status"] description];
+      self.typeLabel.text = [[self.build valueForKey:@"type"] description];
   }
 }
 

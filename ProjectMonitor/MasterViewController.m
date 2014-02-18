@@ -7,7 +7,6 @@
 //
 
 #import "MasterViewController.h"
-#import "DetailViewController.h"
 #import "Build.h"
 #import "BuildCell.h"
 
@@ -22,8 +21,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    self.detailViewController = (DetailViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
     self.builds = [Build all];
     
     UINib *nib = [UINib nibWithNibName:@"BuildCell" bundle:nil];
