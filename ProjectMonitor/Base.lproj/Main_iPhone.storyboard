@@ -327,9 +327,13 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Detail" id="Fsm-7o-X7H"/>
                     <connections>
+                        <outlet property="authorLabel" destination="K2t-g8-EwM" id="qUn-b2-L7q"/>
                         <outlet property="branchLabel" destination="MG1-vz-b1s" id="qKx-Wt-1gP"/>
+                        <outlet property="emailLabel" destination="d2s-it-Hg6" id="uCG-r5-nWq"/>
                         <outlet property="finishedAtLabel" destination="p91-xf-fvh" id="aj2-ik-N4W"/>
+                        <outlet property="messageLabel" destination="DVb-vy-yK2" id="SbW-it-xhJ"/>
                         <outlet property="nagivationItem" destination="Fsm-7o-X7H" id="W6O-i7-YJU"/>
+                        <outlet property="shaLabel" destination="Vt3-70-IOi" id="eXi-mA-MUT"/>
                         <outlet property="statusLabel" destination="Xit-jf-GU6" id="8id-Zk-bId"/>
                         <outlet property="typeLabel" destination="nVf-n7-bsf" id="nX0-CL-UeV"/>
                     </connections>

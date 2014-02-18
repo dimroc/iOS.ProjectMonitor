@@ -18,4 +18,9 @@
 @property (weak, nonatomic) IBOutlet UILabel *typeLabel;
 @property (weak, nonatomic) IBOutlet UINavigationItem *nagivationItem;
 
+@property (weak, nonatomic) IBOutlet UILabel *authorLabel;
+@property (weak, nonatomic) IBOutlet UILabel *emailLabel;
+@property (weak, nonatomic) IBOutlet UILabel *shaLabel;
+@property (weak, nonatomic) IBOutlet UILabel *messageLabel;
+
 @end

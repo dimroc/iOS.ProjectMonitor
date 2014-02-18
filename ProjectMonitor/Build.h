@@ -29,6 +29,11 @@ extern NSString * const PMBuildDidSaveNotication;
 @property (nonatomic, retain) NSString * status;
 @property (nonatomic, retain) NSString * objectId;
 
+@property (nonatomic, retain) NSString * commitSha;
+@property (nonatomic, retain) NSString * commitAuthor;
+@property (nonatomic, retain) NSString * commitEmail;
+@property (nonatomic, retain) NSString * commitMessage;
+
 - (NSString *)description;
 - (BOOL)isSimilarTo:(Build *)build;
 - (void)saveInBackgroundWithBlock: (void (^)(BOOL))mainThreadCallback;

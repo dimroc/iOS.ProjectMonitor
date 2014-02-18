@@ -51,6 +51,12 @@
 
       self.statusLabel.text = [[self.build valueForKey:@"status"] description];
       self.typeLabel.text = [[self.build valueForKey:@"type"] description];
+      
+      self.authorLabel.text = [self.build commitAuthor];
+      self.emailLabel.text = [self.build commitEmail];
+      self.shaLabel.text = [self.build commitSha];
+      self.messageLabel.text = [self.build commitMessage];
+      [self.messageLabel sizeToFit];
   }
 }
 

@@ -2,6 +2,10 @@
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="3401" systemVersion="13B42" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
     <entity name="Build" representedClassName="Build" syncable="YES">
         <attribute name="branch" attributeType="String" syncable="YES"/>
+        <attribute name="commitAuthor" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="commitEmail" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="commitMessage" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="commitSha" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="finishedAt" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="objectId" attributeType="String" syncable="YES"/>
         <attribute name="project" attributeType="String" syncable="YES"/>

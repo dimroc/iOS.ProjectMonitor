@@ -20,6 +20,11 @@
 @dynamic status;
 @dynamic objectId;
 
+@dynamic commitSha;
+@dynamic commitAuthor;
+@dynamic commitEmail;
+@dynamic commitMessage;
+
 // [Name of associated class] + [Did | Will] + [UniquePartOfName] + Notification
 NSString * const PMBuildDidSaveNotication = @"PMBuildDidSaveNotication";
 static NSDateFormatter *dateFormatter;
@@ -37,7 +42,9 @@ static NSArray* whitelistedKeys;
         [dateFormatter setTimeZone:[NSTimeZone timeZoneWithName:@"UTC"]];
         [dateFormatter setDateFormat:@"yyyy-MM-dd'T'HH:mm:ssZZZ"];
         whitelistedKeys = [NSArray arrayWithObjects:
-                           @"type", @"project", @"branch", @"status", @"url", @"startedAt", @"finishedAt", nil];
+                           @"type", @"project", @"branch", @"status", @"url",
+                           @"startedAt", @"finishedAt", @"commitSha", @"commitMessage",
+                           @"commitAuthor", @"commitEmail", nil];
         
     }
 }
@@ -153,6 +160,13 @@ static NSArray* whitelistedKeys;
     [dic setValue:json[@"branch_status_url"] forKey:@"url"];
     [dic setValue:[Build safeParseDateFrom:json withKey:@"started_at"] forKey:@"startedAt"];
     [dic setValue:[Build safeParseDateFrom:json withKey:@"finished_at"] forKey:@"finishedAt"];
+    
+    // Load commit info
+    NSDictionary *commitInfo = json[@"commit"];
+    [dic setValue:commitInfo[@"id"] forKey:@"commitSha"];
+    [dic setValue:commitInfo[@"author_name"] forKey:@"commitAuthor"];
+    [dic setValue:commitInfo[@"author_email"] forKey:@"commitEmail"];
+    [dic setValue:commitInfo[@"message"] forKey:@"commitMessage"];
 
     Build *build = [Build MR_createEntity];
     [build setFromDictionary: dic];
