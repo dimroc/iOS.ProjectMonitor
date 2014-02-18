@@ -50,7 +50,8 @@
       }
 
       self.statusLabel.text = [[self.build valueForKey:@"status"] description];
-      self.typeLabel.text = [[self.build valueForKey:@"type"] description];
+      NSString *shortType = [[self.build valueForKey:@"type"] stringByReplacingOccurrencesOfString:@"Build" withString:@""];
+      self.typeLabel.text = shortType;
       
       self.authorLabel.text = [self.build commitAuthor];
       self.emailLabel.text = [self.build commitEmail];
