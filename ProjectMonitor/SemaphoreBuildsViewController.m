@@ -9,6 +9,7 @@
 #import "SemaphoreBuildsViewController.h"
 #import "Build.h"
 #import "BuildCell.h"
+#import "BlockAlertViewDelegate.h"
 
 @interface SemaphoreBuildsViewController ()
 
@@ -54,6 +55,24 @@
     [self setBuilds:builds];
     [self.tableView reloadData];
     [MBProgressHUD hideHUDForView:self.view animated:YES];
+
+    if ([self.builds count] == 0) {
+        [self showNoBuildsMessage];
+    }
+}
+
+- (void)showNoBuildsMessage
+{
+    UIAlertView *alertView = [[UIAlertView alloc]
+                              initWithTitle:@"No builds to add"
+                              message:@"There are no builds to add."
+                              delegate:nil
+                              cancelButtonTitle:@"ok"
+                              otherButtonTitles:nil];
+    
+    [BlockAlertViewDelegate showAlertView:alertView withCallback:^(NSInteger buttonIndex) {
+        [self.navigationController popToRootViewControllerAnimated:YES];
+    }];
 }
 
 #pragma mark - Table view data source

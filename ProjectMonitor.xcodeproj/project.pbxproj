@@ -35,6 +35,7 @@
 		5E3ED1531899F45500632144 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E3ED14A1899F45500632144 /* SystemConfiguration.framework */; };
 		5E3ED156189A089E00632144 /* ParseHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E3ED155189A089E00632144 /* ParseHelper.m */; };
 		5E755F9D18B1299500692F5F /* BuildCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E755F9C18B1299500692F5F /* BuildCell.xib */; };
+		5E755FA018B2F5D700692F5F /* BlockAlertViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E755F9F18B2F5D700692F5F /* BlockAlertViewDelegate.m */; };
 		5E79F1CA18AA4FA0005BF986 /* Semaphore.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E79F1C918AA4FA0005BF986 /* Semaphore.storyboard */; };
 		5E79F1D018AA4FBB005BF986 /* Build.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E79F1CC18AA4FBB005BF986 /* Build.m */; };
 		5E79F1D118AA4FBB005BF986 /* SourceFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E79F1CF18AA4FBB005BF986 /* SourceFactory.m */; };
@@ -103,6 +104,8 @@
 		5E3ED154189A089E00632144 /* ParseHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParseHelper.h; sourceTree = "<group>"; };
 		5E3ED155189A089E00632144 /* ParseHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParseHelper.m; sourceTree = "<group>"; };
 		5E755F9C18B1299500692F5F /* BuildCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BuildCell.xib; sourceTree = "<group>"; };
+		5E755F9E18B2F5D700692F5F /* BlockAlertViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlockAlertViewDelegate.h; sourceTree = "<group>"; };
+		5E755F9F18B2F5D700692F5F /* BlockAlertViewDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlockAlertViewDelegate.m; sourceTree = "<group>"; };
 		5E79F1C918AA4FA0005BF986 /* Semaphore.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Semaphore.storyboard; sourceTree = "<group>"; };
 		5E79F1CB18AA4FBB005BF986 /* Build.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Build.h; sourceTree = "<group>"; };
 		5E79F1CC18AA4FBB005BF986 /* Build.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Build.m; sourceTree = "<group>"; };
@@ -275,6 +278,8 @@
 			children = (
 				5E79F1D818AA5085005BF986 /* BuildCell.h */,
 				5E79F1D918AA5085005BF986 /* BuildCell.m */,
+				5E755F9E18B2F5D700692F5F /* BlockAlertViewDelegate.h */,
+				5E755F9F18B2F5D700692F5F /* BlockAlertViewDelegate.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -301,11 +306,11 @@
 		5E79F1C818AA4B82005BF986 /* User Interface */ = {
 			isa = PBXGroup;
 			children = (
+				5E755F9C18B1299500692F5F /* BuildCell.xib */,
 				5E79F1DB18AA543D005BF986 /* Images */,
-				5E79F1C918AA4FA0005BF986 /* Semaphore.storyboard */,
 				5E3ED1221899F14F00632144 /* Images.xcassets */,
 				5E3ED1131899F14F00632144 /* Main_iPhone.storyboard */,
-				5E755F9C18B1299500692F5F /* BuildCell.xib */,
+				5E79F1C918AA4FA0005BF986 /* Semaphore.storyboard */,
 			);
 			name = "User Interface";
 			sourceTree = "<group>";
@@ -532,6 +537,7 @@
 				5EBF47DD18A6A3A600175065 /* ProjectMonitorSignUpViewController.m in Sources */,
 				5E3ED1121899F14F00632144 /* AppDelegate.m in Sources */,
 				5E79F1D018AA4FBB005BF986 /* Build.m in Sources */,
+				5E755FA018B2F5D700692F5F /* BlockAlertViewDelegate.m in Sources */,
 				5E3ED10E1899F14F00632144 /* main.m in Sources */,
 				5EBF47E018A6A41000175065 /* ProjectMonitorLogInViewController.m in Sources */,
 				5E79F1DA18AA5085005BF986 /* BuildCell.m in Sources */,
