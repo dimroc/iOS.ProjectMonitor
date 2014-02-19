@@ -1,0 +1,3 @@
+class BuildFetcher::SemaphoreBuild
+
+end

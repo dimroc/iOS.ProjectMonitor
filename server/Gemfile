@@ -5,11 +5,15 @@ ruby '2.1.0'
 gem 'sidekiq'
 gem 'httparty'
 gem 'activesupport', require: 'active_support/all'
+gem 'require_all'
+gem 'settingslogic'
 
 group :development, :test do
   gem 'factory_girl_rails'
   gem 'ffaker'
   gem 'rspec'
   gem 'fuubar'
-  gem 'webmock'
+  gem 'webmock', require: false
+  gem 'pry'
+  gem 'pry-debugger'
 end

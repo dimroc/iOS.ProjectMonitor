@@ -1,0 +1,17 @@
+from_environment: &from_environment
+  parse_application_id: <%= ENV["PARSE_APP_ID"] %>
+  parse_rest_key: <%= ENV["PARSE_REST_KEY"] %>
+  redis_url: <%= ENV["REDIS_URL"] %>
+
+production:
+  <<: *from_environment
+
+development:
+  parse_application_id: YOUR_PARSE_APPLICATION_ID
+  parse_rest_key: YOUR_PARSE_REST_KEY
+  redis_url: 'redis://127.0.0.1:6379'
+
+test:
+  parse_application_id: YOUR_PARSE_APPLICATION_ID
+  parse_rest_key: YOUR_PARSE_REST_KEY
+  redis_url: 'redis://127.0.0.1:6379'
