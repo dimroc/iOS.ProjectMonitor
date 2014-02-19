@@ -22,3 +22,6 @@ DerivedData
 
 #CocoaPods
 Pods
+
+#Ruby
+.bundle/

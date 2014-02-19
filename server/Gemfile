@@ -1,0 +1,15 @@
+source 'https://rubygems.org'
+
+ruby '2.1.0'
+
+gem 'sidekiq'
+gem 'httparty'
+gem 'activesupport', require: 'active_support/all'
+
+group :development, :test do
+  gem 'factory_girl_rails'
+  gem 'ffaker'
+  gem 'rspec'
+  gem 'fuubar'
+  gem 'webmock'
+end
