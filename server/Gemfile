@@ -7,6 +7,8 @@ gem 'httparty'
 gem 'activesupport', require: 'active_support/all'
 gem 'require_all'
 gem 'settingslogic'
+gem 'rufus-scheduler'
+gem 'hashie'
 
 group :development, :test do
   gem 'factory_girl_rails'
