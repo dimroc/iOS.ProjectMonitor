@@ -16,5 +16,5 @@ end
 
 desc "Run sidekiq workers to run jobs available in the queue"
 task :work do
-  exec "sidekiq -r ./bootstrap.rb"
+  exec "sidekiq -c 25 -r ./bootstrap.rb"
 end
