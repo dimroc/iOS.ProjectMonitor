@@ -41,7 +41,7 @@ describe BuildFetcher do
       context "when services are erroring" do
         before { servers_return_error }
 
-        it "should raise not implemented error" do
+        it "should raise standard error" do
           expect {
             fetcher.refresh
           }.to raise_error StandardError
@@ -51,7 +51,7 @@ describe BuildFetcher do
       context "when services are unauthorized" do
         before { servers_return_unauthorized }
 
-        it "should raise not implemented error" do
+        it "should raise standard error" do
           expect {
             fetcher.refresh
           }.to raise_error StandardError
