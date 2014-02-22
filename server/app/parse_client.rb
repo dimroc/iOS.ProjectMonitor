@@ -1,6 +1,4 @@
 class ParseClient
-  class Error < StandardError; end;
-
   attr_reader :application_id, :master_key
 
   def self.from_settings
@@ -15,9 +13,9 @@ class ParseClient
   def fetch_builds
     response = HTTParty.get(builds_url, headers: headers)
     if response.code < 300
-      response['results']
+      response['results'].map { |value| ParseBuild.new value }
     else
-      raise Error, "Error connecting to parse.\n#{response}"
+      raise StandardError, "Error connecting to parse. Status: #{response.code} Message: #{response.message}\n#{response}"
     end
   end
 

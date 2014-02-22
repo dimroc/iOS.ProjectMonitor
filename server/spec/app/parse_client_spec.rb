@@ -1,4 +1,4 @@
-require_relative 'spec_helper'
+require 'spec_helper'
 
 describe ParseClient do
   describe "#fetch_builds" do
@@ -7,8 +7,9 @@ describe ParseClient do
       it "should return builds" do
         builds = client.fetch_builds
         first = builds.first
-        first["project"].acts_like? "string"
-        first["url"].should =~ /\.com/
+        first[:project].acts_like? "string"
+        first.url.should =~ /\.com/
+        first.startedAt["__type"].should == "Date"
       end
     end
 
@@ -17,7 +18,16 @@ describe ParseClient do
       it "should raise error" do
         expect {
           client.fetch_builds
-        }.to raise_error ParseClient::Error
+        }.to raise_error StandardError
+      end
+    end
+
+    context "when services are unauthorized" do
+      before { servers_return_unauthorized }
+      it "should raise error" do
+        expect {
+          client.fetch_builds
+        }.to raise_error StandardError
       end
     end
   end
