@@ -25,4 +25,8 @@ class ParseBuild < Hashie::Trash
       "iso" => value
     }
   end
+
+  def to_s
+    "ParseBuild objectId: #{objectId} project: #{project} branch: #{branch} type: #{type} status: #{status}"
+  end
 end
