@@ -1,7 +1,7 @@
 class UpdateBuildWorker
   include Sidekiq::Worker
 
-  def self.perform(build)
+  def perform(build)
     BuildFetcher.create(build).refresh
   end
 end

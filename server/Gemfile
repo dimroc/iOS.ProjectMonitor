@@ -9,10 +9,9 @@ gem 'require_all'
 gem 'settingslogic'
 gem 'rufus-scheduler'
 gem 'hashie'
+gem 'rake'
 
 group :development, :test do
-  gem 'factory_girl_rails'
-  gem 'ffaker'
   gem 'rspec'
   gem 'fuubar'
   gem 'webmock', require: false
