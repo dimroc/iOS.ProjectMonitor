@@ -15,7 +15,7 @@ class ParseClient
     if response.code < 300
       response['results'].map { |value| ParseBuild.new value }
     else
-      raise StandardError, "Error connecting to parse. Status: #{response.code} Message: #{response.message}\n#{response}"
+      raise StandardError, "Error connecting to parse. Status: #{response.code} Message: #{response.message} #{response}"
     end
   end
 

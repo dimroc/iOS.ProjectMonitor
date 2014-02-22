@@ -24,7 +24,7 @@ class BuildFetcher
     if response.code < 300
       response.body
     else
-      raise StandardError, "Error connecting to <#{build.url}?.\nStatus: #{response.code} Message: #{response.message}\n#{response}"
+      raise StandardError, "Error connecting to <#{build.url}?. Status: #{response.code} Message: #{response.message} #{response}"
     end
   end
 
