@@ -12,6 +12,7 @@ gem 'hashie'
 gem 'rake'
 
 group :development, :test do
+  gem 'rack'
   gem 'rspec'
   gem 'fuubar'
   gem 'webmock', require: false

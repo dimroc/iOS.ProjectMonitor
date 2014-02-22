@@ -3,3 +3,18 @@ require 'rspec/core/rake_task'
 RSpec::Core::RakeTask.new(:spec)
 
 task :default => :spec
+
+desc "Run the sidekiq monitoring website for analytics"
+task :monitor do
+  exec "rackup sidekiq.ru"
+end
+
+desc "Poll the parse servers for builds to enqueue for updating"
+task :produce do
+  load 'producer.rb'
+end
+
+desc "Run sidekiq workers to run jobs available in the queue"
+task :work do
+  exec "sidekiq -r ./bootstrap.rb"
+end

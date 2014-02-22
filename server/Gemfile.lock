@@ -94,6 +94,7 @@ DEPENDENCIES
   httparty
   pry
   pry-debugger
+  rack
   rake
   require_all
   rspec
