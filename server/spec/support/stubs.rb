@@ -8,10 +8,6 @@ module StubSpecHelpers
     ParseBuild.new build.except("objectId")
   end
 
-  def new_parse_build_with_object_id
-    new_parse_build.merge("objectId" => random_id)
-  end
-
   def random_id
     rand.to_s[2..11]
   end
