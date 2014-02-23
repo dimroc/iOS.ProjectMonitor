@@ -26,6 +26,7 @@ extern NSString * const PMBuildDidSaveNotication;
 @property (nonatomic, retain) NSString * url;
 @property (nonatomic, retain) NSDate * startedAt;
 @property (nonatomic, retain) NSDate * finishedAt;
+@property (nonatomic, retain) NSDate * updatedAt;
 @property (nonatomic, retain) NSString * status;
 @property (nonatomic, retain) NSString * objectId;
 

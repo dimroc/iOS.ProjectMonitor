@@ -52,6 +52,7 @@
       self.statusLabel.text = [[self.build valueForKey:@"status"] description];
       NSString *shortType = [[self.build valueForKey:@"type"] stringByReplacingOccurrencesOfString:@"Build" withString:@""];
       self.typeLabel.text = shortType;
+      self.lastPollLabel.text = [self.dateFormatter stringFromDate:[self.build valueForKey:@"updatedAt"]];
       
       self.authorLabel.text = [self.build commitAuthor];
       self.emailLabel.text = [self.build commitEmail];

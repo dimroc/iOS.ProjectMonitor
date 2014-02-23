@@ -17,6 +17,7 @@
 @dynamic url;
 @dynamic startedAt;
 @dynamic finishedAt;
+@dynamic updatedAt;
 @dynamic status;
 @dynamic objectId;
 
@@ -119,7 +120,8 @@ static NSArray* whitelistedKeys;
                 for (PFObject *parseBuild in objects) {
                     Build *build = [Build MR_createInContext:localContext];
                     [build setFromDictionary: [ParseHelper toDictionary: parseBuild]];
-                    [build setObjectId:parseBuild.objectId];
+                    [build setObjectId: parseBuild.objectId];
+                    [build setUpdatedAt: parseBuild.updatedAt];
                 }
                 
                 refreshedBuilds = [Build allInContext:localContext];
@@ -221,6 +223,10 @@ static NSArray* whitelistedKeys;
     
     [buildObject saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         [MagicalRecord saveWithBlock:^(NSManagedObjectContext *localContext) {
+            if (!succeeded) {
+                return;
+            }
+            
             Build *localBuild = [Build MR_createInContext:localContext];
             assert(localBuild != nil);
             [localBuild setFromDictionary: [ParseHelper toDictionary:buildObject]];
