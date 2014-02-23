@@ -19,6 +19,10 @@ class ParseClient
     end
   end
 
+  def save(build)
+    puts "saving to parse: #{build}"
+  end
+
   private
 
   def headers

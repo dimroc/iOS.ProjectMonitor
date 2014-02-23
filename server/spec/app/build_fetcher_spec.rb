@@ -24,7 +24,7 @@ describe BuildFetcher do
     end
   end
 
-  describe "#refresh" do
+  describe "#fetch" do
     let(:fetcher) { BuildFetcher.new(build) }
 
     context "with a good uri" do
@@ -33,7 +33,7 @@ describe BuildFetcher do
       context "when services are healthy" do
         it "should raise not implemented error" do
           expect {
-            fetcher.refresh
+            fetcher.fetch
           }.to raise_error NotImplementedError
         end
       end
@@ -43,7 +43,7 @@ describe BuildFetcher do
 
         it "should raise standard error" do
           expect {
-            fetcher.refresh
+            fetcher.fetch
           }.to raise_error StandardError
         end
       end
@@ -53,7 +53,7 @@ describe BuildFetcher do
 
         it "should raise standard error" do
           expect {
-            fetcher.refresh
+            fetcher.fetch
           }.to raise_error StandardError
         end
       end
@@ -64,7 +64,7 @@ describe BuildFetcher do
 
       it "should raise not implemented error" do
         expect {
-          fetcher.refresh
+          fetcher.fetch
         }.to raise_error URI::InvalidURIError
       end
     end
