@@ -11,7 +11,7 @@ class ParseClient
   end
 
   def fetch_builds
-    response = HTTParty.get(builds_url, headers: headers)
+    response = HTTParty.get(builds_url, headers: headers, query: "order=updatedAt")
     validate_response response
     response['results'].map { |value| ParseBuild.new value }
   end
