@@ -20,6 +20,7 @@ class ParseBuild < Hashie::Trash
   property :ACL
 
   def self.date_hash(value)
+    return value if value.is_a?(Hash)
     {
       "__type" => "Date",
       "iso" => value
