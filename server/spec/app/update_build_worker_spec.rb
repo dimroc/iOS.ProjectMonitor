@@ -11,12 +11,15 @@ describe UpdateBuildWorker do
 
     context "when services are healthy" do
       # unable to create a semaphore test server with expected builds
-      # so force fakes here :(
+      # so force fakes here
       before { servers_return_healthy }
+      let(:client) { ParseClient.from_settings }
+
       it "should update the build" do
-        ParseClient.from_settings.fetch_builds.should be_empty
-        UpdateBuildWorker.new.perform(build)
-        ParseClient.from_settings.fetch_builds.count.should == 1
+        client.fetch_builds.should be_empty
+        created_build = client.create(build)
+        UpdateBuildWorker.new.perform(created_build)
+        client.fetch_builds.count.should == 1
       end
     end
 
