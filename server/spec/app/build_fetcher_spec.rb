@@ -31,6 +31,10 @@ describe BuildFetcher do
       let(:build) { {"url" => semaphore_build_url} }
 
       context "when services are healthy" do
+        # Force Fakes even in integration because we are unable to
+        # configure an actual semaphore test server
+        before { servers_return_healthy }
+
         it "should raise not implemented error" do
           expect {
             fetcher.fetch
