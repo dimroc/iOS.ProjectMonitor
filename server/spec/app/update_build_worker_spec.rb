@@ -1,6 +1,40 @@
 require 'spec_helper'
 
 describe UpdateBuildWorker do
+  describe "unique jobs" do
+    before { Sidekiq::Testing.fake! }
+    after(:each) do
+      sleep 1
+      puts "clearing #{UpdateBuildWorker.jobs.size}"
+      Sidekiq::Worker.clear_all
+      UpdateBuildWorker.jobs.clear
+    end
+
+    context "with two builds with the same objectId" do
+      let(:build1) { new_parse_build.merge("objectId" => "1") }
+      let(:build2) { new_parse_build.merge("objectId" => "1")}
+
+      it "should only enqueue one job" do
+        expect {
+          UpdateBuildWorker.perform_async(build1)
+          UpdateBuildWorker.perform_async(build2)
+        }.to change(UpdateBuildWorker.jobs, :size).by(1)
+      end
+    end
+
+    context "with different objectIds" do
+      let(:build1) { new_parse_build.merge("objectId" => "1") }
+      let(:build2) { new_parse_build.merge("objectId" => "2")}
+
+      it "should enqueue both jobs" do
+        expect {
+          UpdateBuildWorker.perform_async(build1)
+          UpdateBuildWorker.perform_async(build2)
+        }.to change { UpdateBuildWorker.jobs.size }.by(2)
+      end
+    end
+  end
+
   describe "#perform" do
     let(:build) { new_parse_build }
     it "should update the build" do

@@ -7,3 +7,5 @@ end
 Sidekiq.configure_server do |config|
   config.redis = { :namespace => "pm_#{ENVIRONMENT}", :url => Settings.redis_url }
 end
+
+SidekiqUniqueJobs::Config.unique_args_enabled = true
