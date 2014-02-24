@@ -250,6 +250,7 @@ static NSArray* whitelistedKeys;
 {
     PFObject *object = [PFObject objectWithoutDataWithClassName:@"Build" objectId:[self objectId]];
     [object deleteInBackground];
+    [self MR_deleteEntity];
 }
 
 @end
