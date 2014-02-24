@@ -14,11 +14,9 @@ extern NSString * const PMBuildDidSaveNotication;
 
 @interface Build : NSManagedObject
 
-+ (void)fetchFromSemaphore:(NSString*)authenticationToken withCallback:(FetchBuildCallback)callbackBlock;
-+ (void)refreshSavedBuildsInBackground:(void (^)(BOOL, NSArray*))callback;
-+ (NSArray *)arrayFromJson:(id)json;
-+ (Build *)fromJson:(NSDictionary*)json;
 + (NSArray *)all;
++ (NSArray *)saved;
++ (void)refreshSavedBuildsInBackground:(void (^)(BOOL, NSArray*))callback;
 
 @property (nonatomic, retain) NSString * project;
 @property (nonatomic, retain) NSString * branch;
@@ -37,6 +35,7 @@ extern NSString * const PMBuildDidSaveNotication;
 
 - (NSString *)description;
 - (BOOL)isSimilarTo:(Build *)build;
+- (void)setFromDictionary:(NSDictionary*)dic;
 - (void)saveInBackgroundWithBlock: (void (^)(BOOL))mainThreadCallback;
 - (void)deleteInBackground;
 

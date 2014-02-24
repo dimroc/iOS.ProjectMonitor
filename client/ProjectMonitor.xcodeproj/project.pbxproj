@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		20A950CD295D4BD99D563FD3 /* libPods-ProjectMonitorTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B0FF487CBEA473C8D7D223C /* libPods-ProjectMonitorTests.a */; };
+		5E09522A18BADB9500689FBA /* SemaphoreBuild.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E09522918BADB9500689FBA /* SemaphoreBuild.m */; };
+		5E09522C18BADDB100689FBA /* SemaphoreBuildSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E09522B18BADDB100689FBA /* SemaphoreBuildSpec.m */; };
 		5E3ED1001899F14F00632144 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E3ED0FF1899F14F00632144 /* Foundation.framework */; };
 		5E3ED1021899F14F00632144 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E3ED1011899F14F00632144 /* CoreGraphics.framework */; };
 		5E3ED1041899F14F00632144 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E3ED1031899F14F00632144 /* UIKit.framework */; };
@@ -71,6 +73,9 @@
 /* Begin PBXFileReference section */
 		2B0FF487CBEA473C8D7D223C /* libPods-ProjectMonitorTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ProjectMonitorTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DC397F864E74853B41B48C1 /* Pods-ProjectMonitor.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProjectMonitor.xcconfig"; path = "Pods/Pods-ProjectMonitor.xcconfig"; sourceTree = "<group>"; };
+		5E09522818BADB9500689FBA /* SemaphoreBuild.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SemaphoreBuild.h; sourceTree = "<group>"; };
+		5E09522918BADB9500689FBA /* SemaphoreBuild.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SemaphoreBuild.m; sourceTree = "<group>"; };
+		5E09522B18BADDB100689FBA /* SemaphoreBuildSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SemaphoreBuildSpec.m; sourceTree = "<group>"; };
 		5E3ED0FC1899F14F00632144 /* ProjectMonitor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProjectMonitor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E3ED0FF1899F14F00632144 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		5E3ED1011899F14F00632144 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -247,6 +252,7 @@
 			isa = PBXGroup;
 			children = (
 				5E79F1EA18AD5702005BF986 /* BuildSpec.m */,
+				5E09522B18BADDB100689FBA /* SemaphoreBuildSpec.m */,
 				5E3ED1311899F15000632144 /* Supporting Files */,
 			);
 			path = ProjectMonitorTests;
@@ -269,6 +275,8 @@
 				5E79F1CD18AA4FBB005BF986 /* Source.h */,
 				5E79F1CE18AA4FBB005BF986 /* SourceFactory.h */,
 				5E79F1CF18AA4FBB005BF986 /* SourceFactory.m */,
+				5E09522818BADB9500689FBA /* SemaphoreBuild.h */,
+				5E09522918BADB9500689FBA /* SemaphoreBuild.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -539,6 +547,7 @@
 				5E79F1D018AA4FBB005BF986 /* Build.m in Sources */,
 				5E755FA018B2F5D700692F5F /* BlockAlertViewDelegate.m in Sources */,
 				5E3ED10E1899F14F00632144 /* main.m in Sources */,
+				5E09522A18BADB9500689FBA /* SemaphoreBuild.m in Sources */,
 				5EBF47E018A6A41000175065 /* ProjectMonitorLogInViewController.m in Sources */,
 				5E79F1DA18AA5085005BF986 /* BuildCell.m in Sources */,
 			);
@@ -548,6 +557,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5E09522C18BADDB100689FBA /* SemaphoreBuildSpec.m in Sources */,
 				5E79F1EB18AD5702005BF986 /* BuildSpec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
