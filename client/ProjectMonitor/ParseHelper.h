@@ -12,5 +12,7 @@
 
 + (void)launch:(NSDictionary *)launchOptions;
 + (NSDictionary *)toDictionary:(PFObject*)message;
++ (void)registerForRemoteNotificationWithDeviceToken:(NSData*)deviceToken;
++ (void)registerUserForRemoteNotification:(PFUser*)user;
 
 @end

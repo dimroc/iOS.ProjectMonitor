@@ -10,6 +10,7 @@
 
 #import "ProjectMonitorLogInViewController.h"
 #import "ProjectMonitorSignUpViewController.h"
+#import "ParseHelper.h"
 
 @interface ParseUITableViewController ()
 
@@ -62,6 +63,8 @@
 
 // Sent to the delegate when a PFUser is logged in.
 - (void)logInViewController:(PFLogInViewController *)logInController didLogInUser:(PFUser *)user {
+    NSLog(@"Logging in username: %@", user.username);
+    [ParseHelper registerUserForRemoteNotification:user];
     [self dismissViewControllerAnimated:YES completion:NULL];
 }
 

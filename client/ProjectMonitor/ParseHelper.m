@@ -44,4 +44,24 @@ static NSDictionary *credentials;
     return retDict;
 }
 
++ (void)registerForRemoteNotificationWithDeviceToken:(NSData*)deviceToken
+{
+    // Store the deviceToken in the current installation and save it to Parse.
+    PFInstallation *currentInstallation = [PFInstallation currentInstallation];
+    [currentInstallation setDeviceTokenFromData:deviceToken];
+    [currentInstallation saveInBackground];
+}
+
++ (void) registerUserForRemoteNotification:(PFUser*)user
+{
+    PFInstallation *currentInstallation = [PFInstallation currentInstallation];
+    
+    // Ensure that we only register for installations with devices that can receive
+    // push notifications.
+    if (currentInstallation && currentInstallation.deviceToken) {
+        currentInstallation[@"user"] = user;
+        [currentInstallation saveInBackground];
+    }
+}
+
 @end
