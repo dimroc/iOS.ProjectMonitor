@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "ParseHelper.h"
+#import "Build.h"
 
 @implementation AppDelegate
 
@@ -33,6 +34,8 @@
 - (void)application:(UIApplication *)application
 didReceiveRemoteNotification:(NSDictionary *)userInfo {
     [PFPush handlePush:userInfo];
+    NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
+    [center postNotificationName:PMBuildDidSaveNotication object:self];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application
