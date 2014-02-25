@@ -34,4 +34,9 @@ class ParseBuild < Hashie::Trash
   def to_s
     "ParseBuild objectId: #{objectId} project: #{project} branch: #{branch} type: #{type} status: #{status}"
   end
+
+  def failure_description
+    return "" unless status.include? "failed"
+    "#{commitAuthor} broke the build for #{project} on #{branch}!"
+  end
 end

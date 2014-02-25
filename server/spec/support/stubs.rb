@@ -4,8 +4,11 @@ module StubSpecHelpers
   end
 
   def new_parse_build
-    build = JSON.parse(FixtureLoader.load("parse_builds"))["results"].first
-    ParseBuild.new build.except("objectId")
+    saved_parse_build.except("objectId")
+  end
+
+  def saved_parse_build
+    ParseBuild.new JSON.parse(FixtureLoader.load("parse_builds"))["results"].first
   end
 
   def random_id

@@ -27,8 +27,8 @@ describe BuildFetcher do
   describe "#fetch" do
     let(:fetcher) { BuildFetcher.new(build) }
 
-    context "with a good uri" do
-      let(:build) { {"url" => semaphore_build_url} }
+    context "with a build with a good uri" do
+      let(:build) { new_parse_build }
 
       context "when services are healthy" do
         # Force Fakes even in integration because we are unable to
@@ -64,12 +64,12 @@ describe BuildFetcher do
     end
 
     context "with a bad uri" do
-      let(:build) { {} }
+      let(:build) { saved_parse_build.merge({ "url" => "gibberish" })}
 
       it "should raise not implemented error" do
         expect {
           fetcher.fetch
-        }.to raise_error URI::InvalidURIError
+        }.to raise_error StandardError
       end
     end
   end

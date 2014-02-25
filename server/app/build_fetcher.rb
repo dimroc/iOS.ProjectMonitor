@@ -12,6 +12,7 @@ class BuildFetcher
   def fetch
     updated_build = parse(retrieve_from_url)
     updated_build.objectId = build.objectId
+    updated_build.user = build.user
     updated_build
   end
 

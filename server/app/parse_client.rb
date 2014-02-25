@@ -32,6 +32,19 @@ class ParseClient
     build
   end
 
+  def notify_build_failed(build)
+    raise ArgumentError, "Must have user" unless build.user.present?
+
+    output = {
+      "where" => {"user" => build.user},
+      "data" => { "alert" => build.failure_description }
+    }
+
+    puts "notifying failure: #{output.to_json}"
+    response = HTTParty.post(push_url, { headers: headers, body: output.to_json })
+    validate_response response
+  end
+
   private
 
   def headers
@@ -46,9 +59,15 @@ class ParseClient
     'https://api.parse.com/1/classes/Build'
   end
 
+  def push_url
+    'https://api.parse.com/1/push'
+  end
+
   def validate_response(response)
     if response.code >= 300
       raise StandardError, "Error connecting to parse. Status: #{response.code} Message: #{response.message} #{response}"
+    else
+      response
     end
   end
 end

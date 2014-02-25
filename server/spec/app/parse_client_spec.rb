@@ -56,9 +56,7 @@ describe ParseClient do
       context "when the build to update no longer exists" do
         it "should error" do
           build.objectId = "NOTREAL"
-          expect {
-            client.update(build)
-          }.to raise_error
+          expect { client.update(build) }.to raise_error
         end
       end
     end
@@ -74,6 +72,17 @@ describe ParseClient do
       before { servers_return_unauthorized }
       it "should error" do
         expect { client.update(build) }.to raise_error StandardError
+      end
+    end
+  end
+
+  describe "#notify_build_failed" do
+    before { ParseClient.any_instance.stub(:puts) }
+    let(:build) { new_parse_build }
+    context "when servers are healthy" do
+      it "should return true" do
+        response = client.notify_build_failed(build)
+        response["result"].should be_true
       end
     end
   end

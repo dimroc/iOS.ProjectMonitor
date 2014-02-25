@@ -20,6 +20,10 @@ class FakeParse < Sinatra::Base
     @builds = {}
   end
 
+  post "/1/push", provides: :json do
+    {"result" => true}.to_json
+  end
+
   post "/1/classes/Build", provides: :json do
     body = JSON.parse(request.body.read)
     id = next_id
