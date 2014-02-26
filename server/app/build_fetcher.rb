@@ -23,11 +23,12 @@ class BuildFetcher
   end
 
   def retrieve_from_url
-    response = HTTParty.get(build.url)
-    if response.code < 300
-      response.body
+    code, body = CachedHttpParty.get(build.url)
+
+    if code < 300
+      body
     else
-      raise StandardError, "Error connecting to <#{build.url}?. Status: #{response.code} Message: #{response.message} #{response}"
+      raise StandardError, "Error connecting to <#{build.url}?. Status: #{code} Message: #{body}"
     end
   end
 end

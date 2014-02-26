@@ -10,6 +10,7 @@ gem 'settingslogic'
 gem 'rufus-scheduler'
 gem 'hashie'
 gem 'rake'
+gem 'redis-activesupport'
 
 group :development, :test do
   gem 'rack'
