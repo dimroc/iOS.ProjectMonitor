@@ -15,7 +15,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     [ParseHelper launch:launchOptions];
-    [MagicalRecord setupCoreDataStack];
+    [MagicalRecord setupAutoMigratingCoreDataStack];
     
     // Register for push notifications
     [application registerForRemoteNotificationTypes:
