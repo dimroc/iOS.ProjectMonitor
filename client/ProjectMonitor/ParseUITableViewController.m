@@ -117,12 +117,7 @@
 
 // Sent to the delegate when the sign up attempt fails.
 - (void)signUpViewController:(PFSignUpViewController *)signUpController didFailToSignUpWithError:(NSError *)error {
-    NSLog(@"# Failed to sign up...");
-    [[[UIAlertView alloc] initWithTitle:@"Signup Failed"
-                                message:@"Please try again later."
-                               delegate:nil
-                      cancelButtonTitle:@"ok"
-                      otherButtonTitles:nil] show];
+    NSLog(@"# Failed to sign up: %@", error);
 }
 
 // Sent to the delegate when the sign up screen is dismissed.

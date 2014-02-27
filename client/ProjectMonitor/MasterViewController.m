@@ -77,6 +77,29 @@
     }];
 }
 
+- (void)clearTable
+{
+    self.builds = [NSArray array];
+    [self.tableView reloadData];
+}
+
+#pragma mark - ParseUITableViewController
+
+- (void)logInViewController:(PFLogInViewController *)logInController didLogInUser:(PFUser *)user
+{
+    [super logInViewController:logInController didLogInUser:user];
+    [self clearTable];
+    [self forceRefresh];
+}
+
+// Sent to the delegate when a PFUser is signed up.
+- (void)signUpViewController:(PFSignUpViewController *)signUpController didSignUpUser:(PFUser *)user
+{
+    [super signUpViewController:signUpController didSignUpUser:user]; // Dismiss the PFSignUpViewController
+    [self clearTable];
+    [self forceRefresh];
+}
+
 #pragma mark - Table View
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
