@@ -28,8 +28,6 @@
     
     NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
     [center addObserver:self selector:@selector(handleNewBuild:) name:PMBuildDidSaveNotication object:nil];
-    
-    [self forceRefresh];
 }
 
 - (void)forceRefresh
@@ -57,7 +55,6 @@
 
 - (IBAction)triggerRefresh:(id)sender
 {
-    NSLog(@"# triggered a refresh");
     UIRefreshControl *refreshControl = (UIRefreshControl*)sender;
     __weak MasterViewController *that = self;
     
