@@ -107,7 +107,7 @@
     [build saveInBackgroundWithBlock:^(BOOL succeeded) {
         [MBProgressHUD hideHUDForView:self.view animated:YES];
         if (succeeded) {
-            NSLog(@"Successfully added build.");
+            NSLog(@"# Successfully added build.");
         } else {
             [[[UIAlertView alloc] initWithTitle:@"Unable to talk to server"
                                         message:@"Please try again when data is available."

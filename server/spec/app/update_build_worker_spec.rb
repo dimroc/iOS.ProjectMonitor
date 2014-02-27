@@ -11,7 +11,7 @@ describe UpdateBuildWorker do
     end
 
     context "for a build that just failed" do
-      let(:build) { new_parse_build }
+      let(:build) { new_parse_build.merge("status" => "passed-pending") }
       let(:updated_build) { new_parse_build.merge("status" => "failed") }
       it "should notify the user of that failure" do
         BuildFetcher.any_instance.stub(:fetch).and_return(updated_build)

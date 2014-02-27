@@ -46,17 +46,14 @@
 
 - (UIImage*)imageForStatus
 {
-    if ([[self.build status] isEqual: @"passed"]) {
-        return [UIImage imageNamed:@"icon-ok"];
-    }
-    else if ([[self.build status] isEqualToString: @"failed"]) {
-        return [UIImage imageNamed:@"icon-fail"];
-    }
-    else if ([[self.build status] isEqualToString: @"pending"]) {
-        return [UIImage imageNamed:@"icon-undetermined-changing"];
-    }
-    else {
-        return [UIImage imageNamed:@"icon-undetermined"];
+    NSString * imageName = [self.build status] ? [self.build status] : @"undetermined";
+    imageName = [NSString stringWithFormat:@"icon-%@",[self.build status]];
+    UIImage *image = [UIImage imageNamed: imageName];
+    if (image) {
+        return image;
+    } else {
+        NSLog(@"# Unable to load build image for status %@.", [self.build status]);
+        return [UIImage imageNamed: @"icon-undetermined"];
     }
 }
 

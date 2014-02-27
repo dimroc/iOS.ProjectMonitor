@@ -44,11 +44,11 @@
 		5E79F1D618AA4FD4005BF986 /* SemaphoreBuildsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E79F1D318AA4FD4005BF986 /* SemaphoreBuildsViewController.m */; };
 		5E79F1D718AA4FD4005BF986 /* SemaphoreSourceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E79F1D518AA4FD4005BF986 /* SemaphoreSourceViewController.m */; };
 		5E79F1DA18AA5085005BF986 /* BuildCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E79F1D918AA5085005BF986 /* BuildCell.m */; };
-		5E79F1E218AA584A005BF986 /* icon-fail-changing.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E79F1DC18AA584A005BF986 /* icon-fail-changing.png */; };
-		5E79F1E318AA584A005BF986 /* icon-fail.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E79F1DD18AA584A005BF986 /* icon-fail.png */; };
-		5E79F1E418AA584A005BF986 /* icon-ok-changing.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E79F1DE18AA584A005BF986 /* icon-ok-changing.png */; };
-		5E79F1E518AA584A005BF986 /* icon-ok.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E79F1DF18AA584A005BF986 /* icon-ok.png */; };
-		5E79F1E618AA584A005BF986 /* icon-undetermined-changing.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E79F1E018AA584A005BF986 /* icon-undetermined-changing.png */; };
+		5E79F1E218AA584A005BF986 /* icon-failed-pending.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E79F1DC18AA584A005BF986 /* icon-failed-pending.png */; };
+		5E79F1E318AA584A005BF986 /* icon-failed.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E79F1DD18AA584A005BF986 /* icon-failed.png */; };
+		5E79F1E418AA584A005BF986 /* icon-passed-pending.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E79F1DE18AA584A005BF986 /* icon-passed-pending.png */; };
+		5E79F1E518AA584A005BF986 /* icon-passed.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E79F1DF18AA584A005BF986 /* icon-passed.png */; };
+		5E79F1E618AA584A005BF986 /* icon-pending.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E79F1E018AA584A005BF986 /* icon-pending.png */; };
 		5E79F1E718AA584A005BF986 /* icon-undetermined.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E79F1E118AA584A005BF986 /* icon-undetermined.png */; };
 		5E79F1EB18AD5702005BF986 /* BuildSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E79F1EA18AD5702005BF986 /* BuildSpec.m */; };
 		5EBF47D018A69E4C00175065 /* ParseUITableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EBF47CF18A69E4C00175065 /* ParseUITableViewController.m */; };
@@ -123,11 +123,11 @@
 		5E79F1D518AA4FD4005BF986 /* SemaphoreSourceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SemaphoreSourceViewController.m; sourceTree = "<group>"; };
 		5E79F1D818AA5085005BF986 /* BuildCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuildCell.h; sourceTree = "<group>"; };
 		5E79F1D918AA5085005BF986 /* BuildCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BuildCell.m; sourceTree = "<group>"; };
-		5E79F1DC18AA584A005BF986 /* icon-fail-changing.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon-fail-changing.png"; path = "Images/icon-fail-changing.png"; sourceTree = "<group>"; };
-		5E79F1DD18AA584A005BF986 /* icon-fail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon-fail.png"; path = "Images/icon-fail.png"; sourceTree = "<group>"; };
-		5E79F1DE18AA584A005BF986 /* icon-ok-changing.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon-ok-changing.png"; path = "Images/icon-ok-changing.png"; sourceTree = "<group>"; };
-		5E79F1DF18AA584A005BF986 /* icon-ok.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon-ok.png"; path = "Images/icon-ok.png"; sourceTree = "<group>"; };
-		5E79F1E018AA584A005BF986 /* icon-undetermined-changing.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon-undetermined-changing.png"; path = "Images/icon-undetermined-changing.png"; sourceTree = "<group>"; };
+		5E79F1DC18AA584A005BF986 /* icon-failed-pending.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon-failed-pending.png"; path = "Images/icon-failed-pending.png"; sourceTree = "<group>"; };
+		5E79F1DD18AA584A005BF986 /* icon-failed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon-failed.png"; path = "Images/icon-failed.png"; sourceTree = "<group>"; };
+		5E79F1DE18AA584A005BF986 /* icon-passed-pending.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon-passed-pending.png"; path = "Images/icon-passed-pending.png"; sourceTree = "<group>"; };
+		5E79F1DF18AA584A005BF986 /* icon-passed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon-passed.png"; path = "Images/icon-passed.png"; sourceTree = "<group>"; };
+		5E79F1E018AA584A005BF986 /* icon-pending.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon-pending.png"; path = "Images/icon-pending.png"; sourceTree = "<group>"; };
 		5E79F1E118AA584A005BF986 /* icon-undetermined.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon-undetermined.png"; path = "Images/icon-undetermined.png"; sourceTree = "<group>"; };
 		5E79F1EA18AD5702005BF986 /* BuildSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BuildSpec.m; sourceTree = "<group>"; };
 		5EBF47CE18A69E4C00175065 /* ParseUITableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParseUITableViewController.h; sourceTree = "<group>"; };
@@ -326,11 +326,11 @@
 		5E79F1DB18AA543D005BF986 /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				5E79F1DC18AA584A005BF986 /* icon-fail-changing.png */,
-				5E79F1DD18AA584A005BF986 /* icon-fail.png */,
-				5E79F1DE18AA584A005BF986 /* icon-ok-changing.png */,
-				5E79F1DF18AA584A005BF986 /* icon-ok.png */,
-				5E79F1E018AA584A005BF986 /* icon-undetermined-changing.png */,
+				5E79F1DC18AA584A005BF986 /* icon-failed-pending.png */,
+				5E79F1DD18AA584A005BF986 /* icon-failed.png */,
+				5E79F1DE18AA584A005BF986 /* icon-passed-pending.png */,
+				5E79F1DF18AA584A005BF986 /* icon-passed.png */,
+				5E79F1E018AA584A005BF986 /* icon-pending.png */,
 				5E79F1E118AA584A005BF986 /* icon-undetermined.png */,
 			);
 			name = Images;
@@ -439,19 +439,19 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5E79F1E218AA584A005BF986 /* icon-fail-changing.png in Resources */,
+				5E79F1E218AA584A005BF986 /* icon-failed-pending.png in Resources */,
 				5E3ED1231899F14F00632144 /* Images.xcassets in Resources */,
 				5E79F1E718AA584A005BF986 /* icon-undetermined.png in Resources */,
-				5E79F1E318AA584A005BF986 /* icon-fail.png in Resources */,
+				5E79F1E318AA584A005BF986 /* icon-failed.png in Resources */,
 				5ED0A996189EC75100A56A27 /* Credentials.plist in Resources */,
 				5E755F9D18B1299500692F5F /* BuildCell.xib in Resources */,
 				5E3ED1151899F14F00632144 /* Main_iPhone.storyboard in Resources */,
 				5E79F1CA18AA4FA0005BF986 /* Semaphore.storyboard in Resources */,
-				5E79F1E518AA584A005BF986 /* icon-ok.png in Resources */,
-				5E79F1E618AA584A005BF986 /* icon-undetermined-changing.png in Resources */,
+				5E79F1E518AA584A005BF986 /* icon-passed.png in Resources */,
+				5E79F1E618AA584A005BF986 /* icon-pending.png in Resources */,
 				5E3ED10C1899F14F00632144 /* InfoPlist.strings in Resources */,
 				5ED0A998189EC81000A56A27 /* Credentials.example.plist in Resources */,
-				5E79F1E418AA584A005BF986 /* icon-ok-changing.png in Resources */,
+				5E79F1E418AA584A005BF986 /* icon-passed-pending.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

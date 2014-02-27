@@ -29,13 +29,13 @@ static NSDateFormatter *dateFormatter;
     NSString *URLString = @"https://semaphoreapp.com/api/v1/projects";
     NSDictionary *parameters = @{@"auth_token": authenticationToken};
     
-    NSLog(@"Fetching semaphore builds with auth token: %@", authenticationToken);
+    NSLog(@"# Fetching semaphore builds with auth token: %@", authenticationToken);
     
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     [manager GET:URLString parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
         [self handleSemaphoreResponseWith:responseObject andRespondWith:callbackBlock];
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        NSLog(@"Error: %@", error);
+        NSLog(@"# Error: %@", error);
     }];
 }
 
@@ -111,7 +111,7 @@ static NSDateFormatter *dateFormatter;
             return date;
         }
         @catch (NSException *exception) {
-            NSLog(@"Failed to parse %@", json[key]);
+            NSLog(@"# Failed to parse %@", json[key]);
         }
     }
     

@@ -50,14 +50,14 @@
 
 - (IBAction)signOut:(id)sender
 {
-    NSLog(@"Signing out");
+    NSLog(@"# Signing out");
     [PFUser logOut];
     [self showLogIn];
 }
 
 - (IBAction)triggerRefresh:(id)sender
 {
-    NSLog(@"triggered a refresh");
+    NSLog(@"# triggered a refresh");
     UIRefreshControl *refreshControl = (UIRefreshControl*)sender;
     __weak MasterViewController *that = self;
     
@@ -65,7 +65,7 @@
         if (succeeded) {
             [that setBuilds:builds];
             dispatch_async(dispatch_get_main_queue(), ^{
-                NSLog(@"Finished refresh");
+                NSLog(@"# Finished refresh");
                 [that.tableView reloadData];
             });
         } else {

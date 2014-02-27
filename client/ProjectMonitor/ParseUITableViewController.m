@@ -63,14 +63,14 @@
 
 // Sent to the delegate when a PFUser is logged in.
 - (void)logInViewController:(PFLogInViewController *)logInController didLogInUser:(PFUser *)user {
-    NSLog(@"Logging in username: %@", user.username);
+    NSLog(@"# Logging in username: %@", user.username);
     [ParseHelper registerUserForRemoteNotification:user];
     [self dismissViewControllerAnimated:YES completion:NULL];
 }
 
 // Sent to the delegate when the log in attempt fails.
 - (void)logInViewController:(PFLogInViewController *)logInController didFailToLogInWithError:(NSError *)error {
-    NSLog(@"Failed to log in...");
+    NSLog(@"# Failed to log in...");
     [[[UIAlertView alloc] initWithTitle:@"Login Failed"
                                 message:@"Please re-enter your information."
                                delegate:nil
@@ -117,7 +117,7 @@
 
 // Sent to the delegate when the sign up attempt fails.
 - (void)signUpViewController:(PFSignUpViewController *)signUpController didFailToSignUpWithError:(NSError *)error {
-    NSLog(@"Failed to sign up...");
+    NSLog(@"# Failed to sign up...");
     [[[UIAlertView alloc] initWithTitle:@"Signup Failed"
                                 message:@"Please try again later."
                                delegate:nil
@@ -127,7 +127,7 @@
 
 // Sent to the delegate when the sign up screen is dismissed.
 - (void)signUpViewControllerDidCancelSignUp:(PFSignUpViewController *)signUpController {
-    NSLog(@"User dismissed the signUpViewController");
+    NSLog(@"# User dismissed the signUpViewController");
 }
 
 #pragma mark - Normal UITableViewController methods

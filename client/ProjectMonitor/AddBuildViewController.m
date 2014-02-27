@@ -49,7 +49,7 @@
     UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
     NSString *source_name = cell.textLabel.text;
     
-    NSLog(@"Selected %@", source_name);
+    NSLog(@"# Selected %@", source_name);
     id<Source> source = [SourceFactory fetch:source_name];
 
     [[self navigationController] pushViewController:[source controller] animated:YES];

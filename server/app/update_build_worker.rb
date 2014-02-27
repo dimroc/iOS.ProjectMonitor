@@ -4,9 +4,11 @@ class UpdateBuildWorker
   def perform(build_hash)
     build = ParseBuild.new build_hash
     updated_build = BuildFetcher.create(build).fetch
+    merged_build = ParseBuild.merge(build, updated_build)
+
     client = ParseClient.from_settings
-    client.update(updated_build)
-    client.notify_build_failed(updated_build) if changed_to_failed?(build, updated_build)
+    client.update(merged_build)
+    client.notify_build_failed(merged_build) if changed_to_failed?(build, updated_build)
   end
 
   private

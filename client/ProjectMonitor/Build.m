@@ -86,7 +86,7 @@ static NSArray* whitelistedKeys;
             // invoke callback with new builds
             callback(YES, refreshedBuilds);
         } else {
-            NSLog(@"Failed to refresh saved builds\n%@", error);
+            NSLog(@"# Failed to refresh saved builds\n%@", error);
             callback(NO, nil);
         }
     }];
@@ -113,7 +113,7 @@ static NSArray* whitelistedKeys;
 
 - (void)saveInBackgroundWithBlock:(void (^)(BOOL))mainThreadCallback
 {
-    NSLog(@"Saving project %@ with branch %@ of type %@", self.project, self.branch, self.type);
+    NSLog(@"# Saving project %@ with branch %@ of type %@", self.project, self.branch, self.type);
     
     PFObject *buildObject = [PFObject objectWithClassName:@"Build"];
     for (NSString* key in whitelistedKeys) {

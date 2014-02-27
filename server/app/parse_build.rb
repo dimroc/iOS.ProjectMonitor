@@ -27,6 +27,16 @@ class ParseBuild < Hashie::Trash
     }
   end
 
+  def self.merge(original, updated)
+    if updated.status == "pending" && !original.status.include?("pending")
+      updated.merge("status" => "#{original.status}-pending")
+    elsif updated.status == "pending" && original.status.include?("pending")
+      updated.merge("status" => original.status)
+    else
+      updated
+    end
+  end
+
   def output
     self.except("user", "ACL", "objectId", "createdAt", "updatedAt")
   end
