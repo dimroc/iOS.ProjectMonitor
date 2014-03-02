@@ -28,8 +28,7 @@
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="done"/>
                                                     <connections>
-                                                        <outlet property="delegate" destination="ukv-iu-BD1" id="EAw-ST-Qye"/>
-                                                        <segue destination="Jic-GX-z5B" kind="push" identifier="toAvailableSemaphoreBuilds" id="DlP-bZ-M2F"/>
+                                                        <outlet property="delegate" destination="ukv-iu-BD1" id="BAl-eG-S6k"/>
                                                     </connections>
                                                 </textField>
                                             </subviews>
@@ -43,6 +42,7 @@
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="authenticationTokenTextField" destination="Rk5-DA-upW" id="l9q-XU-fdH"/>
+                        <segue destination="Jic-GX-z5B" kind="push" identifier="toAvailableSemaphoreBuilds" id="FJb-90-fgS"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kPI-9Y-9Mv" userLabel="First Responder" sceneMemberID="firstResponder"/>

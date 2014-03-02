@@ -30,6 +30,7 @@
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
     if ([self authenticationFieldValid]) {
         [textField resignFirstResponder];
+        [self performSegueWithIdentifier:@"toAvailableSemaphoreBuilds" sender:self];
         return YES;
     }
     else {
@@ -56,21 +57,6 @@
 }
 
 #pragma mark - Navigation
-
-- (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender
-{
-    if ([self authenticationFieldValid]) {
-        return YES;
-    }
-    else {
-        [[[UIAlertView alloc] initWithTitle:@"Missing Information"
-                                    message:@"Please fill in all information."
-                                   delegate:nil
-                          cancelButtonTitle:@"ok"
-                          otherButtonTitles:nil] show];
-        return NO;
-    }
-}
 
 // In a story board-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
