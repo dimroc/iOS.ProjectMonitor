@@ -10,7 +10,7 @@
 
 @interface SemaphoreBuild : Build
 
-+ (void)fetch:(NSString*)authenticationToken withCallback:(FetchBuildCallback)callbackBlock;
++ (void)fetch:(NSString*)authenticationToken success:(FetchBuildCallback)success failure:(void (^)(NSError *)) failure;
 + (Build *)fromDictionary:(NSDictionary*)json;
 
 @end

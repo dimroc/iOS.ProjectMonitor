@@ -45,8 +45,10 @@
 
 - (void) loadWithToken:(NSString*) authenticationToken
 {
-    [SemaphoreBuild fetch: authenticationToken withCallback: ^(NSArray* builds){
+    [SemaphoreBuild fetch: authenticationToken success: ^(NSArray* builds){
         [self populateWithBuilds:builds];
+    } failure: ^(NSError *error) {
+        [self showErrorMessage:error];
     }];
 }
 
@@ -72,6 +74,20 @@
     
     [BlockAlertViewDelegate showAlertView:alertView withCallback:^(NSInteger buttonIndex) {
         [self.navigationController popToRootViewControllerAnimated:YES];
+    }];
+}
+
+- (void)showErrorMessage: (NSError *)error
+{
+    UIAlertView *alertView = [[UIAlertView alloc]
+                              initWithTitle: @"Error retrieving builds"
+                              message: [error localizedDescription]
+                              delegate: nil
+                              cancelButtonTitle:@"ok"
+                              otherButtonTitles:nil];
+    
+    [BlockAlertViewDelegate showAlertView:alertView withCallback:^(NSInteger buttonIndex) {
+        [self.navigationController popViewControllerAnimated:YES];
     }];
 }
 

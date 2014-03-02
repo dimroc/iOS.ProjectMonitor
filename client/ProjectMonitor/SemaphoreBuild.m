@@ -24,7 +24,7 @@ static NSDateFormatter *dateFormatter;
     }
 }
 
-+ (void)fetch:(NSString*)authenticationToken withCallback:(FetchBuildCallback)callbackBlock
++ (void)fetch:(NSString*)authenticationToken success:(FetchBuildCallback)success failure:(void (^)(NSError *))failure
 {
     NSString *URLString = @"https://semaphoreapp.com/api/v1/projects";
     NSDictionary *parameters = @{@"auth_token": authenticationToken};
@@ -33,9 +33,12 @@ static NSDateFormatter *dateFormatter;
     
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     [manager GET:URLString parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        [self handleSemaphoreResponseWith:responseObject andRespondWith:callbackBlock];
+        [self handleSemaphoreResponseWith:responseObject andRespondWith:success];
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"# Error: %@", error);
+        dispatch_async(dispatch_get_main_queue(), ^{
+            failure(error);
+        });
     }];
 }
 
