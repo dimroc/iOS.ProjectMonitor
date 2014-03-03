@@ -1,0 +1,11 @@
+language: ruby
+rvm:
+  - "2.1.0"
+env:
+  - "INTEGRATION=true"
+  - "INTEGRATION=false"
+install:
+  - cd server
+  - bundle install
+script:
+  - bundle exec rake
