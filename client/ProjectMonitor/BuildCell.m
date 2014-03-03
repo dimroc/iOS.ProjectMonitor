@@ -44,6 +44,31 @@
     self.statusImageView.image = [self imageForStatus];
 }
 
+- (BOOL)toggleChecked
+{
+    if (self.accessoryType == UITableViewCellAccessoryCheckmark) {
+        // Already checked
+        [self toggleDetails: false];
+        self.accessoryType = UITableViewCellAccessoryNone;
+        return NO;
+    } else {
+        [self toggleDetails: true];
+        self.accessoryType = UITableViewCellAccessoryCheckmark;
+        return YES;
+    }
+}
+
+- (void)toggleDetails:(BOOL)hidden
+{
+    if (hidden) {
+        self.timeLabel.hidden = true;
+        self.statusImageView.hidden = true;
+    } else {
+        self.timeLabel.hidden = false;
+        self.statusImageView.hidden = false;
+    }
+}
+
 - (UIImage*)imageForStatus
 {
     NSString * imageName = [self.build status] ? [self.build status] : @"undetermined";

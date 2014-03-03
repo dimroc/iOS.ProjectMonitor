@@ -17,6 +17,7 @@ extern NSString * const PMBuildDidSaveNotication;
 + (NSArray *)all;
 + (NSArray *)saved;
 + (void)refreshSavedBuildsInBackground:(void (^)(BOOL, NSArray*))callback;
++ (void)saveInBackground:(NSArray *)builds withBlock: (void (^)(BOOL))mainThreadCallback;
 
 @property (nonatomic, retain) NSString * project;
 @property (nonatomic, retain) NSString * branch;
@@ -36,7 +37,6 @@ extern NSString * const PMBuildDidSaveNotication;
 - (NSString *)description;
 - (BOOL)isSimilarTo:(Build *)build;
 - (void)setFromDictionary:(NSDictionary*)dic;
-- (void)saveInBackgroundWithBlock: (void (^)(BOOL))mainThreadCallback;
 - (void)deleteInBackground;
 
 @end

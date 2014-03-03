@@ -18,5 +18,6 @@
 @property (weak, nonatomic) Build *build;
 
 - (void)setFromBuild:(Build*)build;
+- (BOOL)toggleChecked;
 
 @end

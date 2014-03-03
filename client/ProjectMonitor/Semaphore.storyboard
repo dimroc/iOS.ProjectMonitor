@@ -62,7 +62,13 @@
                             <outlet property="delegate" destination="Jic-GX-z5B" id="itW-p2-rbk"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Builds" id="M9l-wn-aZr"/>
+                    <navigationItem key="navigationItem" title="Builds" id="M9l-wn-aZr">
+                        <barButtonItem key="rightBarButtonItem" title="Add" id="Ut7-EN-tLe">
+                            <connections>
+                                <action selector="addSelectedBuildsAction:" destination="Jic-GX-z5B" id="Wfb-rI-BXv"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oDm-vf-LeG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

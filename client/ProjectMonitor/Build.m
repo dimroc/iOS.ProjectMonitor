@@ -92,6 +92,37 @@ static NSArray* whitelistedKeys;
     }];
 }
 
++ (void)saveInBackground:(NSArray *)builds withBlock:(void (^)(BOOL))mainThreadCallback
+{
+    NSArray *parseObjects = _.arrayMap(builds, ^PFObject *(Build*build) {
+        return [self generateParseObject:build];
+    });
+    
+    [PFObject saveAllInBackground:parseObjects block:^(BOOL succeeded, NSError *error) {
+        if (succeeded) {
+            [self notifyBuildsSaved];
+        } else {
+            NSLog(@"Failed to save parse objects:\n%@", [error description]);
+        }
+
+        dispatch_async(dispatch_get_main_queue(), ^{
+            mainThreadCallback(succeeded);
+        });
+    }];
+}
+
++ (PFObject *)generateParseObject:(Build*) build
+{
+    PFObject *buildObject = [PFObject objectWithClassName:@"Build"];
+    for (NSString* key in whitelistedKeys) {
+        buildObject[key] = [build valueForKey:key];
+    }
+    
+    buildObject[@"user"] = [PFUser currentUser];
+    buildObject.ACL = [PFACL ACLWithUser:[PFUser currentUser]];
+    return buildObject;
+}
+
 - (NSString *)description
 {
     return [NSString stringWithFormat: @"Build: ObjectId=%@ Project=%@ Branch=%@ Status=%@ Url=%@", self.objectId, self.project, self.branch, self.status, self.url];
@@ -111,41 +142,10 @@ static NSArray* whitelistedKeys;
     }
 }
 
-- (void)saveInBackgroundWithBlock:(void (^)(BOOL))mainThreadCallback
-{
-    NSLog(@"# Saving project %@ with branch %@ of type %@", self.project, self.branch, self.type);
-    
-    PFObject *buildObject = [PFObject objectWithClassName:@"Build"];
-    for (NSString* key in whitelistedKeys) {
-        buildObject[key] = [self valueForKey:key];
-    }
-    
-    buildObject[@"user"] = [PFUser currentUser];
-    buildObject.ACL = [PFACL ACLWithUser:[PFUser currentUser]];
-    
-    [buildObject saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-        [MagicalRecord saveWithBlock:^(NSManagedObjectContext *localContext) {
-            if (!succeeded) {
-                return;
-            }
-            
-            Build *localBuild = [Build MR_createInContext:localContext];
-            assert(localBuild != nil);
-            [localBuild setFromDictionary: [ParseHelper toDictionary:buildObject]];
-            localBuild.objectId = buildObject.objectId;
-        }];
-        
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [self notifyBuildSaved];
-            mainThreadCallback(succeeded);
-        });
-    }];
-}
-
-- (void)notifyBuildSaved
++ (void)notifyBuildsSaved
 {
     NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
-    [center postNotificationName:PMBuildDidSaveNotication object:self];
+    [center postNotificationName:PMBuildDidSaveNotication object:nil];
 }
 
 - (void)deleteInBackground

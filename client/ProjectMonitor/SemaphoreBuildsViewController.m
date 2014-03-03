@@ -14,6 +14,7 @@
 @interface SemaphoreBuildsViewController ()
 
 @property (nonatomic, copy) NSArray* builds;
+@property (nonatomic, copy) NSArray* selectedBuilds;
 
 @end
 
@@ -24,9 +25,19 @@
     self = [super initWithCoder:aDecoder];
     if (self) {
         [self setBuilds:[NSArray array]];
+        [self setSelectedBuilds:[NSArray array]];
     }
 
     return self;
+}
+
+- (IBAction)addSelectedBuildsAction:(id)sender;
+{
+    if ([self.selectedBuilds count] == 0) {
+        [self showPleaseSelectBuildsMessage];
+    } else {
+        [self saveSelectedBuilds];
+    }
 }
 
 - (void)viewDidLoad
@@ -61,6 +72,17 @@
     if ([self.builds count] == 0) {
         [self showNoBuildsMessage];
     }
+}
+
+- (void)showPleaseSelectBuildsMessage
+{
+    UIAlertView *alertView = [[UIAlertView alloc]
+                              initWithTitle:@"No builds to add"
+                              message:@"Please select builds to add."
+                              delegate:nil
+                              cancelButtonTitle:@"ok"
+                              otherButtonTitles:nil];
+    [alertView show];
 }
 
 - (void)showNoBuildsMessage
@@ -114,16 +136,29 @@
     return cell;
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+- (void)tableView:(UITableView*)tableView didSelectRowAtIndexPath:(NSIndexPath*)indexPath
 {
-    BuildCell *cell = (BuildCell*)[tableView cellForRowAtIndexPath:indexPath];
-    Build *build = [cell build];
+    BuildCell * buildCell = (BuildCell*)[tableView cellForRowAtIndexPath:indexPath];
+    BOOL selected = [buildCell toggleChecked];
     
+    NSMutableSet *newSelectedBuilds = [NSMutableSet setWithArray:[self selectedBuilds]];
+    
+    if (selected) {
+        [newSelectedBuilds addObject: [buildCell build]];
+    } else {
+        [newSelectedBuilds removeObject: [buildCell build]];
+    }
+
+    [self setSelectedBuilds: [newSelectedBuilds allObjects]];
+}
+
+- (void)saveSelectedBuilds
+{
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-    [build saveInBackgroundWithBlock:^(BOOL succeeded) {
+    [Build saveInBackground: [self selectedBuilds] withBlock:^(BOOL succeeded) {
         [MBProgressHUD hideHUDForView:self.view animated:YES];
         if (succeeded) {
-            NSLog(@"# Successfully added build.");
+            NSLog(@"# Successfully added builds.");
         } else {
             [[[UIAlertView alloc] initWithTitle:@"Unable to talk to server"
                                         message:@"Please try again when data is available."

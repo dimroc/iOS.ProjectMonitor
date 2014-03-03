@@ -11,6 +11,7 @@
 
 @interface SemaphoreBuildsViewController : UITableViewController
 
-- (void) loadWithToken:(NSString*) authenticationToken;
+- (void)loadWithToken:(NSString*) authenticationToken;
+- (IBAction)addSelectedBuildsAction:(id)sender;
 
 @end
