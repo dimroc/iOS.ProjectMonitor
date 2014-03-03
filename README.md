@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/dimroc/iOS.ProjectMonitor.png?branch=master)](https://travis-ci.org/dimroc/iOS.ProjectMonitor)
+
 iOS Project Monitor
 ===================
 
