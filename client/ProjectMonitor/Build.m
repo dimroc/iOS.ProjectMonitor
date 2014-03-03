@@ -28,6 +28,7 @@
 
 // [Name of associated class] + [Did | Will] + [UniquePartOfName] + Notification
 NSString * const PMBuildDidSaveNotication = @"PMBuildDidSaveNotication";
+NSString * const sortString = @"type,project,branch";
 
 // Thread safe: https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/Multithreading/ThreadSafetySummary/ThreadSafetySummary.html
 static NSArray* whitelistedKeys;
@@ -48,25 +49,25 @@ static NSArray* whitelistedKeys;
 
 + (NSArray *)all
 {
-    return [Build MR_findAllSortedBy:@"project" ascending:YES];
+    return [Build MR_findAllSortedBy:sortString ascending:YES];
 }
 
 + (NSArray *)saved
 {
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"NOT objectId = nil"];
-    return [Build MR_findAllSortedBy:@"project" ascending:YES withPredicate:predicate];
+    return [Build MR_findAllSortedBy:sortString ascending:YES withPredicate:predicate];
 }
 
 + (NSArray *)allInContext:(NSManagedObjectContext *)context
 {
-    return [Build MR_findAllSortedBy:@"project" ascending:YES inContext:context];
+    return [Build MR_findAllSortedBy:sortString ascending:YES inContext:context];
 }
 
 + (void)refreshSavedBuildsInBackground:(void (^)(BOOL, NSArray *))callback
 {
     // Retrieve from parse
     PFQuery *query = [PFQuery queryWithClassName:@"Build"];
-    [query orderByAscending:@"project"];
+    [query orderByAscending:sortString];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (!error) {
             __block NSArray *refreshedBuilds;
