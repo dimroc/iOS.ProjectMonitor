@@ -1,4 +1,9 @@
 class Settings < Settingslogic
-  source File.join(File.dirname(__FILE__), "application.yml")
-  namespace ENV["RACK_ENV"] || "development"
+  if ENVIRONMENT == "test"
+    source File.join(File.dirname(__FILE__), "application.yml.example")
+  else
+    source File.join(File.dirname(__FILE__), "application.yml")
+  end
+
+  namespace ENVIRONMENT
 end

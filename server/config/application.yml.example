@@ -14,7 +14,7 @@ development:
   cache_store: redis_store
 
 test:
-  parse_application_id: YOUR_PARSE_APPLICATION_ID
-  parse_master_key: YOUR_PARSE_MASTER_KEY
+  parse_application_id: <%= ENV["PARSE_APP_ID"] || 'YOUR_PARSE_APPLICATION_ID' %>
+  parse_master_key: <%= ENV["PARSE_MASTER_KEY"] || 'YOUR_PARSE_MASTER_KEY' %>
   redis_url: 'redis://127.0.0.1:6379'
   cache_store: memory_store
