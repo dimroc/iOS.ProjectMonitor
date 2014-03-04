@@ -51,6 +51,11 @@
 		5E79F1E618AA584A005BF986 /* icon-pending.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E79F1E018AA584A005BF986 /* icon-pending.png */; };
 		5E79F1E718AA584A005BF986 /* icon-undetermined.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E79F1E118AA584A005BF986 /* icon-undetermined.png */; };
 		5E79F1EB18AD5702005BF986 /* BuildSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E79F1EA18AD5702005BF986 /* BuildSpec.m */; };
+		5E8D8A4D18C5FB270053E1DC /* Travis.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E8D8A4C18C5FB270053E1DC /* Travis.storyboard */; };
+		5E8D8A5018C5FC050053E1DC /* TravisSourceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E8D8A4F18C5FC050053E1DC /* TravisSourceViewController.m */; };
+		5E8D8A5418C5FDDF0053E1DC /* Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E8D8A5318C5FDDF0053E1DC /* Helper.m */; };
+		5E8D8A5718C600850053E1DC /* BuildsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E8D8A5618C600850053E1DC /* BuildsViewController.m */; };
+		5E8D8A5A18C605B40053E1DC /* TravisBuildsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E8D8A5918C605B40053E1DC /* TravisBuildsViewController.m */; };
 		5EBF47D018A69E4C00175065 /* ParseUITableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EBF47CF18A69E4C00175065 /* ParseUITableViewController.m */; };
 		5EBF47DD18A6A3A600175065 /* ProjectMonitorSignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EBF47DC18A6A3A600175065 /* ProjectMonitorSignUpViewController.m */; };
 		5EBF47E018A6A41000175065 /* ProjectMonitorLogInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EBF47DF18A6A41000175065 /* ProjectMonitorLogInViewController.m */; };
@@ -130,6 +135,15 @@
 		5E79F1E018AA584A005BF986 /* icon-pending.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon-pending.png"; path = "Images/icon-pending.png"; sourceTree = "<group>"; };
 		5E79F1E118AA584A005BF986 /* icon-undetermined.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon-undetermined.png"; path = "Images/icon-undetermined.png"; sourceTree = "<group>"; };
 		5E79F1EA18AD5702005BF986 /* BuildSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BuildSpec.m; sourceTree = "<group>"; };
+		5E8D8A4C18C5FB270053E1DC /* Travis.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Travis.storyboard; sourceTree = "<group>"; };
+		5E8D8A4E18C5FC050053E1DC /* TravisSourceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TravisSourceViewController.h; sourceTree = "<group>"; };
+		5E8D8A4F18C5FC050053E1DC /* TravisSourceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TravisSourceViewController.m; sourceTree = "<group>"; };
+		5E8D8A5218C5FDDF0053E1DC /* Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Helper.h; sourceTree = "<group>"; };
+		5E8D8A5318C5FDDF0053E1DC /* Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Helper.m; sourceTree = "<group>"; };
+		5E8D8A5518C600850053E1DC /* BuildsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuildsViewController.h; sourceTree = "<group>"; };
+		5E8D8A5618C600850053E1DC /* BuildsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BuildsViewController.m; sourceTree = "<group>"; };
+		5E8D8A5818C605B40053E1DC /* TravisBuildsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TravisBuildsViewController.h; sourceTree = "<group>"; };
+		5E8D8A5918C605B40053E1DC /* TravisBuildsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TravisBuildsViewController.m; sourceTree = "<group>"; };
 		5EBF47CE18A69E4C00175065 /* ParseUITableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParseUITableViewController.h; sourceTree = "<group>"; };
 		5EBF47CF18A69E4C00175065 /* ParseUITableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParseUITableViewController.m; sourceTree = "<group>"; };
 		5EBF47DB18A6A3A600175065 /* ProjectMonitorSignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProjectMonitorSignUpViewController.h; sourceTree = "<group>"; };
@@ -224,6 +238,7 @@
 		5E3ED1071899F14F00632144 /* ProjectMonitor */ = {
 			isa = PBXGroup;
 			children = (
+				5E8D8A5118C5FDC30053E1DC /* Misc */,
 				5E79F1C718AA4B52005BF986 /* Controllers */,
 				5E79F1C218A9A4DD005BF986 /* Models */,
 				5E79F1C618AA4B4B005BF986 /* Views */,
@@ -307,6 +322,12 @@
 				5E79F1D318AA4FD4005BF986 /* SemaphoreBuildsViewController.m */,
 				5E79F1D418AA4FD4005BF986 /* SemaphoreSourceViewController.h */,
 				5E79F1D518AA4FD4005BF986 /* SemaphoreSourceViewController.m */,
+				5E8D8A4E18C5FC050053E1DC /* TravisSourceViewController.h */,
+				5E8D8A4F18C5FC050053E1DC /* TravisSourceViewController.m */,
+				5E8D8A5518C600850053E1DC /* BuildsViewController.h */,
+				5E8D8A5618C600850053E1DC /* BuildsViewController.m */,
+				5E8D8A5818C605B40053E1DC /* TravisBuildsViewController.h */,
+				5E8D8A5918C605B40053E1DC /* TravisBuildsViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -319,6 +340,7 @@
 				5E3ED1221899F14F00632144 /* Images.xcassets */,
 				5E3ED1131899F14F00632144 /* Main_iPhone.storyboard */,
 				5E79F1C918AA4FA0005BF986 /* Semaphore.storyboard */,
+				5E8D8A4C18C5FB270053E1DC /* Travis.storyboard */,
 			);
 			name = "User Interface";
 			sourceTree = "<group>";
@@ -334,6 +356,15 @@
 				5E79F1E118AA584A005BF986 /* icon-undetermined.png */,
 			);
 			name = Images;
+			sourceTree = "<group>";
+		};
+		5E8D8A5118C5FDC30053E1DC /* Misc */ = {
+			isa = PBXGroup;
+			children = (
+				5E8D8A5218C5FDDF0053E1DC /* Helper.h */,
+				5E8D8A5318C5FDDF0053E1DC /* Helper.m */,
+			);
+			name = Misc;
 			sourceTree = "<group>";
 		};
 		5EBF47DA18A6A37300175065 /* Parse */ = {
@@ -444,6 +475,7 @@
 				5E79F1E718AA584A005BF986 /* icon-undetermined.png in Resources */,
 				5E79F1E318AA584A005BF986 /* icon-failed.png in Resources */,
 				5ED0A996189EC75100A56A27 /* Credentials.plist in Resources */,
+				5E8D8A4D18C5FB270053E1DC /* Travis.storyboard in Resources */,
 				5E755F9D18B1299500692F5F /* BuildCell.xib in Resources */,
 				5E3ED1151899F14F00632144 /* Main_iPhone.storyboard in Resources */,
 				5E79F1CA18AA4FA0005BF986 /* Semaphore.storyboard in Resources */,
@@ -536,17 +568,21 @@
 				5E79F1D618AA4FD4005BF986 /* SemaphoreBuildsViewController.m in Sources */,
 				5E3ED1211899F14F00632144 /* DetailViewController.m in Sources */,
 				5EBF47D018A69E4C00175065 /* ParseUITableViewController.m in Sources */,
+				5E8D8A5718C600850053E1DC /* BuildsViewController.m in Sources */,
 				5E3ED156189A089E00632144 /* ParseHelper.m in Sources */,
 				5E79F1D118AA4FBB005BF986 /* SourceFactory.m in Sources */,
+				5E8D8A5A18C605B40053E1DC /* TravisBuildsViewController.m in Sources */,
 				5E3ED11E1899F14F00632144 /* MasterViewController.m in Sources */,
 				5E3ED11B1899F14F00632144 /* ProjectMonitor.xcdatamodeld in Sources */,
 				5EBF47E318A6AE7E00175065 /* AddBuildViewController.m in Sources */,
 				5E79F1D718AA4FD4005BF986 /* SemaphoreSourceViewController.m in Sources */,
+				5E8D8A5418C5FDDF0053E1DC /* Helper.m in Sources */,
 				5EBF47DD18A6A3A600175065 /* ProjectMonitorSignUpViewController.m in Sources */,
 				5E3ED1121899F14F00632144 /* AppDelegate.m in Sources */,
 				5E79F1D018AA4FBB005BF986 /* Build.m in Sources */,
 				5E755FA018B2F5D700692F5F /* BlockAlertViewDelegate.m in Sources */,
 				5E3ED10E1899F14F00632144 /* main.m in Sources */,
+				5E8D8A5018C5FC050053E1DC /* TravisSourceViewController.m in Sources */,
 				5E09522A18BADB9500689FBA /* SemaphoreBuild.m in Sources */,
 				5EBF47E018A6A41000175065 /* ProjectMonitorLogInViewController.m in Sources */,
 				5E79F1DA18AA5085005BF986 /* BuildCell.m in Sources */,

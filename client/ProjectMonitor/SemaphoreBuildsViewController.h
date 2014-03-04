@@ -8,10 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "Build.h"
+#import "BuildsViewController.h"
 
-@interface SemaphoreBuildsViewController : UITableViewController
-
-- (void)loadWithToken:(NSString*) authenticationToken;
-- (IBAction)addSelectedBuildsAction:(id)sender;
+@interface SemaphoreBuildsViewController : BuildsViewController
 
 @end

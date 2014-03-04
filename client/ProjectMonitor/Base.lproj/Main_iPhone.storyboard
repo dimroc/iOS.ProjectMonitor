@@ -73,10 +73,24 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="Tqh-I4-egP" style="IBUITableViewCellStyleDefault" id="kC7-um-ri6">
+                                        <rect key="frame" x="0.0" y="163" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="kC7-um-ri6" id="3FE-fR-DBt">
+                                            <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Travis" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Tqh-I4-egP">
+                                                    <rect key="frame" x="15" y="0.0" width="270" height="43"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
                                 </cells>
-                            </tableViewSection>
-                            <tableViewSection headerTitle="Personal Continuous Integration" footerTitle="TeamCity and Jenkins coming soon" id="nBO-w6-U5U">
-                                <cells/>
                             </tableViewSection>
                         </sections>
                     </tableView>
