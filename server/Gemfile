@@ -12,6 +12,7 @@ gem 'rufus-scheduler'
 gem 'hashie'
 gem 'rake'
 gem 'redis-activesupport'
+gem 'redis-semaphore'
 
 group :development, :test do
   gem 'rack'
