@@ -11,5 +11,7 @@
 @interface Helper : NSObject
 
 + (BOOL)stringValid:(NSString*)value;
++ (NSString*) stringFromDate:(NSDate*)date;
++ (NSDate*) dateFromString:(NSString*)dateString;
 
 @end

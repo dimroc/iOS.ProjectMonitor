@@ -8,9 +8,9 @@
 
 #import "DetailViewController.h"
 #import "Build.h"
+#import "Helper.h"
 
 @interface DetailViewController ()
-@property NSDateFormatter *dateFormatter;
 - (void)configureView;
 @end
 
@@ -19,8 +19,6 @@
 -(id)initWithCoder:(NSCoder *)aDecoder
 {
     self = [super initWithCoder:aDecoder];
-    self.dateFormatter = [[NSDateFormatter alloc] init];
-    [self.dateFormatter setDateFormat:@"MMM dd, yyyy h:mm a"];
     return self;
 }
 
@@ -46,13 +44,13 @@
       
       if ([self.build finishedAt]) {
           self.finishedAtLabel.text =
-            [self.dateFormatter stringFromDate:[self.build valueForKey:@"finishedAt"]];
+            [Helper stringFromDate:[self.build valueForKey:@"finishedAt"]];
       }
 
       self.statusLabel.text = [[self.build valueForKey:@"status"] description];
       NSString *shortType = [[self.build valueForKey:@"type"] stringByReplacingOccurrencesOfString:@"Build" withString:@""];
       self.typeLabel.text = shortType;
-      self.lastPollLabel.text = [self.dateFormatter stringFromDate:[self.build valueForKey:@"updatedAt"]];
+      self.lastPollLabel.text = [Helper stringFromDate:[self.build valueForKey:@"updatedAt"]];
       
       self.authorLabel.text = [self.build commitAuthor];
       self.emailLabel.text = [self.build commitEmail];

@@ -7,22 +7,9 @@
 //
 
 #import "SemaphoreBuild.h"
+#import "Helper.h"
 
 @implementation SemaphoreBuild
-
-static NSDateFormatter *dateFormatter;
-
-+ (void)initialize
-{
-    static BOOL initialized = NO;
-    if(!initialized)
-    {
-        initialized = YES;
-        dateFormatter = [[NSDateFormatter alloc] init];
-        [dateFormatter setTimeZone:[NSTimeZone timeZoneWithName:@"UTC"]];
-        [dateFormatter setDateFormat:@"yyyy-MM-dd'T'HH:mm:ssZZZ"];
-    }
-}
 
 + (void)fetch:(NSString*)authenticationToken success:(FetchBuildCallback)success failure:(void (^)(NSError *))failure
 {
@@ -110,7 +97,7 @@ static NSDateFormatter *dateFormatter;
 {
     if (json[key] && json[key] != (id)[NSNull null]) {
         @try {
-            NSDate *date = [dateFormatter dateFromString:json[key]];
+            NSDate *date = [Helper dateFromString:json[key]];
             return date;
         }
         @catch (NSException *exception) {
