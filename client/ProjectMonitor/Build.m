@@ -43,8 +43,12 @@ static NSArray* whitelistedKeys;
                            @"type", @"project", @"branch", @"status", @"url",
                            @"startedAt", @"finishedAt", @"commitSha", @"commitMessage",
                            @"commitAuthor", @"commitEmail", nil];
-        
     }
+}
+
++ (void)fetch:(NSString*)authenticationToken success:(FetchBuildCallback)success failure:(void (^)(NSError *)) failure
+{
+    [NSException raise:NSInternalInconsistencyException format:@"Must be called from subclass: %@", NSStringFromSelector(_cmd)];
 }
 
 + (NSArray *)all

@@ -19,6 +19,10 @@ extern NSString * const PMBuildDidSaveNotication;
 + (void)refreshSavedBuildsInBackground:(void (^)(BOOL, NSArray*))callback;
 + (void)saveInBackground:(NSArray *)builds withBlock: (void (^)(BOOL))mainThreadCallback;
 
+# pragma mark Abstract methods
++ (void)fetch:(NSString*)authenticationToken success:(FetchBuildCallback)success failure:(void (^)(NSError *)) failure;
+
+#pragma mark properties
 @property (nonatomic, retain) NSString * project;
 @property (nonatomic, retain) NSString * branch;
 @property (nonatomic, retain) NSString * type;
