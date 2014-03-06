@@ -59,10 +59,13 @@
     NSMutableDictionary *dic = [NSMutableDictionary dictionary];
     
     [dic setValue:@"SemaphoreBuild" forKey:@"type"];
+    [dic setValue:[self token] forKey:@"accessToken"];
+    
     [dic setValue:json[@"project_name"] forKey:@"project"];
     [dic setValue:json[@"branch_name"] forKey:@"branch"];
     [dic setValue:json[@"result"] forKey:@"status"];
     [dic setValue:json[@"branch_status_url"] forKey:@"url"];
+
     [dic setValue:[Helper parseDateSafelyFromDictionary:json withKey:@"started_at"] forKey:@"startedAt"];
     [dic setValue:[Helper parseDateSafelyFromDictionary:json withKey:@"finished_at"] forKey:@"finishedAt"];
     

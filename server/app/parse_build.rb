@@ -1,9 +1,10 @@
 class ParseBuild < Hashie::Trash
-  property :project, required: true
-  property :url, required: true
+  property :project
+  property :url
   property :type, required: true
   property :status, required: true
-  property :branch, required: true
+  property :branch
+  property :accessToken
 
   property :startedAt, transform_with: lambda { |v| date_hash(v) }
   property :finishedAt, transform_with: lambda { |v| date_hash(v) }
@@ -29,11 +30,11 @@ class ParseBuild < Hashie::Trash
 
   def self.merge(original, updated)
     if updated.status == "pending" && !original.status.include?("pending")
-      updated.merge("status" => "#{original.status}-pending")
+      original.merge(updated.merge("status" => "#{original.status}-pending"))
     elsif updated.status == "pending" && original.status.include?("pending")
-      updated.merge("status" => original.status)
+      original.merge(updated.merge("status" => original.status))
     else
-      updated
+      original.merge(updated)
     end
   end
 

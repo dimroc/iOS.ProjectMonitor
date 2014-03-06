@@ -59,6 +59,7 @@
     
     [dic setValue:[self statusFromResult:[input[@"last_build_result"] intValue]] forKey:@"status"];
     
+    [dic setValue:[self token] forKey:@"accessToken"];
     [dic setValue:[self generateUrlWithProject:input[@"slug"]] forKey:@"url"];
     
     [dic setValue:[Helper parseDateSafelyFromDictionary:input withKey:@"last_build_started_at"] forKey:@"startedAt"];

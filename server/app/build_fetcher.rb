@@ -10,25 +10,16 @@ class BuildFetcher
   end
 
   def fetch
-    updated_build = parse(retrieve_from_url)
-    updated_build.objectId = build.objectId
-    updated_build.user = build.user
-    updated_build
-  end
-
-  private
-
-  def parse(content)
     raise NotImplementedError
   end
 
-  def retrieve_from_url
-    code, body = CachedHttpParty.get(build.url)
+  def retrieve_from_url(url)
+    code, body = CachedHttpParty.get(url)
 
     if code < 300
       body
     else
-      raise StandardError, "Error connecting to <#{build.url}?. Status: #{code} Message: #{body}"
+      raise StandardError, "Error connecting to <#{url}?. Status: #{code} Message: #{body}"
     end
   end
 end

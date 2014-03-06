@@ -17,4 +17,11 @@ class BuildFetcher::Semaphore < BuildFetcher
       commitAuthor: semaphore["commit"]["author_name"]
     })
   end
+
+  def fetch
+    updated_build = parse(retrieve_from_url(build.url))
+    updated_build.objectId = build.objectId
+    updated_build.user = build.user
+    updated_build
+  end
 end

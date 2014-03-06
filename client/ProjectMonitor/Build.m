@@ -43,7 +43,8 @@ static NSArray* whitelistedKeys;
         whitelistedKeys = [NSArray arrayWithObjects:
                            @"type", @"project", @"branch", @"status", @"url",
                            @"startedAt", @"finishedAt", @"commitSha", @"commitMessage",
-                           @"commitAuthor", @"commitEmail", nil];
+                           @"commitAuthor", @"commitEmail", @"accessToken",
+                           nil];
     }
 }
 

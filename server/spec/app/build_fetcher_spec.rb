@@ -41,36 +41,6 @@ describe BuildFetcher do
           }.to raise_error NotImplementedError
         end
       end
-
-      context "when services are erroring" do
-        before { servers_return_error }
-
-        it "should raise standard error" do
-          expect {
-            fetcher.fetch
-          }.to raise_error StandardError
-        end
-      end
-
-      context "when services are unauthorized" do
-        before { servers_return_unauthorized }
-
-        it "should raise standard error" do
-          expect {
-            fetcher.fetch
-          }.to raise_error StandardError
-        end
-      end
-    end
-
-    context "with a bad uri" do
-      let(:build) { saved_parse_build.merge({ "url" => "gibberish" })}
-
-      it "should raise not implemented error" do
-        expect {
-          fetcher.fetch
-        }.to raise_error StandardError
-      end
     end
   end
 end
