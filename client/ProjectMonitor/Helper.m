@@ -36,6 +36,21 @@ dispatch_queue_t dateFormatterQueue;
     
 }
 
++ (NSDate *)parseDateSafelyFromDictionary:(NSDictionary*)dic withKey:(NSString*)key
+{
+    if (dic && dic[key] && dic[key] != (id)[NSNull null]) {
+        @try {
+            NSDate *date = [self dateFromString:dic[key]];
+            return date;
+        }
+        @catch (NSException *exception) {
+            NSLog(@"# Failed to parse %@", dic[key]);
+        }
+    }
+    
+    return nil;
+}
+
 #pragma mark date helpers
 
 // Rather than recreating a DateFormatter everywhere, we'll reuse the same one in a thread safe manner.
@@ -64,6 +79,11 @@ dispatch_queue_t dateFormatterQueue;
     });
     
     return rval;
+}
+
++ (BOOL)isAnyNull:(id)value
+{
+    return !value || value == (id)[NSNull null];
 }
 
 @end

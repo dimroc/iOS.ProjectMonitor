@@ -13,5 +13,7 @@
 + (BOOL)stringValid:(NSString*)value;
 + (NSString*) stringFromDate:(NSDate*)date;
 + (NSDate*) dateFromString:(NSString*)dateString;
++ (NSDate *)parseDateSafelyFromDictionary:(NSDictionary*)json withKey:(NSString*)key;
++ (BOOL)isAnyNull:(id)value;
 
 @end

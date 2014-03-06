@@ -9,18 +9,16 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
-typedef void (^FetchBuildCallback)(NSArray *);
 extern NSString * const PMBuildDidSaveNotication;
 
 @interface Build : NSManagedObject
 
 + (NSArray *)all;
++ (NSArray *)forType:(NSString*)type;
 + (NSArray *)saved;
+
 + (void)refreshSavedBuildsInBackground:(void (^)(BOOL, NSArray*))callback;
 + (void)saveInBackground:(NSArray *)builds withBlock: (void (^)(BOOL))mainThreadCallback;
-
-# pragma mark Abstract methods
-+ (void)fetch:(NSString*)authenticationToken success:(FetchBuildCallback)success failure:(void (^)(NSError *)) failure;
 
 #pragma mark properties
 @property (nonatomic, retain) NSString * project;

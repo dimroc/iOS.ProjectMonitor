@@ -27,6 +27,9 @@
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="done"/>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="HS3-hk-Wpu" id="b6j-gG-c70"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                         </tableViewCellContentView>
@@ -52,7 +55,15 @@
         <scene sceneID="q57-la-9lV">
             <objects>
                 <tableViewController id="k8K-3E-hJA" customClass="TravisBuildsViewController" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="oMz-oU-hcM"/>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="oMz-oU-hcM">
+                        <barButtonItem key="rightBarButtonItem" title="Add" id="zW4-nG-Jtx">
+                            <connections>
+                                <action selector="addSelectedBuildsAction:" destination="k8K-3E-hJA" id="D5p-ni-qh7"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hzt-AR-0l0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

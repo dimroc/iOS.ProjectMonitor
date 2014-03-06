@@ -1,0 +1,28 @@
+[
+  {
+  "id": 47097,
+  "slug": "best-org/monolithic_project",
+  "description": "Best bootstrap project ever",
+  "last_build_id": 2734776,
+  "last_build_number": "6655",
+  "last_build_status": 0,
+  "last_build_result": 0,
+  "last_build_duration": 491,
+  "last_build_language": null,
+  "last_build_started_at": "2014-03-01T00:45:58Z",
+  "last_build_finished_at": "2014-03-01T00:54:09Z"
+  },
+  {
+  "id": 78595,
+  "slug": "best-org/new-service",
+  "description": "The first of many micro services",
+  "last_build_id": 2728266,
+  "last_build_number": "78",
+  "last_build_status": 1,
+  "last_build_result": 1,
+  "last_build_duration": 65,
+  "last_build_language": null,
+  "last_build_started_at": "2014-02-28T17:23:27Z",
+  "last_build_finished_at": "2014-02-28T17:24:32Z"
+  }
+]

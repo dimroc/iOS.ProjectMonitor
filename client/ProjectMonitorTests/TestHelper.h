@@ -1,13 +1,15 @@
 //
-//  TravisBuild.h
+//  TestHelper.h
 //  ProjectMonitor
 //
 //  Created by Dimitri Roche on 3/5/14.
 //  Copyright (c) 2014 Dimitri Roche. All rights reserved.
 //
 
-#import "Build.h"
+#import <Foundation/Foundation.h>
 
-@interface TravisBuild : Build
+@interface TestHelper : NSObject
+
++ (id)dataFromJSONFileNamed:(NSString *)fileName;
 
 @end

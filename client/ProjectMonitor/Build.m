@@ -8,6 +8,7 @@
 
 #import "Build.h"
 #import "ParseHelper.h"
+#import "Helper.h"
 
 @implementation Build
 
@@ -46,14 +47,16 @@ static NSArray* whitelistedKeys;
     }
 }
 
-+ (void)fetch:(NSString*)authenticationToken success:(FetchBuildCallback)success failure:(void (^)(NSError *)) failure
-{
-    [NSException raise:NSInternalInconsistencyException format:@"Must be called from subclass: %@", NSStringFromSelector(_cmd)];
-}
-
 + (NSArray *)all
 {
     return [Build MR_findAllSortedBy:sortString ascending:YES];
+}
+
++ (NSArray *)forType:(NSString*)type
+{
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"type = %@",type];
+
+    return [Build MR_findAllSortedBy:sortString ascending:YES withPredicate:predicate];
 }
 
 + (NSArray *)saved
@@ -116,11 +119,30 @@ static NSArray* whitelistedKeys;
     }];
 }
 
+
++ (id)valueOrNSNull:(id)value
+{
+    if (value) {
+        return value;
+    } else {
+        return [NSNull null];
+    }
+}
+
+- (id)valueOrNil:(id)value
+{
+    if ([Helper isAnyNull:value]) {
+        return nil;
+    } else {
+        return value;
+    }
+}
+
 + (PFObject *)generateParseObject:(Build*) build
 {
     PFObject *buildObject = [PFObject objectWithClassName:@"Build"];
     for (NSString* key in whitelistedKeys) {
-        buildObject[key] = [build valueForKey:key];
+        buildObject[key] = [self valueOrNSNull: [build valueForKey:key]];
     }
     
     buildObject[@"user"] = [PFUser currentUser];
@@ -143,7 +165,8 @@ static NSArray* whitelistedKeys;
 - (void)setFromDictionary:(NSDictionary*)dic
 {
     for (NSString* key in whitelistedKeys) {
-        [self setValue:dic[key] forKey:key];
+        id someVal = [self valueOrNil:dic[key]];
+        [self setValue:someVal forKey:key];
     }
 }
 

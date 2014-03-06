@@ -7,7 +7,7 @@
 //
 
 #import "SemaphoreBuildsViewController.h"
-#import "SemaphoreBuild.h"
+#import "SemaphoreBuildFactory.h"
 #import "BuildCell.h"
 #import "BlockAlertViewDelegate.h"
 
@@ -19,7 +19,7 @@
 
 - (void) loadWithToken:(NSString*) authenticationToken
 {
-    [SemaphoreBuild fetch: authenticationToken success: ^(NSArray* builds){
+    [[SemaphoreBuildFactory initWithToken:authenticationToken] fetchWithSuccess: ^(NSArray* builds){
         [super populateWithBuilds:builds];
     } failure: ^(NSError *error) {
         [super showErrorMessage:error];

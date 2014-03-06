@@ -12,7 +12,8 @@
 
 @interface MasterViewController ()
 
-@property (strong, nonatomic) NSArray *builds;
+@property (strong, nonatomic) NSArray *semaphoreBuilds;
+@property (strong, nonatomic) NSArray *travisBuilds;
 
 @end
 
@@ -21,13 +22,19 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.builds = [Build all];
+    [self refreshBuilds];
     
     UINib *nib = [UINib nibWithNibName:@"BuildCell" bundle:nil];
     [[self tableView] registerNib:nib forCellReuseIdentifier:@"BuildCell"];
     
     NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
     [center addObserver:self selector:@selector(handleNewBuild:) name:PMBuildDidSaveNotication object:nil];
+}
+
+- (void)refreshBuilds
+{
+    self.semaphoreBuilds = [Build forType:@"SemaphoreBuild"];
+    self.travisBuilds = [Build forType:@"TravisBuild"];
 }
 
 - (void)forceRefresh
@@ -60,7 +67,7 @@
     
     [Build refreshSavedBuildsInBackground:^(BOOL succeeded, NSArray *builds) {
         if (succeeded) {
-            [that setBuilds:builds];
+            [that refreshBuilds];
             dispatch_async(dispatch_get_main_queue(), ^{
                 NSLog(@"# Finished refresh");
                 [that.tableView reloadData];
@@ -79,7 +86,8 @@
 
 - (void)clearTable
 {
-    self.builds = [NSArray array];
+    self.semaphoreBuilds = [NSArray array];
+    self.travisBuilds = [NSArray array];
     [self.tableView reloadData];
 }
 
@@ -121,9 +129,9 @@
 {
     switch (section) {
         case 0:
-            return [self.builds count];
+            return [self.semaphoreBuilds count];
         default:
-            return 0;
+            return [self.travisBuilds count];
     }
 }
 
@@ -131,10 +139,8 @@
 {
     static NSString *CellIdentifier = @"BuildCell";
     BuildCell *cell = (BuildCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    
-    Build *build = [_builds objectAtIndex:indexPath.row];
+    Build* build = [self getBuildForIndexPath:indexPath];
     [cell setFromBuild:build];
-    
     return cell;
 }
 
@@ -145,12 +151,29 @@
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    Build *build = [self.builds objectAtIndex:indexPath.row];
+    Build* build = [self getBuildForIndexPath:indexPath];
     [build deleteInBackground];
-    NSMutableArray *mutableCopy = [NSMutableArray arrayWithArray:self.builds];
-    [mutableCopy removeObjectAtIndex:indexPath.row];
-    [self setBuilds: [NSArray arrayWithArray:mutableCopy]];
+    
+    [self refreshBuilds];
     [self.tableView reloadData];
+}
+                    
+- (Build*)getBuildForIndexPath:(NSIndexPath *)indexPath
+{
+    Build *build;
+    switch (indexPath.section) {
+        case 0:
+            build = [_semaphoreBuilds objectAtIndex:indexPath.row];
+            break;
+        case 1:
+            build = [_travisBuilds objectAtIndex:indexPath.row];
+            break;
+        default:
+            NSLog(@"Unknown section %@", [indexPath description]);
+            @throw([NSException exceptionWithName:NSInternalInconsistencyException reason:@"Unknown section" userInfo: [NSDictionary dictionary]]);
+    }
+    
+    return build;
 }
 
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
@@ -162,7 +185,7 @@
 {
     if ([[segue identifier] isEqualToString:@"toDetailsView"]) {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        Build *build = [[self builds] objectAtIndex:indexPath.row];
+        Build *build = [self getBuildForIndexPath:indexPath];
         [[segue destinationViewController] setBuild:build];
     }
 }

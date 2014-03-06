@@ -8,8 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		20A950CD295D4BD99D563FD3 /* libPods-ProjectMonitorTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B0FF487CBEA473C8D7D223C /* libPods-ProjectMonitorTests.a */; };
-		5E09522A18BADB9500689FBA /* SemaphoreBuild.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E09522918BADB9500689FBA /* SemaphoreBuild.m */; };
-		5E09522C18BADDB100689FBA /* SemaphoreBuildSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E09522B18BADDB100689FBA /* SemaphoreBuildSpec.m */; };
+		5E09522A18BADB9500689FBA /* SemaphoreBuildFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E09522918BADB9500689FBA /* SemaphoreBuildFactory.m */; };
+		5E09522C18BADDB100689FBA /* SemaphoreBuildFactorySpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E09522B18BADDB100689FBA /* SemaphoreBuildFactorySpec.m */; };
 		5E3ED1001899F14F00632144 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E3ED0FF1899F14F00632144 /* Foundation.framework */; };
 		5E3ED1021899F14F00632144 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E3ED1011899F14F00632144 /* CoreGraphics.framework */; };
 		5E3ED1041899F14F00632144 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E3ED1031899F14F00632144 /* UIKit.framework */; };
@@ -56,6 +56,11 @@
 		5E8D8A5418C5FDDF0053E1DC /* Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E8D8A5318C5FDDF0053E1DC /* Helper.m */; };
 		5E8D8A5718C600850053E1DC /* BuildsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E8D8A5618C600850053E1DC /* BuildsViewController.m */; };
 		5E8D8A5A18C605B40053E1DC /* TravisBuildsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E8D8A5918C605B40053E1DC /* TravisBuildsViewController.m */; };
+		5E8D8A5D18C752590053E1DC /* TravisBuildFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E8D8A5C18C752590053E1DC /* TravisBuildFactory.m */; };
+		5E8D8A5F18C81BF30053E1DC /* TravisBuildFactorySpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E8D8A5E18C81BF30053E1DC /* TravisBuildFactorySpec.m */; };
+		5E8D8A6418C81E210053E1DC /* travisRepos.json in Resources */ = {isa = PBXBuildFile; fileRef = 5E8D8A6318C81E210053E1DC /* travisRepos.json */; };
+		5E8D8A6718C81EE30053E1DC /* TestHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E8D8A6618C81EE30053E1DC /* TestHelper.m */; };
+		5E8D8A6A18C83C8B0053E1DC /* BuildFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E8D8A6918C83C8B0053E1DC /* BuildFactory.m */; };
 		5EBF47D018A69E4C00175065 /* ParseUITableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EBF47CF18A69E4C00175065 /* ParseUITableViewController.m */; };
 		5EBF47DD18A6A3A600175065 /* ProjectMonitorSignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EBF47DC18A6A3A600175065 /* ProjectMonitorSignUpViewController.m */; };
 		5EBF47E018A6A41000175065 /* ProjectMonitorLogInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EBF47DF18A6A41000175065 /* ProjectMonitorLogInViewController.m */; };
@@ -78,9 +83,9 @@
 /* Begin PBXFileReference section */
 		2B0FF487CBEA473C8D7D223C /* libPods-ProjectMonitorTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ProjectMonitorTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DC397F864E74853B41B48C1 /* Pods-ProjectMonitor.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProjectMonitor.xcconfig"; path = "Pods/Pods-ProjectMonitor.xcconfig"; sourceTree = "<group>"; };
-		5E09522818BADB9500689FBA /* SemaphoreBuild.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SemaphoreBuild.h; sourceTree = "<group>"; };
-		5E09522918BADB9500689FBA /* SemaphoreBuild.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SemaphoreBuild.m; sourceTree = "<group>"; };
-		5E09522B18BADDB100689FBA /* SemaphoreBuildSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SemaphoreBuildSpec.m; sourceTree = "<group>"; };
+		5E09522818BADB9500689FBA /* SemaphoreBuildFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SemaphoreBuildFactory.h; sourceTree = "<group>"; };
+		5E09522918BADB9500689FBA /* SemaphoreBuildFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SemaphoreBuildFactory.m; sourceTree = "<group>"; };
+		5E09522B18BADDB100689FBA /* SemaphoreBuildFactorySpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SemaphoreBuildFactorySpec.m; sourceTree = "<group>"; };
 		5E3ED0FC1899F14F00632144 /* ProjectMonitor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProjectMonitor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E3ED0FF1899F14F00632144 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		5E3ED1011899F14F00632144 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -144,6 +149,14 @@
 		5E8D8A5618C600850053E1DC /* BuildsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BuildsViewController.m; sourceTree = "<group>"; };
 		5E8D8A5818C605B40053E1DC /* TravisBuildsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TravisBuildsViewController.h; sourceTree = "<group>"; };
 		5E8D8A5918C605B40053E1DC /* TravisBuildsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TravisBuildsViewController.m; sourceTree = "<group>"; };
+		5E8D8A5B18C752590053E1DC /* TravisBuildFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TravisBuildFactory.h; sourceTree = "<group>"; };
+		5E8D8A5C18C752590053E1DC /* TravisBuildFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TravisBuildFactory.m; sourceTree = "<group>"; };
+		5E8D8A5E18C81BF30053E1DC /* TravisBuildFactorySpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TravisBuildFactorySpec.m; sourceTree = "<group>"; };
+		5E8D8A6318C81E210053E1DC /* travisRepos.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = travisRepos.json; sourceTree = "<group>"; };
+		5E8D8A6518C81EE30053E1DC /* TestHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestHelper.h; sourceTree = "<group>"; };
+		5E8D8A6618C81EE30053E1DC /* TestHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestHelper.m; sourceTree = "<group>"; };
+		5E8D8A6818C83C8B0053E1DC /* BuildFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuildFactory.h; sourceTree = "<group>"; };
+		5E8D8A6918C83C8B0053E1DC /* BuildFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BuildFactory.m; sourceTree = "<group>"; };
 		5EBF47CE18A69E4C00175065 /* ParseUITableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParseUITableViewController.h; sourceTree = "<group>"; };
 		5EBF47CF18A69E4C00175065 /* ParseUITableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParseUITableViewController.m; sourceTree = "<group>"; };
 		5EBF47DB18A6A3A600175065 /* ProjectMonitorSignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProjectMonitorSignUpViewController.h; sourceTree = "<group>"; };
@@ -266,8 +279,12 @@
 		5E3ED1301899F15000632144 /* ProjectMonitorTests */ = {
 			isa = PBXGroup;
 			children = (
+				5E8D8A6518C81EE30053E1DC /* TestHelper.h */,
 				5E79F1EA18AD5702005BF986 /* BuildSpec.m */,
-				5E09522B18BADDB100689FBA /* SemaphoreBuildSpec.m */,
+				5E09522B18BADDB100689FBA /* SemaphoreBuildFactorySpec.m */,
+				5E8D8A6618C81EE30053E1DC /* TestHelper.m */,
+				5E8D8A5E18C81BF30053E1DC /* TravisBuildFactorySpec.m */,
+				5E8D8A6218C81DED0053E1DC /* Fixtures */,
 				5E3ED1311899F15000632144 /* Supporting Files */,
 			);
 			path = ProjectMonitorTests;
@@ -290,8 +307,12 @@
 				5E79F1CD18AA4FBB005BF986 /* Source.h */,
 				5E79F1CE18AA4FBB005BF986 /* SourceFactory.h */,
 				5E79F1CF18AA4FBB005BF986 /* SourceFactory.m */,
-				5E09522818BADB9500689FBA /* SemaphoreBuild.h */,
-				5E09522918BADB9500689FBA /* SemaphoreBuild.m */,
+				5E09522818BADB9500689FBA /* SemaphoreBuildFactory.h */,
+				5E09522918BADB9500689FBA /* SemaphoreBuildFactory.m */,
+				5E8D8A5B18C752590053E1DC /* TravisBuildFactory.h */,
+				5E8D8A5C18C752590053E1DC /* TravisBuildFactory.m */,
+				5E8D8A6818C83C8B0053E1DC /* BuildFactory.h */,
+				5E8D8A6918C83C8B0053E1DC /* BuildFactory.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -365,6 +386,14 @@
 				5E8D8A5318C5FDDF0053E1DC /* Helper.m */,
 			);
 			name = Misc;
+			sourceTree = "<group>";
+		};
+		5E8D8A6218C81DED0053E1DC /* Fixtures */ = {
+			isa = PBXGroup;
+			children = (
+				5E8D8A6318C81E210053E1DC /* travisRepos.json */,
+			);
+			name = Fixtures;
 			sourceTree = "<group>";
 		};
 		5EBF47DA18A6A37300175065 /* Parse */ = {
@@ -491,6 +520,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5E8D8A6418C81E210053E1DC /* travisRepos.json in Resources */,
 				5E3ED1351899F15000632144 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -572,6 +602,7 @@
 				5E3ED156189A089E00632144 /* ParseHelper.m in Sources */,
 				5E79F1D118AA4FBB005BF986 /* SourceFactory.m in Sources */,
 				5E8D8A5A18C605B40053E1DC /* TravisBuildsViewController.m in Sources */,
+				5E8D8A5D18C752590053E1DC /* TravisBuildFactory.m in Sources */,
 				5E3ED11E1899F14F00632144 /* MasterViewController.m in Sources */,
 				5E3ED11B1899F14F00632144 /* ProjectMonitor.xcdatamodeld in Sources */,
 				5EBF47E318A6AE7E00175065 /* AddBuildViewController.m in Sources */,
@@ -580,10 +611,11 @@
 				5EBF47DD18A6A3A600175065 /* ProjectMonitorSignUpViewController.m in Sources */,
 				5E3ED1121899F14F00632144 /* AppDelegate.m in Sources */,
 				5E79F1D018AA4FBB005BF986 /* Build.m in Sources */,
+				5E8D8A6A18C83C8B0053E1DC /* BuildFactory.m in Sources */,
 				5E755FA018B2F5D700692F5F /* BlockAlertViewDelegate.m in Sources */,
 				5E3ED10E1899F14F00632144 /* main.m in Sources */,
 				5E8D8A5018C5FC050053E1DC /* TravisSourceViewController.m in Sources */,
-				5E09522A18BADB9500689FBA /* SemaphoreBuild.m in Sources */,
+				5E09522A18BADB9500689FBA /* SemaphoreBuildFactory.m in Sources */,
 				5EBF47E018A6A41000175065 /* ProjectMonitorLogInViewController.m in Sources */,
 				5E79F1DA18AA5085005BF986 /* BuildCell.m in Sources */,
 			);
@@ -593,8 +625,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5E09522C18BADDB100689FBA /* SemaphoreBuildSpec.m in Sources */,
+				5E09522C18BADDB100689FBA /* SemaphoreBuildFactorySpec.m in Sources */,
 				5E79F1EB18AD5702005BF986 /* BuildSpec.m in Sources */,
+				5E8D8A5F18C81BF30053E1DC /* TravisBuildFactorySpec.m in Sources */,
+				5E8D8A6718C81EE30053E1DC /* TestHelper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

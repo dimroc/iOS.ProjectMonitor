@@ -7,6 +7,7 @@
 //
 
 #import "TravisBuildsViewController.h"
+#import "TravisBuildFactory.h"
 
 @interface TravisBuildsViewController ()
 
@@ -16,7 +17,12 @@
 
 - (void) loadWithToken:(NSString*) authenticationToken
 {
-    
+    BuildFactory* factory = [[TravisBuildFactory alloc] initWithToken:authenticationToken];
+    [factory fetchWithSuccess: ^(NSArray* builds){
+        [super populateWithBuilds:builds];
+    } failure: ^(NSError *error) {
+        [super showErrorMessage:error];
+    }];
 }
 
 @end
