@@ -16,13 +16,13 @@ describe(@"isSimilarTo:", ^{
         it(@"should be true", ^{
             Build *build1 = [Build MR_createEntity];
             [build1 setProject:@"TestProject"];
-            [build1 setBranch:@"Test Branch"];
+            [build1 setUrl:@"http://test"];
             [build1 setType:@"SemaphoreBuild"];
             [build1 setCommitAuthor:@"DoesntMatter"];
 
             Build *build2 = [Build MR_createEntity];
             [build2 setProject:@"TestProject"];
-            [build2 setBranch:@"Test Branch"];
+            [build2 setUrl:@"http://test"];
             [build2 setType:@"SemaphoreBuild"];
             
             [[theValue([build1 isSimilarTo:build2]) should] equal:theValue(YES)];
@@ -34,12 +34,11 @@ describe(@"isSimilarTo:", ^{
         it(@"should be false", ^{
             Build *build1 = [Build MR_createEntity];
             [build1 setProject:@"Another Project"];
-            [build1 setBranch:@"Test Branch"];
             [build1 setType:@"SemaphoreBuild"];
             
             Build *build2 = [Build MR_createEntity];
             [build2 setProject:@"TestProject"];
-            [build2 setBranch:@"Test Branch"];
+            [build2 setUrl:@"http://iexist"];
             [build2 setType:@"SemaphoreBuild"];
             
             [[theValue([build1 isSimilarTo:build2]) should] equal:theValue(NO)];
