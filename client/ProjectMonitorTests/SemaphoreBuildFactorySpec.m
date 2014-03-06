@@ -1,5 +1,5 @@
 //
-//  SemaphoreBuildSpec.m
+//  SemaphoreBuildFactorySpec.m
 //  ProjectMonitor
 //
 //  Created by Dimitri Roche on 2/23/14.
@@ -7,11 +7,12 @@
 //
 
 #import "Kiwi.h"
-#import "SemaphoreBuild.h"
+#import "SemaphoreBuildFactory.h"
+#import "Build.h"
 
-SPEC_BEGIN(SemaphoreBuildSpec)
+SPEC_BEGIN(SemaphoreBuildFactorySpec)
 
-describe(@".fromJson", ^{
+describe(@"#fromJson", ^{
     context(@"with started_at and finished_at null", ^{
         specify(^{
             NSDictionary *json = [NSDictionary dictionaryWithObjectsAndKeys:
@@ -23,7 +24,7 @@ describe(@".fromJson", ^{
                                   [NSNull null], @"finished_at",
                                   nil];
             
-            Build *build = [SemaphoreBuild fromDictionary:json];
+            Build *build = [[[SemaphoreBuildFactory alloc] initWithToken:@"gibbiersh"] fromDictionary:json];
             [[[build finishedAt] should] beNil];
             [[[build startedAt] should] beNil];
         });
@@ -40,7 +41,7 @@ describe(@".fromJson", ^{
                                   @"2014-02-07T23:40:00Z", @"finished_at",
                                   nil];
             
-            Build *build = [SemaphoreBuild fromDictionary:json];
+            Build *build = [[[SemaphoreBuildFactory alloc] initWithToken:@"gibbiersh"] fromDictionary:json];
             
             [[[[build finishedAt] description] should] containString: @"2014"];
             [[[[build startedAt] description] should] containString: @"2014"];
@@ -58,7 +59,7 @@ describe(@".fromJson", ^{
                                   @"fdsa", @"finished_at",
                                   nil];
             
-            Build *build = [SemaphoreBuild fromDictionary:json];
+            Build *build = [[[SemaphoreBuildFactory alloc] initWithToken:@"gibbiersh"] fromDictionary:json];
             [[[build finishedAt] should] beNil];
             [[[build startedAt] should] beNil];
         });

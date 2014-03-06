@@ -8,6 +8,7 @@
 
 #import "Build.h"
 #import "ParseHelper.h"
+#import "Helper.h"
 
 @implementation Build
 
@@ -42,14 +43,21 @@ static NSArray* whitelistedKeys;
         whitelistedKeys = [NSArray arrayWithObjects:
                            @"type", @"project", @"branch", @"status", @"url",
                            @"startedAt", @"finishedAt", @"commitSha", @"commitMessage",
-                           @"commitAuthor", @"commitEmail", nil];
-        
+                           @"commitAuthor", @"commitEmail", @"accessToken",
+                           nil];
     }
 }
 
 + (NSArray *)all
 {
     return [Build MR_findAllSortedBy:sortString ascending:YES];
+}
+
++ (NSArray *)forType:(NSString*)type
+{
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"type = %@",type];
+
+    return [Build MR_findAllSortedBy:sortString ascending:YES withPredicate:predicate];
 }
 
 + (NSArray *)saved
@@ -112,11 +120,30 @@ static NSArray* whitelistedKeys;
     }];
 }
 
+
++ (id)valueOrNSNull:(id)value
+{
+    if (value) {
+        return value;
+    } else {
+        return [NSNull null];
+    }
+}
+
+- (id)valueOrNil:(id)value
+{
+    if ([Helper isAnyNull:value]) {
+        return nil;
+    } else {
+        return value;
+    }
+}
+
 + (PFObject *)generateParseObject:(Build*) build
 {
     PFObject *buildObject = [PFObject objectWithClassName:@"Build"];
     for (NSString* key in whitelistedKeys) {
-        buildObject[key] = [build valueForKey:key];
+        buildObject[key] = [self valueOrNSNull: [build valueForKey:key]];
     }
     
     buildObject[@"user"] = [PFUser currentUser];
@@ -132,14 +159,15 @@ static NSArray* whitelistedKeys;
 - (BOOL)isSimilarTo:(Build *)build
 {
     return [[self project] isEqualToString:[build project]] &&
-        [[self branch] isEqualToString: [build branch]] &&
+        [[self url] isEqualToString: [build url]] &&
         [[self type] isEqualToString: [build type]];
 }
 
 - (void)setFromDictionary:(NSDictionary*)dic
 {
     for (NSString* key in whitelistedKeys) {
-        [self setValue:dic[key] forKey:key];
+        id someVal = [self valueOrNil:dic[key]];
+        [self setValue:someVal forKey:key];
     }
 }
 

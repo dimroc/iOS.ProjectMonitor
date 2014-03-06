@@ -8,6 +8,7 @@
 
 #import "BuildCell.h"
 #import "Build.h"
+#import "Helper.h"
 
 @interface BuildCell ()
 
@@ -35,11 +36,7 @@
     [self setBuild:build];
     self.projectLabel.text = self.build.project;
     self.branchLabel.text = self.build.branch;
-    
-    NSDateFormatter *format = [[NSDateFormatter alloc] init];
-    [format setDateFormat:@"MMM dd, yyyy hh:mm a"];
-    self.timeLabel.text = [format stringFromDate: self.build.startedAt];
-    
+    self.timeLabel.text = [Helper stringFromDate: self.build.startedAt];
     self.statusImageView.image = [self imageForStatus];
 }
 

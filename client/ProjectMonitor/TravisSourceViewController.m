@@ -1,28 +1,27 @@
 //
-//  SemaphoreSourceViewController.m
+//  TravisSourceViewController.m
 //  ProjectMonitor
 //
-//  Created by Dimitri Roche on 2/8/14.
+//  Created by Dimitri Roche on 3/4/14.
 //  Copyright (c) 2014 Dimitri Roche. All rights reserved.
 //
 
-#import "SemaphoreSourceViewController.h"
+#import "TravisSourceViewController.h"
 #import "BuildsViewController.h"
-#import "Build.h"
 #import "Helper.h"
 
-@interface SemaphoreSourceViewController ()
+@interface TravisSourceViewController ()
 
 @property (nonatomic, copy) NSArray *builds;
 
 @end
 
-@implementation SemaphoreSourceViewController
+@implementation TravisSourceViewController
 
 -(id)initWithCoder:(NSCoder *)aDecoder
 {
     self = [super initWithCoder:aDecoder];
-    [self setName:@"Semaphore"];
+    [self setName:@"Travis"];
     [self setController:self];
     return self;
 }
@@ -30,7 +29,7 @@
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
     if ([Helper stringValid: textField.text]) {
         [textField resignFirstResponder];
-        [self performSegueWithIdentifier:@"toAvailableSemaphoreBuilds" sender:self];
+        [self performSegueWithIdentifier:@"toAvailableTravisBuilds" sender:self];
         return YES;
     }
     else {
