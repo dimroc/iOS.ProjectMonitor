@@ -7,13 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BuildFactory.h"
 
 @interface BuildsViewController : UITableViewController
 
-- (void)loadWithToken:(NSString*) authenticationToken;
+@property (nonatomic, weak) BuildFactory *buildFactory;
 
+- (void)loadWithFactory:(BuildFactory*) buildFactory;
 - (IBAction)addSelectedBuildsAction:(id)sender;
-- (void) populateWithBuilds:(NSArray *)builds;
-- (void)showErrorMessage: (NSError *)error;
 
 @end

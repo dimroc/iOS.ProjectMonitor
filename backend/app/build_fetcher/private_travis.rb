@@ -1,7 +1,7 @@
-class BuildFetcher::Travis < BuildFetcher
+class BuildFetcher::PrivateTravis < BuildFetcher
   def parse(content)
     ParseBuild.new({
-      type: "TravisBuild",
+      type: build_type,
       status: translate_result(content["result"]),
       startedAt: content["started_at"],
       finishedAt: content["finished_at"],
@@ -23,6 +23,14 @@ class BuildFetcher::Travis < BuildFetcher
     updated_build
   end
 
+  def base_url
+    "https://api.travis-ci.com"
+  end
+
+  def build_type
+    self.class.name.demodulize + "Build"
+  end
+
   private
 
   def translate_result(travis_result)
@@ -39,13 +47,13 @@ class BuildFetcher::Travis < BuildFetcher
   end
 
   def retrieve_repo
-    url = "https://api.travis-ci.com/repos/#{build.project}?access_token=#{build.accessToken}"
+    url = "#{base_url}/repos/#{build.project}?access_token=#{build.accessToken}"
     JSON.parse retrieve_from_url(url)
   end
 
   def retrieve_build_details(repo_info)
     build_id = repo_info["last_build_id"]
-    url = "https://api.travis-ci.com/builds/#{build_id}?access_token=#{build.accessToken}"
+    url = "#{base_url}/builds/#{build_id}?access_token=#{build.accessToken}"
     JSON.parse retrieve_from_url(url)
   end
 end

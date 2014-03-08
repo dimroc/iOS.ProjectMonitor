@@ -7,16 +7,16 @@
 //
 
 #import "Kiwi.h"
-#import "TravisBuildFactory.h"
+#import "PrivateTravisBuildFactory.h"
 #import "TestHelper.h"
 #import "Build.h"
 
-SPEC_BEGIN(TravisBuildFactorySpec)
+SPEC_BEGIN(PrivateTravisBuildFactorySpec)
 
 describe(@"#arrayFromResponse", ^{
     it(@"should return the correct number of builds from the expected response", ^{
         id response = [TestHelper dataFromJSONFileNamed:@"travisRepos"];
-        TravisBuildFactory* factory = [[TravisBuildFactory alloc] initWithToken:@"gibberish"];
+        PrivateTravisBuildFactory* factory = [[PrivateTravisBuildFactory alloc] initWithToken:@"gibberish"];
         NSArray *builds = [factory arrayFromResponse:response];
         
         [[theValue([builds count]) should] equal:theValue(2)];
@@ -29,13 +29,13 @@ describe(@"#arrayFromResponse", ^{
 describe(@"#fromDictionary", ^{
     it(@"should return a build from expected parameters", ^{
         id fixtures = [TestHelper dataFromJSONFileNamed:@"travisRepos"];
-        TravisBuildFactory* factory = [[TravisBuildFactory alloc] initWithToken:@"MyTestToken"];
+        PrivateTravisBuildFactory* factory = [[PrivateTravisBuildFactory alloc] initWithToken:@"MyTestToken"];
         Build *build = [factory fromDictionary: [fixtures objectAtIndex:0]];
         
         [[[build project] should] equal:@"best-org/monolithic_project"];
         [[[build status] should] equal:@"passed"];
         [[[build branch] should] beNil];
-        [[[build type] should] equal:@"TravisBuild"];
+        [[[build type] should] equal:@"PrivateTravisBuild"];
         [[[[build finishedAt] description] should] containString: @"2014"];
         [[[[build startedAt] description] should] containString: @"2014"];
         [[[build url] should] equal:@"https://api.travis-ci.com/repos/best-org/monolithic_project/builds?access_token=MyTestToken"];

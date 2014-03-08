@@ -9,7 +9,7 @@
 #import "BuildFactory.h"
 @class Build;
 
-@interface TravisBuildFactory : BuildFactory
+@interface PrivateTravisBuildFactory : BuildFactory
 
 // Public just for testing. Don't judge me.
 - (NSArray *)arrayFromResponse:(NSDictionary *)response;

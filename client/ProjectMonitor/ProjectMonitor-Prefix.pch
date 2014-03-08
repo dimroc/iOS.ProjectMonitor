@@ -17,11 +17,12 @@
   #import <Parse/Parse.h>
   #import <QuartzCore/QuartzCore.h>
   #import <AFNetworking/AFNetworking.h>
-  #import "Underscore.h"
+  #import <Underscore.h>
   #import <MBProgressHUD/MBProgressHUD.h>
+  #import <BlocksKit/BlocksKit.h>
 
   //#define MR_SHORTHAND
-  #import "CoreData+MagicalRecord.h"
+  #import <CoreData+MagicalRecord.h>
 
   #define _ Underscore
 #endif

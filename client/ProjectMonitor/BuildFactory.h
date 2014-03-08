@@ -14,7 +14,6 @@ typedef void (^FetchBuildCallback)(NSArray *);
 
 @property (nonatomic, copy) NSString *token;
 
-+ (BuildFactory *)initWithToken:(NSString*)token;
 - (id)initWithToken:(NSString*)token;
 
 - (NSArray *)removeExistingBuilds:(NSArray *)existingBuilds;

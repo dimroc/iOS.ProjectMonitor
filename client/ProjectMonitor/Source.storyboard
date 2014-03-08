@@ -4,10 +4,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
     </dependencies>
     <scenes>
-        <!--Semaphore Source View Controller-->
+        <!--Source View Controller-->
         <scene sceneID="y30-v2-G1c">
             <objects>
-                <tableViewController storyboardIdentifier="Semaphore" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ukv-iu-BD1" customClass="SemaphoreSourceViewController" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="Semaphore" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ukv-iu-BD1" customClass="SourceViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="u63-th-dld">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -42,17 +42,17 @@
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="authenticationTokenTextField" destination="Rk5-DA-upW" id="l9q-XU-fdH"/>
-                        <segue destination="Jic-GX-z5B" kind="push" identifier="toAvailableSemaphoreBuilds" id="FJb-90-fgS"/>
+                        <segue destination="Jic-GX-z5B" kind="push" identifier="toAvailableBuilds" id="FJb-90-fgS"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kPI-9Y-9Mv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="274" y="-48"/>
         </scene>
-        <!--Semaphore Builds View Controller - Builds-->
+        <!--Builds View Controller - Builds-->
         <scene sceneID="xmG-mL-aGm">
             <objects>
-                <tableViewController id="Jic-GX-z5B" customClass="SemaphoreBuildsViewController" sceneMemberID="viewController">
+                <tableViewController id="Jic-GX-z5B" customClass="BuildsViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="ZKp-Ik-vfc">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

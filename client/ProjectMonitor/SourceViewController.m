@@ -1,27 +1,28 @@
 //
-//  TravisSourceViewController.m
+//  SemaphoreSourceViewController.m
 //  ProjectMonitor
 //
-//  Created by Dimitri Roche on 3/4/14.
+//  Created by Dimitri Roche on 2/8/14.
 //  Copyright (c) 2014 Dimitri Roche. All rights reserved.
 //
 
-#import "TravisSourceViewController.h"
+#import "SourceViewController.h"
 #import "BuildsViewController.h"
+#import "Build.h"
 #import "Helper.h"
 
-@interface TravisSourceViewController ()
+@interface SourceViewController ()
 
 @property (nonatomic, copy) NSArray *builds;
 
 @end
 
-@implementation TravisSourceViewController
+@implementation SourceViewController
 
 -(id)initWithCoder:(NSCoder *)aDecoder
 {
     self = [super initWithCoder:aDecoder];
-    [self setName:@"Travis"];
+    [self setName:@"Semaphore"];
     [self setController:self];
     return self;
 }
@@ -29,7 +30,7 @@
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
     if ([Helper stringValid: textField.text]) {
         [textField resignFirstResponder];
-        [self performSegueWithIdentifier:@"toAvailableTravisBuilds" sender:self];
+        [self performSegueWithIdentifier:@"toAvailableBuilds" sender:self];
         return YES;
     }
     else {
@@ -48,7 +49,7 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     BuildsViewController *buildsController = [segue destinationViewController];
-    [buildsController loadWithToken:_authenticationTokenTextField.text];
+    [buildsController loadWithFactory:[self.buildFactory initWithToken:_authenticationTokenTextField.text]];
 }
 
 @end
