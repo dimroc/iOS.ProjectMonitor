@@ -9,7 +9,7 @@ env:
   - secure: goGCFuLSsyB5hJgxfkN0C+QSMmhFypjggfIxN+j+RtZd5sxyV5T2Kyz5o1vQ+iLkigKO+rMsGtLdQ9CC4guReUt/YnxsodNiEGyx3+jexG9t6qYX8xfNmxDuAu7RB+y3HNzaNAh7A46sxZNducBYxiwOuH99Fvl8Q42Lj+QKNZs=
   - secure: DiPfXlgyaUI/BtPCcEy7Zu/vaHqT7p0NIlaJVD3jSlBN4wndP6dgFuzA7WtEMRnn5E60sjP6Jy4gPU7T54Lyil1BNbSiLF/CFaYkRumNIONhLzuiPezb4s4BFg1zta1l0d3TKkeu+6UyTaaTz4yBkCVvGNwzq4pHyH2zFg6BuYw=
 install:
-- cd server
+- cd backend
 - bundle install
 script:
 - bundle exec rake
