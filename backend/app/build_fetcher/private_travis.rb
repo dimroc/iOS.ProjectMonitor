@@ -1,7 +1,7 @@
 class BuildFetcher::PrivateTravis < BuildFetcher
   def parse(content)
     ParseBuild.new({
-      type: "TravisBuild",
+      type: build_type,
       status: translate_result(content["result"]),
       startedAt: content["started_at"],
       finishedAt: content["finished_at"],
@@ -25,6 +25,10 @@ class BuildFetcher::PrivateTravis < BuildFetcher
 
   def base_url
     "https://api.travis-ci.com"
+  end
+
+  def build_type
+    self.class.name.demodulize + "Build"
   end
 
   private

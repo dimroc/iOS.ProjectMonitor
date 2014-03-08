@@ -26,3 +26,4 @@ Pods
 #Ruby
 .bundle/
 server/config/*.yml
+backend/config/*.yml
