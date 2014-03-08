@@ -15,9 +15,9 @@
     return @"PublicTravisBuild";
 }
 
-- (NSString*)getTravisUrl
+- (NSString*)baseUrl
 {
-    return @"https://api.travis-ci.org/repos";
+    return @"https://api.travis-ci.org";
 }
 
 @end

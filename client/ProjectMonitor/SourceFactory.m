@@ -14,19 +14,12 @@
 
 + (id<Source>)fetch:(NSString*)name
 {
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:[self storyboardNameFromName:name] bundle:nil];
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Source" bundle:nil];
     id<Source> source = (id<Source>)[storyboard instantiateInitialViewController];
     BuildFactory *buildFactory = [self buildFactoryFromName:name];
     [source setBuildFactory:buildFactory];
     
     return (id<Source>)source;
-}
-
-+ (NSString*)storyboardNameFromName:(NSString*)name
-{
-    return @"Semaphore";
-//    NSString *storyboardName = [name stringByReplacingOccurrencesOfString:@"Private " withString:@""];
-//    return [storyboardName stringByReplacingOccurrencesOfString:@"Public " withString:@""];
 }
 
 + (BuildFactory*)buildFactoryFromName:(NSString*)name

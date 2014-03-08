@@ -38,7 +38,7 @@
 		5E3ED156189A089E00632144 /* ParseHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E3ED155189A089E00632144 /* ParseHelper.m */; };
 		5E755F9D18B1299500692F5F /* BuildCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E755F9C18B1299500692F5F /* BuildCell.xib */; };
 		5E755FA018B2F5D700692F5F /* BlockAlertViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E755F9F18B2F5D700692F5F /* BlockAlertViewDelegate.m */; };
-		5E79F1CA18AA4FA0005BF986 /* Semaphore.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E79F1C918AA4FA0005BF986 /* Semaphore.storyboard */; };
+		5E79F1CA18AA4FA0005BF986 /* Source.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E79F1C918AA4FA0005BF986 /* Source.storyboard */; };
 		5E79F1D018AA4FBB005BF986 /* Build.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E79F1CC18AA4FBB005BF986 /* Build.m */; };
 		5E79F1D118AA4FBB005BF986 /* SourceFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E79F1CF18AA4FBB005BF986 /* SourceFactory.m */; };
 		5E79F1D718AA4FD4005BF986 /* SourceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E79F1D518AA4FD4005BF986 /* SourceViewController.m */; };
@@ -50,7 +50,6 @@
 		5E79F1E618AA584A005BF986 /* icon-pending.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E79F1E018AA584A005BF986 /* icon-pending.png */; };
 		5E79F1E718AA584A005BF986 /* icon-undetermined.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E79F1E118AA584A005BF986 /* icon-undetermined.png */; };
 		5E79F1EB18AD5702005BF986 /* BuildSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E79F1EA18AD5702005BF986 /* BuildSpec.m */; };
-		5E8D8A4D18C5FB270053E1DC /* Travis.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E8D8A4C18C5FB270053E1DC /* Travis.storyboard */; };
 		5E8D8A5418C5FDDF0053E1DC /* Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E8D8A5318C5FDDF0053E1DC /* Helper.m */; };
 		5E8D8A5718C600850053E1DC /* BuildsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E8D8A5618C600850053E1DC /* BuildsViewController.m */; };
 		5E8D8A5D18C752590053E1DC /* PrivateTravisBuildFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E8D8A5C18C752590053E1DC /* PrivateTravisBuildFactory.m */; };
@@ -119,7 +118,7 @@
 		5E755F9C18B1299500692F5F /* BuildCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BuildCell.xib; sourceTree = "<group>"; };
 		5E755F9E18B2F5D700692F5F /* BlockAlertViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlockAlertViewDelegate.h; sourceTree = "<group>"; };
 		5E755F9F18B2F5D700692F5F /* BlockAlertViewDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlockAlertViewDelegate.m; sourceTree = "<group>"; };
-		5E79F1C918AA4FA0005BF986 /* Semaphore.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Semaphore.storyboard; sourceTree = "<group>"; };
+		5E79F1C918AA4FA0005BF986 /* Source.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Source.storyboard; sourceTree = "<group>"; };
 		5E79F1CB18AA4FBB005BF986 /* Build.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Build.h; sourceTree = "<group>"; };
 		5E79F1CC18AA4FBB005BF986 /* Build.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Build.m; sourceTree = "<group>"; };
 		5E79F1CD18AA4FBB005BF986 /* Source.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Source.h; sourceTree = "<group>"; };
@@ -136,7 +135,6 @@
 		5E79F1E018AA584A005BF986 /* icon-pending.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon-pending.png"; path = "Images/icon-pending.png"; sourceTree = "<group>"; };
 		5E79F1E118AA584A005BF986 /* icon-undetermined.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon-undetermined.png"; path = "Images/icon-undetermined.png"; sourceTree = "<group>"; };
 		5E79F1EA18AD5702005BF986 /* BuildSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BuildSpec.m; sourceTree = "<group>"; };
-		5E8D8A4C18C5FB270053E1DC /* Travis.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Travis.storyboard; sourceTree = "<group>"; };
 		5E8D8A5218C5FDDF0053E1DC /* Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Helper.h; sourceTree = "<group>"; };
 		5E8D8A5318C5FDDF0053E1DC /* Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Helper.m; sourceTree = "<group>"; };
 		5E8D8A5518C600850053E1DC /* BuildsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuildsViewController.h; sourceTree = "<group>"; };
@@ -350,8 +348,7 @@
 				5E79F1DB18AA543D005BF986 /* Images */,
 				5E3ED1221899F14F00632144 /* Images.xcassets */,
 				5E3ED1131899F14F00632144 /* Main_iPhone.storyboard */,
-				5E79F1C918AA4FA0005BF986 /* Semaphore.storyboard */,
-				5E8D8A4C18C5FB270053E1DC /* Travis.storyboard */,
+				5E79F1C918AA4FA0005BF986 /* Source.storyboard */,
 			);
 			name = "User Interface";
 			sourceTree = "<group>";
@@ -494,10 +491,9 @@
 				5E79F1E718AA584A005BF986 /* icon-undetermined.png in Resources */,
 				5E79F1E318AA584A005BF986 /* icon-failed.png in Resources */,
 				5ED0A996189EC75100A56A27 /* Credentials.plist in Resources */,
-				5E8D8A4D18C5FB270053E1DC /* Travis.storyboard in Resources */,
 				5E755F9D18B1299500692F5F /* BuildCell.xib in Resources */,
 				5E3ED1151899F14F00632144 /* Main_iPhone.storyboard in Resources */,
-				5E79F1CA18AA4FA0005BF986 /* Semaphore.storyboard in Resources */,
+				5E79F1CA18AA4FA0005BF986 /* Source.storyboard in Resources */,
 				5E79F1E518AA584A005BF986 /* icon-passed.png in Resources */,
 				5E79F1E618AA584A005BF986 /* icon-pending.png in Resources */,
 				5E3ED10C1899F14F00632144 /* InfoPlist.strings in Resources */,

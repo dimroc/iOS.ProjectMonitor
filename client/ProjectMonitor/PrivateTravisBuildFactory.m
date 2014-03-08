@@ -74,7 +74,7 @@
 
 - (NSString *)generateUrlWithProject:(NSString*) project
 {
-    return [NSString stringWithFormat:@"https://api.travis-ci.com/repos/%@/builds?access_token=%@", project, [self token]];
+    return [NSString stringWithFormat:@"%@/repos/%@/builds?access_token=%@", [self baseUrl], project, [self token]];
 }
 
 - (NSString *)statusFromResult:(id)result
@@ -101,9 +101,14 @@
     return @"PrivateTravisBuild";
 }
 
+- (NSString*)baseUrl
+{
+    return @"https://api.travis-ci.com";
+}
+
 - (NSString*)getTravisUrl
 {
-    return @"https://api.travis-ci.com/repos";
+    return [NSString stringWithFormat:@"%@/repos", [self baseUrl]];
 }
 
 @end
