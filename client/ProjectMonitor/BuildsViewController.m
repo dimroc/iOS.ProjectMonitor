@@ -20,10 +20,14 @@
 
 @implementation BuildsViewController
 
-- (void)loadWithToken:(NSString*) authenticationToken
+- (void)loadWithFactory:(BuildFactory*) buildFactory
 {
-    [NSException raise:NSInternalInconsistencyException
-                format:@"You must override %@ in a subclass", NSStringFromSelector(_cmd)];
+    [self setBuildFactory:buildFactory];
+    [[self buildFactory] fetchWithSuccess: ^(NSArray* builds){
+        [self populateWithBuilds:builds];
+    } failure: ^(NSError *error) {
+        [self showErrorMessage:error];
+    }];
 }
 
 -(id)initWithCoder:(NSCoder *)aDecoder

@@ -41,8 +41,7 @@
 		5E79F1CA18AA4FA0005BF986 /* Semaphore.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E79F1C918AA4FA0005BF986 /* Semaphore.storyboard */; };
 		5E79F1D018AA4FBB005BF986 /* Build.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E79F1CC18AA4FBB005BF986 /* Build.m */; };
 		5E79F1D118AA4FBB005BF986 /* SourceFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E79F1CF18AA4FBB005BF986 /* SourceFactory.m */; };
-		5E79F1D618AA4FD4005BF986 /* SemaphoreBuildsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E79F1D318AA4FD4005BF986 /* SemaphoreBuildsViewController.m */; };
-		5E79F1D718AA4FD4005BF986 /* SemaphoreSourceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E79F1D518AA4FD4005BF986 /* SemaphoreSourceViewController.m */; };
+		5E79F1D718AA4FD4005BF986 /* SourceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E79F1D518AA4FD4005BF986 /* SourceViewController.m */; };
 		5E79F1DA18AA5085005BF986 /* BuildCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E79F1D918AA5085005BF986 /* BuildCell.m */; };
 		5E79F1E218AA584A005BF986 /* icon-failed-pending.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E79F1DC18AA584A005BF986 /* icon-failed-pending.png */; };
 		5E79F1E318AA584A005BF986 /* icon-failed.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E79F1DD18AA584A005BF986 /* icon-failed.png */; };
@@ -52,15 +51,14 @@
 		5E79F1E718AA584A005BF986 /* icon-undetermined.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E79F1E118AA584A005BF986 /* icon-undetermined.png */; };
 		5E79F1EB18AD5702005BF986 /* BuildSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E79F1EA18AD5702005BF986 /* BuildSpec.m */; };
 		5E8D8A4D18C5FB270053E1DC /* Travis.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E8D8A4C18C5FB270053E1DC /* Travis.storyboard */; };
-		5E8D8A5018C5FC050053E1DC /* TravisSourceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E8D8A4F18C5FC050053E1DC /* TravisSourceViewController.m */; };
 		5E8D8A5418C5FDDF0053E1DC /* Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E8D8A5318C5FDDF0053E1DC /* Helper.m */; };
 		5E8D8A5718C600850053E1DC /* BuildsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E8D8A5618C600850053E1DC /* BuildsViewController.m */; };
-		5E8D8A5A18C605B40053E1DC /* TravisBuildsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E8D8A5918C605B40053E1DC /* TravisBuildsViewController.m */; };
-		5E8D8A5D18C752590053E1DC /* TravisBuildFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E8D8A5C18C752590053E1DC /* TravisBuildFactory.m */; };
-		5E8D8A5F18C81BF30053E1DC /* TravisBuildFactorySpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E8D8A5E18C81BF30053E1DC /* TravisBuildFactorySpec.m */; };
+		5E8D8A5D18C752590053E1DC /* PrivateTravisBuildFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E8D8A5C18C752590053E1DC /* PrivateTravisBuildFactory.m */; };
+		5E8D8A5F18C81BF30053E1DC /* PrivateTravisBuildFactorySpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E8D8A5E18C81BF30053E1DC /* PrivateTravisBuildFactorySpec.m */; };
 		5E8D8A6418C81E210053E1DC /* travisRepos.json in Resources */ = {isa = PBXBuildFile; fileRef = 5E8D8A6318C81E210053E1DC /* travisRepos.json */; };
 		5E8D8A6718C81EE30053E1DC /* TestHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E8D8A6618C81EE30053E1DC /* TestHelper.m */; };
 		5E8D8A6A18C83C8B0053E1DC /* BuildFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E8D8A6918C83C8B0053E1DC /* BuildFactory.m */; };
+		5E9DD7ED18CB5CA00035F2C4 /* PublicTravisBuildFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E9DD7EC18CB5CA00035F2C4 /* PublicTravisBuildFactory.m */; };
 		5EBF47D018A69E4C00175065 /* ParseUITableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EBF47CF18A69E4C00175065 /* ParseUITableViewController.m */; };
 		5EBF47DD18A6A3A600175065 /* ProjectMonitorSignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EBF47DC18A6A3A600175065 /* ProjectMonitorSignUpViewController.m */; };
 		5EBF47E018A6A41000175065 /* ProjectMonitorLogInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EBF47DF18A6A41000175065 /* ProjectMonitorLogInViewController.m */; };
@@ -127,10 +125,8 @@
 		5E79F1CD18AA4FBB005BF986 /* Source.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Source.h; sourceTree = "<group>"; };
 		5E79F1CE18AA4FBB005BF986 /* SourceFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SourceFactory.h; sourceTree = "<group>"; };
 		5E79F1CF18AA4FBB005BF986 /* SourceFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SourceFactory.m; sourceTree = "<group>"; };
-		5E79F1D218AA4FD4005BF986 /* SemaphoreBuildsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SemaphoreBuildsViewController.h; sourceTree = "<group>"; };
-		5E79F1D318AA4FD4005BF986 /* SemaphoreBuildsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SemaphoreBuildsViewController.m; sourceTree = "<group>"; };
-		5E79F1D418AA4FD4005BF986 /* SemaphoreSourceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SemaphoreSourceViewController.h; sourceTree = "<group>"; };
-		5E79F1D518AA4FD4005BF986 /* SemaphoreSourceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SemaphoreSourceViewController.m; sourceTree = "<group>"; };
+		5E79F1D418AA4FD4005BF986 /* SourceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SourceViewController.h; sourceTree = "<group>"; };
+		5E79F1D518AA4FD4005BF986 /* SourceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SourceViewController.m; sourceTree = "<group>"; };
 		5E79F1D818AA5085005BF986 /* BuildCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuildCell.h; sourceTree = "<group>"; };
 		5E79F1D918AA5085005BF986 /* BuildCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BuildCell.m; sourceTree = "<group>"; };
 		5E79F1DC18AA584A005BF986 /* icon-failed-pending.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon-failed-pending.png"; path = "Images/icon-failed-pending.png"; sourceTree = "<group>"; };
@@ -141,22 +137,20 @@
 		5E79F1E118AA584A005BF986 /* icon-undetermined.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon-undetermined.png"; path = "Images/icon-undetermined.png"; sourceTree = "<group>"; };
 		5E79F1EA18AD5702005BF986 /* BuildSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BuildSpec.m; sourceTree = "<group>"; };
 		5E8D8A4C18C5FB270053E1DC /* Travis.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Travis.storyboard; sourceTree = "<group>"; };
-		5E8D8A4E18C5FC050053E1DC /* TravisSourceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TravisSourceViewController.h; sourceTree = "<group>"; };
-		5E8D8A4F18C5FC050053E1DC /* TravisSourceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TravisSourceViewController.m; sourceTree = "<group>"; };
 		5E8D8A5218C5FDDF0053E1DC /* Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Helper.h; sourceTree = "<group>"; };
 		5E8D8A5318C5FDDF0053E1DC /* Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Helper.m; sourceTree = "<group>"; };
 		5E8D8A5518C600850053E1DC /* BuildsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuildsViewController.h; sourceTree = "<group>"; };
 		5E8D8A5618C600850053E1DC /* BuildsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BuildsViewController.m; sourceTree = "<group>"; };
-		5E8D8A5818C605B40053E1DC /* TravisBuildsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TravisBuildsViewController.h; sourceTree = "<group>"; };
-		5E8D8A5918C605B40053E1DC /* TravisBuildsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TravisBuildsViewController.m; sourceTree = "<group>"; };
-		5E8D8A5B18C752590053E1DC /* TravisBuildFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TravisBuildFactory.h; sourceTree = "<group>"; };
-		5E8D8A5C18C752590053E1DC /* TravisBuildFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TravisBuildFactory.m; sourceTree = "<group>"; };
-		5E8D8A5E18C81BF30053E1DC /* TravisBuildFactorySpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TravisBuildFactorySpec.m; sourceTree = "<group>"; };
+		5E8D8A5B18C752590053E1DC /* PrivateTravisBuildFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrivateTravisBuildFactory.h; sourceTree = "<group>"; };
+		5E8D8A5C18C752590053E1DC /* PrivateTravisBuildFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrivateTravisBuildFactory.m; sourceTree = "<group>"; };
+		5E8D8A5E18C81BF30053E1DC /* PrivateTravisBuildFactorySpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrivateTravisBuildFactorySpec.m; sourceTree = "<group>"; };
 		5E8D8A6318C81E210053E1DC /* travisRepos.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = travisRepos.json; sourceTree = "<group>"; };
 		5E8D8A6518C81EE30053E1DC /* TestHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestHelper.h; sourceTree = "<group>"; };
 		5E8D8A6618C81EE30053E1DC /* TestHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestHelper.m; sourceTree = "<group>"; };
 		5E8D8A6818C83C8B0053E1DC /* BuildFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuildFactory.h; sourceTree = "<group>"; };
 		5E8D8A6918C83C8B0053E1DC /* BuildFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BuildFactory.m; sourceTree = "<group>"; };
+		5E9DD7EB18CB5CA00035F2C4 /* PublicTravisBuildFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PublicTravisBuildFactory.h; sourceTree = "<group>"; };
+		5E9DD7EC18CB5CA00035F2C4 /* PublicTravisBuildFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PublicTravisBuildFactory.m; sourceTree = "<group>"; };
 		5EBF47CE18A69E4C00175065 /* ParseUITableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParseUITableViewController.h; sourceTree = "<group>"; };
 		5EBF47CF18A69E4C00175065 /* ParseUITableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParseUITableViewController.m; sourceTree = "<group>"; };
 		5EBF47DB18A6A3A600175065 /* ProjectMonitorSignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProjectMonitorSignUpViewController.h; sourceTree = "<group>"; };
@@ -283,7 +277,7 @@
 				5E79F1EA18AD5702005BF986 /* BuildSpec.m */,
 				5E09522B18BADDB100689FBA /* SemaphoreBuildFactorySpec.m */,
 				5E8D8A6618C81EE30053E1DC /* TestHelper.m */,
-				5E8D8A5E18C81BF30053E1DC /* TravisBuildFactorySpec.m */,
+				5E8D8A5E18C81BF30053E1DC /* PrivateTravisBuildFactorySpec.m */,
 				5E8D8A6218C81DED0053E1DC /* Fixtures */,
 				5E3ED1311899F15000632144 /* Supporting Files */,
 			);
@@ -309,10 +303,12 @@
 				5E79F1CF18AA4FBB005BF986 /* SourceFactory.m */,
 				5E09522818BADB9500689FBA /* SemaphoreBuildFactory.h */,
 				5E09522918BADB9500689FBA /* SemaphoreBuildFactory.m */,
-				5E8D8A5B18C752590053E1DC /* TravisBuildFactory.h */,
-				5E8D8A5C18C752590053E1DC /* TravisBuildFactory.m */,
+				5E8D8A5B18C752590053E1DC /* PrivateTravisBuildFactory.h */,
+				5E8D8A5C18C752590053E1DC /* PrivateTravisBuildFactory.m */,
 				5E8D8A6818C83C8B0053E1DC /* BuildFactory.h */,
 				5E8D8A6918C83C8B0053E1DC /* BuildFactory.m */,
+				5E9DD7EB18CB5CA00035F2C4 /* PublicTravisBuildFactory.h */,
+				5E9DD7EC18CB5CA00035F2C4 /* PublicTravisBuildFactory.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -339,16 +335,10 @@
 				5E3ED1201899F14F00632144 /* DetailViewController.m */,
 				5E3ED11C1899F14F00632144 /* MasterViewController.h */,
 				5E3ED11D1899F14F00632144 /* MasterViewController.m */,
-				5E79F1D218AA4FD4005BF986 /* SemaphoreBuildsViewController.h */,
-				5E79F1D318AA4FD4005BF986 /* SemaphoreBuildsViewController.m */,
-				5E79F1D418AA4FD4005BF986 /* SemaphoreSourceViewController.h */,
-				5E79F1D518AA4FD4005BF986 /* SemaphoreSourceViewController.m */,
-				5E8D8A4E18C5FC050053E1DC /* TravisSourceViewController.h */,
-				5E8D8A4F18C5FC050053E1DC /* TravisSourceViewController.m */,
+				5E79F1D418AA4FD4005BF986 /* SourceViewController.h */,
+				5E79F1D518AA4FD4005BF986 /* SourceViewController.m */,
 				5E8D8A5518C600850053E1DC /* BuildsViewController.h */,
 				5E8D8A5618C600850053E1DC /* BuildsViewController.m */,
-				5E8D8A5818C605B40053E1DC /* TravisBuildsViewController.h */,
-				5E8D8A5918C605B40053E1DC /* TravisBuildsViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -595,18 +585,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5E79F1D618AA4FD4005BF986 /* SemaphoreBuildsViewController.m in Sources */,
 				5E3ED1211899F14F00632144 /* DetailViewController.m in Sources */,
 				5EBF47D018A69E4C00175065 /* ParseUITableViewController.m in Sources */,
 				5E8D8A5718C600850053E1DC /* BuildsViewController.m in Sources */,
 				5E3ED156189A089E00632144 /* ParseHelper.m in Sources */,
 				5E79F1D118AA4FBB005BF986 /* SourceFactory.m in Sources */,
-				5E8D8A5A18C605B40053E1DC /* TravisBuildsViewController.m in Sources */,
-				5E8D8A5D18C752590053E1DC /* TravisBuildFactory.m in Sources */,
+				5E8D8A5D18C752590053E1DC /* PrivateTravisBuildFactory.m in Sources */,
 				5E3ED11E1899F14F00632144 /* MasterViewController.m in Sources */,
 				5E3ED11B1899F14F00632144 /* ProjectMonitor.xcdatamodeld in Sources */,
 				5EBF47E318A6AE7E00175065 /* AddBuildViewController.m in Sources */,
-				5E79F1D718AA4FD4005BF986 /* SemaphoreSourceViewController.m in Sources */,
+				5E79F1D718AA4FD4005BF986 /* SourceViewController.m in Sources */,
 				5E8D8A5418C5FDDF0053E1DC /* Helper.m in Sources */,
 				5EBF47DD18A6A3A600175065 /* ProjectMonitorSignUpViewController.m in Sources */,
 				5E3ED1121899F14F00632144 /* AppDelegate.m in Sources */,
@@ -614,8 +602,8 @@
 				5E8D8A6A18C83C8B0053E1DC /* BuildFactory.m in Sources */,
 				5E755FA018B2F5D700692F5F /* BlockAlertViewDelegate.m in Sources */,
 				5E3ED10E1899F14F00632144 /* main.m in Sources */,
-				5E8D8A5018C5FC050053E1DC /* TravisSourceViewController.m in Sources */,
 				5E09522A18BADB9500689FBA /* SemaphoreBuildFactory.m in Sources */,
+				5E9DD7ED18CB5CA00035F2C4 /* PublicTravisBuildFactory.m in Sources */,
 				5EBF47E018A6A41000175065 /* ProjectMonitorLogInViewController.m in Sources */,
 				5E79F1DA18AA5085005BF986 /* BuildCell.m in Sources */,
 			);
@@ -627,7 +615,7 @@
 			files = (
 				5E09522C18BADDB100689FBA /* SemaphoreBuildFactorySpec.m in Sources */,
 				5E79F1EB18AD5702005BF986 /* BuildSpec.m in Sources */,
-				5E8D8A5F18C81BF30053E1DC /* TravisBuildFactorySpec.m in Sources */,
+				5E8D8A5F18C81BF30053E1DC /* PrivateTravisBuildFactorySpec.m in Sources */,
 				5E8D8A6718C81EE30053E1DC /* TestHelper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

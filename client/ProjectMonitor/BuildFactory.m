@@ -11,11 +11,6 @@
 
 @implementation BuildFactory
 
-+ (BuildFactory *)initWithToken:(NSString*)token
-{
-    return [[self alloc] initWithToken:token];
-}
-
 - (id)initWithToken:(NSString*)token
 {
     self = [self init];

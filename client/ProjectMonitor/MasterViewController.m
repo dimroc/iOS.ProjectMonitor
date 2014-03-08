@@ -10,10 +10,15 @@
 #import "Build.h"
 #import "BuildCell.h"
 
+typedef enum {
+    SemaphoreBuild,
+    PrivateTravisBuild,
+    PublicTravisBuild
+} BuildType;
+
 @interface MasterViewController ()
 
-@property (strong, nonatomic) NSArray *semaphoreBuilds;
-@property (strong, nonatomic) NSArray *travisBuilds;
+@property (strong, nonatomic) NSArray *builds;
 
 @end
 
@@ -23,7 +28,7 @@
 {
     [super viewDidLoad];
     [self refreshBuilds];
-    
+
     UINib *nib = [UINib nibWithNibName:@"BuildCell" bundle:nil];
     [[self tableView] registerNib:nib forCellReuseIdentifier:@"BuildCell"];
     
@@ -33,8 +38,11 @@
 
 - (void)refreshBuilds
 {
-    self.semaphoreBuilds = [Build forType:@"SemaphoreBuild"];
-    self.travisBuilds = [Build forType:@"TravisBuild"];
+    NSMutableArray *array = [NSMutableArray array];
+    array[SemaphoreBuild] = [Build forType:@"SemaphoreBuild"];
+    array[PrivateTravisBuild] = [Build forType:@"PrivateTravisBuild"];
+    array[PublicTravisBuild] = [Build forType:@"PublicTravisBuild"];
+    [self setBuilds:array];
 }
 
 - (void)forceRefresh
@@ -86,8 +94,7 @@
 
 - (void)clearTable
 {
-    self.semaphoreBuilds = [NSArray array];
-    self.travisBuilds = [NSArray array];
+    [self setBuilds:[NSArray array]];
     [self.tableView reloadData];
 }
 
@@ -112,7 +119,7 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 2;
+    return [self.builds count];
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
@@ -120,19 +127,16 @@
     switch (section) {
         case 0:
             return @"Semaphore";
+        case 1:
+            return @"Private Travis";
         default:
-            return @"Travis";
+            return @"Public Travis";
     }
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    switch (section) {
-        case 0:
-            return [self.semaphoreBuilds count];
-        default:
-            return [self.travisBuilds count];
-    }
+    return [self.builds[section] count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -160,20 +164,7 @@
                     
 - (Build*)getBuildForIndexPath:(NSIndexPath *)indexPath
 {
-    Build *build;
-    switch (indexPath.section) {
-        case 0:
-            build = [_semaphoreBuilds objectAtIndex:indexPath.row];
-            break;
-        case 1:
-            build = [_travisBuilds objectAtIndex:indexPath.row];
-            break;
-        default:
-            NSLog(@"Unknown section %@", [indexPath description]);
-            @throw([NSException exceptionWithName:NSInternalInconsistencyException reason:@"Unknown section" userInfo: [NSDictionary dictionary]]);
-    }
-    
-    return build;
+    return [self.builds[indexPath.section] objectAtIndex:indexPath.row];
 }
 
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
