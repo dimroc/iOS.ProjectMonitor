@@ -58,7 +58,7 @@
 {
     NSMutableDictionary *dic = [NSMutableDictionary dictionary];
     
-    [dic setValue:@"SemaphoreBuild" forKey:@"type"];
+    [dic setValue:@"Semaphore" forKey:@"type"];
     [dic setValue:[self token] forKey:@"accessToken"];
     
     [dic setValue:json[@"project_name"] forKey:@"project"];

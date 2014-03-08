@@ -1,5 +1,5 @@
 //
-//  TravisBuild.h
+//  PrivateTravisBuildFactory.m
 //  ProjectMonitor
 //
 //  Created by Dimitri Roche on 3/5/14.

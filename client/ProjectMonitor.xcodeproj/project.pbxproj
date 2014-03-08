@@ -58,6 +58,7 @@
 		5E8D8A6718C81EE30053E1DC /* TestHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E8D8A6618C81EE30053E1DC /* TestHelper.m */; };
 		5E8D8A6A18C83C8B0053E1DC /* BuildFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E8D8A6918C83C8B0053E1DC /* BuildFactory.m */; };
 		5E9DD7ED18CB5CA00035F2C4 /* PublicTravisBuildFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E9DD7EC18CB5CA00035F2C4 /* PublicTravisBuildFactory.m */; };
+		5E9DD7F018CBA69B0035F2C4 /* BuildCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E9DD7EF18CBA69B0035F2C4 /* BuildCollection.m */; };
 		5EBF47D018A69E4C00175065 /* ParseUITableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EBF47CF18A69E4C00175065 /* ParseUITableViewController.m */; };
 		5EBF47DD18A6A3A600175065 /* ProjectMonitorSignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EBF47DC18A6A3A600175065 /* ProjectMonitorSignUpViewController.m */; };
 		5EBF47E018A6A41000175065 /* ProjectMonitorLogInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EBF47DF18A6A41000175065 /* ProjectMonitorLogInViewController.m */; };
@@ -149,6 +150,8 @@
 		5E8D8A6918C83C8B0053E1DC /* BuildFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BuildFactory.m; sourceTree = "<group>"; };
 		5E9DD7EB18CB5CA00035F2C4 /* PublicTravisBuildFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PublicTravisBuildFactory.h; sourceTree = "<group>"; };
 		5E9DD7EC18CB5CA00035F2C4 /* PublicTravisBuildFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PublicTravisBuildFactory.m; sourceTree = "<group>"; };
+		5E9DD7EE18CBA69B0035F2C4 /* BuildCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuildCollection.h; sourceTree = "<group>"; };
+		5E9DD7EF18CBA69B0035F2C4 /* BuildCollection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BuildCollection.m; sourceTree = "<group>"; };
 		5EBF47CE18A69E4C00175065 /* ParseUITableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParseUITableViewController.h; sourceTree = "<group>"; };
 		5EBF47CF18A69E4C00175065 /* ParseUITableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParseUITableViewController.m; sourceTree = "<group>"; };
 		5EBF47DB18A6A3A600175065 /* ProjectMonitorSignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProjectMonitorSignUpViewController.h; sourceTree = "<group>"; };
@@ -307,6 +310,8 @@
 				5E8D8A6918C83C8B0053E1DC /* BuildFactory.m */,
 				5E9DD7EB18CB5CA00035F2C4 /* PublicTravisBuildFactory.h */,
 				5E9DD7EC18CB5CA00035F2C4 /* PublicTravisBuildFactory.m */,
+				5E9DD7EE18CBA69B0035F2C4 /* BuildCollection.h */,
+				5E9DD7EF18CBA69B0035F2C4 /* BuildCollection.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -591,6 +596,7 @@
 				5E3ED11B1899F14F00632144 /* ProjectMonitor.xcdatamodeld in Sources */,
 				5EBF47E318A6AE7E00175065 /* AddBuildViewController.m in Sources */,
 				5E79F1D718AA4FD4005BF986 /* SourceViewController.m in Sources */,
+				5E9DD7F018CBA69B0035F2C4 /* BuildCollection.m in Sources */,
 				5E8D8A5418C5FDDF0053E1DC /* Helper.m in Sources */,
 				5EBF47DD18A6A3A600175065 /* ProjectMonitorSignUpViewController.m in Sources */,
 				5E3ED1121899F14F00632144 /* AppDelegate.m in Sources */,

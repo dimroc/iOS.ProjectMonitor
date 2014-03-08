@@ -5,7 +5,7 @@ class BuildFetcher::Semaphore < BuildFetcher
     ParseBuild.new({
       project: semaphore["project_name"],
       url: semaphore["branch_status_url"],
-      type: "SemaphoreBuild",
+      type: "Semaphore",
       status: semaphore["result"],
       branch: semaphore["branch_name"],
       startedAt: semaphore["started_at"],

@@ -9,16 +9,11 @@
 #import "MasterViewController.h"
 #import "Build.h"
 #import "BuildCell.h"
-
-typedef enum {
-    SemaphoreBuild,
-    PrivateTravisBuild,
-    PublicTravisBuild
-} BuildType;
+#import "BuildCollection.h"
 
 @interface MasterViewController ()
 
-@property (strong, nonatomic) NSArray *builds;
+@property (strong, nonatomic) BuildCollection *buildCollection;
 
 @end
 
@@ -27,22 +22,15 @@ typedef enum {
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self refreshBuilds];
+    
+    [self setBuildCollection:[[BuildCollection alloc] init]];
+    [self.buildCollection refresh];
 
     UINib *nib = [UINib nibWithNibName:@"BuildCell" bundle:nil];
     [[self tableView] registerNib:nib forCellReuseIdentifier:@"BuildCell"];
     
     NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
     [center addObserver:self selector:@selector(handleNewBuild:) name:PMBuildDidSaveNotication object:nil];
-}
-
-- (void)refreshBuilds
-{
-    NSMutableArray *array = [NSMutableArray array];
-    array[SemaphoreBuild] = [Build forType:@"SemaphoreBuild"];
-    array[PrivateTravisBuild] = [Build forType:@"PrivateTravisBuild"];
-    array[PublicTravisBuild] = [Build forType:@"PublicTravisBuild"];
-    [self setBuilds:array];
 }
 
 - (void)forceRefresh
@@ -75,7 +63,7 @@ typedef enum {
     
     [Build refreshSavedBuildsInBackground:^(BOOL succeeded, NSArray *builds) {
         if (succeeded) {
-            [that refreshBuilds];
+            [[that buildCollection] refresh];
             dispatch_async(dispatch_get_main_queue(), ^{
                 NSLog(@"# Finished refresh");
                 [that.tableView reloadData];
@@ -94,7 +82,7 @@ typedef enum {
 
 - (void)clearTable
 {
-    [self setBuilds:[NSArray array]];
+    [[self buildCollection] clear];
     [self.tableView reloadData];
 }
 
@@ -119,24 +107,17 @@ typedef enum {
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return [self.builds count];
+    return [[self.buildCollection onlyPopulated] count];
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
-    switch (section) {
-        case 0:
-            return @"Semaphore";
-        case 1:
-            return @"Private Travis";
-        default:
-            return @"Public Travis";
-    }
+    return [self.buildCollection onlyPopulatedTitles][section];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [self.builds[section] count];
+    return [[self.buildCollection onlyPopulated][section] count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -158,13 +139,14 @@ typedef enum {
     Build* build = [self getBuildForIndexPath:indexPath];
     [build deleteInBackground];
     
-    [self refreshBuilds];
+    [self.buildCollection refresh];
     [self.tableView reloadData];
 }
                     
 - (Build*)getBuildForIndexPath:(NSIndexPath *)indexPath
 {
-    return [self.builds[indexPath.section] objectAtIndex:indexPath.row];
+    NSArray *sectionBuilds = [self.buildCollection onlyPopulated][indexPath.section];
+    return sectionBuilds[indexPath.row];
 }
 
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath

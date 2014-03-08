@@ -12,7 +12,7 @@
 
 - (NSString*)getTravisBuildType
 {
-    return @"PublicTravisBuild";
+    return @"PublicTravis";
 }
 
 - (NSString*)baseUrl
