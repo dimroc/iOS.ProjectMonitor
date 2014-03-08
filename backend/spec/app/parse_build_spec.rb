@@ -22,6 +22,11 @@ describe ParseBuild do
       its(["__type"]) { should == "Date" }
       its(["iso"]) { should == date_string }
     end
+
+    context "for nil" do
+      let(:value) { nil }
+      it { should == nil }
+    end
   end
 
   describe ".merge" do
