@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface PreferencesViewController : UITableViewController
+@property (weak, nonatomic) IBOutlet UILabel *loggedInLabel;
 
 @end

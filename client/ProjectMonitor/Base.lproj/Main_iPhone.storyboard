@@ -80,7 +80,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="brL-pm-eg6">
-                                                    <rect key="frame" x="20" y="7" width="63" height="30"/>
+                                                    <rect key="frame" x="237" y="7" width="63" height="30"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <state key="normal" title="Sign Out">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -89,6 +89,13 @@
                                                         <action selector="signOut:" destination="Tne-Yf-n30" eventType="touchUpInside" id="Km3-OT-nVq"/>
                                                     </connections>
                                                 </button>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Logged in as" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="zi1-7B-Z4Y">
+                                                    <rect key="frame" x="20" y="11" width="218" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -161,11 +168,14 @@
                     <navigationItem key="navigationItem" title="Preferences" id="nLm-HB-Yne">
                         <barButtonItem key="leftBarButtonItem" systemItem="done" id="2VG-w3-jnq">
                             <connections>
-                                <action selector="closeModal:" destination="Tne-Yf-n30" id="nU8-52-BMO"/>
+                                <action selector="dismissModal:" destination="Tne-Yf-n30" id="6JX-Qc-TYo"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="loggedInLabel" destination="zi1-7B-Z4Y" id="vUI-w9-KZB"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kgh-f2-WP6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

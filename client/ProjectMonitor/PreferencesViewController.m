@@ -23,15 +23,19 @@
     return self;
 }
 
+- (void)viewDidLoad
+{
+    [self.loggedInLabel setText:[[PFUser currentUser] username]];
+}
 
 - (IBAction)signOut:(id)sender
 {
     NSLog(@"# Signing out");
     [PFUser logOut];
-    [self closeModal:nil];
+    [self dismissModal:self];
 }
 
-- (IBAction)closeModal:(id)sender
+- (IBAction)dismissModal:(id)sender
 {
     [[self presentingViewController] dismissViewControllerAnimated:YES completion:nil];
 }
