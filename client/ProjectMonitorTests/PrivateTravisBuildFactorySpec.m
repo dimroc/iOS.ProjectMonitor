@@ -35,7 +35,7 @@ describe(@"#fromDictionary", ^{
         [[[build project] should] equal:@"best-org/monolithic_project"];
         [[[build status] should] equal:@"passed"];
         [[[build branch] should] beNil];
-        [[[build type] should] equal:@"PrivateTravisBuild"];
+        [[[build type] should] equal:@"PrivateTravis"];
         [[[[build finishedAt] description] should] containString: @"2014"];
         [[[[build startedAt] description] should] containString: @"2014"];
         [[[build url] should] equal:@"https://api.travis-ci.com/repos/best-org/monolithic_project/builds?access_token=MyTestToken"];
