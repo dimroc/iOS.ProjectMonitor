@@ -14,6 +14,7 @@
 @interface MasterViewController ()
 
 @property (strong, nonatomic) BuildCollection *buildCollection;
+@property (strong, nonatomic) UIView *addBuildOverlayView;
 
 @end
 
@@ -29,24 +30,26 @@
     UINib *nib = [UINib nibWithNibName:@"BuildCell" bundle:nil];
     [[self tableView] registerNib:nib forCellReuseIdentifier:@"BuildCell"];
     
+    // Your scroll view or table view would be a subview of this view
+    UINib *emptyViewNib = [UINib nibWithNibName:@"AddBuildOverlayView" bundle:nil];
+    [self setAddBuildOverlayView:[emptyViewNib instantiateWithOwner:self options:nil][0]];
+    
+    [self toggleAddBuildOverlay];
+    
     NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
     [center addObserver:self selector:@selector(handleNewBuild:) name:PMBuildDidSaveNotication object:nil];
 }
 
 - (void)forceRefresh
 {
+    [self toggleAddBuildOverlay];
     [self.refreshControl beginRefreshing];
-    [self triggerRefresh:self.refreshControl];
+    [self triggerRefresh];
 }
 
 - (void)handleNewBuild:(NSNotification *)notification
 {
     [self forceRefresh];
-}
-
-- (void)viewDidAppear:(BOOL)animated
-{
-    [super viewDidAppear:animated];
 }
 
 - (IBAction)signOut:(id)sender
@@ -56,18 +59,23 @@
     [self showLogIn];
 }
 
-- (IBAction)triggerRefresh:(id)sender
+- (void)toggleAddBuildOverlay
 {
-    UIRefreshControl *refreshControl = (UIRefreshControl*)sender;
+    if ([self.buildCollection isEmpty]) {
+        [self.view addSubview:_addBuildOverlayView];
+        [self.view bringSubviewToFront:_addBuildOverlayView];
+    } else {
+        [_addBuildOverlayView removeFromSuperview];
+    }
+}
+
+- (IBAction)triggerRefresh
+{
     __weak MasterViewController *that = self;
     
     [Build refreshSavedBuildsInBackground:^(BOOL succeeded, NSArray *builds) {
         if (succeeded) {
             [[that buildCollection] refresh];
-            dispatch_async(dispatch_get_main_queue(), ^{
-                NSLog(@"# Finished refresh");
-                [that.tableView reloadData];
-            });
         } else {
             [[[UIAlertView alloc] initWithTitle:@"Failed to refresh"
                                         message:@"Please try again later."
@@ -76,7 +84,12 @@
                               otherButtonTitles:nil] show];
         }
         
-        [refreshControl endRefreshing];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            NSLog(@"# Finished refresh");
+            [that toggleAddBuildOverlay];
+            [that.tableView reloadData];
+            [that.refreshControl endRefreshing];
+        });
     }];
 }
 
@@ -140,6 +153,7 @@
     [build deleteInBackground];
     
     [self.buildCollection refresh];
+    [self toggleAddBuildOverlay];
     [self.tableView reloadData];
 }
                     
