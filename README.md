@@ -7,7 +7,7 @@ An iPhone app that monitors continuous integration servers for the status
 of your builds. Should a build fail, a push notification will be sent to your
 phone with information about the faulty commit.
 
-Currently supports [Semaphore](www.semaphoreapp.com) and [Travis](http://travis-ci.com/).
+Currently supports [Semaphore](http://www.semaphoreapp.com) and [Travis](http://travis-ci.com/).
 
 Jenkins and TeamCity support coming soon. Feel free to fork the repo and contribute!
 
