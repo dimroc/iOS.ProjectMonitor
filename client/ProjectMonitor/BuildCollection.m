@@ -16,9 +16,9 @@
 
 @implementation BuildCollection
 
-- (NSArray*)buildsForType:(BuildType)buildType
+- (BOOL)isEmpty
 {
-    return [self buildsByType][buildType];
+    return [[self onlyPopulated] count] <= 0;
 }
 
 - (void)refresh
@@ -60,6 +60,19 @@
     }
     
     return populatedTitles;
+}
+
+- (NSString*)description
+{
+    NSMutableString *string = [NSMutableString string];
+    [string appendString:@"BuildCollection: "];
+    [self.buildsByType bk_each:^(id obj) {
+        [obj bk_each:^(id obj) {
+            [string appendString:[obj description]];
+        }];
+    }];
+    
+    return string;
 }
 
 @end

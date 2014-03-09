@@ -20,5 +20,6 @@ typedef enum {
 - (void)clear;
 - (NSArray*)onlyPopulated;
 - (NSArray*)onlyPopulatedTitles;
+- (BOOL)isEmpty;
 
 @end
