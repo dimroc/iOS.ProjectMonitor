@@ -52,13 +52,6 @@
     [self forceRefresh];
 }
 
-- (IBAction)signOut:(id)sender
-{
-    NSLog(@"# Signing out");
-    [PFUser logOut];
-    [self showLogIn];
-}
-
 - (void)toggleAddBuildOverlay
 {
     if ([self.buildCollection isEmpty]) {

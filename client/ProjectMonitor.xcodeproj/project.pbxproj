@@ -38,6 +38,7 @@
 		5E3ED156189A089E00632144 /* ParseHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E3ED155189A089E00632144 /* ParseHelper.m */; };
 		5E74B54E18CCC939001CFB60 /* AddBuildOverlayView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E74B54D18CCC939001CFB60 /* AddBuildOverlayView.xib */; };
 		5E74B55218CCCFDF001CFB60 /* addABuild.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E74B55118CCCFDE001CFB60 /* addABuild.png */; };
+		5E74B55518CCE48F001CFB60 /* PreferencesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E74B55418CCE48F001CFB60 /* PreferencesViewController.m */; };
 		5E755F9D18B1299500692F5F /* BuildCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E755F9C18B1299500692F5F /* BuildCell.xib */; };
 		5E755FA018B2F5D700692F5F /* BlockAlertViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E755F9F18B2F5D700692F5F /* BlockAlertViewDelegate.m */; };
 		5E79F1CA18AA4FA0005BF986 /* Source.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E79F1C918AA4FA0005BF986 /* Source.storyboard */; };
@@ -120,6 +121,8 @@
 		5E3ED155189A089E00632144 /* ParseHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParseHelper.m; sourceTree = "<group>"; };
 		5E74B54D18CCC939001CFB60 /* AddBuildOverlayView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddBuildOverlayView.xib; sourceTree = "<group>"; };
 		5E74B55118CCCFDE001CFB60 /* addABuild.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = addABuild.png; sourceTree = "<group>"; };
+		5E74B55318CCE48F001CFB60 /* PreferencesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreferencesViewController.h; sourceTree = "<group>"; };
+		5E74B55418CCE48F001CFB60 /* PreferencesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreferencesViewController.m; sourceTree = "<group>"; };
 		5E755F9C18B1299500692F5F /* BuildCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BuildCell.xib; sourceTree = "<group>"; };
 		5E755F9E18B2F5D700692F5F /* BlockAlertViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlockAlertViewDelegate.h; sourceTree = "<group>"; };
 		5E755F9F18B2F5D700692F5F /* BlockAlertViewDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlockAlertViewDelegate.m; sourceTree = "<group>"; };
@@ -346,6 +349,8 @@
 				5E79F1D518AA4FD4005BF986 /* SourceViewController.m */,
 				5E8D8A5518C600850053E1DC /* BuildsViewController.h */,
 				5E8D8A5618C600850053E1DC /* BuildsViewController.m */,
+				5E74B55318CCE48F001CFB60 /* PreferencesViewController.h */,
+				5E74B55418CCE48F001CFB60 /* PreferencesViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -601,6 +606,7 @@
 				5E79F1D118AA4FBB005BF986 /* SourceFactory.m in Sources */,
 				5E8D8A5D18C752590053E1DC /* PrivateTravisBuildFactory.m in Sources */,
 				5E3ED11E1899F14F00632144 /* MasterViewController.m in Sources */,
+				5E74B55518CCE48F001CFB60 /* PreferencesViewController.m in Sources */,
 				5E3ED11B1899F14F00632144 /* ProjectMonitor.xcdatamodeld in Sources */,
 				5EBF47E318A6AE7E00175065 /* AddBuildViewController.m in Sources */,
 				5E79F1D718AA4FD4005BF986 /* SourceViewController.m in Sources */,
