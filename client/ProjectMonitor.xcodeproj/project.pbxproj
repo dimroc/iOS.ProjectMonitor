@@ -37,8 +37,9 @@
 		5E3ED1531899F45500632144 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E3ED14A1899F45500632144 /* SystemConfiguration.framework */; };
 		5E3ED156189A089E00632144 /* ParseHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E3ED155189A089E00632144 /* ParseHelper.m */; };
 		5E74B54E18CCC939001CFB60 /* AddBuildOverlayView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E74B54D18CCC939001CFB60 /* AddBuildOverlayView.xib */; };
-		5E74B55218CCCFDF001CFB60 /* addABuild.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E74B55118CCCFDE001CFB60 /* addABuild.png */; };
 		5E74B55518CCE48F001CFB60 /* PreferencesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E74B55418CCE48F001CFB60 /* PreferencesViewController.m */; };
+		5E74B55718CCEBA5001CFB60 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E74B55618CCEBA5001CFB60 /* logo.png */; };
+		5E74B55918CCEBED001CFB60 /* addABuild.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E74B55818CCEBED001CFB60 /* addABuild.png */; };
 		5E755F9D18B1299500692F5F /* BuildCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E755F9C18B1299500692F5F /* BuildCell.xib */; };
 		5E755FA018B2F5D700692F5F /* BlockAlertViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E755F9F18B2F5D700692F5F /* BlockAlertViewDelegate.m */; };
 		5E79F1CA18AA4FA0005BF986 /* Source.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E79F1C918AA4FA0005BF986 /* Source.storyboard */; };
@@ -120,9 +121,10 @@
 		5E3ED154189A089E00632144 /* ParseHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParseHelper.h; sourceTree = "<group>"; };
 		5E3ED155189A089E00632144 /* ParseHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParseHelper.m; sourceTree = "<group>"; };
 		5E74B54D18CCC939001CFB60 /* AddBuildOverlayView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddBuildOverlayView.xib; sourceTree = "<group>"; };
-		5E74B55118CCCFDE001CFB60 /* addABuild.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = addABuild.png; sourceTree = "<group>"; };
 		5E74B55318CCE48F001CFB60 /* PreferencesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreferencesViewController.h; sourceTree = "<group>"; };
 		5E74B55418CCE48F001CFB60 /* PreferencesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreferencesViewController.m; sourceTree = "<group>"; };
+		5E74B55618CCEBA5001CFB60 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logo.png; path = Images/logo.png; sourceTree = "<group>"; };
+		5E74B55818CCEBED001CFB60 /* addABuild.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = addABuild.png; path = Images/addABuild.png; sourceTree = "<group>"; };
 		5E755F9C18B1299500692F5F /* BuildCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BuildCell.xib; sourceTree = "<group>"; };
 		5E755F9E18B2F5D700692F5F /* BlockAlertViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlockAlertViewDelegate.h; sourceTree = "<group>"; };
 		5E755F9F18B2F5D700692F5F /* BlockAlertViewDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlockAlertViewDelegate.m; sourceTree = "<group>"; };
@@ -371,7 +373,8 @@
 		5E79F1DB18AA543D005BF986 /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				5E74B55118CCCFDE001CFB60 /* addABuild.png */,
+				5E74B55818CCEBED001CFB60 /* addABuild.png */,
+				5E74B55618CCEBA5001CFB60 /* logo.png */,
 				5E79F1DC18AA584A005BF986 /* icon-failed-pending.png */,
 				5E79F1DD18AA584A005BF986 /* icon-failed.png */,
 				5E79F1DE18AA584A005BF986 /* icon-passed-pending.png */,
@@ -506,14 +509,15 @@
 				5E3ED1231899F14F00632144 /* Images.xcassets in Resources */,
 				5E79F1E718AA584A005BF986 /* icon-undetermined.png in Resources */,
 				5E79F1E318AA584A005BF986 /* icon-failed.png in Resources */,
-				5E74B55218CCCFDF001CFB60 /* addABuild.png in Resources */,
 				5ED0A996189EC75100A56A27 /* Credentials.plist in Resources */,
 				5E755F9D18B1299500692F5F /* BuildCell.xib in Resources */,
 				5E3ED1151899F14F00632144 /* Main_iPhone.storyboard in Resources */,
 				5E79F1CA18AA4FA0005BF986 /* Source.storyboard in Resources */,
 				5E79F1E518AA584A005BF986 /* icon-passed.png in Resources */,
 				5E79F1E618AA584A005BF986 /* icon-pending.png in Resources */,
+				5E74B55918CCEBED001CFB60 /* addABuild.png in Resources */,
 				5E74B54E18CCC939001CFB60 /* AddBuildOverlayView.xib in Resources */,
+				5E74B55718CCEBA5001CFB60 /* logo.png in Resources */,
 				5E3ED10C1899F14F00632144 /* InfoPlist.strings in Resources */,
 				5ED0A998189EC81000A56A27 /* Credentials.example.plist in Resources */,
 				5E79F1E418AA584A005BF986 /* icon-passed-pending.png in Resources */,

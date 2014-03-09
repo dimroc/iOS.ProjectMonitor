@@ -34,8 +34,6 @@
     UINib *emptyViewNib = [UINib nibWithNibName:@"AddBuildOverlayView" bundle:nil];
     [self setAddBuildOverlayView:[emptyViewNib instantiateWithOwner:self options:nil][0]];
     
-    [self toggleAddBuildOverlay];
-    
     NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
     [center addObserver:self selector:@selector(handleNewBuild:) name:PMBuildDidSaveNotication object:nil];
 }
@@ -43,7 +41,6 @@
 - (void)forceRefresh
 {
     [self toggleAddBuildOverlay];
-    [self.refreshControl beginRefreshing];
     [self triggerRefresh];
 }
 
