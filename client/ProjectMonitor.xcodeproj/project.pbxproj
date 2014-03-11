@@ -324,19 +324,19 @@
 			children = (
 				5E79F1CB18AA4FBB005BF986 /* Build.h */,
 				5E79F1CC18AA4FBB005BF986 /* Build.m */,
+				5E9DD7EE18CBA69B0035F2C4 /* BuildCollection.h */,
+				5E9DD7EF18CBA69B0035F2C4 /* BuildCollection.m */,
+				5E8D8A6818C83C8B0053E1DC /* BuildFactory.h */,
+				5E8D8A6918C83C8B0053E1DC /* BuildFactory.m */,
+				5E09522818BADB9500689FBA /* SemaphoreBuildFactory.h */,
+				5E09522918BADB9500689FBA /* SemaphoreBuildFactory.m */,
 				5E79F1CD18AA4FBB005BF986 /* Source.h */,
 				5E79F1CE18AA4FBB005BF986 /* SourceFactory.h */,
 				5E79F1CF18AA4FBB005BF986 /* SourceFactory.m */,
-				5E09522818BADB9500689FBA /* SemaphoreBuildFactory.h */,
-				5E09522918BADB9500689FBA /* SemaphoreBuildFactory.m */,
-				5E8D8A5B18C752590053E1DC /* TravisProBuildFactory.h */,
-				5E8D8A5C18C752590053E1DC /* TravisProBuildFactory.m */,
-				5E8D8A6818C83C8B0053E1DC /* BuildFactory.h */,
-				5E8D8A6918C83C8B0053E1DC /* BuildFactory.m */,
 				5E9DD7EB18CB5CA00035F2C4 /* TravisBuildFactory.h */,
 				5E9DD7EC18CB5CA00035F2C4 /* TravisBuildFactory.m */,
-				5E9DD7EE18CBA69B0035F2C4 /* BuildCollection.h */,
-				5E9DD7EF18CBA69B0035F2C4 /* BuildCollection.m */,
+				5E8D8A5B18C752590053E1DC /* TravisProBuildFactory.h */,
+				5E8D8A5C18C752590053E1DC /* TravisProBuildFactory.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";

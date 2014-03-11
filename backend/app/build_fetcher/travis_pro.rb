@@ -1,4 +1,4 @@
-class BuildFetcher::PrivateTravis < BuildFetcher
+class BuildFetcher::TravisPro < BuildFetcher
   def parse(content)
     ParseBuild.new({
       type: build_type,
@@ -28,7 +28,7 @@ class BuildFetcher::PrivateTravis < BuildFetcher
   end
 
   def build_type
-    self.class.name.demodulize + "Build"
+    self.class.name.demodulize
   end
 
   private

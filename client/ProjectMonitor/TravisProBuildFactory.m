@@ -16,7 +16,7 @@
 
 - (NSString*)getTravisBuildType
 {
-    return @"PrivateTravis";
+    return @"TravisPro";
 }
 
 - (NSString*)baseUrl

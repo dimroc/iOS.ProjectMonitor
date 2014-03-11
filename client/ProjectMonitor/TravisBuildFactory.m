@@ -1,5 +1,5 @@
 //
-//  PublicTravisBuildFactory.m
+//  TravisBuildFactory.m
 //  ProjectMonitor
 //
 //  Created by Dimitri Roche on 3/8/14.
@@ -99,7 +99,7 @@
 
 - (NSString*)getTravisBuildType
 {
-    return @"PublicTravis";
+    return @"Travis";
 }
 
 - (NSString*)baseUrl

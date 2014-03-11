@@ -2,7 +2,7 @@ class BuildFetcher
   attr_reader :build
 
   def self.create(build)
-    fetcher_name = build["type"].gsub("Build","")
+    fetcher_name = build["type"]
     "BuildFetcher::#{fetcher_name}".constantize.new(build)
   end
 

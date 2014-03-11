@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe BuildFetcher::PrivateTravis do
+describe BuildFetcher::TravisPro do
   describe "#parse" do
     let(:fetcher) { described_class.new({"project" => "best-org/monolithic_project"}) }
     let(:content) { JSON.parse(FixtureLoader.load("travis_build")) }

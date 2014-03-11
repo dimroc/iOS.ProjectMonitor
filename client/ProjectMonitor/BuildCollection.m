@@ -25,8 +25,8 @@
 {
     NSMutableArray *array = [NSMutableArray array];
     array[SemaphoreBuildType] = [Build forType:@"Semaphore"];
-    array[TravisBuildType] = [Build forType:@"PublicTravis"];
-    array[TravisProBuildType] = [Build forType:@"PrivateTravis"];
+    array[TravisBuildType] = [Build forType:@"Travis"];
+    array[TravisProBuildType] = [Build forType:@"TravisPro"];
     [self setBuildsByType:array];
     
     [self setBuildLabelsByType:[NSArray arrayWithObjects:

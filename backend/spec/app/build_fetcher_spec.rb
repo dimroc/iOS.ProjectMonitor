@@ -7,7 +7,7 @@ describe BuildFetcher do
         class BuildFetcher::Test < BuildFetcher; end;
       end
 
-      let(:build) { { "type" => "TestBuild" } }
+      let(:build) { { "type" => "Test" } }
       it "should create an instance" do
         instance = BuildFetcher.create(build)
         instance.should be
