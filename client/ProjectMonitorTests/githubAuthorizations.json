@@ -1,0 +1,43 @@
+ [{
+  "id": 6529449,
+  "url": "https://api.github.com/authorizations/6529449",
+  "app": {
+  "name": "Travis CI",
+  "url": "https://travis-ci.org",
+  "client_id": "f244293c729d5066cf27"
+  },
+  "token": "tokenfortravis",
+  "note": null,
+  "note_url": null,
+  "created_at": "2014-03-03T02:49:20Z",
+  "updated_at": "2014-03-03T19:08:55Z",
+  "scopes": ["read:org", "repo:status", "repo_deployment", "user:email", "write:repo_hook"]
+  }, {
+  "id": 2339132,
+  "url": "https://api.github.com/authorizations/2339132",
+  "app": {
+  "name": "Travis CI Pro",
+  "url": "https://travis-ci.com",
+  "client_id": "88c5b97de2dbfc50f3ac"
+  },
+  "token": "tokenfortravispro",
+  "note": null,
+  "note_url": null,
+  "created_at": "2013-04-19T17:18:21Z",
+  "updated_at": "2014-03-03T02:54:30Z",
+  "scopes": ["repo", "user:email"]
+  }, {
+  "id": 6665111,
+  "url": "https://api.github.com/authorizations/6665111",
+  "app": {
+  "client_id": "1f7221dcb0733a14f2d8",
+  "name": "gittip",
+  "url": "https://www.gittip.com/"
+  },
+  "created_at": "2014-03-07T14:05:05Z",
+  "note": null,
+  "note_url": null,
+  "scopes": [],
+  "token": "tokenforgittip",
+  "updated_at": "2014-03-07T14:05:05Z"
+  }]

@@ -40,9 +40,15 @@
 		5E74B55518CCE48F001CFB60 /* PreferencesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E74B55418CCE48F001CFB60 /* PreferencesViewController.m */; };
 		5E74B55718CCEBA5001CFB60 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E74B55618CCEBA5001CFB60 /* logo.png */; };
 		5E74B55918CCEBED001CFB60 /* addABuild.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E74B55818CCEBED001CFB60 /* addABuild.png */; };
+		5E74B55B18CD6FB4001CFB60 /* Travis.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E74B55A18CD6FB4001CFB60 /* Travis.storyboard */; };
+		5E74B55E18CD71EE001CFB60 /* TravisSourceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E74B55D18CD71EE001CFB60 /* TravisSourceViewController.m */; };
+		5E74B56118CDE749001CFB60 /* GithubClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E74B56018CDE749001CFB60 /* GithubClient.m */; };
+		5E74B56318CEA178001CFB60 /* githubAuthorizations.json in Resources */ = {isa = PBXBuildFile; fileRef = 5E74B56218CEA178001CFB60 /* githubAuthorizations.json */; };
+		5E74B56518CEA40D001CFB60 /* GithubClientSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E74B56418CEA40D001CFB60 /* GithubClientSpec.m */; };
+		5E74B56818CEAC29001CFB60 /* TravisClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E74B56718CEAC29001CFB60 /* TravisClient.m */; };
 		5E755F9D18B1299500692F5F /* BuildCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E755F9C18B1299500692F5F /* BuildCell.xib */; };
 		5E755FA018B2F5D700692F5F /* BlockAlertViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E755F9F18B2F5D700692F5F /* BlockAlertViewDelegate.m */; };
-		5E79F1CA18AA4FA0005BF986 /* Source.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E79F1C918AA4FA0005BF986 /* Source.storyboard */; };
+		5E79F1CA18AA4FA0005BF986 /* Semaphore.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E79F1C918AA4FA0005BF986 /* Semaphore.storyboard */; };
 		5E79F1D018AA4FBB005BF986 /* Build.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E79F1CC18AA4FBB005BF986 /* Build.m */; };
 		5E79F1D118AA4FBB005BF986 /* SourceFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E79F1CF18AA4FBB005BF986 /* SourceFactory.m */; };
 		5E79F1D718AA4FD4005BF986 /* SourceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E79F1D518AA4FD4005BF986 /* SourceViewController.m */; };
@@ -125,10 +131,19 @@
 		5E74B55418CCE48F001CFB60 /* PreferencesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreferencesViewController.m; sourceTree = "<group>"; };
 		5E74B55618CCEBA5001CFB60 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logo.png; path = Images/logo.png; sourceTree = "<group>"; };
 		5E74B55818CCEBED001CFB60 /* addABuild.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = addABuild.png; path = Images/addABuild.png; sourceTree = "<group>"; };
+		5E74B55A18CD6FB4001CFB60 /* Travis.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Travis.storyboard; sourceTree = "<group>"; };
+		5E74B55C18CD71EE001CFB60 /* TravisSourceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TravisSourceViewController.h; sourceTree = "<group>"; };
+		5E74B55D18CD71EE001CFB60 /* TravisSourceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TravisSourceViewController.m; sourceTree = "<group>"; };
+		5E74B55F18CDE749001CFB60 /* GithubClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GithubClient.h; sourceTree = "<group>"; };
+		5E74B56018CDE749001CFB60 /* GithubClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GithubClient.m; sourceTree = "<group>"; };
+		5E74B56218CEA178001CFB60 /* githubAuthorizations.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = githubAuthorizations.json; sourceTree = "<group>"; };
+		5E74B56418CEA40D001CFB60 /* GithubClientSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GithubClientSpec.m; sourceTree = "<group>"; };
+		5E74B56618CEAC29001CFB60 /* TravisClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TravisClient.h; sourceTree = "<group>"; };
+		5E74B56718CEAC29001CFB60 /* TravisClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TravisClient.m; sourceTree = "<group>"; };
 		5E755F9C18B1299500692F5F /* BuildCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BuildCell.xib; sourceTree = "<group>"; };
 		5E755F9E18B2F5D700692F5F /* BlockAlertViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlockAlertViewDelegate.h; sourceTree = "<group>"; };
 		5E755F9F18B2F5D700692F5F /* BlockAlertViewDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlockAlertViewDelegate.m; sourceTree = "<group>"; };
-		5E79F1C918AA4FA0005BF986 /* Source.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Source.storyboard; sourceTree = "<group>"; };
+		5E79F1C918AA4FA0005BF986 /* Semaphore.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Semaphore.storyboard; sourceTree = "<group>"; };
 		5E79F1CB18AA4FBB005BF986 /* Build.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Build.h; sourceTree = "<group>"; };
 		5E79F1CC18AA4FBB005BF986 /* Build.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Build.m; sourceTree = "<group>"; };
 		5E79F1CD18AA4FBB005BF986 /* Source.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Source.h; sourceTree = "<group>"; };
@@ -283,13 +298,14 @@
 		5E3ED1301899F15000632144 /* ProjectMonitorTests */ = {
 			isa = PBXGroup;
 			children = (
-				5E8D8A6518C81EE30053E1DC /* TestHelper.h */,
 				5E79F1EA18AD5702005BF986 /* BuildSpec.m */,
-				5E09522B18BADDB100689FBA /* SemaphoreBuildFactorySpec.m */,
-				5E8D8A6618C81EE30053E1DC /* TestHelper.m */,
-				5E8D8A5E18C81BF30053E1DC /* PrivateTravisBuildFactorySpec.m */,
 				5E8D8A6218C81DED0053E1DC /* Fixtures */,
+				5E74B56418CEA40D001CFB60 /* GithubClientSpec.m */,
+				5E8D8A5E18C81BF30053E1DC /* PrivateTravisBuildFactorySpec.m */,
+				5E09522B18BADDB100689FBA /* SemaphoreBuildFactorySpec.m */,
 				5E3ED1311899F15000632144 /* Supporting Files */,
+				5E8D8A6518C81EE30053E1DC /* TestHelper.h */,
+				5E8D8A6618C81EE30053E1DC /* TestHelper.m */,
 			);
 			path = ProjectMonitorTests;
 			sourceTree = "<group>";
@@ -353,6 +369,8 @@
 				5E8D8A5618C600850053E1DC /* BuildsViewController.m */,
 				5E74B55318CCE48F001CFB60 /* PreferencesViewController.h */,
 				5E74B55418CCE48F001CFB60 /* PreferencesViewController.m */,
+				5E74B55C18CD71EE001CFB60 /* TravisSourceViewController.h */,
+				5E74B55D18CD71EE001CFB60 /* TravisSourceViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -364,8 +382,9 @@
 				5E79F1DB18AA543D005BF986 /* Images */,
 				5E3ED1221899F14F00632144 /* Images.xcassets */,
 				5E3ED1131899F14F00632144 /* Main_iPhone.storyboard */,
-				5E79F1C918AA4FA0005BF986 /* Source.storyboard */,
+				5E79F1C918AA4FA0005BF986 /* Semaphore.storyboard */,
 				5E74B54D18CCC939001CFB60 /* AddBuildOverlayView.xib */,
+				5E74B55A18CD6FB4001CFB60 /* Travis.storyboard */,
 			);
 			name = "User Interface";
 			sourceTree = "<group>";
@@ -390,6 +409,10 @@
 			children = (
 				5E8D8A5218C5FDDF0053E1DC /* Helper.h */,
 				5E8D8A5318C5FDDF0053E1DC /* Helper.m */,
+				5E74B55F18CDE749001CFB60 /* GithubClient.h */,
+				5E74B56018CDE749001CFB60 /* GithubClient.m */,
+				5E74B56618CEAC29001CFB60 /* TravisClient.h */,
+				5E74B56718CEAC29001CFB60 /* TravisClient.m */,
 			);
 			name = Misc;
 			sourceTree = "<group>";
@@ -398,6 +421,7 @@
 			isa = PBXGroup;
 			children = (
 				5E8D8A6318C81E210053E1DC /* travisRepos.json */,
+				5E74B56218CEA178001CFB60 /* githubAuthorizations.json */,
 			);
 			name = Fixtures;
 			sourceTree = "<group>";
@@ -512,13 +536,14 @@
 				5ED0A996189EC75100A56A27 /* Credentials.plist in Resources */,
 				5E755F9D18B1299500692F5F /* BuildCell.xib in Resources */,
 				5E3ED1151899F14F00632144 /* Main_iPhone.storyboard in Resources */,
-				5E79F1CA18AA4FA0005BF986 /* Source.storyboard in Resources */,
+				5E79F1CA18AA4FA0005BF986 /* Semaphore.storyboard in Resources */,
 				5E79F1E518AA584A005BF986 /* icon-passed.png in Resources */,
 				5E79F1E618AA584A005BF986 /* icon-pending.png in Resources */,
 				5E74B55918CCEBED001CFB60 /* addABuild.png in Resources */,
 				5E74B54E18CCC939001CFB60 /* AddBuildOverlayView.xib in Resources */,
 				5E74B55718CCEBA5001CFB60 /* logo.png in Resources */,
 				5E3ED10C1899F14F00632144 /* InfoPlist.strings in Resources */,
+				5E74B55B18CD6FB4001CFB60 /* Travis.storyboard in Resources */,
 				5ED0A998189EC81000A56A27 /* Credentials.example.plist in Resources */,
 				5E79F1E418AA584A005BF986 /* icon-passed-pending.png in Resources */,
 			);
@@ -529,6 +554,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5E8D8A6418C81E210053E1DC /* travisRepos.json in Resources */,
+				5E74B56318CEA178001CFB60 /* githubAuthorizations.json in Resources */,
 				5E3ED1351899F15000632144 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -603,6 +629,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5E74B56118CDE749001CFB60 /* GithubClient.m in Sources */,
 				5E3ED1211899F14F00632144 /* DetailViewController.m in Sources */,
 				5EBF47D018A69E4C00175065 /* ParseUITableViewController.m in Sources */,
 				5E8D8A5718C600850053E1DC /* BuildsViewController.m in Sources */,
@@ -611,6 +638,7 @@
 				5E8D8A5D18C752590053E1DC /* PrivateTravisBuildFactory.m in Sources */,
 				5E3ED11E1899F14F00632144 /* MasterViewController.m in Sources */,
 				5E74B55518CCE48F001CFB60 /* PreferencesViewController.m in Sources */,
+				5E74B55E18CD71EE001CFB60 /* TravisSourceViewController.m in Sources */,
 				5E3ED11B1899F14F00632144 /* ProjectMonitor.xcdatamodeld in Sources */,
 				5EBF47E318A6AE7E00175065 /* AddBuildViewController.m in Sources */,
 				5E79F1D718AA4FD4005BF986 /* SourceViewController.m in Sources */,
@@ -626,6 +654,7 @@
 				5E9DD7ED18CB5CA00035F2C4 /* PublicTravisBuildFactory.m in Sources */,
 				5EBF47E018A6A41000175065 /* ProjectMonitorLogInViewController.m in Sources */,
 				5E79F1DA18AA5085005BF986 /* BuildCell.m in Sources */,
+				5E74B56818CEAC29001CFB60 /* TravisClient.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -634,6 +663,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5E09522C18BADDB100689FBA /* SemaphoreBuildFactorySpec.m in Sources */,
+				5E74B56518CEA40D001CFB60 /* GithubClientSpec.m in Sources */,
 				5E79F1EB18AD5702005BF986 /* BuildSpec.m in Sources */,
 				5E8D8A5F18C81BF30053E1DC /* PrivateTravisBuildFactorySpec.m in Sources */,
 				5E8D8A6718C81EE30053E1DC /* TestHelper.m in Sources */,

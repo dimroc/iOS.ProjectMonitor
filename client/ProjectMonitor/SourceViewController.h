@@ -12,8 +12,6 @@
 
 @interface SourceViewController : UITableViewController <Source, UITextFieldDelegate>
 
-@property (nonatomic, copy) NSString* name;
-@property (nonatomic, weak) UIViewController* controller;
 @property (nonatomic, strong) BuildFactory *buildFactory;
 @property (weak, nonatomic) IBOutlet UITextField *authenticationTokenTextField;
 

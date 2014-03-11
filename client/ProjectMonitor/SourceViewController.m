@@ -12,9 +12,6 @@
 #import "Helper.h"
 
 @interface SourceViewController ()
-
-@property (nonatomic, copy) NSArray *builds;
-
 @end
 
 @implementation SourceViewController
@@ -22,15 +19,13 @@
 -(id)initWithCoder:(NSCoder *)aDecoder
 {
     self = [super initWithCoder:aDecoder];
-    [self setName:@"Semaphore"];
-    [self setController:self];
     return self;
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
     if ([Helper stringValid: textField.text]) {
         [textField resignFirstResponder];
-        [self performSegueWithIdentifier:@"toAvailableBuilds" sender:self];
+        [self performSegueWithIdentifier:@"toAvailableSemaphoreBuilds" sender:self];
         return YES;
     }
     else {

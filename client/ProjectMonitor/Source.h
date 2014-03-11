@@ -11,8 +11,6 @@
 
 @protocol Source <NSObject>
 
-@property (nonatomic, copy) NSString* name;
-@property (nonatomic, weak) UIViewController* controller;
 @property (nonatomic, strong) BuildFactory *buildFactory;
 
 @end
