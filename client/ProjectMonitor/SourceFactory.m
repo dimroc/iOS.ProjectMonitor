@@ -26,12 +26,11 @@
 
 + (NSString *)storyboardNameFromName:(NSString*)name
 {
-    NSString *string = [name stringByReplacingOccurrencesOfString:@"Private " withString:@""];
-    return [string stringByReplacingOccurrencesOfString:@"Public " withString:@""];
+    return [name stringByReplacingOccurrencesOfString:@" Pro" withString:@""];
 }
 
 + (void)configureSourceViewController: (id<Source>)source FromName:(NSString*) name {
-    if ([name isEqualToString:@"Private Travis"]) {
+    if ([name isEqualToString:@"Travis Pro"]) {
         [(TravisSourceViewController*)source setPro:true];
     }
 }

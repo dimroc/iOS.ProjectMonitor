@@ -1,37 +1,33 @@
 //
-//  PrivateTravisBuildFactory.m
+//  PublicTravisBuildFactory.m
 //  ProjectMonitor
 //
-//  Created by Dimitri Roche on 3/5/14.
+//  Created by Dimitri Roche on 3/8/14.
 //  Copyright (c) 2014 Dimitri Roche. All rights reserved.
 //
 
-#import "PrivateTravisBuildFactory.h"
-#import "Build.h"
+#import "TravisBuildFactory.h"
 #import "Helper.h"
+#import "Build.h"
 
-@interface PrivateTravisBuildFactory ()
-
-@end
-
-@implementation PrivateTravisBuildFactory : BuildFactory
+@implementation TravisBuildFactory
 
 - (void)fetchWithSuccess:(FetchBuildCallback)success failure:(void (^)(NSError *)) failure
 {
     NSDictionary *parameters = @{@"access_token": [self token]};
     NSLog(@"# Fetching travis builds with access token: %@", [self token]);
-
+    
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     
     [manager GET:[self getTravisUrl] parameters:parameters success:
      ^(AFHTTPRequestOperation *operation, id responseObject) {
-        [self handleResponseWith:responseObject andRespondWith:success];
-    } failure: ^(AFHTTPRequestOperation *operation, NSError *error) {
-        NSLog(@"# Error: %@", error);
-        dispatch_async(dispatch_get_main_queue(), ^{
-            failure(error);
-        });
-    }];
+         [self handleResponseWith:responseObject andRespondWith:success];
+     } failure: ^(AFHTTPRequestOperation *operation, NSError *error) {
+         NSLog(@"# Error: %@", error);
+         dispatch_async(dispatch_get_main_queue(), ^{
+             failure(error);
+         });
+     }];
 }
 
 - (void)handleResponseWith:(id)responseObject andRespondWith:(FetchBuildCallback)callback
@@ -96,19 +92,19 @@
     }
 }
 
+- (NSString*)getTravisUrl
+{
+    return [NSString stringWithFormat:@"%@/repos", [self baseUrl]];
+}
+
 - (NSString*)getTravisBuildType
 {
-    return @"PrivateTravis";
+    return @"PublicTravis";
 }
 
 - (NSString*)baseUrl
 {
-    return @"https://api.travis-ci.com";
-}
-
-- (NSString*)getTravisUrl
-{
-    return [NSString stringWithFormat:@"%@/repos", [self baseUrl]];
+    return @"https://api.travis-ci.org";
 }
 
 @end

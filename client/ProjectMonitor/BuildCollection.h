@@ -10,8 +10,8 @@
 
 typedef enum {
     SemaphoreBuildType = 0,
-    PrivateTravisBuildType,
-    PublicTravisBuildType
+    TravisBuildType,
+    TravisProBuildType
 } BuildType;
 
 @interface BuildCollection : NSObject

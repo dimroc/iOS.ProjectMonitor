@@ -1,5 +1,5 @@
 //
-//  TravisBuildFactorySpec.m
+//  TravisProBuildFactory
 //  ProjectMonitor
 //
 //  Created by Dimitri Roche on 3/5/14.
@@ -7,16 +7,16 @@
 //
 
 #import "Kiwi.h"
-#import "PrivateTravisBuildFactory.h"
+#import "TravisProBuildFactory.h"
 #import "TestHelper.h"
 #import "Build.h"
 
-SPEC_BEGIN(PrivateTravisBuildFactorySpec)
+SPEC_BEGIN(TravisProBuildFactorySpec)
 
 describe(@"#arrayFromResponse", ^{
     it(@"should return the correct number of builds from the expected response", ^{
         id response = [TestHelper dataFromJSONFileNamed:@"travisRepos"];
-        PrivateTravisBuildFactory* factory = [[PrivateTravisBuildFactory alloc] initWithToken:@"gibberish"];
+        TravisProBuildFactory* factory = [[TravisProBuildFactory alloc] initWithToken:@"gibberish"];
         NSArray *builds = [factory arrayFromResponse:response];
         
         [[theValue([builds count]) should] equal:theValue(2)];
@@ -29,7 +29,7 @@ describe(@"#arrayFromResponse", ^{
 describe(@"#fromDictionary", ^{
     it(@"should return a build from expected parameters", ^{
         id fixtures = [TestHelper dataFromJSONFileNamed:@"travisRepos"];
-        PrivateTravisBuildFactory* factory = [[PrivateTravisBuildFactory alloc] initWithToken:@"MyTestToken"];
+        TravisProBuildFactory* factory = [[TravisProBuildFactory alloc] initWithToken:@"MyTestToken"];
         Build *build = [factory fromDictionary: [fixtures objectAtIndex:0]];
         
         [[[build project] should] equal:@"best-org/monolithic_project"];

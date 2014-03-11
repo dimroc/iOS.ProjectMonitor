@@ -62,12 +62,12 @@
 		5E79F1EB18AD5702005BF986 /* BuildSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E79F1EA18AD5702005BF986 /* BuildSpec.m */; };
 		5E8D8A5418C5FDDF0053E1DC /* Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E8D8A5318C5FDDF0053E1DC /* Helper.m */; };
 		5E8D8A5718C600850053E1DC /* BuildsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E8D8A5618C600850053E1DC /* BuildsViewController.m */; };
-		5E8D8A5D18C752590053E1DC /* PrivateTravisBuildFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E8D8A5C18C752590053E1DC /* PrivateTravisBuildFactory.m */; };
-		5E8D8A5F18C81BF30053E1DC /* PrivateTravisBuildFactorySpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E8D8A5E18C81BF30053E1DC /* PrivateTravisBuildFactorySpec.m */; };
+		5E8D8A5D18C752590053E1DC /* TravisProBuildFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E8D8A5C18C752590053E1DC /* TravisProBuildFactory.m */; };
+		5E8D8A5F18C81BF30053E1DC /* TravisProBuildFactorySpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E8D8A5E18C81BF30053E1DC /* TravisProBuildFactorySpec.m */; };
 		5E8D8A6418C81E210053E1DC /* travisRepos.json in Resources */ = {isa = PBXBuildFile; fileRef = 5E8D8A6318C81E210053E1DC /* travisRepos.json */; };
 		5E8D8A6718C81EE30053E1DC /* TestHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E8D8A6618C81EE30053E1DC /* TestHelper.m */; };
 		5E8D8A6A18C83C8B0053E1DC /* BuildFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E8D8A6918C83C8B0053E1DC /* BuildFactory.m */; };
-		5E9DD7ED18CB5CA00035F2C4 /* PublicTravisBuildFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E9DD7EC18CB5CA00035F2C4 /* PublicTravisBuildFactory.m */; };
+		5E9DD7ED18CB5CA00035F2C4 /* TravisBuildFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E9DD7EC18CB5CA00035F2C4 /* TravisBuildFactory.m */; };
 		5E9DD7F018CBA69B0035F2C4 /* BuildCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E9DD7EF18CBA69B0035F2C4 /* BuildCollection.m */; };
 		5EBF47D018A69E4C00175065 /* ParseUITableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EBF47CF18A69E4C00175065 /* ParseUITableViewController.m */; };
 		5EBF47DD18A6A3A600175065 /* ProjectMonitorSignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EBF47DC18A6A3A600175065 /* ProjectMonitorSignUpViewController.m */; };
@@ -164,16 +164,16 @@
 		5E8D8A5318C5FDDF0053E1DC /* Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Helper.m; sourceTree = "<group>"; };
 		5E8D8A5518C600850053E1DC /* BuildsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuildsViewController.h; sourceTree = "<group>"; };
 		5E8D8A5618C600850053E1DC /* BuildsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BuildsViewController.m; sourceTree = "<group>"; };
-		5E8D8A5B18C752590053E1DC /* PrivateTravisBuildFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrivateTravisBuildFactory.h; sourceTree = "<group>"; };
-		5E8D8A5C18C752590053E1DC /* PrivateTravisBuildFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrivateTravisBuildFactory.m; sourceTree = "<group>"; };
-		5E8D8A5E18C81BF30053E1DC /* PrivateTravisBuildFactorySpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrivateTravisBuildFactorySpec.m; sourceTree = "<group>"; };
+		5E8D8A5B18C752590053E1DC /* TravisProBuildFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TravisProBuildFactory.h; sourceTree = "<group>"; };
+		5E8D8A5C18C752590053E1DC /* TravisProBuildFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TravisProBuildFactory.m; sourceTree = "<group>"; };
+		5E8D8A5E18C81BF30053E1DC /* TravisProBuildFactorySpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TravisProBuildFactorySpec.m; sourceTree = "<group>"; };
 		5E8D8A6318C81E210053E1DC /* travisRepos.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = travisRepos.json; sourceTree = "<group>"; };
 		5E8D8A6518C81EE30053E1DC /* TestHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestHelper.h; sourceTree = "<group>"; };
 		5E8D8A6618C81EE30053E1DC /* TestHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestHelper.m; sourceTree = "<group>"; };
 		5E8D8A6818C83C8B0053E1DC /* BuildFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuildFactory.h; sourceTree = "<group>"; };
 		5E8D8A6918C83C8B0053E1DC /* BuildFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BuildFactory.m; sourceTree = "<group>"; };
-		5E9DD7EB18CB5CA00035F2C4 /* PublicTravisBuildFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PublicTravisBuildFactory.h; sourceTree = "<group>"; };
-		5E9DD7EC18CB5CA00035F2C4 /* PublicTravisBuildFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PublicTravisBuildFactory.m; sourceTree = "<group>"; };
+		5E9DD7EB18CB5CA00035F2C4 /* TravisBuildFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TravisBuildFactory.h; sourceTree = "<group>"; };
+		5E9DD7EC18CB5CA00035F2C4 /* TravisBuildFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TravisBuildFactory.m; sourceTree = "<group>"; };
 		5E9DD7EE18CBA69B0035F2C4 /* BuildCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuildCollection.h; sourceTree = "<group>"; };
 		5E9DD7EF18CBA69B0035F2C4 /* BuildCollection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BuildCollection.m; sourceTree = "<group>"; };
 		5EBF47CE18A69E4C00175065 /* ParseUITableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParseUITableViewController.h; sourceTree = "<group>"; };
@@ -301,7 +301,7 @@
 				5E79F1EA18AD5702005BF986 /* BuildSpec.m */,
 				5E8D8A6218C81DED0053E1DC /* Fixtures */,
 				5E74B56418CEA40D001CFB60 /* GithubClientSpec.m */,
-				5E8D8A5E18C81BF30053E1DC /* PrivateTravisBuildFactorySpec.m */,
+				5E8D8A5E18C81BF30053E1DC /* TravisProBuildFactorySpec.m */,
 				5E09522B18BADDB100689FBA /* SemaphoreBuildFactorySpec.m */,
 				5E3ED1311899F15000632144 /* Supporting Files */,
 				5E8D8A6518C81EE30053E1DC /* TestHelper.h */,
@@ -329,12 +329,12 @@
 				5E79F1CF18AA4FBB005BF986 /* SourceFactory.m */,
 				5E09522818BADB9500689FBA /* SemaphoreBuildFactory.h */,
 				5E09522918BADB9500689FBA /* SemaphoreBuildFactory.m */,
-				5E8D8A5B18C752590053E1DC /* PrivateTravisBuildFactory.h */,
-				5E8D8A5C18C752590053E1DC /* PrivateTravisBuildFactory.m */,
+				5E8D8A5B18C752590053E1DC /* TravisProBuildFactory.h */,
+				5E8D8A5C18C752590053E1DC /* TravisProBuildFactory.m */,
 				5E8D8A6818C83C8B0053E1DC /* BuildFactory.h */,
 				5E8D8A6918C83C8B0053E1DC /* BuildFactory.m */,
-				5E9DD7EB18CB5CA00035F2C4 /* PublicTravisBuildFactory.h */,
-				5E9DD7EC18CB5CA00035F2C4 /* PublicTravisBuildFactory.m */,
+				5E9DD7EB18CB5CA00035F2C4 /* TravisBuildFactory.h */,
+				5E9DD7EC18CB5CA00035F2C4 /* TravisBuildFactory.m */,
 				5E9DD7EE18CBA69B0035F2C4 /* BuildCollection.h */,
 				5E9DD7EF18CBA69B0035F2C4 /* BuildCollection.m */,
 			);
@@ -635,7 +635,7 @@
 				5E8D8A5718C600850053E1DC /* BuildsViewController.m in Sources */,
 				5E3ED156189A089E00632144 /* ParseHelper.m in Sources */,
 				5E79F1D118AA4FBB005BF986 /* SourceFactory.m in Sources */,
-				5E8D8A5D18C752590053E1DC /* PrivateTravisBuildFactory.m in Sources */,
+				5E8D8A5D18C752590053E1DC /* TravisProBuildFactory.m in Sources */,
 				5E3ED11E1899F14F00632144 /* MasterViewController.m in Sources */,
 				5E74B55518CCE48F001CFB60 /* PreferencesViewController.m in Sources */,
 				5E74B55E18CD71EE001CFB60 /* TravisSourceViewController.m in Sources */,
@@ -651,7 +651,7 @@
 				5E755FA018B2F5D700692F5F /* BlockAlertViewDelegate.m in Sources */,
 				5E3ED10E1899F14F00632144 /* main.m in Sources */,
 				5E09522A18BADB9500689FBA /* SemaphoreBuildFactory.m in Sources */,
-				5E9DD7ED18CB5CA00035F2C4 /* PublicTravisBuildFactory.m in Sources */,
+				5E9DD7ED18CB5CA00035F2C4 /* TravisBuildFactory.m in Sources */,
 				5EBF47E018A6A41000175065 /* ProjectMonitorLogInViewController.m in Sources */,
 				5E79F1DA18AA5085005BF986 /* BuildCell.m in Sources */,
 				5E74B56818CEAC29001CFB60 /* TravisClient.m in Sources */,
@@ -665,7 +665,7 @@
 				5E09522C18BADDB100689FBA /* SemaphoreBuildFactorySpec.m in Sources */,
 				5E74B56518CEA40D001CFB60 /* GithubClientSpec.m in Sources */,
 				5E79F1EB18AD5702005BF986 /* BuildSpec.m in Sources */,
-				5E8D8A5F18C81BF30053E1DC /* PrivateTravisBuildFactorySpec.m in Sources */,
+				5E8D8A5F18C81BF30053E1DC /* TravisProBuildFactorySpec.m in Sources */,
 				5E8D8A6718C81EE30053E1DC /* TestHelper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
