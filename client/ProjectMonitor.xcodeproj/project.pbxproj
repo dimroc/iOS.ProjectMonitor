@@ -75,6 +75,7 @@
 		5EBF47E318A6AE7E00175065 /* AddBuildViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EBF47E218A6AE7E00175065 /* AddBuildViewController.m */; };
 		5ED0A996189EC75100A56A27 /* Credentials.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5ED0A995189EC75100A56A27 /* Credentials.plist */; };
 		5ED0A998189EC81000A56A27 /* Credentials.example.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5ED0A997189EC81000A56A27 /* Credentials.example.plist */; };
+		5EDBEBBD18D0074500389C7E /* Credentials.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EDBEBBC18D0074500389C7E /* Credentials.m */; };
 		A808C67AAD954B00B7CCF868 /* libPods-ProjectMonitor.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 841A53FDA145460EA60ED4BF /* libPods-ProjectMonitor.a */; };
 /* End PBXBuildFile section */
 
@@ -186,6 +187,8 @@
 		5EBF47E218A6AE7E00175065 /* AddBuildViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddBuildViewController.m; sourceTree = "<group>"; };
 		5ED0A995189EC75100A56A27 /* Credentials.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Credentials.plist; sourceTree = "<group>"; };
 		5ED0A997189EC81000A56A27 /* Credentials.example.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Credentials.example.plist; sourceTree = "<group>"; };
+		5EDBEBBB18D0074500389C7E /* Credentials.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Credentials.h; sourceTree = "<group>"; };
+		5EDBEBBC18D0074500389C7E /* Credentials.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Credentials.m; sourceTree = "<group>"; };
 		841A53FDA145460EA60ED4BF /* libPods-ProjectMonitor.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ProjectMonitor.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -413,6 +416,8 @@
 				5E74B56018CDE749001CFB60 /* GithubClient.m */,
 				5E74B56618CEAC29001CFB60 /* TravisClient.h */,
 				5E74B56718CEAC29001CFB60 /* TravisClient.m */,
+				5EDBEBBB18D0074500389C7E /* Credentials.h */,
+				5EDBEBBC18D0074500389C7E /* Credentials.m */,
 			);
 			name = Misc;
 			sourceTree = "<group>";
@@ -649,6 +654,7 @@
 				5E79F1D018AA4FBB005BF986 /* Build.m in Sources */,
 				5E8D8A6A18C83C8B0053E1DC /* BuildFactory.m in Sources */,
 				5E755FA018B2F5D700692F5F /* BlockAlertViewDelegate.m in Sources */,
+				5EDBEBBD18D0074500389C7E /* Credentials.m in Sources */,
 				5E3ED10E1899F14F00632144 /* main.m in Sources */,
 				5E09522A18BADB9500689FBA /* SemaphoreBuildFactory.m in Sources */,
 				5E9DD7ED18CB5CA00035F2C4 /* TravisBuildFactory.m in Sources */,

@@ -42,6 +42,7 @@ PODS:
     - MagicalRecord/Core
   - MagicalRecord/Core (2.2)
   - MBProgressHUD (0.8)
+  - NewRelicAgent (3.256)
   - Parse (1.2.18):
     - Facebook-iOS-SDK (~> 3.11)
   - Underscore.m (0.2.1)
@@ -52,6 +53,7 @@ DEPENDENCIES:
   - Kiwi/XCTest
   - MagicalRecord
   - MBProgressHUD (~> 0.8)
+  - NewRelicAgent
   - Parse
   - Underscore.m
 
@@ -67,6 +69,7 @@ SPEC CHECKSUMS:
   Kiwi: 04c51e880831d291748ec702d42c4101f7eb95c9
   MagicalRecord: 95d49d74ef752cd52f6ad87bcb474817fc3978cf
   MBProgressHUD: 2bbc6f470111daf7f3eaa4eb12b8cbf01c4c0622
+  NewRelicAgent: 14ab6b0fd2af34eca7668449b83bf2ae872ec533
   Parse: 6dd57f2af9f89dc6facc755cec4e96f8b739b1fb
   Underscore.m: 593ea54a19d3cc4439387a83d36eb7ba6ffd1707
 

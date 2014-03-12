@@ -9,12 +9,14 @@
 #import "AppDelegate.h"
 #import "ParseHelper.h"
 #import "Build.h"
+#import "Credentials.h"
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     [ParseHelper launch:launchOptions];
+    [NewRelicAgent startWithApplicationToken: [Credentials objectForKey:@"NewRelicToken"]];
     [MagicalRecord setupAutoMigratingCoreDataStack];
     
     // Register for push notifications

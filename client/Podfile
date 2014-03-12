@@ -7,6 +7,7 @@ target "ProjectMonitor" do
   pod 'MBProgressHUD', '~> 0.8'
   pod 'MagicalRecord'
   pod 'BlocksKit', :git => 'https://github.com/pandamonia/BlocksKit.git', :commit => '95833bd'
+  pod 'NewRelicAgent'
 
   target "ProjectMonitorTests", :exclusive => true do
     pod 'Kiwi/XCTest'

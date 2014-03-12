@@ -7,27 +7,13 @@
 //
 
 #import "ParseHelper.h"
+#import "Credentials.h"
 
 @implementation ParseHelper
 
-// Class Singleton
-// http://stackoverflow.com/questions/145154/what-should-my-objective-c-singleton-look-like
-static NSDictionary *credentials;
-
-+ (void)initialize
-{
-    static BOOL initialized = NO;
-    if(!initialized)
-    {
-        initialized = YES;
-        NSString *path = [[NSBundle mainBundle] pathForResource: @"Credentials" ofType: @"plist"];
-        credentials =[[NSMutableDictionary alloc] initWithContentsOfFile:path];
-    }
-}
-
 +(void)launch:(NSDictionary *)launchOptions     {
-    [Parse setApplicationId: [credentials objectForKey: @"ParseApplicationId"]
-                  clientKey: [credentials objectForKey: @"ParseClientKey"]];
+    [Parse setApplicationId: [Credentials objectForKey:@"ParseApplicationId"]
+                  clientKey: [Credentials objectForKey:@"ParseClientKey"]];
     
     [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
 }
