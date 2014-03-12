@@ -12,6 +12,7 @@
 #import "BuildsViewController.h"
 #import "Helper.h"
 #import "TravisClient.h"
+#import "TravisBuildFactory.h"
 
 @interface TravisSourceViewController ()
 @property (nonatomic, copy) NSString *currentToken;
@@ -92,7 +93,7 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     BuildsViewController *buildsController = [segue destinationViewController];
-    [buildsController loadWithFactory:[self.buildFactory initWithToken:self.currentToken]];
+    [buildsController loadWithFactory:[(TravisBuildFactory*)self.buildFactory initWithToken:self.currentToken andUsername:_usernameTextField.text]];
 }
 
 @end

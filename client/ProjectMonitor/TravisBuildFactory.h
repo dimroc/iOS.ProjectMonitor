@@ -11,6 +11,9 @@
 
 @interface TravisBuildFactory : BuildFactory
 
+@property (nonatomic, strong) NSString* username;
+
+- (id)initWithToken:(NSString *)token andUsername:(NSString*)username;
 - (NSArray *)arrayFromResponse:(NSDictionary *)response;
 - (Build *)fromDictionary:(NSDictionary *)dictionary;
 

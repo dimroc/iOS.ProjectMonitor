@@ -10,16 +10,27 @@
 #import "Helper.h"
 #import "Build.h"
 
+@interface TravisBuildFactory ()
+@end
+
 @implementation TravisBuildFactory
+
+- (id)initWithToken:(NSString *)token andUsername:(NSString*)username {
+    self = [self initWithToken:token];
+    if (self) {
+        [self setUsername:username];
+    }
+    
+    return self;
+}
 
 - (void)fetchWithSuccess:(FetchBuildCallback)success failure:(void (^)(NSError *)) failure
 {
-    NSDictionary *parameters = @{@"access_token": [self token]};
     NSLog(@"# Fetching travis builds with access token: %@", [self token]);
     
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     
-    [manager GET:[self getTravisUrl] parameters:parameters success:
+    [manager GET:[self getTravisUrl] parameters:[self getParameters] success:
      ^(AFHTTPRequestOperation *operation, id responseObject) {
          [self handleResponseWith:responseObject andRespondWith:success];
      } failure: ^(AFHTTPRequestOperation *operation, NSError *error) {
@@ -105,6 +116,10 @@
 - (NSString*)baseUrl
 {
     return @"https://api.travis-ci.org";
+}
+
+- (NSDictionary*)getParameters {
+    return @{@"access_token": [self token], @"member": [self username]};
 }
 
 @end
