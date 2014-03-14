@@ -21,6 +21,7 @@
   #import <MBProgressHUD/MBProgressHUD.h>
   #import <BlocksKit/BlocksKit.h>
   #import <NewRelicAgent/NewRelic.h>
+  #import <Crashlytics/Crashlytics.h>
 
   //#define MR_SHORTHAND
   #import <CoreData+MagicalRecord.h>

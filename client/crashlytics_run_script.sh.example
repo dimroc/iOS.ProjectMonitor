@@ -1,0 +1,4 @@
+#!/bin/sh
+#http://support.crashlytics.com/knowledgebase/articles/92534-can-i-move-the-framework-to-a-different-folder
+./Pods/CrashlyticsFramework/Crashlytics.framework/run yourAPIkey yourOTHERkey
+

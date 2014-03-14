@@ -410,14 +410,14 @@
 		5E8D8A5118C5FDC30053E1DC /* Misc */ = {
 			isa = PBXGroup;
 			children = (
-				5E8D8A5218C5FDDF0053E1DC /* Helper.h */,
-				5E8D8A5318C5FDDF0053E1DC /* Helper.m */,
-				5E74B55F18CDE749001CFB60 /* GithubClient.h */,
-				5E74B56018CDE749001CFB60 /* GithubClient.m */,
-				5E74B56618CEAC29001CFB60 /* TravisClient.h */,
-				5E74B56718CEAC29001CFB60 /* TravisClient.m */,
 				5EDBEBBB18D0074500389C7E /* Credentials.h */,
 				5EDBEBBC18D0074500389C7E /* Credentials.m */,
+				5E74B55F18CDE749001CFB60 /* GithubClient.h */,
+				5E74B56018CDE749001CFB60 /* GithubClient.m */,
+				5E8D8A5218C5FDDF0053E1DC /* Helper.h */,
+				5E8D8A5318C5FDDF0053E1DC /* Helper.m */,
+				5E74B56618CEAC29001CFB60 /* TravisClient.h */,
+				5E74B56718CEAC29001CFB60 /* TravisClient.m */,
 			);
 			name = Misc;
 			sourceTree = "<group>";
@@ -458,6 +458,7 @@
 				5E3ED0F91899F14F00632144 /* Frameworks */,
 				5E3ED0FA1899F14F00632144 /* Resources */,
 				EDC5BCFFC519462DBE578A57 /* Copy Pods Resources */,
+				5EA58D2A18D2A5350069D6E6 /* Run Script */,
 			);
 			buildRules = (
 			);
@@ -596,6 +597,20 @@
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
+		};
+		5EA58D2A18D2A5350069D6E6 /* Run Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Run Script";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = ./crashlytics_run_script.sh;
+			shellScript = "";
 		};
 		611C2540F357466BAF481159 /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -800,6 +815,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/dimroc/workspace/ios.ProjectMonitor,
+					/Users/dimroc/workspace/ios.ProjectMonitor/client,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ProjectMonitor/ProjectMonitor-Prefix.pch";
@@ -820,6 +836,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/dimroc/workspace/ios.ProjectMonitor,
+					/Users/dimroc/workspace/ios.ProjectMonitor/client,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ProjectMonitor/ProjectMonitor-Prefix.pch";

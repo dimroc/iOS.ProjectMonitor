@@ -27,6 +27,9 @@
     
     NSLog(@"# Application Documents Directory: %@", [self applicationDocumentsDirectory]);
     NSLog(@"# %@", [MagicalRecord currentStack]);
+    
+    [Crashlytics startWithAPIKey:[Credentials objectForKey:@"CrashlyticsKey"]];
+    
     return YES;
 }
 

@@ -32,6 +32,7 @@ PODS:
   - BlocksKit/MiniFFI (2.1.0)
   - BlocksKit/UIKit (2.1.0):
     - BlocksKit/DynamicDelegate
+  - CrashlyticsFramework (2.1.7)
   - Facebook-iOS-SDK (3.12.0)
   - Kiwi/ARC (2.2.3)
   - Kiwi/NonARC (2.2.3)
@@ -50,6 +51,7 @@ PODS:
 DEPENDENCIES:
   - AFNetworking (~> 2.0)
   - BlocksKit (from `https://github.com/pandamonia/BlocksKit.git`, commit `95833bd`)
+  - CrashlyticsFramework
   - Kiwi/XCTest
   - MagicalRecord
   - MBProgressHUD (~> 0.8)
@@ -65,6 +67,7 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   AFNetworking: c7d7901a83f631414c7eda1737261f696101a5cd
   BlocksKit: 20086a023551c742d2278771e47c36e05f17b662
+  CrashlyticsFramework: 569d2b1c71922aa480bfdc55df4c86aedf7b215c
   Facebook-iOS-SDK: c09f7d80db5c48170ff834bc03ebe774c49d1f5b
   Kiwi: 04c51e880831d291748ec702d42c4101f7eb95c9
   MagicalRecord: 95d49d74ef752cd52f6ad87bcb474817fc3978cf

@@ -8,6 +8,7 @@ target "ProjectMonitor" do
   pod 'MagicalRecord'
   pod 'BlocksKit', :git => 'https://github.com/pandamonia/BlocksKit.git', :commit => '95833bd'
   pod 'NewRelicAgent'
+  pod 'CrashlyticsFramework'
 
   target "ProjectMonitorTests", :exclusive => true do
     pod 'Kiwi/XCTest'

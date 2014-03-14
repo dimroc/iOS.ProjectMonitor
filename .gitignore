@@ -1,5 +1,4 @@
 */xcuserdata/*
-Credentials.plist
 /tmp
 
 # Xcode
@@ -27,3 +26,7 @@ Pods
 .bundle/
 server/config/*.yml
 backend/config/*.yml
+
+#Credentials
+Credentials.plist
+crashlytics_run_script.sh
