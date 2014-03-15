@@ -18,10 +18,14 @@
 
 NSString *const SemaphoreTokenDefault = @"semaphoreToken";
 
--(id)initWithCoder:(NSCoder *)aDecoder
+- (id)initWithCoder:(NSCoder *)aDecoder
 {
     self = [super initWithCoder:aDecoder];
     return self;
+}
+
+- (IBAction)showSemaphoreDocumentationInfo:(id)sender {
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://semaphoreapp.com/docs/api_authentication.html"]];
 }
 
 - (void)viewDidLoad {
