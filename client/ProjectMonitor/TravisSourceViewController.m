@@ -53,6 +53,12 @@
     [client retrieveTokensWithSuccess:^(NSString *githubTravisToken, NSString *githubTravisProToken) {
         
         NSString *githubToken = _pro ? githubTravisProToken : githubTravisToken;
+        if (githubToken == nil) {
+            [that showNoTokenFound];
+            [MBProgressHUD hideHUDForView:that.view animated:YES];
+            return;
+        }
+        
         TravisClient *travisClient = [[TravisClient alloc] initWithToken:githubToken];
         [travisClient setPro:_pro];
         
@@ -86,7 +92,19 @@
                          otherButtonTitles:nil];
         
         [BlockAlertViewDelegate showAlertView:alert withCallback:nil];
+    });
+}
+
+- (void)showNoTokenFound {
+    dispatch_async(dispatch_get_main_queue(), ^{
+        UIAlertView* alert =
+        [[UIAlertView alloc] initWithTitle:@"Unauthorized by Github"
+                                   message:@"Github authorization not found. You must sign up to Travis through the website before adding builds."
+                                  delegate:nil
+                         cancelButtonTitle:@"ok"
+                         otherButtonTitles:nil];
         
+        [BlockAlertViewDelegate showAlertView:alert withCallback:nil];
     });
 }
 
