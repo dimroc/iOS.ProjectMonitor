@@ -16,14 +16,24 @@
 
 @implementation SourceViewController
 
+NSString *const SemaphoreTokenDefault = @"semaphoreToken";
+
 -(id)initWithCoder:(NSCoder *)aDecoder
 {
     self = [super initWithCoder:aDecoder];
     return self;
 }
 
+- (void)viewDidLoad {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [self.authenticationTokenTextField setText:[defaults objectForKey:SemaphoreTokenDefault]];
+}
+
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
     if ([Helper stringValid: textField.text]) {
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        [defaults setValue:textField.text forKey:SemaphoreTokenDefault];
+
         [textField resignFirstResponder];
         [self performSegueWithIdentifier:@"toAvailableSemaphoreBuilds" sender:self];
         return YES;
