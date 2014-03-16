@@ -14,7 +14,7 @@
 +(void)launch:(NSDictionary *)launchOptions     {
     [Parse setApplicationId: [Credentials objectForKey:@"ParseApplicationId"]
                   clientKey: [Credentials objectForKey:@"ParseClientKey"]];
-    
+    [PFFacebookUtils initializeFacebook];
     [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
 }
 

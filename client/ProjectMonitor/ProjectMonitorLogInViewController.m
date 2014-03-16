@@ -18,7 +18,6 @@
 {
     [super viewDidLoad];
     
-    [[self.logInView dismissButton] setHidden:YES];
     [self.logInView setLogo:[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"logo.png"]]];
 }
 

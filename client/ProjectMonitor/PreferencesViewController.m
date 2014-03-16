@@ -25,13 +25,22 @@
 
 - (void)viewDidLoad
 {
-    [self.loggedInLabel setText:[[PFUser currentUser] username]];
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSString *username = [defaults objectForKey:@"username"];
+    
+    if (username == nil) {
+        username = [[PFUser currentUser] username];
+    }
+        
+    [self.loggedInLabel setText:username];
 }
 
 - (IBAction)signOut:(id)sender
 {
     NSLog(@"# Signing out");
     [PFUser logOut];
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults removeObjectForKey:@"username"];
     [self dismissModal:self];
 }
 

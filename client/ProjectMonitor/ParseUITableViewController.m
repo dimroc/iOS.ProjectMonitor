@@ -40,6 +40,13 @@
     // Assign our sign up controller to be displayed from the login controller
     [logInViewController setSignUpController:signUpViewController];
     
+    [logInViewController setFields:
+     PFLogInFieldsFacebook |
+     PFLogInFieldsUsernameAndPassword |
+     PFLogInFieldsSignUpButton |
+     PFLogInFieldsLogInButton |
+     PFLogInFieldsPasswordForgotten];
+    
     // Present the log in view controller
     [self presentViewController:logInViewController animated:YES completion:NULL];
 }
@@ -65,6 +72,26 @@
 - (void)logInViewController:(PFLogInViewController *)logInController didLogInUser:(PFUser *)user {
     NSLog(@"# Logging in username: %@", user.username);
     [ParseHelper registerUserForRemoteNotification:user];
+
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+
+    if ([PFFacebookUtils isLinkedWithUser:[PFUser currentUser]]) {
+        // Create request for user's Facebook data
+        FBRequest *request = [FBRequest requestForMe];
+        
+        // Send request to Facebook
+        [request startWithCompletionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
+            if (!error) {
+                // result is a dictionary with the user's Facebook data
+                NSDictionary *userData = (NSDictionary *)result;
+                NSString *name = userData[@"name"];
+                [defaults setValue:name forKey:@"username"];
+            }
+        }];
+    } else {
+        [defaults setValue:user.username forKey:@"username"];
+    }
+    
     [self dismissViewControllerAnimated:YES completion:NULL];
 }
 
