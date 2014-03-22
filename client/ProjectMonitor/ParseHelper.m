@@ -14,7 +14,12 @@
 +(void)launch:(NSDictionary *)launchOptions     {
     [Parse setApplicationId: [Credentials objectForKey:@"ParseApplicationId"]
                   clientKey: [Credentials objectForKey:@"ParseClientKey"]];
+    
     [PFFacebookUtils initializeFacebook];
+    
+    [PFTwitterUtils initializeWithConsumerKey:[Credentials objectForKey:@"TwitterConsumerKey"]
+                               consumerSecret:[Credentials objectForKey:@"TwitterConsumerSecret"]];
+        
     [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
 }
 

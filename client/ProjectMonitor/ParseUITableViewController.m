@@ -39,9 +39,10 @@
     
     // Assign our sign up controller to be displayed from the login controller
     [logInViewController setSignUpController:signUpViewController];
-    
+
     [logInViewController setFields:
      PFLogInFieldsFacebook |
+     PFLogInFieldsTwitter |
      PFLogInFieldsUsernameAndPassword |
      PFLogInFieldsSignUpButton |
      PFLogInFieldsLogInButton |
@@ -75,7 +76,7 @@
 
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
 
-    if ([PFFacebookUtils isLinkedWithUser:[PFUser currentUser]]) {
+    if ([PFFacebookUtils isLinkedWithUser:user]) {
         // Create request for user's Facebook data
         FBRequest *request = [FBRequest requestForMe];
         
@@ -88,6 +89,9 @@
                 [defaults setValue:name forKey:@"username"];
             }
         }];
+    } else if ([PFTwitterUtils isLinkedWithUser:user]) {
+        NSString *twitterScreenName = [[PFTwitterUtils twitter] screenName];
+        [defaults setValue:twitterScreenName forKey:@"username"];
     } else {
         [defaults setValue:user.username forKey:@"username"];
     }
