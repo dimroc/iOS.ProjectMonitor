@@ -43,8 +43,6 @@
 		5E3ED156189A089E00632144 /* ParseHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E3ED155189A089E00632144 /* ParseHelper.m */; };
 		5E74B54E18CCC939001CFB60 /* AddBuildOverlayView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E74B54D18CCC939001CFB60 /* AddBuildOverlayView.xib */; };
 		5E74B55518CCE48F001CFB60 /* PreferencesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E74B55418CCE48F001CFB60 /* PreferencesViewController.m */; };
-		5E74B55718CCEBA5001CFB60 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E74B55618CCEBA5001CFB60 /* logo.png */; };
-		5E74B55918CCEBED001CFB60 /* addABuild.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E74B55818CCEBED001CFB60 /* addABuild.png */; };
 		5E74B55B18CD6FB4001CFB60 /* Travis.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E74B55A18CD6FB4001CFB60 /* Travis.storyboard */; };
 		5E74B55E18CD71EE001CFB60 /* TravisSourceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E74B55D18CD71EE001CFB60 /* TravisSourceViewController.m */; };
 		5E74B56118CDE749001CFB60 /* GithubClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E74B56018CDE749001CFB60 /* GithubClient.m */; };
@@ -58,12 +56,6 @@
 		5E79F1D118AA4FBB005BF986 /* SourceFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E79F1CF18AA4FBB005BF986 /* SourceFactory.m */; };
 		5E79F1D718AA4FD4005BF986 /* SourceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E79F1D518AA4FD4005BF986 /* SourceViewController.m */; };
 		5E79F1DA18AA5085005BF986 /* BuildCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E79F1D918AA5085005BF986 /* BuildCell.m */; };
-		5E79F1E218AA584A005BF986 /* icon-failed-pending.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E79F1DC18AA584A005BF986 /* icon-failed-pending.png */; };
-		5E79F1E318AA584A005BF986 /* icon-failed.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E79F1DD18AA584A005BF986 /* icon-failed.png */; };
-		5E79F1E418AA584A005BF986 /* icon-passed-pending.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E79F1DE18AA584A005BF986 /* icon-passed-pending.png */; };
-		5E79F1E518AA584A005BF986 /* icon-passed.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E79F1DF18AA584A005BF986 /* icon-passed.png */; };
-		5E79F1E618AA584A005BF986 /* icon-pending.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E79F1E018AA584A005BF986 /* icon-pending.png */; };
-		5E79F1E718AA584A005BF986 /* icon-undetermined.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E79F1E118AA584A005BF986 /* icon-undetermined.png */; };
 		5E79F1EB18AD5702005BF986 /* BuildSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E79F1EA18AD5702005BF986 /* BuildSpec.m */; };
 		5E8D8A5418C5FDDF0053E1DC /* Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E8D8A5318C5FDDF0053E1DC /* Helper.m */; };
 		5E8D8A5718C600850053E1DC /* BuildsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E8D8A5618C600850053E1DC /* BuildsViewController.m */; };
@@ -138,8 +130,6 @@
 		5E74B54D18CCC939001CFB60 /* AddBuildOverlayView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddBuildOverlayView.xib; sourceTree = "<group>"; };
 		5E74B55318CCE48F001CFB60 /* PreferencesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreferencesViewController.h; sourceTree = "<group>"; };
 		5E74B55418CCE48F001CFB60 /* PreferencesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreferencesViewController.m; sourceTree = "<group>"; };
-		5E74B55618CCEBA5001CFB60 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logo.png; path = Images/logo.png; sourceTree = "<group>"; };
-		5E74B55818CCEBED001CFB60 /* addABuild.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = addABuild.png; path = Images/addABuild.png; sourceTree = "<group>"; };
 		5E74B55A18CD6FB4001CFB60 /* Travis.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Travis.storyboard; sourceTree = "<group>"; };
 		5E74B55C18CD71EE001CFB60 /* TravisSourceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TravisSourceViewController.h; sourceTree = "<group>"; };
 		5E74B55D18CD71EE001CFB60 /* TravisSourceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TravisSourceViewController.m; sourceTree = "<group>"; };
@@ -162,12 +152,6 @@
 		5E79F1D518AA4FD4005BF986 /* SourceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SourceViewController.m; sourceTree = "<group>"; };
 		5E79F1D818AA5085005BF986 /* BuildCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuildCell.h; sourceTree = "<group>"; };
 		5E79F1D918AA5085005BF986 /* BuildCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BuildCell.m; sourceTree = "<group>"; };
-		5E79F1DC18AA584A005BF986 /* icon-failed-pending.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon-failed-pending.png"; path = "Images/icon-failed-pending.png"; sourceTree = "<group>"; };
-		5E79F1DD18AA584A005BF986 /* icon-failed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon-failed.png"; path = "Images/icon-failed.png"; sourceTree = "<group>"; };
-		5E79F1DE18AA584A005BF986 /* icon-passed-pending.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon-passed-pending.png"; path = "Images/icon-passed-pending.png"; sourceTree = "<group>"; };
-		5E79F1DF18AA584A005BF986 /* icon-passed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon-passed.png"; path = "Images/icon-passed.png"; sourceTree = "<group>"; };
-		5E79F1E018AA584A005BF986 /* icon-pending.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon-pending.png"; path = "Images/icon-pending.png"; sourceTree = "<group>"; };
-		5E79F1E118AA584A005BF986 /* icon-undetermined.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon-undetermined.png"; path = "Images/icon-undetermined.png"; sourceTree = "<group>"; };
 		5E79F1EA18AD5702005BF986 /* BuildSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BuildSpec.m; sourceTree = "<group>"; };
 		5E8D8A5218C5FDDF0053E1DC /* Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Helper.h; sourceTree = "<group>"; };
 		5E8D8A5318C5FDDF0053E1DC /* Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Helper.m; sourceTree = "<group>"; };
@@ -391,7 +375,6 @@
 			isa = PBXGroup;
 			children = (
 				5E755F9C18B1299500692F5F /* BuildCell.xib */,
-				5E79F1DB18AA543D005BF986 /* Images */,
 				5E3ED1221899F14F00632144 /* Images.xcassets */,
 				5E3ED1131899F14F00632144 /* Main_iPhone.storyboard */,
 				5E79F1C918AA4FA0005BF986 /* Semaphore.storyboard */,
@@ -400,21 +383,6 @@
 				5E3433DA18DD10660022EDAF /* BuildsHeader.xib */,
 			);
 			name = "User Interface";
-			sourceTree = "<group>";
-		};
-		5E79F1DB18AA543D005BF986 /* Images */ = {
-			isa = PBXGroup;
-			children = (
-				5E74B55818CCEBED001CFB60 /* addABuild.png */,
-				5E74B55618CCEBA5001CFB60 /* logo.png */,
-				5E79F1DC18AA584A005BF986 /* icon-failed-pending.png */,
-				5E79F1DD18AA584A005BF986 /* icon-failed.png */,
-				5E79F1DE18AA584A005BF986 /* icon-passed-pending.png */,
-				5E79F1DF18AA584A005BF986 /* icon-passed.png */,
-				5E79F1E018AA584A005BF986 /* icon-pending.png */,
-				5E79F1E118AA584A005BF986 /* icon-undetermined.png */,
-			);
-			name = Images;
 			sourceTree = "<group>";
 		};
 		5E8D8A5118C5FDC30053E1DC /* Misc */ = {
@@ -546,26 +514,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				5E3433E118DDF59C0022EDAF /* Credentials.debug.plist in Resources */,
-				5E79F1E218AA584A005BF986 /* icon-failed-pending.png in Resources */,
 				5E3ED1231899F14F00632144 /* Images.xcassets in Resources */,
-				5E79F1E718AA584A005BF986 /* icon-undetermined.png in Resources */,
-				5E79F1E318AA584A005BF986 /* icon-failed.png in Resources */,
 				5E755F9D18B1299500692F5F /* BuildCell.xib in Resources */,
 				5E3ED1151899F14F00632144 /* Main_iPhone.storyboard in Resources */,
 				5E79F1CA18AA4FA0005BF986 /* Semaphore.storyboard in Resources */,
 				5E3433E318DDF5C50022EDAF /* ProjectMonitor-Info.debug.plist in Resources */,
-				5E79F1E518AA584A005BF986 /* icon-passed.png in Resources */,
-				5E79F1E618AA584A005BF986 /* icon-pending.png in Resources */,
-				5E74B55918CCEBED001CFB60 /* addABuild.png in Resources */,
 				5E3433E018DDF59C0022EDAF /* Credentials.release.plist in Resources */,
 				5E74B54E18CCC939001CFB60 /* AddBuildOverlayView.xib in Resources */,
-				5E74B55718CCEBA5001CFB60 /* logo.png in Resources */,
 				5E3ED10C1899F14F00632144 /* InfoPlist.strings in Resources */,
 				5E74B55B18CD6FB4001CFB60 /* Travis.storyboard in Resources */,
 				5E3433DD18DDF4720022EDAF /* ProjectMonitor-Info.release.plist in Resources */,
 				5E3433DB18DD10660022EDAF /* BuildsHeader.xib in Resources */,
 				5ED0A998189EC81000A56A27 /* Credentials.example.plist in Resources */,
-				5E79F1E418AA584A005BF986 /* icon-passed-pending.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -826,6 +786,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/dimroc/workspace/ios.ProjectMonitor,
@@ -836,6 +798,7 @@
 				INFOPLIST_FILE = "ProjectMonitor/ProjectMonitor-Info.debug.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "Project Monitor";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
@@ -847,6 +810,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/dimroc/workspace/ios.ProjectMonitor,
@@ -857,6 +822,7 @@
 				INFOPLIST_FILE = "ProjectMonitor/ProjectMonitor-Info.release.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "Project Monitor";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
