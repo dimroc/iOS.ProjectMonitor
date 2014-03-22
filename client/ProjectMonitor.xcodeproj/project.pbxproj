@@ -10,6 +10,7 @@
 		20A950CD295D4BD99D563FD3 /* libPods-ProjectMonitorTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B0FF487CBEA473C8D7D223C /* libPods-ProjectMonitorTests.a */; };
 		5E09522A18BADB9500689FBA /* SemaphoreBuildFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E09522918BADB9500689FBA /* SemaphoreBuildFactory.m */; };
 		5E09522C18BADDB100689FBA /* SemaphoreBuildFactorySpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E09522B18BADDB100689FBA /* SemaphoreBuildFactorySpec.m */; };
+		5E3433DB18DD10660022EDAF /* BuildsHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E3433DA18DD10660022EDAF /* BuildsHeader.xib */; };
 		5E3ED1001899F14F00632144 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E3ED0FF1899F14F00632144 /* Foundation.framework */; };
 		5E3ED1021899F14F00632144 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E3ED1011899F14F00632144 /* CoreGraphics.framework */; };
 		5E3ED1041899F14F00632144 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E3ED1031899F14F00632144 /* UIKit.framework */; };
@@ -95,6 +96,7 @@
 		5E09522818BADB9500689FBA /* SemaphoreBuildFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SemaphoreBuildFactory.h; sourceTree = "<group>"; };
 		5E09522918BADB9500689FBA /* SemaphoreBuildFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SemaphoreBuildFactory.m; sourceTree = "<group>"; };
 		5E09522B18BADDB100689FBA /* SemaphoreBuildFactorySpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SemaphoreBuildFactorySpec.m; sourceTree = "<group>"; };
+		5E3433DA18DD10660022EDAF /* BuildsHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BuildsHeader.xib; sourceTree = "<group>"; };
 		5E3ED0FC1899F14F00632144 /* ProjectMonitor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProjectMonitor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E3ED0FF1899F14F00632144 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		5E3ED1011899F14F00632144 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -388,6 +390,7 @@
 				5E79F1C918AA4FA0005BF986 /* Semaphore.storyboard */,
 				5E74B54D18CCC939001CFB60 /* AddBuildOverlayView.xib */,
 				5E74B55A18CD6FB4001CFB60 /* Travis.storyboard */,
+				5E3433DA18DD10660022EDAF /* BuildsHeader.xib */,
 			);
 			name = "User Interface";
 			sourceTree = "<group>";
@@ -550,6 +553,7 @@
 				5E74B55718CCEBA5001CFB60 /* logo.png in Resources */,
 				5E3ED10C1899F14F00632144 /* InfoPlist.strings in Resources */,
 				5E74B55B18CD6FB4001CFB60 /* Travis.storyboard in Resources */,
+				5E3433DB18DD10660022EDAF /* BuildsHeader.xib in Resources */,
 				5ED0A998189EC81000A56A27 /* Credentials.example.plist in Resources */,
 				5E79F1E418AA584A005BF986 /* icon-passed-pending.png in Resources */,
 			);

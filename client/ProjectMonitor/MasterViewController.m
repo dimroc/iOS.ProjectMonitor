@@ -15,6 +15,7 @@
 
 @property (strong, nonatomic) BuildCollection *buildCollection;
 @property (strong, nonatomic) UIView *addBuildOverlayView;
+@property (strong, nonatomic) UINib *buildsHeaderNib;
 
 @end
 
@@ -29,8 +30,10 @@
 
     UINib *nib = [UINib nibWithNibName:@"BuildCell" bundle:nil];
     [[self tableView] registerNib:nib forCellReuseIdentifier:@"BuildCell"];
+
+    // Get table header view from nib
+    [self setBuildsHeaderNib: [UINib nibWithNibName:@"BuildsHeader" bundle:nil]];
     
-    // Your scroll view or table view would be a subview of this view
     UINib *emptyViewNib = [UINib nibWithNibName:@"AddBuildOverlayView" bundle:nil];
     [self setAddBuildOverlayView:[emptyViewNib instantiateWithOwner:self options:nil][0]];
     
@@ -113,9 +116,13 @@
     return [[self.buildCollection onlyPopulated] count];
 }
 
-- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
-    return [self.buildCollection onlyPopulatedTitles][section];
+    NSString *title = [self.buildCollection onlyPopulatedTitles][section];
+    UIView *view = [self.buildsHeaderNib instantiateWithOwner:self options:nil][0];
+    UILabel *label = (UILabel*)[view viewWithTag:50];
+    label.text = title;
+    return view;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
