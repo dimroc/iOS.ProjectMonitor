@@ -28,5 +28,6 @@ server/config/*.yml
 backend/config/*.yml
 
 #Credentials
-Credentials.plist
+Credentials.debug.plist
+Credentials.release.plist
 crashlytics_run_script.sh

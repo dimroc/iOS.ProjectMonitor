@@ -11,6 +11,10 @@
 		5E09522A18BADB9500689FBA /* SemaphoreBuildFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E09522918BADB9500689FBA /* SemaphoreBuildFactory.m */; };
 		5E09522C18BADDB100689FBA /* SemaphoreBuildFactorySpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E09522B18BADDB100689FBA /* SemaphoreBuildFactorySpec.m */; };
 		5E3433DB18DD10660022EDAF /* BuildsHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E3433DA18DD10660022EDAF /* BuildsHeader.xib */; };
+		5E3433DD18DDF4720022EDAF /* ProjectMonitor-Info.release.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5E3433DC18DDF4720022EDAF /* ProjectMonitor-Info.release.plist */; };
+		5E3433E018DDF59C0022EDAF /* Credentials.release.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5E3433DE18DDF59C0022EDAF /* Credentials.release.plist */; };
+		5E3433E118DDF59C0022EDAF /* Credentials.debug.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5E3433DF18DDF59C0022EDAF /* Credentials.debug.plist */; };
+		5E3433E318DDF5C50022EDAF /* ProjectMonitor-Info.debug.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5E3433E218DDF5C50022EDAF /* ProjectMonitor-Info.debug.plist */; };
 		5E3ED1001899F14F00632144 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E3ED0FF1899F14F00632144 /* Foundation.framework */; };
 		5E3ED1021899F14F00632144 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E3ED1011899F14F00632144 /* CoreGraphics.framework */; };
 		5E3ED1041899F14F00632144 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E3ED1031899F14F00632144 /* UIKit.framework */; };
@@ -74,7 +78,6 @@
 		5EBF47DD18A6A3A600175065 /* ProjectMonitorSignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EBF47DC18A6A3A600175065 /* ProjectMonitorSignUpViewController.m */; };
 		5EBF47E018A6A41000175065 /* ProjectMonitorLogInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EBF47DF18A6A41000175065 /* ProjectMonitorLogInViewController.m */; };
 		5EBF47E318A6AE7E00175065 /* AddBuildViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EBF47E218A6AE7E00175065 /* AddBuildViewController.m */; };
-		5ED0A996189EC75100A56A27 /* Credentials.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5ED0A995189EC75100A56A27 /* Credentials.plist */; };
 		5ED0A998189EC81000A56A27 /* Credentials.example.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5ED0A997189EC81000A56A27 /* Credentials.example.plist */; };
 		5EDBEBBD18D0074500389C7E /* Credentials.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EDBEBBC18D0074500389C7E /* Credentials.m */; };
 		A808C67AAD954B00B7CCF868 /* libPods-ProjectMonitor.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 841A53FDA145460EA60ED4BF /* libPods-ProjectMonitor.a */; };
@@ -97,12 +100,15 @@
 		5E09522918BADB9500689FBA /* SemaphoreBuildFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SemaphoreBuildFactory.m; sourceTree = "<group>"; };
 		5E09522B18BADDB100689FBA /* SemaphoreBuildFactorySpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SemaphoreBuildFactorySpec.m; sourceTree = "<group>"; };
 		5E3433DA18DD10660022EDAF /* BuildsHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BuildsHeader.xib; sourceTree = "<group>"; };
-		5E3ED0FC1899F14F00632144 /* ProjectMonitor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProjectMonitor.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5E3433DC18DDF4720022EDAF /* ProjectMonitor-Info.release.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "ProjectMonitor-Info.release.plist"; sourceTree = "<group>"; };
+		5E3433DE18DDF59C0022EDAF /* Credentials.release.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Credentials.release.plist; sourceTree = "<group>"; };
+		5E3433DF18DDF59C0022EDAF /* Credentials.debug.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Credentials.debug.plist; sourceTree = "<group>"; };
+		5E3433E218DDF5C50022EDAF /* ProjectMonitor-Info.debug.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "ProjectMonitor-Info.debug.plist"; sourceTree = "<group>"; };
+		5E3ED0FC1899F14F00632144 /* Project Monitor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Project Monitor.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E3ED0FF1899F14F00632144 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		5E3ED1011899F14F00632144 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		5E3ED1031899F14F00632144 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		5E3ED1051899F14F00632144 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
-		5E3ED1091899F14F00632144 /* ProjectMonitor-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ProjectMonitor-Info.plist"; sourceTree = "<group>"; };
 		5E3ED10B1899F14F00632144 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		5E3ED10D1899F14F00632144 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		5E3ED10F1899F14F00632144 /* ProjectMonitor-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ProjectMonitor-Prefix.pch"; sourceTree = "<group>"; };
@@ -187,7 +193,6 @@
 		5EBF47DF18A6A41000175065 /* ProjectMonitorLogInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProjectMonitorLogInViewController.m; sourceTree = "<group>"; };
 		5EBF47E118A6AE7E00175065 /* AddBuildViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddBuildViewController.h; sourceTree = "<group>"; };
 		5EBF47E218A6AE7E00175065 /* AddBuildViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddBuildViewController.m; sourceTree = "<group>"; };
-		5ED0A995189EC75100A56A27 /* Credentials.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Credentials.plist; sourceTree = "<group>"; };
 		5ED0A997189EC81000A56A27 /* Credentials.example.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Credentials.example.plist; sourceTree = "<group>"; };
 		5EDBEBBB18D0074500389C7E /* Credentials.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Credentials.h; sourceTree = "<group>"; };
 		5EDBEBBC18D0074500389C7E /* Credentials.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Credentials.m; sourceTree = "<group>"; };
@@ -244,7 +249,7 @@
 		5E3ED0FD1899F14F00632144 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				5E3ED0FC1899F14F00632144 /* ProjectMonitor.app */,
+				5E3ED0FC1899F14F00632144 /* Project Monitor.app */,
 				5E3ED1281899F15000632144 /* ProjectMonitorTests.xctest */,
 			);
 			name = Products;
@@ -290,12 +295,14 @@
 		5E3ED1081899F14F00632144 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				5E3ED1091899F14F00632144 /* ProjectMonitor-Info.plist */,
+				5E3433DF18DDF59C0022EDAF /* Credentials.debug.plist */,
+				5ED0A997189EC81000A56A27 /* Credentials.example.plist */,
+				5E3433DE18DDF59C0022EDAF /* Credentials.release.plist */,
 				5E3ED10A1899F14F00632144 /* InfoPlist.strings */,
 				5E3ED10D1899F14F00632144 /* main.m */,
+				5E3433E218DDF5C50022EDAF /* ProjectMonitor-Info.debug.plist */,
+				5E3433DC18DDF4720022EDAF /* ProjectMonitor-Info.release.plist */,
 				5E3ED10F1899F14F00632144 /* ProjectMonitor-Prefix.pch */,
-				5ED0A995189EC75100A56A27 /* Credentials.plist */,
-				5ED0A997189EC81000A56A27 /* Credentials.example.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -469,7 +476,7 @@
 			);
 			name = ProjectMonitor;
 			productName = ProjectMonitor;
-			productReference = 5E3ED0FC1899F14F00632144 /* ProjectMonitor.app */;
+			productReference = 5E3ED0FC1899F14F00632144 /* Project Monitor.app */;
 			productType = "com.apple.product-type.application";
 		};
 		5E3ED1271899F15000632144 /* ProjectMonitorTests */ = {
@@ -538,21 +545,24 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5E3433E118DDF59C0022EDAF /* Credentials.debug.plist in Resources */,
 				5E79F1E218AA584A005BF986 /* icon-failed-pending.png in Resources */,
 				5E3ED1231899F14F00632144 /* Images.xcassets in Resources */,
 				5E79F1E718AA584A005BF986 /* icon-undetermined.png in Resources */,
 				5E79F1E318AA584A005BF986 /* icon-failed.png in Resources */,
-				5ED0A996189EC75100A56A27 /* Credentials.plist in Resources */,
 				5E755F9D18B1299500692F5F /* BuildCell.xib in Resources */,
 				5E3ED1151899F14F00632144 /* Main_iPhone.storyboard in Resources */,
 				5E79F1CA18AA4FA0005BF986 /* Semaphore.storyboard in Resources */,
+				5E3433E318DDF5C50022EDAF /* ProjectMonitor-Info.debug.plist in Resources */,
 				5E79F1E518AA584A005BF986 /* icon-passed.png in Resources */,
 				5E79F1E618AA584A005BF986 /* icon-pending.png in Resources */,
 				5E74B55918CCEBED001CFB60 /* addABuild.png in Resources */,
+				5E3433E018DDF59C0022EDAF /* Credentials.release.plist in Resources */,
 				5E74B54E18CCC939001CFB60 /* AddBuildOverlayView.xib in Resources */,
 				5E74B55718CCEBA5001CFB60 /* logo.png in Resources */,
 				5E3ED10C1899F14F00632144 /* InfoPlist.strings in Resources */,
 				5E74B55B18CD6FB4001CFB60 /* Travis.storyboard in Resources */,
+				5E3433DD18DDF4720022EDAF /* ProjectMonitor-Info.release.plist in Resources */,
 				5E3433DB18DD10660022EDAF /* BuildsHeader.xib in Resources */,
 				5ED0A998189EC81000A56A27 /* Credentials.example.plist in Resources */,
 				5E79F1E418AA584A005BF986 /* icon-passed-pending.png in Resources */,
@@ -823,9 +833,9 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ProjectMonitor/ProjectMonitor-Prefix.pch";
-				INFOPLIST_FILE = "ProjectMonitor/ProjectMonitor-Info.plist";
+				INFOPLIST_FILE = "ProjectMonitor/ProjectMonitor-Info.debug.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Project Monitor";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
@@ -844,9 +854,9 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ProjectMonitor/ProjectMonitor-Prefix.pch";
-				INFOPLIST_FILE = "ProjectMonitor/ProjectMonitor-Info.plist";
+				INFOPLIST_FILE = "ProjectMonitor/ProjectMonitor-Info.release.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Project Monitor";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};

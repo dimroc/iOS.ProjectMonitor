@@ -20,7 +20,15 @@ static NSDictionary *credentials;
     if(!initialized)
     {
         initialized = YES;
-        NSString *path = [[NSBundle mainBundle] pathForResource: @"Credentials" ofType: @"plist"];
+        NSString *pathForResource;
+        
+#ifdef DEBUG
+        pathForResource = @"Credentials.debug";
+#else
+        pathForResource = @"Credentials.release";
+#endif
+        
+        NSString *path = [[NSBundle mainBundle] pathForResource: pathForResource ofType: @"plist"];
         credentials =[[NSDictionary alloc] initWithContentsOfFile:path];
     }
 }
