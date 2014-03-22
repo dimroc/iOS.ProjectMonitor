@@ -9,7 +9,9 @@ phone with information about the faulty commit.
 
 Currently supports [Semaphore](http://www.semaphoreapp.com) and [Travis](http://travis-ci.com/).
 
-Jenkins and TeamCity support coming soon. Feel free to fork the repo and contribute!
+Jenkins and TeamCity support coming soon. 
+
+Feel free to fork the repo and contribute! The public Pivotal Tracker project can be found [here](https://www.pivotaltracker.com/projects/1001516).
 
 Project Setup
 =============
