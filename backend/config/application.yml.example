@@ -8,12 +8,23 @@ production:
   cache_store: redis_store
 
 development:
+  pusher_key: KEY
+  pusher_secret: SECRET
+  pusher_app_id: APP_ID
   parse_application_id: YOUR_PARSE_APPLICATION_ID
   parse_master_key: YOUR_PARSE_MASTER_KEY
   redis_url: 'redis://127.0.0.1:6379'
   cache_store: redis_store
 
 test:
+  # ERB parses environment variables here solely for use by
+  # travis ci to run integration test.
+  # See the above development section for a cleanser example.
+  # See .travis.yml for the encrypted environment variables.
+
+  pusher_key: <%= ENV["PUSHER_KEY"] || 'KEY' %>
+  pusher_secret: <%= ENV["PUSHER_SECRET"] || 'SECRET' %>
+  pusher_app_id: <%= ENV["PUSHER_APP_ID"] || 'APP_ID' %>
   parse_application_id: <%= ENV["PARSE_APP_ID"] || 'YOUR_PARSE_APPLICATION_ID' %>
   parse_master_key: <%= ENV["PARSE_MASTER_KEY"] || 'YOUR_PARSE_MASTER_KEY' %>
   redis_url: 'redis://127.0.0.1:6379'

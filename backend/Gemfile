@@ -13,6 +13,7 @@ gem 'hashie'
 gem 'rake'
 gem 'redis-activesupport'
 gem 'redis-semaphore'
+gem 'pusher'
 
 group :development, :test do
   gem 'rack'

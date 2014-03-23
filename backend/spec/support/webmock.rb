@@ -5,6 +5,7 @@ module FakeSpecHelpers
     puts "WARNING: Stubbing out healthy servers in an integration run" if ENV["INTEGRATION"] == "true"
     WebMock.stub_request(:any, /.*api.parse.com\/.*/).to_rack(FakeParse)
     WebMock.stub_request(:any, /.*semaphoreapp.com\/.*/).to_rack(FakeSemaphore)
+    WebMock.stub_request(:any, /.*api.pusherapp.com\/.*/).to_rack(FakePusher)
   end
 
   def servers_return_error

@@ -16,6 +16,28 @@ describe UpdateBuildWorker do
         UpdateBuildWorker.new.perform(created_build)
         client.fetch_builds.count.should == 1
       end
+
+      context "and the build status changes" do
+        let(:build) do
+          build = new_parse_build
+          build.status = "pending"
+          build
+        end
+
+        it "should push the change" do
+          created_build = client.create(build)
+          PusherClient.any_instance.should_receive(:push)
+          UpdateBuildWorker.new.perform(created_build)
+        end
+      end
+
+      context "and the build status remains the same" do
+        it "should not push the build" do
+          created_build = client.create(build)
+          PusherClient.any_instance.should_not_receive(:push)
+          UpdateBuildWorker.new.perform(created_build)
+        end
+      end
     end
 
     context "when services are erroring" do
