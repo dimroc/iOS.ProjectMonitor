@@ -5,7 +5,7 @@ iOS Project Monitor
 
 An iPhone app that monitors continuous integration servers for the status
 of your builds. Should a build fail, a push notification will be sent to your
-phone with information about the faulty commit.
+phone with information about the faulty commit. Coming to the app store in just a week (or two)!
 
 ![Screens](https://raw.githubusercontent.com/dimroc/iOS.ProjectMonitor/master/client/ProjectMonitor/Images.xcassets/screens.imageset/screens.png)
 
