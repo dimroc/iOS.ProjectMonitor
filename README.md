@@ -47,7 +47,7 @@ iOS Client tests use [Kiwi](https://github.com/allending/Kiwi) and are run insid
 #### Backend
 Backend server tests can be run with RSpec with `rake` in `backend/`.
 
-The backend tests uses togglable fakes as outlined in the [Engine Yard talk](https://vimeo.com/26510145). The following command will run the same tests with full integration:
+The backend tests use togglable fakes as outlined in the [Engine Yard talk](https://vimeo.com/26510145). The following command will run the same tests with full integration:
 
 ```shell
 backend/ $ INTEGRATION=true rake
