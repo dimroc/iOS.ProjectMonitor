@@ -22,6 +22,7 @@
   #import <BlocksKit/BlocksKit.h>
   #import <NewRelicAgent/NewRelic.h>
   #import <Crashlytics/Crashlytics.h>
+  #import <Pusher.h>
 
   //#define MR_SHORTHAND
   #import <CoreData+MagicalRecord.h>

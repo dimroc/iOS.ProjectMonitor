@@ -10,12 +10,14 @@
 #import "Build.h"
 #import "BuildCell.h"
 #import "BuildCollection.h"
+#import "Credentials.h"
 
 @interface MasterViewController ()
 
 @property (strong, nonatomic) BuildCollection *buildCollection;
 @property (strong, nonatomic) UIView *addBuildOverlayView;
 @property (strong, nonatomic) UINib *buildsHeaderNib;
+@property (strong, nonatomic) PTPusher *pusher;
 
 @end
 
@@ -39,6 +41,35 @@
     
     NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
     [center addObserver:self selector:@selector(handleNewBuild:) name:PMBuildDidSaveNotication object:nil];
+    
+    [self subscribeToPusherChannel];
+}
+
+- (void)subscribeToPusherChannel
+{
+    NSString *userId = [[PFUser currentUser] objectId];
+    NSString *channelName = [NSString stringWithFormat: @"user_%@", userId];
+    NSLog(@"# Subscribing to pusher channel");
+    
+    self.pusher = [PTPusher pusherWithKey:[Credentials objectForKey:@"PusherKey"] delegate:self encrypted:YES];
+    __weak MasterViewController* that = self;
+    
+    // subscribe to channel and bind to event
+    PTPusherChannel *channel = [self.pusher subscribeToChannelNamed:channelName];
+    [channel bindToEventNamed:@"update_build" handleWithBlock:^(PTPusherEvent *channelEvent) {
+        NSLog(@"# Received updated build for project %@ on branch %@ for user %@",
+              [channelEvent.data objectForKey:@"project"],
+              [channelEvent.data objectForKey:@"branch"],
+              [channelEvent.data objectForKey:@"user"]);
+        
+        [Build updateSavedBuild:channelEvent.data];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [that.buildCollection refresh];
+            [that.tableView reloadData];
+        });
+    }];
+    
+    [self.pusher connect];
 }
 
 - (void)forceRefresh

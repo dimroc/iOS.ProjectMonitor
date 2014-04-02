@@ -15,6 +15,7 @@
 		5E3433E018DDF59C0022EDAF /* Credentials.release.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5E3433DE18DDF59C0022EDAF /* Credentials.release.plist */; };
 		5E3433E118DDF59C0022EDAF /* Credentials.debug.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5E3433DF18DDF59C0022EDAF /* Credentials.debug.plist */; };
 		5E3433E318DDF5C50022EDAF /* ProjectMonitor-Info.debug.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5E3433E218DDF5C50022EDAF /* ProjectMonitor-Info.debug.plist */; };
+		5E3763F818ECBF9900635D2E /* pusherPayload.json in Resources */ = {isa = PBXBuildFile; fileRef = 5E3763F718ECBF9900635D2E /* pusherPayload.json */; };
 		5E3ED1001899F14F00632144 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E3ED0FF1899F14F00632144 /* Foundation.framework */; };
 		5E3ED1021899F14F00632144 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E3ED1011899F14F00632144 /* CoreGraphics.framework */; };
 		5E3ED1041899F14F00632144 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E3ED1031899F14F00632144 /* UIKit.framework */; };
@@ -96,6 +97,7 @@
 		5E3433DE18DDF59C0022EDAF /* Credentials.release.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Credentials.release.plist; sourceTree = "<group>"; };
 		5E3433DF18DDF59C0022EDAF /* Credentials.debug.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Credentials.debug.plist; sourceTree = "<group>"; };
 		5E3433E218DDF5C50022EDAF /* ProjectMonitor-Info.debug.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "ProjectMonitor-Info.debug.plist"; sourceTree = "<group>"; };
+		5E3763F718ECBF9900635D2E /* pusherPayload.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = pusherPayload.json; sourceTree = "<group>"; };
 		5E3ED0FC1899F14F00632144 /* Project Monitor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Project Monitor.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E3ED0FF1899F14F00632144 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		5E3ED1011899F14F00632144 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -405,6 +407,7 @@
 			children = (
 				5E8D8A6318C81E210053E1DC /* travisRepos.json */,
 				5E74B56218CEA178001CFB60 /* githubAuthorizations.json */,
+				5E3763F718ECBF9900635D2E /* pusherPayload.json */,
 			);
 			name = Fixtures;
 			sourceTree = "<group>";
@@ -536,6 +539,7 @@
 				5E8D8A6418C81E210053E1DC /* travisRepos.json in Resources */,
 				5E74B56318CEA178001CFB60 /* githubAuthorizations.json in Resources */,
 				5E3ED1351899F15000632144 /* InfoPlist.strings in Resources */,
+				5E3763F818ECBF9900635D2E /* pusherPayload.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

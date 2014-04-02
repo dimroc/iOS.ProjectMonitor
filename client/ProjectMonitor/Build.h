@@ -18,6 +18,7 @@ extern NSString * const PMBuildDidSaveNotication;
 + (NSArray *)saved;
 
 + (void)refreshSavedBuildsInBackground:(void (^)(BOOL, NSArray*))callback;
++ (void)updateSavedBuild:(NSDictionary *)dictionary;
 + (void)saveInBackground:(NSArray *)builds withBlock: (void (^)(BOOL))mainThreadCallback;
 
 #pragma mark properties

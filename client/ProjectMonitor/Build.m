@@ -101,6 +101,21 @@ static NSArray* whitelistedKeys;
     }];
 }
 
++ (void)updateSavedBuild:(NSDictionary *)dictionary
+{
+    [MagicalRecord saveWithBlockAndWait:^(NSManagedObjectContext *localContext) {
+        Build* build;
+        NSString *objectId = [dictionary objectForKey:@"objectId"];
+        
+        build = [Build MR_findFirstByAttribute:@"objectId" withValue:objectId inContext:localContext];
+        if (!build) {
+            build = [Build MR_createInContext:localContext];
+        }
+        
+        [build setFromDictionary:dictionary];
+    }];
+}
+
 + (void)saveInBackground:(NSArray *)builds withBlock:(void (^)(BOOL))mainThreadCallback
 {
     NSArray *parseObjects = _.arrayMap(builds, ^PFObject *(Build*build) {
@@ -134,6 +149,8 @@ static NSArray* whitelistedKeys;
 {
     if ([Helper isAnyNull:value]) {
         return nil;
+    } else if ([value respondsToSelector:@selector(objectForKey:)]) {
+        return [Helper parseDateSafelyFromDictionary:value withKey:@"iso"];
     } else {
         return value;
     }
@@ -168,6 +185,10 @@ static NSArray* whitelistedKeys;
     for (NSString* key in whitelistedKeys) {
         id someVal = [self valueOrNil:dic[key]];
         [self setValue:someVal forKey:key];
+    }
+    
+    if ([dic objectForKey:@"objectId"]) {
+        [self setObjectId:[dic objectForKey:@"objectId"]];
     }
 }
 

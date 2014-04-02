@@ -1,0 +1,34 @@
+{
+    "user": {
+        "__type": "Pointer",
+        "className": "_User",
+        "objectId": "gB0we7uBZR"
+    },
+    "accessToken": "xkFHCiCCSQmMpyQ7JeCr",
+    "branch": "master",
+    "commitAuthor": "Jake Quain",
+    "commitEmail": "pair+jakeq@infogroup.com",
+    "commitMessage": "Merge branch 'update_traveler_models'\n\n[Finishes #67558156]",
+    "commitSha": "98fbfd4b5ec827caf45edc5961fc17508ec20cc6",
+    "finishedAt": {
+        "__type": "Date",
+        "iso": "2014-04-02T21:44:55Z"
+    },
+    "project": "bulk_update",
+    "startedAt": {
+        "__type": "Date",
+        "iso": "2014-04-02T21:42:35Z"
+    },
+    "status": "passed",
+    "type": "Semaphore",
+    "url": "https://semaphoreapp.com/api/v1/projects/bbdd758529c8ad98040375a93812d922a8aa0cca/53780/status?auth_token=xkFHCiCCSQmMpyQ7JeCr",
+    "createdAt": "2014-03-11T04:16:52.073Z",
+    "updatedAt": "2014-04-02T21:53:36.351Z",
+    "objectId": "PusherPayloadObjectId",
+    "ACL": {
+        "gB0we7uBZR": {
+            "write": true,
+            "read": true
+        }
+    }
+}

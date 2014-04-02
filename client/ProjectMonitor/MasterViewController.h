@@ -13,7 +13,7 @@
 #import <CoreData/CoreData.h>
 #import "ParseUITableViewController.h"
 
-@interface MasterViewController : ParseUITableViewController
+@interface MasterViewController : ParseUITableViewController <PTPusherDelegate>
 
 @property (strong, nonatomic) DetailViewController *detailViewController;
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
