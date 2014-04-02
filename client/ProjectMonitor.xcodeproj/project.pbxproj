@@ -833,7 +833,7 @@
 			baseConfigurationReference = 4DC397F864E74853B41B48C1 /* Pods-ProjectMonitor.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/ProjectMonitor.app/ProjectMonitor";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Project Monitor.app/Project Monitor";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -857,7 +857,7 @@
 			baseConfigurationReference = 4DC397F864E74853B41B48C1 /* Pods-ProjectMonitor.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/ProjectMonitor.app/ProjectMonitor";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Project Monitor.app/Project Monitor";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
