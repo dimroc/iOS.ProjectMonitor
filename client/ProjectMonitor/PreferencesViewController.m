@@ -14,6 +14,8 @@
 
 @implementation PreferencesViewController
 
+NSString * const PMUserDidLogOut = @"PMUserDidLogOut";
+
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
@@ -42,6 +44,9 @@
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     [defaults removeObjectForKey:@"username"];
     [self dismissModal:self];
+    
+    NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
+    [center postNotificationName:PMUserDidLogOut object:nil];
 }
 
 - (IBAction)dismissModal:(id)sender

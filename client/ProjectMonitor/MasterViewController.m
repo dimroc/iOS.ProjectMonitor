@@ -11,6 +11,7 @@
 #import "BuildCell.h"
 #import "BuildCollection.h"
 #import "Credentials.h"
+#import "PreferencesViewController.h"
 
 @interface MasterViewController ()
 
@@ -41,12 +42,30 @@
     
     NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
     [center addObserver:self selector:@selector(handleNewBuild:) name:PMBuildDidSaveNotication object:nil];
+    [center addObserver:self selector:@selector(handleLogOut:) name:PMUserDidLogOut object:nil];
+    
+//    [center addObserver:self selector:@selector(traceAllNotifications:) name:nil object:nil];
     
     [self subscribeToPusherChannel];
 }
 
+- (void)unsubscribeFromPusher
+{
+    if (self.pusher) {
+        [self.pusher disconnect];
+        [self setPusher:nil];
+    }
+}
+
 - (void)subscribeToPusherChannel
 {
+    [self unsubscribeFromPusher];
+    
+    if (![PFUser currentUser]) {
+        NSLog(@"# No user, unable to subscribe to pusher");
+        return;
+    }
+    
     NSString *userId = [[PFUser currentUser] objectId];
     NSString *channelName = [NSString stringWithFormat: @"user_%@", userId];
     NSLog(@"# Subscribing to pusher channel");
@@ -78,9 +97,20 @@
     [self triggerRefresh];
 }
 
+- (void)traceAllNotifications:(NSNotification *)notification
+{
+    NSLog(@"# notification: %@", notification);
+}
+
 - (void)handleNewBuild:(NSNotification *)notification
 {
     [self forceRefresh];
+}
+
+- (void)handleLogOut:(NSNotification *)notification
+{
+    [self unsubscribeFromPusher];
+    [self clearTable];
 }
 
 - (void)toggleAddBuildOverlay
@@ -128,7 +158,7 @@
 - (void)logInViewController:(PFLogInViewController *)logInController didLogInUser:(PFUser *)user
 {
     [super logInViewController:logInController didLogInUser:user];
-    [self clearTable];
+    [self subscribeToPusherChannel];
     [self forceRefresh];
 }
 
@@ -136,7 +166,7 @@
 - (void)signUpViewController:(PFSignUpViewController *)signUpController didSignUpUser:(PFUser *)user
 {
     [super signUpViewController:signUpController didSignUpUser:user]; // Dismiss the PFSignUpViewController
-    [self clearTable];
+    [self subscribeToPusherChannel];
     [self forceRefresh];
 }
 

@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+extern NSString * const PMUserDidLogOut;
+
 @interface PreferencesViewController : UITableViewController
 @property (weak, nonatomic) IBOutlet UILabel *loggedInLabel;
 
