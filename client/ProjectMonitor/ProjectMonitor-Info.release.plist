@@ -57,5 +57,7 @@
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
 	</array>
+	<key>PusherAuthorizationUrl</key>
+	<string>https://projectmonitor-prod.parseapp.com/pusher/auth</string>
 </dict>
 </plist>

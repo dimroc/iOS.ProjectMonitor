@@ -11,6 +11,7 @@
 #import "BuildCell.h"
 #import "BuildCollection.h"
 #import "Credentials.h"
+#import "PMInfo.h"
 #import "PreferencesViewController.h"
 
 @interface MasterViewController ()
@@ -67,10 +68,12 @@
     }
     
     NSString *userId = [[PFUser currentUser] objectId];
-    NSString *channelName = [NSString stringWithFormat: @"user_%@", userId];
+    NSString *channelName = [NSString stringWithFormat: @"private-user_%@", userId];
     NSLog(@"# Subscribing to pusher channel");
     
     self.pusher = [PTPusher pusherWithKey:[Credentials objectForKey:@"PusherKey"] delegate:self encrypted:YES];
+    self.pusher.authorizationURL = [NSURL URLWithString: [PMInfo objectForKey:@"PusherAuthorizationUrl"]];
+    
     __weak MasterViewController* that = self;
     
     // subscribe to channel and bind to event
@@ -89,6 +92,17 @@
     }];
     
     [self.pusher connect];
+}
+
+- (void)pusher:(PTPusher *)pusher willAuthorizeChannel:(PTPusherChannel *)channel withRequest:(NSMutableURLRequest *)request
+{
+    NSString *username = [[PFUser currentUser] objectId];
+    NSString *password = [[PFUser currentUser] sessionToken];
+    
+    NSString *authStr = [NSString stringWithFormat:@"%@:%@", username, password];
+    NSData *authData = [authStr dataUsingEncoding:NSASCIIStringEncoding];
+    NSString *authValue = [NSString stringWithFormat:@"Basic %@", [authData base64EncodedStringWithOptions:NSDataBase64Encoding76CharacterLineLength]];
+    [request setValue:authValue forHTTPHeaderField:@"Authorization"];
 }
 
 - (void)forceRefresh

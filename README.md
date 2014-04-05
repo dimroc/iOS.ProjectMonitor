@@ -17,7 +17,7 @@ Project Setup - Client
 ======================
 
 #### Parse
-The iPhone app uses Parse as its backend and therefore requires credentials.
+The iPhone app uses Parse as its web server and therefore requires credentials.
 
 Copy `ProjectMonitor/Credentials.example.plist` to `ProjectMonitor/Credentials.debug.plist`,
 enter your Parse credentials.
@@ -27,6 +27,11 @@ Run `pod install` in the `client/` folder to download iOS frameworks and depende
 
 ##### Other Credentials
 The project uses a variety of optional services (New Relic, Crashlytics, Twitter). Please refer to `ProjectMonitor/Credentials.example.plist` and `ProjectMonitor/ProjectMonitor-Info.debug.plist`.
+
+Project Setup - Frontend (Parse)
+===============================
+
+Parse's Cloud Code is used to provide an authentication endpoint for private pusher channels. Details can be found in parse/README.md folder.
 
 Project Setup - Backend
 =======================

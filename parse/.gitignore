@@ -1,0 +1,4 @@
+config/global.json
+tmp/
+cloud/credentials.debug.js
+cloud/credentials.release.js

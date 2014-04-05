@@ -42,6 +42,7 @@
 		5E3ED1511899F45500632144 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E3ED1481899F45500632144 /* Security.framework */; };
 		5E3ED1531899F45500632144 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E3ED14A1899F45500632144 /* SystemConfiguration.framework */; };
 		5E3ED156189A089E00632144 /* ParseHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E3ED155189A089E00632144 /* ParseHelper.m */; };
+		5E3F9AB418F082F4004F711B /* PMInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E3F9AB318F082F4004F711B /* PMInfo.m */; };
 		5E74B54E18CCC939001CFB60 /* AddBuildOverlayView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E74B54D18CCC939001CFB60 /* AddBuildOverlayView.xib */; };
 		5E74B55518CCE48F001CFB60 /* PreferencesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E74B55418CCE48F001CFB60 /* PreferencesViewController.m */; };
 		5E74B55B18CD6FB4001CFB60 /* Travis.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E74B55A18CD6FB4001CFB60 /* Travis.storyboard */; };
@@ -129,6 +130,8 @@
 		5E3ED14A1899F45500632144 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		5E3ED154189A089E00632144 /* ParseHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParseHelper.h; sourceTree = "<group>"; };
 		5E3ED155189A089E00632144 /* ParseHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParseHelper.m; sourceTree = "<group>"; };
+		5E3F9AB218F082F4004F711B /* PMInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMInfo.h; sourceTree = "<group>"; };
+		5E3F9AB318F082F4004F711B /* PMInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMInfo.m; sourceTree = "<group>"; };
 		5E74B54D18CCC939001CFB60 /* AddBuildOverlayView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddBuildOverlayView.xib; sourceTree = "<group>"; };
 		5E74B55318CCE48F001CFB60 /* PreferencesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreferencesViewController.h; sourceTree = "<group>"; };
 		5E74B55418CCE48F001CFB60 /* PreferencesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreferencesViewController.m; sourceTree = "<group>"; };
@@ -398,6 +401,8 @@
 				5E8D8A5318C5FDDF0053E1DC /* Helper.m */,
 				5E74B56618CEAC29001CFB60 /* TravisClient.h */,
 				5E74B56718CEAC29001CFB60 /* TravisClient.m */,
+				5E3F9AB218F082F4004F711B /* PMInfo.h */,
+				5E3F9AB318F082F4004F711B /* PMInfo.m */,
 			);
 			name = Misc;
 			sourceTree = "<group>";
@@ -639,6 +644,7 @@
 				5E74B55E18CD71EE001CFB60 /* TravisSourceViewController.m in Sources */,
 				5E3ED11B1899F14F00632144 /* ProjectMonitor.xcdatamodeld in Sources */,
 				5EBF47E318A6AE7E00175065 /* AddBuildViewController.m in Sources */,
+				5E3F9AB418F082F4004F711B /* PMInfo.m in Sources */,
 				5E79F1D718AA4FD4005BF986 /* SourceViewController.m in Sources */,
 				5E9DD7F018CBA69B0035F2C4 /* BuildCollection.m in Sources */,
 				5E8D8A5418C5FDDF0053E1DC /* Helper.m in Sources */,
