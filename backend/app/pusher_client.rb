@@ -16,6 +16,6 @@ class PusherClient
   end
 
   def push(user_object_id, build)
-    client.trigger("user_#{user_object_id}", 'update_build', build)
+    client.trigger("private-user_#{user_object_id}", 'update_build', build)
   end
 end
