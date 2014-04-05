@@ -144,9 +144,7 @@
     __weak MasterViewController *that = self;
     
     [Build refreshSavedBuildsInBackground:^(BOOL succeeded, NSArray *builds) {
-        if (succeeded) {
-            [[that buildCollection] refresh];
-        } else {
+        if (!succeeded) {
             [[[UIAlertView alloc] initWithTitle:@"Failed to refresh"
                                         message:@"Please try again later."
                                        delegate:nil
@@ -156,9 +154,11 @@
         
         dispatch_async(dispatch_get_main_queue(), ^{
             NSLog(@"# Finished refresh");
+            [[that buildCollection] refresh];
             [that toggleAddBuildOverlay];
             [that.tableView reloadData];
             [that.refreshControl endRefreshing];
+            [self dismissViewControllerAnimated:YES completion:NULL];
         });
     }];
 }
@@ -173,7 +173,6 @@
 
 - (void)logInViewController:(PFLogInViewController *)logInController didLogInUser:(PFUser *)user
 {
-    [self clearTable];
     [super logInViewController:logInController didLogInUser:user];
     [self subscribeToPusherChannel];
     [self forceRefresh];
@@ -182,8 +181,7 @@
 // Sent to the delegate when a PFUser is signed up.
 - (void)signUpViewController:(PFSignUpViewController *)signUpController didSignUpUser:(PFUser *)user
 {
-    [self clearTable];
-    [super signUpViewController:signUpController didSignUpUser:user]; // Dismiss the PFSignUpViewController
+    [super signUpViewController:signUpController didSignUpUser:user];
     [self subscribeToPusherChannel];
     [self forceRefresh];
 }
