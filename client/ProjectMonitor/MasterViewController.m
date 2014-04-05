@@ -107,7 +107,6 @@
 
 - (void)forceRefresh
 {
-    [self toggleAddBuildOverlay];
     [self triggerRefresh];
 }
 
@@ -118,7 +117,10 @@
 
 - (void)handleNewBuild:(NSNotification *)notification
 {
-    [self forceRefresh];
+    NSLog(@"# handleNewBuild: %@", notification);
+    [self.buildCollection refresh];
+    [self toggleAddBuildOverlay];
+    [self.tableView reloadData];
 }
 
 - (void)handleLogOut:(NSNotification *)notification
@@ -171,6 +173,7 @@
 
 - (void)logInViewController:(PFLogInViewController *)logInController didLogInUser:(PFUser *)user
 {
+    [self clearTable];
     [super logInViewController:logInController didLogInUser:user];
     [self subscribeToPusherChannel];
     [self forceRefresh];
@@ -179,6 +182,7 @@
 // Sent to the delegate when a PFUser is signed up.
 - (void)signUpViewController:(PFSignUpViewController *)signUpController didSignUpUser:(PFUser *)user
 {
+    [self clearTable];
     [super signUpViewController:signUpController didSignUpUser:user]; // Dismiss the PFSignUpViewController
     [self subscribeToPusherChannel];
     [self forceRefresh];

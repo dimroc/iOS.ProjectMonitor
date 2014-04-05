@@ -55,7 +55,7 @@ static NSArray* whitelistedKeys;
 
 + (NSArray *)forType:(NSString*)type
 {
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"type = %@",type];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"type = %@ AND NOT objectId = nil",type];
 
     return [Build MR_findAllSortedBy:sortString ascending:YES withPredicate:predicate];
 }
@@ -82,13 +82,7 @@ static NSArray* whitelistedKeys;
             // Save in Core Data
             [MagicalRecord saveUsingCurrentThreadContextWithBlockAndWait:^(NSManagedObjectContext *localContext) {
                 [Build MR_truncateAllInContext:localContext];
-                for (PFObject *parseBuild in objects) {
-                    Build *build = [Build MR_createInContext:localContext];
-                    [build setFromDictionary: [ParseHelper toDictionary: parseBuild]];
-                    [build setObjectId: parseBuild.objectId];
-                    [build setUpdatedAt: parseBuild.updatedAt];
-                }
-                
+                [self createBuilds:objects InContext:localContext];
                 refreshedBuilds = [Build allInContext:localContext];
             }];
             
@@ -99,6 +93,15 @@ static NSArray* whitelistedKeys;
             callback(NO, nil);
         }
     }];
+}
+
++ (void)createBuilds:(NSArray*)parseBuilds InContext:(NSManagedObjectContext *)localContext {
+    for (PFObject *parseBuild in parseBuilds) {
+        Build *build = [Build MR_createInContext:localContext];
+        [build setFromDictionary: [ParseHelper toDictionary: parseBuild]];
+        [build setObjectId: parseBuild.objectId];
+        [build setUpdatedAt: parseBuild.updatedAt];
+    }
 }
 
 + (void)updateSavedBuild:(NSDictionary *)dictionary
@@ -124,6 +127,11 @@ static NSArray* whitelistedKeys;
     
     [PFObject saveAllInBackground:parseObjects block:^(BOOL succeeded, NSError *error) {
         if (succeeded) {
+            [MagicalRecord saveWithBlockAndWait:^(NSManagedObjectContext *localContext) {
+                NSLog(@"# Writing added builds to Core Data!");
+                [self createBuilds:parseObjects InContext:localContext];
+            }];
+            
             [self notifyBuildsSaved];
         } else {
             NSLog(@"Failed to save parse objects:\n%@", [error description]);
