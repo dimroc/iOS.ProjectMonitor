@@ -38,7 +38,7 @@ app.post('/pusher/auth', pusherAuth, function(req, res) {
     return;
   }
 
-  var channelId = channel.substr(5);
+  var channelId = channel.substr(13); // channel: private-user_USERID
   var userId = req.user.id;
 
   console.log("channelId: " + channelId)
