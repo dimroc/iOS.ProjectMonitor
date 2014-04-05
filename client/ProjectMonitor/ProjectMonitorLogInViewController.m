@@ -28,6 +28,10 @@
     [self.logInView.passwordField setTextColor:[UIColor blackColor]];
 }
 
+-(UIStatusBarStyle)preferredStatusBarStyle{
+    return UIStatusBarStyleDefault;
+}
+
 - (void)setBorderColor:(UITextField*)field {
     field.layer.cornerRadius=5.0f;
     field.layer.masksToBounds=YES;
