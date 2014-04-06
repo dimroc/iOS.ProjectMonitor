@@ -1,9 +1,9 @@
 source 'https://rubygems.org'
 
-ruby '2.1.0'
+ruby '2.1.1'
 
 gem 'sidekiq'
-gem 'sidekiq-failures'
+gem 'sidekiq-failures', git: 'git@github.com:mhfs/sidekiq-failures.git', branch: 'master'
 gem 'httparty'
 gem 'activesupport', require: 'active_support/all'
 gem 'require_all'
@@ -22,5 +22,4 @@ group :development, :test do
   gem 'webmock', require: false
   gem 'sinatra'
   gem 'pry'
-  gem 'pry-debugger'
 end
