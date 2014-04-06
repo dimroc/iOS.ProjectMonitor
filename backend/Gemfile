@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 ruby '2.1.1'
 
 gem 'sidekiq'
-gem 'sidekiq-failures', git: 'git@github.com:mhfs/sidekiq-failures.git', branch: 'master'
+#gem 'sidekiq-failures', git: 'git@github.com:mhfs/sidekiq-failures.git', branch: 'master'
 gem 'httparty'
 gem 'activesupport', require: 'active_support/all'
 gem 'require_all'
