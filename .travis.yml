@@ -1,6 +1,6 @@
 language: ruby
 rvm:
-- 2.1.0
+- 2.1.1
 env:
   matrix:
   - INTEGRATION=true
@@ -11,6 +11,7 @@ env:
   - secure: CTU1UZ8zGiZ/zlNYtjm4qddmxcU/jRssg0Mrak6zUl/XKxVEzBqffsKwkPhjlrD8AInPHPdD4uROxRIFlhFaji8ULvvAaFYsO8ljBTI4aI59fK/EMWy/7ZfitkOlGPFHVSZErP8KyyLyWa5Rd2fcml0itF6SeAfU/EUjOOO9AcU=
 install:
 - cd backend
+- ssh-keyscan -t rsa,dsa github.com,192.30.252.129 >> ~/.ssh/known_hosts
 - bundle install
 script:
 - bundle exec rake
