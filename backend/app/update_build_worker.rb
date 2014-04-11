@@ -1,5 +1,6 @@
 class UpdateBuildWorker
   include Sidekiq::Worker
+  sidekiq_options :retry => false
 
   def perform(build_hash)
     build = ParseBuild.new build_hash

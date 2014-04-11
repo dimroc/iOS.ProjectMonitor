@@ -107,4 +107,15 @@ describe ParseBuild do
       end
     end
   end
+
+  describe "#dup" do
+    let(:content) { JSON.parse(FixtureLoader.load("travis_build")) }
+    let(:build) { BuildFetcher::TravisPro.new({}).parse(content) }
+
+    it "should create a new instance that's equal" do
+      duplicate = build.dup
+      duplicate.url.should == build.url
+      duplicate.project.should == build.project
+    end
+  end
 end

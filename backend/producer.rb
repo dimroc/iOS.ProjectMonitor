@@ -11,7 +11,7 @@ rescue => e
   puts e.message
 end
 
-scheduler.every '30', first: :now, overlap: false do
+scheduler.every '120', first: :now, overlap: false do
   poll_parse
 end
 

@@ -21,6 +21,7 @@
 @dynamic updatedAt;
 @dynamic status;
 @dynamic objectId;
+@dynamic isInvalid;
 
 @dynamic commitSha;
 @dynamic commitAuthor;
@@ -44,6 +45,7 @@ static NSArray* whitelistedKeys;
                            @"type", @"project", @"branch", @"status", @"url",
                            @"startedAt", @"finishedAt", @"commitSha", @"commitMessage",
                            @"commitAuthor", @"commitEmail", @"accessToken",
+                           @"isInvalid",
                            nil];
     }
 }

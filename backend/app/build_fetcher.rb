@@ -1,4 +1,6 @@
 class BuildFetcher
+  class ForbiddenError < StandardError; end;
+
   attr_reader :build
 
   def self.create(build)
@@ -19,6 +21,8 @@ class BuildFetcher
 
     if code < 300
       body
+    elsif code == 403
+      raise ForbiddenError, body
     else
       raise StandardError, "Error connecting to <#{url}?. Status: #{code} Message: #{body}"
     end

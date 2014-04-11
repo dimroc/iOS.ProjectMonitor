@@ -117,7 +117,6 @@
 
 - (void)handleNewBuild:(NSNotification *)notification
 {
-    NSLog(@"# handleNewBuild: %@", notification);
     [self.buildCollection refresh];
     [self toggleAddBuildOverlay];
     [self.tableView reloadData];

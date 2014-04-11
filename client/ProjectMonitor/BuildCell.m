@@ -35,7 +35,7 @@
 {
     [self setBuild:build];
     self.projectLabel.text = self.build.project;
-    self.branchLabel.text = self.build.branch;
+    [self configureBranchLabelFromBuild:build];
     self.timeLabel.text = [Helper stringFromDate: self.build.startedAt];
     self.statusImageView.image = [self imageForStatus];
 }
@@ -75,6 +75,17 @@
     } else {
         NSLog(@"# Unable to load build image for status %@.", [self.build status]);
         return [UIImage imageNamed: @"icon-undetermined"];
+    }
+}
+
+- (void)configureBranchLabelFromBuild:(Build*)build
+{
+    if ([build isInvalid]) {
+        self.branchLabel.text = @"Forbidded: Please readd build";
+        self.branchLabel.textColor = [UIColor redColor];
+    } else {
+        self.branchLabel.text = self.build.branch;
+        self.branchLabel.textColor = [UIColor blackColor];
     }
 }
 

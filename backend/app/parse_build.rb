@@ -16,6 +16,7 @@ class ParseBuild < Hashie::Trash
   property :commitAuthor
   property :createdAt
   property :updatedAt
+  property :isInvalid
 
   property :user
   property :ACL

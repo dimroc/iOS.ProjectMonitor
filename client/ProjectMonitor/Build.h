@@ -31,6 +31,7 @@ extern NSString * const PMBuildDidSaveNotication;
 @property (nonatomic, retain) NSDate * updatedAt;
 @property (nonatomic, retain) NSString * status;
 @property (nonatomic, retain) NSString * objectId;
+@property (nonatomic) BOOL isInvalid;
 
 @property (nonatomic, retain) NSString * commitSha;
 @property (nonatomic, retain) NSString * commitAuthor;

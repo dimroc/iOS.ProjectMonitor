@@ -23,5 +23,10 @@ class BuildFetcher::Semaphore < BuildFetcher
     updated_build.objectId = build.objectId
     updated_build.user = build.user
     updated_build
+  rescue ForbiddenError
+    puts "Forbidden: #{build}"
+    updated_build = build.dup
+    updated_build.isInvalid = true
+    updated_build
   end
 end
