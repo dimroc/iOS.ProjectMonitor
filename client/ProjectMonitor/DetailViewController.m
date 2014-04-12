@@ -45,6 +45,8 @@
       if ([self.build finishedAt]) {
           self.finishedAtLabel.text =
             [Helper stringFromDate:[self.build valueForKey:@"finishedAt"]];
+      } else {
+          self.finishedAtLabel.text = @"";
       }
 
       self.statusLabel.text = [[self.build valueForKey:@"status"] description];
@@ -63,14 +65,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
-  [self configureView];
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    [self configureView];
 }
 
 @end

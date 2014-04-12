@@ -8,7 +8,7 @@ class UpdateBuildWorker
     merged_build = ParseBuild.merge(build, updated_build)
 
     client = ParseClient.from_settings
-    client.update(merged_build)
+    client.update(merged_build) if changed?(build, updated_build)
     client.notify_build_failed(merged_build) if changed_to_failed?(build, updated_build)
 
     push_change(merged_build) if changed?(build, updated_build)
@@ -23,7 +23,9 @@ class UpdateBuildWorker
   def changed?(original, updated)
     original.status != updated.status ||
       original.branch != updated.branch ||
-      original.isInvalid != updated.isInvalid
+      original.isInvalid != updated.isInvalid ||
+      original.commitSha != updated.commitSha ||
+      original.finishedAt != updated.finishedAt
   end
 
   def push_change(build)
