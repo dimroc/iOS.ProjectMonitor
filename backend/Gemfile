@@ -22,4 +22,5 @@ group :development, :test do
   gem 'webmock', require: false
   gem 'sinatra'
   gem 'pry'
+  gem 'timecop'
 end

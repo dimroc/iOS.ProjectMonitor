@@ -79,6 +79,7 @@ GEM
     slop (3.5.0)
     thread_safe (0.3.2)
     tilt (1.4.1)
+    timecop (0.7.1)
     timers (1.1.0)
     tzinfo (0.3.39)
     webmock (1.17.4)
@@ -105,4 +106,5 @@ DEPENDENCIES
   settingslogic
   sidekiq
   sinatra
+  timecop
   webmock

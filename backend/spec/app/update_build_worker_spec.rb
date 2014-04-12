@@ -60,10 +60,15 @@ describe UpdateBuildWorker do
       end
 
       context "and the build status remains the same" do
-        it "should not push the build" do
-          created_build = client.create(build)
-          PusherClient.any_instance.should_not_receive(:push)
-          UpdateBuildWorker.new.perform(created_build)
+        context "and finishedAt remains the same" do
+          before { Timecop.freeze }
+          after { Timecop.return }
+
+          it "should not push the build" do
+            created_build = client.create(build)
+            PusherClient.any_instance.should_not_receive(:push)
+            UpdateBuildWorker.new.perform(created_build)
+          end
         end
       end
     end
