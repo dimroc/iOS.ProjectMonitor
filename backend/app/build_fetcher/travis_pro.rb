@@ -23,7 +23,7 @@ class BuildFetcher::TravisPro < BuildFetcher
     updated_build
   rescue ForbiddenError
     puts "Forbidden: #{build}"
-    updated_build = build.dup
+    updated_build = ParseBuild.new build.dup
     updated_build.isInvalid = true
     updated_build
   end
