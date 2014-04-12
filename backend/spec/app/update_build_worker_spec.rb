@@ -17,6 +17,20 @@ describe UpdateBuildWorker do
         client.fetch_builds.count.should == 1
       end
 
+      context "and the build becomes invalid" do
+        let(:build) do
+          build = new_parse_build
+          build.isInvalid = true
+          build
+        end
+
+        it "should push the change" do
+          created_build = client.create(build)
+          PusherClient.any_instance.should_receive(:push)
+          UpdateBuildWorker.new.perform(created_build)
+        end
+      end
+
       context "and the build branch changes" do
         let(:build) do
           build = new_parse_build
