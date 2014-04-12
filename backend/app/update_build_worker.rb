@@ -21,7 +21,7 @@ class UpdateBuildWorker
   end
 
   def changed?(original, updated)
-    original.status != updated.status
+    original.status != updated.status || original.branch != updated.branch
   end
 
   def push_change(build)
