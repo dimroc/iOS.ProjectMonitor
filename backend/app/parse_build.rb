@@ -52,4 +52,9 @@ class ParseBuild < Hashie::Trash
     return "" unless status.include? "failed"
     "#{commitAuthor} broke the build for #{project} on #{branch}!"
   end
+
+  def finishedAtTime
+    return nil unless finishedAt.present?
+    DateTime.parse finishedAt["iso"]
+  end
 end

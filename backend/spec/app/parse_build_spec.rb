@@ -108,6 +108,26 @@ describe ParseBuild do
     end
   end
 
+  describe "#finishedAtTime" do
+    context "when finishedAt is nil" do
+      let(:build1) { ParseBuild.new(type: "Semaphore", status: "passed", finishedAt: nil) }
+      it "should be nil" do
+        build1.finishedAtTime.should be_nil
+      end
+    end
+
+    context "when different strings but same time" do
+      let(:finishedAt1) { {"__type"=>"Date", "iso"=>"2014-04-12T12:03:13.000Z"} }
+      let(:finishedAt2) { {"__type"=>"Date", "iso"=>"2014-04-12T12:03:13Z"} }
+      let(:build1) { ParseBuild.new(type: "Semaphore", status: "passed", finishedAt: finishedAt1) }
+      let(:build2) { ParseBuild.new(type: "Semaphore", status: "passed", finishedAt: finishedAt2) }
+
+      it "should be equal" do
+        build1.finishedAtTime.should == build2.finishedAtTime
+      end
+    end
+  end
+
   describe "#dup" do
     let(:content) { JSON.parse(FixtureLoader.load("travis_build")) }
     let(:build) { BuildFetcher::TravisPro.new({}).parse(content) }
