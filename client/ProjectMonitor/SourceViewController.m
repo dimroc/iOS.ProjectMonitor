@@ -28,6 +28,10 @@ NSString *const SemaphoreTokenDefault = @"semaphoreToken";
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://semaphoreapp.com/docs/api_authentication.html"]];
 }
 
+- (IBAction)retrieveBuildsWithEnteredToken:(id)sender {
+    [self textFieldShouldReturn:self.authenticationTokenTextField];
+}
+
 - (void)viewDidLoad {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     [self.authenticationTokenTextField setText:[defaults objectForKey:SemaphoreTokenDefault]];
