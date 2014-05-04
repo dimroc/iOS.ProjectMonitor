@@ -30,6 +30,7 @@
 
 // [Name of associated class] + [Did | Will] + [UniquePartOfName] + Notification
 NSString * const PMBuildDidSaveNotication = @"PMBuildDidSaveNotication";
+NSString * const PMBuildsDidBecomeActiveNotication = @"PMBuildsDidBecomeActiveNotication";
 NSString * const sortString = @"type,project,branch";
 
 // Thread safe: https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/Multithreading/ThreadSafetySummary/ThreadSafetySummary.html

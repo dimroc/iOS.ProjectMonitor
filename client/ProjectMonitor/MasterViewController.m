@@ -42,8 +42,9 @@
     [self setAddBuildOverlayView:[emptyViewNib instantiateWithOwner:self options:nil][0]];
     
     NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
-    [center addObserver:self selector:@selector(handleNewBuild:) name:PMBuildDidSaveNotication object:nil];
-    [center addObserver:self selector:@selector(handleLogOut:) name:PMUserDidLogOut object:nil];
+    [center addObserver:self selector:@selector(triggerRefresh) name:PMBuildsDidBecomeActiveNotication object:nil];
+    [center addObserver:self selector:@selector(handleNewBuild) name:PMBuildDidSaveNotication object:nil];
+    [center addObserver:self selector:@selector(handleLogOut) name:PMUserDidLogOut object:nil];
     
 //    [center addObserver:self selector:@selector(traceAllNotifications:) name:nil object:nil];
     
@@ -105,24 +106,19 @@
     [request setValue:authValue forHTTPHeaderField:@"Authorization"];
 }
 
-- (void)forceRefresh
-{
-    [self triggerRefresh];
-}
-
 - (void)traceAllNotifications:(NSNotification *)notification
 {
     NSLog(@"# notification: %@", notification);
 }
 
-- (void)handleNewBuild:(NSNotification *)notification
+- (void)handleNewBuild
 {
     [self.buildCollection refresh];
     [self toggleAddBuildOverlay];
     [self.tableView reloadData];
 }
 
-- (void)handleLogOut:(NSNotification *)notification
+- (void)handleLogOut
 {
     [self unsubscribeFromPusher];
     [self clearTable];
@@ -174,7 +170,7 @@
 {
     [super logInViewController:logInController didLogInUser:user];
     [self subscribeToPusherChannel];
-    [self forceRefresh];
+    [self triggerRefresh];
 }
 
 // Sent to the delegate when a PFUser is signed up.
@@ -182,7 +178,7 @@
 {
     [super signUpViewController:signUpController didSignUpUser:user];
     [self subscribeToPusherChannel];
-    [self forceRefresh];
+    [self triggerRefresh];
 }
 
 #pragma mark - Table View

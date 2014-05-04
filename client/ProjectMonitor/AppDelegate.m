@@ -45,8 +45,7 @@
     [ParseHelper registerForRemoteNotificationWithDeviceToken: deviceToken];
 }
 
-- (void)application:(UIApplication *)application
-didReceiveRemoteNotification:(NSDictionary *)userInfo {
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
     [PFPush handlePush:userInfo];
     NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
     [center postNotificationName:PMBuildDidSaveNotication object:self];
@@ -57,7 +56,7 @@ didReceiveRemoteNotification:(NSDictionary *)userInfo {
     [FBAppCall handleDidBecomeActiveWithSession:[PFFacebookUtils session]];
 
     NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
-    [center postNotificationName:PMBuildDidSaveNotication object:self];
+    [center postNotificationName:PMBuildsDidBecomeActiveNotication object:self];
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application

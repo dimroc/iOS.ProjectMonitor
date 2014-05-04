@@ -10,6 +10,7 @@
 #import <CoreData/CoreData.h>
 
 extern NSString * const PMBuildDidSaveNotication;
+extern NSString * const PMBuildsDidBecomeActiveNotication;
 
 @interface Build : NSManagedObject
 
