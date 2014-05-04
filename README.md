@@ -4,6 +4,7 @@ iOS Project Monitor
 ===================
 
 ![Icon](https://raw.githubusercontent.com/dimroc/iOS.ProjectMonitor/master/client/ProjectMonitor/Images.xcassets/AppIcon.appiconset/AppIconv2.png)
+[Available for free in the App Store!](https://itunes.apple.com/us/app/project-monitor/id857272990?ls=1&mt=8)
 
 An iPhone app that monitors continuous integration servers for the status
 of your builds. Should a build fail, a push notification will be sent to your
