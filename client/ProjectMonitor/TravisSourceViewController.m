@@ -114,4 +114,8 @@
     [buildsController loadWithFactory:[(TravisBuildFactory*)self.buildFactory initWithToken:self.currentToken andUsername:_usernameTextField.text]];
 }
 
+- (NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    return nil;
+}
+
 @end

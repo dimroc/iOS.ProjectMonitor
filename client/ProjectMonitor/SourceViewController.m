@@ -61,4 +61,8 @@ NSString *const SemaphoreTokenDefault = @"semaphoreToken";
     [buildsController loadWithFactory:[self.buildFactory initWithToken:_authenticationTokenTextField.text]];
 }
 
+- (NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    return nil;
+}
+
 @end

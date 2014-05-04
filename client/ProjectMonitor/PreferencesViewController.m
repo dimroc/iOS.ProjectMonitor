@@ -64,4 +64,8 @@ NSString * const PMUserDidLogOut = @"PMUserDidLogOut";
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://github.com/dimroc/iOS.ProjectMonitor"]];
 }
 
+- (NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    return nil;
+}
+
 @end
