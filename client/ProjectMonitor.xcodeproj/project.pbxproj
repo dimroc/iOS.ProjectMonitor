@@ -750,6 +750,7 @@
 				INFOPLIST_FILE = "ProjectMonitor-Info.debug.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "C1C7FFF3-E446-4D0F-B0D7-5E8ADE13F32E";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -772,8 +773,8 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Dimitri Roche (ZW25PS9S44)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Dimitri Roche (ZW25PS9S44)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Dimitri Roche (5R23V2RJ26)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Dimitri Roche (5R23V2RJ26)";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -785,7 +786,8 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = "ProjectMonitor-Info.release.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				ONLY_ACTIVE_ARCH = YES;
+				ONLY_ACTIVE_ARCH = NO;
+				PROVISIONING_PROFILE = "ECBF39A7-3437-4B41-BE05-1CE9666C7B66";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 1;
 				VALIDATE_PRODUCT = YES;
@@ -810,7 +812,7 @@
 				INFOPLIST_FILE = "ProjectMonitor/ProjectMonitor-Info.debug.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "Project Monitor";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "C1C7FFF3-E446-4D0F-B0D7-5E8ADE13F32E";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
@@ -833,8 +835,9 @@
 				GCC_PREFIX_HEADER = "ProjectMonitor/ProjectMonitor-Prefix.pch";
 				INFOPLIST_FILE = "ProjectMonitor/ProjectMonitor-Info.release.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "Project Monitor";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "ECBF39A7-3437-4B41-BE05-1CE9666C7B66";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
