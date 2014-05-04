@@ -3,12 +3,13 @@ require_relative 'bootstrap'
 scheduler = Rufus::Scheduler.new
 
 def poll_parse
+  puts "#{DateTime.now}: Starting Poll"
   ParseClient.from_settings.fetch_builds.each do |build|
-    puts "enqueuing #{build}"
+    puts "#{DateTime.now}: enqueuing #{build}"
     UpdateBuildWorker.perform_async(build)
   end
 rescue => e
-  puts e.message
+  puts "## ERROR: #{e.message}"
 end
 
 scheduler.every '120', first: :now, overlap: false do
