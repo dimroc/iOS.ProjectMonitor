@@ -12,7 +12,7 @@ phone with information about the faulty commit. Coming to the app store in just 
 
 ![Screens](https://raw.githubusercontent.com/dimroc/iOS.ProjectMonitor/master/client/ProjectMonitor/Images.xcassets/screens.imageset/screens.png)
 
-Currently supports [Semaphore](http://www.semaphoreapp.com) and [Travis](http://travis-ci.com/). Jenkins and TeamCity support coming soon. 
+Currently supports [Semaphore](http://www.semaphoreapp.com), [Travis](http://travis-ci.com/) and Travis Pro. Jenkins and TeamCity support coming soon. 
 
 Feel free to fork the repo and contribute! The public Pivotal Tracker project can be found [here](https://www.pivotaltracker.com/projects/1001516).
 
