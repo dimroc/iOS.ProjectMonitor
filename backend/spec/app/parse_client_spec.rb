@@ -1,6 +1,7 @@
 require 'spec_helper'
 
 describe ParseClient do
+  before { ParseClient.any_instance.stub(:puts) }
   let(:client) { ParseClient.from_settings }
 
   describe "#fetch_builds" do
@@ -14,6 +15,17 @@ describe ParseClient do
           first["project"].acts_like? "string"
           first.url.should =~ /\.com/
           first.startedAt["__type"].should == "Date"
+        end
+      end
+
+      context "and there is an invalid row" do
+        before do
+          ParseBuild.any_instance.stub(:output).and_return(broken_build)
+          client.create(new_parse_build)
+        end
+
+        it "should skip that build" do
+          client.fetch_builds.should be_empty
         end
       end
     end

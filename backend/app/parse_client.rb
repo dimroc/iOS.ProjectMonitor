@@ -13,7 +13,9 @@ class ParseClient
   def fetch_builds
     response = HTTParty.get(builds_url, headers: headers, query: "order=updatedAt&limit=500")
     validate_response response
-    response['results'].map { |value| ParseBuild.new value }
+    response['results'].map do |value|
+      safe_parse_build(value)
+    end.compact
   end
 
   def update(build)
@@ -46,6 +48,13 @@ class ParseClient
   end
 
   private
+
+  def safe_parse_build(value)
+    ParseBuild.new value
+  rescue ArgumentError => e
+    puts "failed to create build from: #{value}\n#{e}"
+    nil
+  end
 
   def headers
     {
