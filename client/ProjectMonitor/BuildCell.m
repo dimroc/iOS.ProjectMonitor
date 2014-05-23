@@ -81,7 +81,7 @@
 - (void)configureBranchLabelFromBuild:(Build*)build
 {
     if ([build isInvalid]) {
-        self.branchLabel.text = @"Forbidden: Please readd build";
+        self.branchLabel.text = @"Forbidden: Delete and readd build";
         self.branchLabel.textColor = [UIColor redColor];
     } else {
         self.branchLabel.text = self.build.branch;
