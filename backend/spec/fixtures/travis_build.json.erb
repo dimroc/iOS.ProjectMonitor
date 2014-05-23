@@ -1,40 +1,87 @@
 {
-  "id": 572621,
-  "repository_id": 47132,
-  "number": "10",
-  "config": {
-    "rvm": ["1.9.3"],
-    "script": "bundle exec rake",
-    ".result": "configured"
+  "build": {
+    "id":25891164,
+      "repository_id":1982680,
+      "commit_id":7480542,
+      "number":"92",
+      "pull_request":false,
+      "pull_request_title":null,
+      "pull_request_number":null,
+      "config": {
+        "language":"ruby",
+        "rvm":["2.1.1"],
+        "env":["INTEGRATION=true", "INTEGRATION=false"],
+        "install": ["cd backend", "ssh-keyscan -t rsa,dsa github.com,192.30.252.129 >> ~/.ssh/known_hosts", "bundle install"],
+        "script":["bundle exec rake"],
+        ".result":"configured",
+        "os":"linux"
+      },
+      "state":"passed",
+      "started_at":"2014-05-23T17:46:22Z",
+      "finished_at":"2014-05-23T17:47:56Z",
+      "duration":102,
+      "job_ids":[25891165, 25891166]
   },
-  "state": "finished",
-  "result": 1,
-  "status": 1,
-  "started_at": "2013-04-25T02:26:21Z",
-  "finished_at": "2013-04-25T02:56:26Z",
-  "duration": 1805,
-  "commit": "0f9f0703da42ea57f732d6ab81a17b3711a051ac",
-  "branch": "release",
-  "message": "Manual refresh only happens once for infinite_scroll",
-  "committed_at": "2013-04-25T01:55:57Z",
-  "author_name": "Dimitri Roche",
-  "author_email": "dimroc@gmail.com",
-  "committer_name": "Dimitri Roche",
-  "committer_email": "dimroc@gmail.com",
-  "compare_url": "https://github.com/data-axle/axle-ui/compare/9c733fc79bb0...0f9f0703da42",
-  "event_type": "push",
-  "matrix": [{
-    "id": 758062,
-    "repository_id": 47132,
-    "number": "10.1",
-    "config": {
-      "rvm": "1.9.3",
-      "script": "bundle exec rake",
-      ".result": "configured"
+    "commit": {
+      "id":7480542,
+      "sha":"cb7d271e03145d68a7b2f85b598a466773668a43",
+      "branch":"master",
+      "message":"Update iOS client to use Travis API v2\n\n[#71940592]",
+      "committed_at":"2014-05-23T17:45:20Z",
+      "author_name":"Dimitri Roche",
+      "author_email":"dimroc@gmail.com",
+      "committer_name":"Dimitri Roche",
+      "committer_email":"dimroc@gmail.com",
+      "compare_url": "https://github.com/dimroc/iOS.ProjectMonitor/compare/777955eeec59...cb7d271e0314"
     },
-    "result": 1,
-    "started_at": "2013-04-25T02:26:21Z",
-    "finished_at": "2013-04-25T02:56:26Z",
-    "allow_failure": false
-  }]
+    "jobs": [
+    {
+      "id":25891165,
+      "repository_id":1982680,
+      "build_id":25891164,
+      "commit_id":7480542,
+      "log_id":16056011,
+      "state":"passed",
+      "number":"92.1",
+      "config": {
+        "language":"ruby",
+        "rvm":"2.1.1",
+        "env":"INTEGRATION=true",
+        "install": ["cd backend", "ssh-keyscan -t rsa,dsa github.com,192.30.252.129 >> ~/.ssh/known_hosts", "bundle install"],
+        "script":["bundle exec rake"],
+        ".result":"configured"
+      },
+      "started_at":"2014-05-23T17:47:02Z",
+        "finished_at":"2014-05-23T17:47:56Z",
+        "queue":"builds.linux",
+        "allow_failure":false,
+        "tags":null,
+        "annotation_ids":[]
+    },
+    {
+      "id":25891166,
+      "repository_id":1982680,
+      "build_id":25891164,
+      "commit_id":7480542,
+      "log_id":16056012,
+      "state":"passed",
+      "number":"92.2",
+      "config": {
+        "language":"ruby",
+        "rvm":"2.1.1",
+        "env":"INTEGRATION=false",
+        "install":
+          ["cd backend",
+        "ssh-keyscan -t rsa,dsa github.com,192.30.252.129 >> ~/.ssh/known_hosts",
+        "bundle install"],
+        "script":["bundle exec rake"],
+        ".result":"configured"
+      },
+      "started_at":"2014-05-23T17:46:22Z",
+        "finished_at":"2014-05-23T17:47:10Z",
+        "queue":"builds.linux",
+        "allow_failure":false,
+        "tags":null,
+        "annotation_ids":[]
+    }]
 }

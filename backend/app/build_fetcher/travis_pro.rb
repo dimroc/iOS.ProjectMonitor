@@ -1,15 +1,17 @@
 class BuildFetcher::TravisPro < BuildFetcher
   def parse(content)
+    build = content["build"]
+    commit = content["commit"]
     ParseBuild.new({
       type: build_type,
-      status: translate_result(content["result"]),
-      startedAt: content["started_at"],
-      finishedAt: content["finished_at"],
-      branch: content["branch"],
-      commitSha: content["commit"],
-      commitEmail: content["author_email"],
-      commitMessage: content["message"],
-      commitAuthor: content["author_name"]
+      status: build["state"],
+      startedAt: build["started_at"],
+      finishedAt: build["finished_at"],
+      branch: commit["branch"],
+      commitSha: commit["sha"],
+      commitEmail: commit["author_email"],
+      commitMessage: commit["message"],
+      commitAuthor: commit["author_name"]
     })
   end
 
@@ -38,27 +40,21 @@ class BuildFetcher::TravisPro < BuildFetcher
 
   private
 
-  def translate_result(travis_result)
-    case travis_result
-    when 0
-      "passed"
-    when 1
-      "failed"
-    when 2
-      "pending"
-    else
-      "undetermined"
-    end
-  end
-
   def retrieve_repo
     url = "#{base_url}/repos/#{build.project}?access_token=#{build.accessToken}"
-    JSON.parse retrieve_from_url(url)
+    JSON.parse retrieve_from_url(url, headers)
   end
 
   def retrieve_build_details(repo_info)
-    build_id = repo_info["last_build_id"]
+    build_id = repo_info["repo"]["last_build_id"]
     url = "#{base_url}/builds/#{build_id}?access_token=#{build.accessToken}"
-    JSON.parse retrieve_from_url(url)
+    JSON.parse retrieve_from_url(url, headers)
+  end
+
+  def headers
+    {
+      "User-Agent" => "iOSProjectMonitor-server/1.0",
+      "Accept" => "application/vnd.travis-ci.2+json"
+    }
   end
 end

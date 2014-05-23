@@ -6,7 +6,7 @@ describe BuildFetcher::TravisPro do
     let(:content) { JSON.parse(FixtureLoader.load("travis_build")) }
     it "should successfully parse json from travis" do
       parsed = fetcher.parse(content)
-      parsed.branch.should == "release"
+      parsed.branch.should == "master"
       parsed.commitAuthor.should == "Dimitri Roche"
     end
   end

@@ -16,8 +16,8 @@ class BuildFetcher
     raise NotImplementedError
   end
 
-  def retrieve_from_url(url)
-    code, body = CachedHttpParty.get(url)
+  def retrieve_from_url(url, headers = {})
+    code, body = CachedHttpParty.get(url, headers)
 
     if code < 300
       body
