@@ -4,7 +4,7 @@ class BuildFetcher::TravisPro < BuildFetcher
     commit = content["commit"]
     ParseBuild.new({
       type: build_type,
-      status: build["state"],
+      status: translate_state(build["state"]),
       startedAt: build["started_at"],
       finishedAt: build["finished_at"],
       branch: commit["branch"],
@@ -39,6 +39,14 @@ class BuildFetcher::TravisPro < BuildFetcher
   end
 
   private
+
+  def translate_state(state)
+    case state
+    when "errored" then "failed"
+    when "started" then "pending"
+    else state
+    end
+  end
 
   def retrieve_repo
     url = "#{base_url}/repos/#{build.project}?access_token=#{build.accessToken}"
