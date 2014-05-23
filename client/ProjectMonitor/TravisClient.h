@@ -12,7 +12,8 @@
 
 @property (nonatomic, assign) BOOL pro;
 
-- (id)initWithToken:(NSString*)token;
-- (void)retrieveTokenWithSuccess:(void (^)(NSString* token)) success failure:(void (^)(NSError *)) failure;
+- (void)retrieveTokenWithGithubToken:(NSString*) token success:(void (^)(NSString* token)) success failure:(void (^)(NSError *)) failure;
+
+- (void)retrieveBuildsWithToken: (NSString*) token andMember: (NSString*) member success:(void (^)(id response)) success failure:(void (^)(NSError *)) failure;
 
 @end

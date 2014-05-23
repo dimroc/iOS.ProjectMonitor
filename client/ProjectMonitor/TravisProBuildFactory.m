@@ -24,8 +24,9 @@
     return @"https://api.travis-ci.com";
 }
 
-- (NSDictionary*)getParameters {
-    return @{@"access_token": [self token]};
+- (BOOL) pro
+{
+    return true;
 }
 
 @end

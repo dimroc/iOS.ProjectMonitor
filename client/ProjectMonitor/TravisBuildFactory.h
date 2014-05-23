@@ -14,7 +14,7 @@
 @property (nonatomic, strong) NSString* username;
 
 - (id)initWithToken:(NSString *)token andUsername:(NSString*)username;
-- (NSArray *)arrayFromResponse:(NSDictionary *)response;
+- (NSArray *)arrayFromResponse:(NSArray *)response;
 - (Build *)fromDictionary:(NSDictionary *)dictionary;
 
 @end

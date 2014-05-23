@@ -59,10 +59,10 @@
             return;
         }
         
-        TravisClient *travisClient = [[TravisClient alloc] initWithToken:githubToken];
+        TravisClient *travisClient = [[TravisClient alloc] init];
         [travisClient setPro:_pro];
         
-        [travisClient retrieveTokenWithSuccess:^(NSString *token) {
+        [travisClient retrieveTokenWithGithubToken:githubToken success:^(NSString *token) {
             [that showBuildsControllerWithToken:token];
             [MBProgressHUD hideHUDForView:that.view animated:YES];
         } failure:^(NSError *error) {
