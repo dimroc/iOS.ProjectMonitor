@@ -25,6 +25,10 @@ RSpec.configure do |config|
 
     if ENV["INTEGRATION"] == "true"
       WebMock.allow_net_connect!
+      client = ParseClient.from_settings
+      client.fetch_all_builds.each do |build|
+        client.delete_build(build)
+      end
     else
       WebMock.disable_net_connect!
       servers_return_healthy

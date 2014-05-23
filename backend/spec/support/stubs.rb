@@ -4,7 +4,10 @@ module StubSpecHelpers
   end
 
   def broken_build
-    JSON.parse(FixtureLoader.load("parse_builds"))["results"].first.except("type")
+    build = new_parse_build
+    output = build.output
+    build.stub(:output).and_return(output.except("type"))
+    build
   end
 
   def new_parse_build
