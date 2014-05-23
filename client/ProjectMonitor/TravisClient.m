@@ -33,7 +33,6 @@
     
     [manager GET:[self getRepoUrl] parameters:[self getParametersWithToken:token andMember:member] success:
      ^(AFHTTPRequestOperation *operation, id responseObject) {
-         NSLog(@"Response: %@", responseObject);
          NSDictionary* dictionary = (NSDictionary*)responseObject;
          success(dictionary[@"repos"]);
      } failure: ^(AFHTTPRequestOperation *operation, NSError *error) {

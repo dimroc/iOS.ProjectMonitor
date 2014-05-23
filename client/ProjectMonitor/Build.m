@@ -187,7 +187,6 @@ static NSArray* whitelistedKeys;
 - (BOOL)isSimilarTo:(Build *)build
 {
     return [[self project] isEqualToString:[build project]] &&
-        [[self url] isEqualToString: [build url]] &&
         [[self type] isEqualToString: [build type]];
 }
 
