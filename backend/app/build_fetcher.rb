@@ -1,5 +1,6 @@
 class BuildFetcher
   class ForbiddenError < StandardError; end;
+  class NotFoundError < StandardError; end;
 
   attr_reader :build
 
@@ -23,6 +24,8 @@ class BuildFetcher
       body
     elsif code == 403
       raise ForbiddenError, body
+    elsif code == 404
+      raise NotFoundError, body
     else
       raise StandardError, "Error connecting to <#{url}?. Status: #{code} Message: #{body}"
     end

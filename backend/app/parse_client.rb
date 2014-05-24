@@ -85,6 +85,7 @@ class ParseClient
   end
 
   def build_url(build)
+    raise ArgumentError, "objectId is required" unless build.objectId
     File.join(builds_url, build.objectId)
   end
 

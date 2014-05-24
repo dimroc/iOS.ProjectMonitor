@@ -42,5 +42,22 @@ describe BuildFetcher do
         end
       end
     end
+
+  end
+
+  describe "#retrieve_from_url" do
+    let(:fetcher) { BuildFetcher.new({}) }
+
+    context "of a build that wasn't found" do
+      before do
+        CachedHttpParty.stub(:get).and_return([404, "Some Body"])
+      end
+
+      it "should raise a not found error" do
+        expect {
+          fetcher.retrieve_from_url("some url")
+        }.to raise_error BuildFetcher::NotFoundError
+      end
+    end
   end
 end

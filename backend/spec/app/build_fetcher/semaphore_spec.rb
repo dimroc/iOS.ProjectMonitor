@@ -27,5 +27,19 @@ describe BuildFetcher::Semaphore do
         updated.user.should == build.user
       end
     end
+
+    context "when not found" do
+      before do
+        BuildFetcher::Semaphore.any_instance.stub(:puts)
+        fetcher.stub(:retrieve_from_url).and_raise(BuildFetcher::NotFoundError)
+      end
+
+      it "should delete the build" do
+        ParseClient.any_instance.should_receive(:delete_build).with(build)
+        expect {
+          fetcher.fetch
+        }.to raise_error BuildFetcher::NotFoundError
+      end
+    end
   end
 end
