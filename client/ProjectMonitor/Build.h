@@ -33,6 +33,7 @@ extern NSString * const PMBuildsDidBecomeActiveNotication;
 @property (nonatomic, retain) NSString * status;
 @property (nonatomic, retain) NSString * objectId;
 @property (nonatomic) BOOL isInvalid;
+@property (nonatomic, retain) NSString * invalidMessage;
 
 @property (nonatomic, retain) NSString * commitSha;
 @property (nonatomic, retain) NSString * commitAuthor;

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="5063" systemVersion="13C64" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="5064" systemVersion="13D65" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
     <entity name="Build" representedClassName="Build" syncable="YES">
         <attribute name="accessToken" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="branch" optional="YES" attributeType="String" syncable="YES"/>
@@ -8,6 +8,7 @@
         <attribute name="commitMessage" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="commitSha" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="finishedAt" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="invalidMessage" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="isInvalid" optional="YES" attributeType="Boolean" defaultValueString="NO" syncable="YES"/>
         <attribute name="objectId" attributeType="String" syncable="YES"/>
         <attribute name="project" attributeType="String" syncable="YES"/>
@@ -18,6 +19,6 @@
         <attribute name="url" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Build" positionX="0" positionY="0" width="128" height="270"/>
+        <element name="Build" positionX="0" positionY="0" width="128" height="285"/>
     </elements>
 </model>
