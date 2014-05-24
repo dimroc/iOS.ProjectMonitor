@@ -14,7 +14,7 @@ class ParseClient
     HTTParty.delete(build_url(build), headers: headers)
   end
 
-  def fetch_valid_builds
+  def fetch_parseable_builds
     response = HTTParty.get(builds_url, headers: headers, query: "order=updatedAt&limit=500")
     validate_response response
     response['results'].map do |value|

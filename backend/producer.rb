@@ -4,7 +4,7 @@ scheduler = Rufus::Scheduler.new
 
 def poll_parse
   puts "#{DateTime.now}: Starting Poll"
-  ParseClient.from_settings.fetch_valid_builds.each do |build|
+  ParseClient.from_settings.fetch_parseable_builds.each do |build|
     puts "#{DateTime.now}: enqueuing #{build}"
     UpdateBuildWorker.perform_async(build)
   end

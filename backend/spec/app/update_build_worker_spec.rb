@@ -11,10 +11,10 @@ describe UpdateBuildWorker do
       let(:client) { ParseClient.from_settings }
 
       it "should update the build" do
-        client.fetch_valid_builds.should be_empty
+        client.fetch_parseable_builds.should be_empty
         created_build = client.create(build)
         UpdateBuildWorker.new.perform(created_build)
-        client.fetch_valid_builds.count.should == 1
+        client.fetch_parseable_builds.count.should == 1
       end
 
       context "and the build becomes invalid" do

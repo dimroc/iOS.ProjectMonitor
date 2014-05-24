@@ -12,7 +12,7 @@ describe ParseClient do
         build.invalidMessage = "Forbidden"
 
         created_build = client.create(build)
-        build = client.fetch_valid_builds.last
+        build = client.fetch_parseable_builds.last
 
         build.objectId.should == created_build.objectId
         build.invalidMessage.should == "Forbidden"
@@ -21,13 +21,13 @@ describe ParseClient do
     end
   end
 
-  describe "#fetch_valid_builds" do
+  describe "#fetch_parseable_builds" do
     context "when services are healthy" do
       context "and there are builds" do
         before { client.create(new_parse_build) }
 
         it "should return builds" do
-          builds = client.fetch_valid_builds
+          builds = client.fetch_parseable_builds
           first = builds.first
           first["project"].acts_like? "string"
           first.url.should =~ /\.com/
@@ -41,7 +41,7 @@ describe ParseClient do
         end
 
         it "should skip that build" do
-          client.fetch_valid_builds.should be_empty
+          client.fetch_parseable_builds.should be_empty
         end
       end
     end
@@ -49,14 +49,14 @@ describe ParseClient do
     context "when services are erroring" do
       before { servers_return_error }
       it "should raise error" do
-        expect { client.fetch_valid_builds }.to raise_error StandardError
+        expect { client.fetch_parseable_builds }.to raise_error StandardError
       end
     end
 
     context "when services are unauthorized" do
       before { servers_return_unauthorized }
       it "should raise error" do
-        expect { client.fetch_valid_builds }.to raise_error StandardError
+        expect { client.fetch_parseable_builds }.to raise_error StandardError
       end
     end
   end
@@ -73,7 +73,7 @@ describe ParseClient do
 
         client.update(build)
 
-        updated_build = client.fetch_valid_builds.detect do |b|
+        updated_build = client.fetch_parseable_builds.detect do |b|
           b.objectId == build.objectId
         end
 
