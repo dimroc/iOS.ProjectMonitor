@@ -17,6 +17,7 @@ class ParseBuild < Hashie::Trash
   property :createdAt
   property :updatedAt
   property :isInvalid
+  property :invalidMessage
 
   property :user
   property :ACL

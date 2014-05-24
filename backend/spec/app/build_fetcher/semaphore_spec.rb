@@ -35,10 +35,9 @@ describe BuildFetcher::Semaphore do
       end
 
       it "should delete the build" do
-        ParseClient.any_instance.should_receive(:delete_build).with(build)
-        expect {
-          fetcher.fetch
-        }.to raise_error BuildFetcher::NotFoundError
+        updated = fetcher.fetch
+        updated.isInvalid.should == true
+        updated.invalidMessage.should == "Not Found"
       end
     end
   end

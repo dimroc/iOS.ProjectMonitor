@@ -4,6 +4,23 @@ describe ParseClient do
   before { ParseClient.any_instance.stub(:puts) }
   let(:client) { ParseClient.from_settings }
 
+  describe "#create" do
+    context "when services are healthy" do
+      it "should be able to create a build that has isInvalid true" do
+        build = new_parse_build
+        build.isInvalid = true
+        build.invalidMessage = "Forbidden"
+
+        created_build = client.create(build)
+        build = client.fetch_valid_builds.last
+
+        build.objectId.should == created_build.objectId
+        build.invalidMessage.should == "Forbidden"
+        build.isInvalid.should be_true
+      end
+    end
+  end
+
   describe "#fetch_valid_builds" do
     context "when services are healthy" do
       context "and there are builds" do

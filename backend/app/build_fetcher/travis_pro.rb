@@ -27,6 +27,13 @@ class BuildFetcher::TravisPro < BuildFetcher
     puts "Forbidden: #{build}"
     updated_build = ParseBuild.new build.dup
     updated_build.isInvalid = true
+    updated_build.invalidMessage = "Forbidden"
+    updated_build
+  rescue NotFoundError
+    puts "Not Found: #{build}"
+    updated_build = ParseBuild.new build.dup
+    updated_build.isInvalid = true
+    updated_build.invalidMessage = "Not Found"
     updated_build
   end
 

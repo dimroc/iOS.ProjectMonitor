@@ -27,10 +27,13 @@ class BuildFetcher::Semaphore < BuildFetcher
     puts "Forbidden: #{build}"
     updated_build = ParseBuild.new build.dup
     updated_build.isInvalid = true
+    updated_build.invalidMessage = "Forbidden"
     updated_build
   rescue NotFoundError
-    puts "Not Found, deleting: #{build}"
-    ParseClient.from_settings.delete_build(build) if build.objectId
-    raise
+    puts "Not Found: #{build}"
+    updated_build = ParseBuild.new build.dup
+    updated_build.isInvalid = true
+    updated_build.invalidMessage = "Not Found"
+    updated_build
   end
 end
