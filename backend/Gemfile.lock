@@ -63,7 +63,7 @@ GEM
     ruby-progressbar (1.4.2)
     rufus-scheduler (3.0.7)
       tzinfo
-    safe_yaml (1.0.2)
+    safe_yaml (1.0.3)
     settingslogic (2.0.9)
     sidekiq (3.0.0)
       celluloid (>= 0.15.2)
