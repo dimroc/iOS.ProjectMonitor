@@ -7,7 +7,6 @@
 //
 
 #import "BuildCollection.h"
-#import "Build.h"
 
 @interface BuildCollection ()
 @property (nonatomic, strong) NSArray *buildsByType;
@@ -38,6 +37,30 @@
 {
     [self setBuildLabelsByType:[NSArray array]];
     [self setBuildsByType:[NSArray array]];
+}
+
+- (Build*)find:(NSString*)objectId
+{
+    return [Build MR_findFirstByAttribute:@"objectId" withValue:objectId];
+}
+
+- (NSIndexPath*)positionOf:(NSString*)objectId
+{
+    NSInteger section = 0;
+    for (NSArray* builds in [self buildsByType]) {
+        NSInteger row = 0;
+        for (Build* build in builds) {
+            if (build.objectId == objectId) {
+                return [NSIndexPath indexPathForRow:row inSection:section];
+            }
+            
+            row++;
+        }
+        
+        section++;
+    }
+    
+    return nil;
 }
 
 - (NSArray*)onlyPopulated

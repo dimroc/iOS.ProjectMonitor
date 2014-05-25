@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Build.h"
 
 typedef enum {
     SemaphoreBuildType = 0,
@@ -21,5 +22,6 @@ typedef enum {
 - (NSArray*)onlyPopulated;
 - (NSArray*)onlyPopulatedTitles;
 - (BOOL)isEmpty;
+- (Build*)find:(NSString*)objectId;
 
 @end

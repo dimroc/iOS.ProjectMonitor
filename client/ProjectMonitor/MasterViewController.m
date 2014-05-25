@@ -17,6 +17,7 @@
 @interface MasterViewController ()
 
 @property (strong, nonatomic) BuildCollection *buildCollection;
+@property (strong, nonatomic) Build* selectedBuild;
 @property (strong, nonatomic) UIView *addBuildOverlayView;
 @property (strong, nonatomic) UINib *buildsHeaderNib;
 @property (strong, nonatomic) PTPusher *pusher;
@@ -45,6 +46,7 @@
     [center addObserver:self selector:@selector(triggerRefresh) name:PMBuildsDidBecomeActiveNotication object:nil];
     [center addObserver:self selector:@selector(handleNewBuild) name:PMBuildDidSaveNotication object:nil];
     [center addObserver:self selector:@selector(handleLogOut) name:PMUserDidLogOut object:nil];
+    [center addObserver:self selector:@selector(handleSelectedBuildNotification:) name:PMBuildDidBecomeSelected object:nil];
     
 //    [center addObserver:self selector:@selector(traceAllNotifications:) name:nil object:nil];
     
@@ -122,6 +124,21 @@
 {
     [self unsubscribeFromPusher];
     [self clearTable];
+}
+
+- (void)handleSelectedBuildNotification:(NSNotification *)notification
+{
+    NSLog(@"Handling selection: %@", notification);
+    [self selectBuild:notification.object];
+}
+- (void)selectBuild:(NSString*) objectId
+{
+    [self setSelectedBuild: [self.buildCollection find:objectId]];
+    if ([self selectedBuild]) {
+        [self performSegueWithIdentifier: @"toDetailsView" sender: self];
+    } else {
+        NSLog(@"Unable to select build from row %@", objectId);
+    }
 }
 
 - (void)toggleAddBuildOverlay
@@ -213,7 +230,13 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [self performSegueWithIdentifier: @"toDetailsView" sender: self];
+    Build* build = [self getBuildForIndexPath:indexPath];
+
+    if (build != nil) {
+        [self selectBuild:build.objectId];
+    } else {
+        NSLog(@"Unable to select build from row %@", indexPath);
+    }
 }
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
@@ -239,10 +262,8 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if ([[segue identifier] isEqualToString:@"toDetailsView"]) {
-        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        Build *build = [self getBuildForIndexPath:indexPath];
-        [[segue destinationViewController] setBuild:build];
+    if ([[segue identifier] isEqualToString:@"toDetailsView"] && [self selectedBuild] != nil) {
+        [[segue destinationViewController] setBuild:_selectedBuild];
     }
 }
 

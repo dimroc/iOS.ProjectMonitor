@@ -30,6 +30,13 @@
     
     [Crashlytics startWithAPIKey:[Credentials objectForKey:@"CrashlyticsKey"]];
     
+    NSDictionary* userInfo = launchOptions[UIApplicationLaunchOptionsRemoteNotificationKey];
+    NSDictionary* apsInfo = [userInfo objectForKey:@"aps"];
+    if( [apsInfo objectForKey:@"alert"] != NULL)
+    {
+        [self application:application didReceiveRemoteNotification:userInfo];
+    }
+    
     return YES;
 }
 
@@ -46,9 +53,17 @@
 }
 
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
+    NSLog(@"Did receive remote notification");
     [PFPush handlePush:userInfo];
+    
     NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
     [center postNotificationName:PMBuildsDidBecomeActiveNotication object:self];
+    
+    NSString* objectId = [userInfo objectForKey:@"buildObjectId"];
+    if (objectId != nil) {
+        NSLog(@"Triggering %@ for object id %@", PMBuildDidBecomeSelected, objectId);
+        [center postNotificationName:PMBuildDidBecomeSelected object:objectId];
+    }
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application

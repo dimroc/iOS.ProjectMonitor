@@ -31,6 +31,7 @@
 
 // [Name of associated class] + [Did | Will] + [UniquePartOfName] + Notification
 NSString * const PMBuildDidSaveNotication = @"PMBuildDidSaveNotication";
+NSString * const PMBuildDidBecomeSelected = @"PMBuildDidBecomeSelected";
 NSString * const PMBuildsDidBecomeActiveNotication = @"PMBuildsDidBecomeActiveNotication";
 NSString * const sortString = @"type,project,branch";
 
