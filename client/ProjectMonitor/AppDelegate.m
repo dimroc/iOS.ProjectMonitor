@@ -48,7 +48,7 @@
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
     [PFPush handlePush:userInfo];
     NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
-    [center postNotificationName:PMBuildDidSaveNotication object:self];
+    [center postNotificationName:PMBuildsDidBecomeActiveNotication object:self];
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application
