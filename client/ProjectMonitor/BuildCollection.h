@@ -16,7 +16,7 @@ typedef enum {
 
 @interface BuildCollection : NSObject
 
-- (void)refresh;
+- (void)refreshFromCoreData;
 - (void)clear;
 - (NSArray*)onlyPopulated;
 - (NSArray*)onlyPopulatedTitles;

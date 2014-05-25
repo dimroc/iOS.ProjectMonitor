@@ -30,7 +30,7 @@
     [super viewDidLoad];
     
     [self setBuildCollection:[[BuildCollection alloc] init]];
-    [self.buildCollection refresh];
+    [self.buildCollection refreshFromCoreData];
 
     UINib *nib = [UINib nibWithNibName:@"BuildCell" bundle:nil];
     [[self tableView] registerNib:nib forCellReuseIdentifier:@"BuildCell"];
@@ -87,7 +87,7 @@
         
         [Build updateSavedBuild:channelEvent.data];
         dispatch_async(dispatch_get_main_queue(), ^{
-            [that.buildCollection refresh];
+            [that.buildCollection refreshFromCoreData];
             [that.tableView reloadData];
         });
     }];
@@ -113,7 +113,7 @@
 
 - (void)handleNewBuild
 {
-    [self.buildCollection refresh];
+    [self.buildCollection refreshFromCoreData];
     [self toggleAddBuildOverlay];
     [self.tableView reloadData];
 }
@@ -149,7 +149,7 @@
         
         dispatch_async(dispatch_get_main_queue(), ^{
             NSLog(@"# Finished refresh");
-            [[that buildCollection] refresh];
+            [[that buildCollection] refreshFromCoreData];
             [that toggleAddBuildOverlay];
             [that.tableView reloadData];
             [that.refreshControl endRefreshing];
@@ -221,7 +221,7 @@
     Build* build = [self getBuildForIndexPath:indexPath];
     [build deleteInBackground];
     
-    [self.buildCollection refresh];
+    [self.buildCollection refreshFromCoreData];
     [self toggleAddBuildOverlay];
     [self.tableView reloadData];
 }

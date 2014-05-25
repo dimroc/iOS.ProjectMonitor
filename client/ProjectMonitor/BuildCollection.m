@@ -21,7 +21,7 @@
     return [[self onlyPopulated] count] <= 0;
 }
 
-- (void)refresh
+- (void)refreshFromCoreData
 {
     NSMutableArray *array = [NSMutableArray array];
     array[SemaphoreBuildType] = [Build forType:@"Semaphore"];
