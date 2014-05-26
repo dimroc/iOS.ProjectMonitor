@@ -52,7 +52,10 @@ class ParseClient
     output = {
       "where" => {"user" => build.user},
       "expiration_time" => 12.hours.from_now.utc.iso8601,
-      "data" => { "alert" => build.failure_description }
+      "data" => {
+        "buildObjectId" => build.objectId,
+        "alert" => build.failure_description
+      }
     }
 
     puts "notifying failure: #{output.to_json}"
