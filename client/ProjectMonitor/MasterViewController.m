@@ -129,8 +129,11 @@
 - (void)handleSelectedBuildNotification:(NSNotification *)notification
 {
     NSLog(@"Handling selection: %@", notification);
-    [self selectBuild:notification.object];
+    [self triggerRefreshWithCallback:^{
+        [self selectBuild:notification.object];
+    }];
 }
+
 - (void)selectBuild:(NSString*) objectId
 {
     [self setSelectedBuild: [self.buildCollection find:objectId]];
@@ -153,6 +156,11 @@
 
 - (IBAction)triggerRefresh
 {
+    [self triggerRefreshWithCallback: nil];
+}
+
+- (IBAction)triggerRefreshWithCallback:(void (^)(void))success
+{
     __weak MasterViewController *that = self;
     
     [Build refreshSavedBuildsInBackground:^(BOOL succeeded, NSArray *builds) {
@@ -171,6 +179,9 @@
             [that.tableView reloadData];
             [that.refreshControl endRefreshing];
             [self dismissViewControllerAnimated:YES completion:NULL];
+            if (success) {
+                success();
+            }
         });
     }];
 }

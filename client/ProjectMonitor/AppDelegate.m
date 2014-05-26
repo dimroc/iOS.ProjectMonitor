@@ -32,9 +32,18 @@
     
     NSDictionary* userInfo = launchOptions[UIApplicationLaunchOptionsRemoteNotificationKey];
     NSDictionary* apsInfo = [userInfo objectForKey:@"aps"];
-    if( [apsInfo objectForKey:@"alert"] != NULL)
+    NSString* objectId = [userInfo objectForKey:@"buildObjectId"];
+
+    if( [apsInfo objectForKey:@"alert"] != NULL && objectId != nil)
     {
-        [self application:application didReceiveRemoteNotification:userInfo];
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+            // Horrible, but I'm too lazy to probably coordinate the creation of the MasterViewController instance.
+            // This is only an issue when launching the app from a push notification and navigating to a deep link.
+            sleep(1);
+            NSLog(@"Triggering %@ for object id %@", PMBuildDidBecomeSelected, objectId);
+            NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
+            [center postNotificationName:PMBuildDidBecomeSelected object:objectId];
+        });
     }
     
     return YES;
@@ -54,15 +63,14 @@
 
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
     NSLog(@"Did receive remote notification");
-    [PFPush handlePush:userInfo];
-    
+    [PFPush handlePush:userInfo];   // Do not run when launching application from APNS.
     NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
-    [center postNotificationName:PMBuildsDidBecomeActiveNotication object:self];
     
     NSString* objectId = [userInfo objectForKey:@"buildObjectId"];
     if (objectId != nil) {
-        NSLog(@"Triggering %@ for object id %@", PMBuildDidBecomeSelected, objectId);
         [center postNotificationName:PMBuildDidBecomeSelected object:objectId];
+    } else {
+        [center postNotificationName:PMBuildsDidBecomeActiveNotication object:self];
     }
 }
 
