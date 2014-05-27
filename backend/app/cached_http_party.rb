@@ -3,11 +3,13 @@ class CachedHttpParty
     def get(url, headers = {})
       rval = nil
 
-      semaphore(url).lock do
-        rval = cache.fetch(url, expires_in: 1.minute) do
-          response = HTTParty.get(url, headers: headers)
-          # Can't serialize HTTParty response because it has a Proc.
-          [response.code, response.body]
+      Sidekiq.redis do |redis|
+        semaphore(url, redis).lock(20) do
+          rval = cache.fetch(url, expires_in: 1.minute) do
+            response = HTTParty.get(url, headers: headers)
+            # Can't serialize HTTParty response because it has a Proc.
+            [response.code, response.body]
+          end
         end
       end
 
@@ -16,8 +18,8 @@ class CachedHttpParty
 
     # Ensures only one thread pays the expense of retrieving the url via a distributed mutex.
     # All subsequent threads will get the cached value.
-    def semaphore(url)
-      Redis::Semaphore.new(url, :connection => Redis.current)
+    def semaphore(url, redis)
+      Redis::Semaphore.new(url, :redis => redis)
     end
 
     def cache
