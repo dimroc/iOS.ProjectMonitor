@@ -129,6 +129,7 @@
 - (void)handleSelectedBuildNotification:(NSNotification *)notification
 {
     NSLog(@"Handling selection: %@", notification);
+    [self.navigationController popToRootViewControllerAnimated:NO];
     [self triggerRefreshWithCallback:^{
         [self selectBuild:notification.object];
     }];
