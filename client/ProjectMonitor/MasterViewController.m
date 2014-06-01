@@ -179,7 +179,6 @@
             [that toggleAddBuildOverlay];
             [that.tableView reloadData];
             [that.refreshControl endRefreshing];
-            [self dismissViewControllerAnimated:YES completion:NULL];
             if (success) {
                 success();
             }
@@ -199,7 +198,9 @@
 {
     [super logInViewController:logInController didLogInUser:user];
     [self subscribeToPusherChannel];
-    [self triggerRefresh];
+    [self triggerRefreshWithCallback:^{
+        [self dismissViewControllerAnimated:YES completion:NULL];
+    }];
 }
 
 // Sent to the delegate when a PFUser is signed up.
@@ -207,8 +208,9 @@
 {
     [super signUpViewController:signUpController didSignUpUser:user];
     [self subscribeToPusherChannel];
-    [self triggerRefresh];
-}
+    [self triggerRefreshWithCallback:^{
+        [self dismissViewControllerAnimated:YES completion:NULL];
+    }];}
 
 #pragma mark - Table View
 
