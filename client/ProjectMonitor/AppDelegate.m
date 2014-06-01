@@ -17,7 +17,7 @@
 {
     [ParseHelper launch:launchOptions];
     [NewRelicAgent startWithApplicationToken: [Credentials objectForKey:@"NewRelicToken"]];
-    [MagicalRecord setupAutoMigratingCoreDataStack];
+    [MagicalRecord setupCoreDataStackWithAutoMigratingSqliteStoreNamed:@"iOSProjectMonitor_103.sqlite"];
     
     // Register for push notifications
     [application registerForRemoteNotificationTypes:
