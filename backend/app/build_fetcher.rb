@@ -19,6 +19,7 @@ class BuildFetcher
 
   def retrieve_from_url(url, headers = {})
     code, body = CachedHttpParty.get(url, headers)
+    raise StandardError, "Unable to retrieve from URL probably due to locked redis mutex. url: #{url}" unless code
 
     if code < 300
       body
