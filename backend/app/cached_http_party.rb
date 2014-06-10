@@ -19,7 +19,7 @@ class CachedHttpParty
     # Ensures only one thread pays the expense of retrieving the url via a distributed mutex.
     # All subsequent threads will get the cached value.
     def semaphore(url, redis)
-      Redis::Semaphore.new(url, :redis => redis)
+      Redis::Semaphore.new(url, :redis => redis, :stale_client_timeout => 120)
     end
 
     def cache
