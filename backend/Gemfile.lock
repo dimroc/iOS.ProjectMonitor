@@ -41,12 +41,12 @@ GEM
     rack-protection (1.5.2)
       rack
     rake (10.2.2)
-    redis (3.0.7)
+    redis (3.1.0)
     redis-activesupport (4.0.0)
       activesupport (~> 4)
       redis-store (~> 1.1.0)
-    redis-namespace (1.4.1)
-      redis (~> 3.0.4)
+    redis-namespace (1.5.0)
+      redis (~> 3.0, >= 3.0.4)
     redis-semaphore (0.2.1)
       redis
     redis-store (1.1.4)
@@ -65,7 +65,7 @@ GEM
       tzinfo
     safe_yaml (1.0.3)
     settingslogic (2.0.9)
-    sidekiq (3.0.0)
+    sidekiq (3.2.1)
       celluloid (>= 0.15.2)
       connection_pool (>= 2.0.0)
       json
