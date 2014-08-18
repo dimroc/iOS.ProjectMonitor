@@ -6,7 +6,7 @@ class CachedHttpParty
       Sidekiq.redis do |redis|
         semaphore(url, redis).lock(20) do
           rval = cache.fetch(url, expires_in: 1.minute) do
-            response = HTTParty.get(url, headers: headers)
+            response = HTTParty.get(url, headers: headers, timeout: 30)
             # Can't serialize HTTParty response because it has a Proc.
             [response.code, response.body]
           end

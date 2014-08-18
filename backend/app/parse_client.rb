@@ -11,11 +11,11 @@ class ParseClient
   end
 
   def delete_build(build)
-    HTTParty.delete(build_url(build), headers: headers)
+    HTTParty.delete(build_url(build), headers: headers, timeout: 30)
   end
 
   def fetch_parseable_builds
-    response = HTTParty.get(builds_url, headers: headers, query: "order=updatedAt&limit=500")
+    response = HTTParty.get(builds_url, headers: headers, query: "order=updatedAt&limit=500", timeout: 30)
     validate_response response
     response['results'].map do |value|
       safe_parse_build(value)
@@ -23,7 +23,7 @@ class ParseClient
   end
 
   def fetch_all_builds
-    response = HTTParty.get(builds_url, headers: headers, query: "order=updatedAt&limit=500")
+    response = HTTParty.get(builds_url, headers: headers, query: "order=updatedAt&limit=500", timeout: 30)
     validate_response response
     response['results'].map do |value|
       OpenStruct.new(value)
@@ -33,12 +33,12 @@ class ParseClient
   def update(build)
     raise ArgumentError, "Must have objectId" unless build.objectId.present?
     url = build_url(build)
-    response = HTTParty.put(url, headers: headers, body: build.output.to_json)
+    response = HTTParty.put(url, headers: headers, body: build.output.to_json, timeout: 30)
     validate_response response
   end
 
   def create(build)
-    response = HTTParty.post(builds_url, { headers: headers, body: build.output.to_json })
+    response = HTTParty.post(builds_url, { headers: headers, body: build.output.to_json, timeout: 30 })
     validate_response response
 
     build.objectId = response["objectId"]
@@ -59,7 +59,7 @@ class ParseClient
     }
 
     puts "notifying failure: #{output.to_json}"
-    response = HTTParty.post(push_url, { headers: headers, body: output.to_json })
+    response = HTTParty.post(push_url, { headers: headers, body: output.to_json, timeout: 30 })
     validate_response response
   end
 
