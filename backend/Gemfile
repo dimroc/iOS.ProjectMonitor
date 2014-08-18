@@ -19,6 +19,7 @@ gem 'god'
 group :development, :test do
   gem 'rack'
   gem 'rspec'
+  gem 'rspec-its'
   gem 'fuubar'
   gem 'webmock', require: false
   gem 'sinatra'

@@ -30,8 +30,8 @@ describe BuildFetcher::Semaphore do
 
     context "when not found" do
       before do
-        BuildFetcher::Semaphore.any_instance.stub(:puts)
-        fetcher.stub(:retrieve_from_url).and_raise(BuildFetcher::NotFoundError)
+        allow_any_instance_of(BuildFetcher::Semaphore).to receive(:puts)
+        allow(fetcher).to receive(:retrieve_from_url).and_raise(BuildFetcher::NotFoundError)
       end
 
       it "should delete the build" do

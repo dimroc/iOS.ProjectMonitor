@@ -1,4 +1,6 @@
 class ParseBuild < Hashie::Trash
+  include Hashie::Extensions::IndifferentAccess
+
   property :project
   property :url
   property :type, required: true

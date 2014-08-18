@@ -6,7 +6,7 @@ module StubSpecHelpers
   def broken_build
     build = new_parse_build
     output = build.output
-    build.stub(:output).and_return(output.except("type"))
+    allow(build).to receive(:output).and_return(output.except("type"))
     build
   end
 

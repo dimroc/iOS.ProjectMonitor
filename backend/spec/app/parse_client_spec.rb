@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe ParseClient do
-  before { ParseClient.any_instance.stub(:puts) }
+  before { allow_any_instance_of(ParseClient).to receive(:puts) }
   let(:client) { ParseClient.from_settings }
 
   describe "#create" do
@@ -16,7 +16,7 @@ describe ParseClient do
 
         build.objectId.should == created_build.objectId
         build.invalidMessage.should == "Forbidden"
-        build.isInvalid.should be_true
+        expect(build.isInvalid).to eq(true)
       end
     end
   end
@@ -105,12 +105,12 @@ describe ParseClient do
   end
 
   describe "#notify_build_failed" do
-    before { ParseClient.any_instance.stub(:puts) }
+    before { allow_any_instance_of(ParseClient).to receive(:puts) }
     let(:build) { new_parse_build }
     context "when servers are healthy" do
       it "should return true" do
         response = client.notify_build_failed(build)
-        response["result"].should be_true
+        expect(response["result"]).to eq(true)
       end
     end
   end

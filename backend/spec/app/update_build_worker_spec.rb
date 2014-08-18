@@ -26,7 +26,7 @@ describe UpdateBuildWorker do
 
         it "should push the change" do
           created_build = client.create(build)
-          PusherClient.any_instance.should_receive(:push)
+          expect_any_instance_of(PusherClient).to receive(:push)
           UpdateBuildWorker.new.perform(created_build)
         end
       end
@@ -54,7 +54,7 @@ describe UpdateBuildWorker do
 
         it "should push the change" do
           created_build = client.create(build)
-          PusherClient.any_instance.should_receive(:push)
+          expect_any_instance_of(PusherClient).to receive(:push)
           UpdateBuildWorker.new.perform(created_build)
         end
       end

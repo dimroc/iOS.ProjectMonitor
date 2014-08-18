@@ -50,7 +50,7 @@ describe BuildFetcher do
 
     context "of a build that wasn't found" do
       before do
-        CachedHttpParty.stub(:get).and_return([404, "Some Body"])
+        allow(CachedHttpParty).to receive(:get).and_return([404, "Some Body"])
       end
 
       it "should raise a not found error" do
