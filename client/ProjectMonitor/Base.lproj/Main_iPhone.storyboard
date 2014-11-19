@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13C1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="Ech-13-SYg">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6205" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="Ech-13-SYg">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6198"/>
     </dependencies>
     <scenes>
-        <!--Master View Controller - Master-->
+        <!--Master-->
         <scene sceneID="VgW-fR-Quf">
             <objects>
                 <tableViewController title="Master" id="pGg-6v-bdr" customClass="MasterViewController" sceneMemberID="viewController">
@@ -61,7 +61,7 @@
             </objects>
             <point key="canvasLocation" x="673" y="-200"/>
         </scene>
-        <!--Preferences View Controller - Preferences-->
+        <!--Preferences-->
         <scene sceneID="qKW-VK-JRr">
             <objects>
                 <tableViewController id="Tne-Yf-n30" customClass="PreferencesViewController" sceneMemberID="viewController">
@@ -181,7 +181,7 @@
             </objects>
             <point key="canvasLocation" x="1456" y="-1075"/>
         </scene>
-        <!--Add Build View Controller - Add Build-->
+        <!--Add Build-->
         <scene sceneID="4c8-9n-lUT">
             <objects>
                 <tableViewController id="fya-Z9-VvV" customClass="AddBuildViewController" sceneMemberID="viewController">
@@ -253,7 +253,7 @@
             </objects>
             <point key="canvasLocation" x="1216" y="-321"/>
         </scene>
-        <!--Detail View Controller - Detail-->
+        <!--Detail-->
         <scene sceneID="OU0-mq-FSk">
             <objects>
                 <tableViewController title="Detail" id="jib-AW-4M0" customClass="DetailViewController" sceneMemberID="viewController">
@@ -575,6 +575,9 @@
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination" type="retina4"/>
+        <simulatedScreenMetrics key="destination" type="retina4">
+            <size key="portraitSize" width="320" height="568"/>
+            <size key="landscapeSize" width="568" height="320"/>
+        </simulatedScreenMetrics>
     </simulatedMetricsContainer>
 </document>
