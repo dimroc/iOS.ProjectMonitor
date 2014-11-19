@@ -18,30 +18,26 @@ PODS:
   - AFNetworking/UIKit (2.2.4):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
-  - BlocksKit (2.1.0):
+  - BlocksKit (2.2.5):
     - BlocksKit/All
-  - BlocksKit/All (2.1.0):
+  - BlocksKit/All (2.2.5):
     - BlocksKit/Core
     - BlocksKit/DynamicDelegate
     - BlocksKit/MessageUI
     - BlocksKit/UIKit
-  - BlocksKit/Core (2.1.0)
-  - BlocksKit/DynamicDelegate (2.1.0):
-    - BlocksKit/MiniFFI
-  - BlocksKit/MessageUI (2.1.0):
+  - BlocksKit/Core (2.2.5)
+  - BlocksKit/DynamicDelegate (2.2.5)
+  - BlocksKit/MessageUI (2.2.5):
+    - BlocksKit/Core
     - BlocksKit/DynamicDelegate
-  - BlocksKit/MiniFFI (2.1.0)
-  - BlocksKit/UIKit (2.1.0):
+  - BlocksKit/UIKit (2.2.5):
+    - BlocksKit/Core
     - BlocksKit/DynamicDelegate
-  - Bolts (1.1.0)
+  - Bolts (1.1.3)
   - CrashlyticsFramework (2.2.0)
-  - Facebook-iOS-SDK (3.14.1):
-    - Bolts
-  - Kiwi/ARC (2.2.4)
-  - Kiwi/NonARC (2.2.4)
-  - Kiwi/XCTest (2.2.4):
-    - Kiwi/ARC
-    - Kiwi/NonARC
+  - Facebook-iOS-SDK (3.20.0):
+    - Bolts (~> 1.0)
+  - Kiwi (2.3.1)
   - libPusher (1.5):
     - libPusher/Core
   - libPusher/Core (1.5):
@@ -50,7 +46,7 @@ PODS:
     - MagicalRecord/Core
   - MagicalRecord/Core (2.2)
   - MBProgressHUD (0.8)
-  - NewRelicAgent (3.324)
+  - NewRelicAgent (4.83)
   - Parse (1.2.19):
     - Facebook-iOS-SDK (~> 3.11)
   - SocketRocket (0.3.1-beta2)
@@ -58,9 +54,9 @@ PODS:
 
 DEPENDENCIES:
   - AFNetworking (~> 2.0)
-  - BlocksKit (from `https://github.com/pandamonia/BlocksKit.git`, commit `95833bd`)
+  - BlocksKit
   - CrashlyticsFramework
-  - Kiwi/XCTest
+  - Kiwi
   - libPusher
   - MagicalRecord
   - MBProgressHUD (~> 0.8)
@@ -68,24 +64,19 @@ DEPENDENCIES:
   - Parse
   - Underscore.m
 
-EXTERNAL SOURCES:
-  BlocksKit:
-    :commit: 95833bd
-    :git: https://github.com/pandamonia/BlocksKit.git
-
 SPEC CHECKSUMS:
   AFNetworking: ab63e259fe91eef4519b371ef0a4955af0e73e64
-  BlocksKit: 20086a023551c742d2278771e47c36e05f17b662
-  Bolts: 91c2af8eae1d44e1dd75946a5b0ae04a43ea43e4
+  BlocksKit: 4439e7f30a9f90743462ca63545a15c1f4304cef
+  Bolts: 3db0a875235e0c9042b013af13af0f00f79b102c
   CrashlyticsFramework: 1df72ced1f7744bae1daf141f6e314951a0d9c06
-  Facebook-iOS-SDK: e9b3d5ac54ee3e5e693f4eef470b97911b3d076d
-  Kiwi: c73667f2b84cbf36f1a3830267c5a4ae8dcbd8ba
+  Facebook-iOS-SDK: 5854404b4b651f612a8ef79ca06d766858f4cb8e
+  Kiwi: 73e1400209055ee9c8ba78c6012b6b642d0fb9f7
   libPusher: 583326327a72ab7cd0f38692f61f9061cf4be3d9
   MagicalRecord: 2b471584fc9e3137f3d0a56967917baa4979e224
   MBProgressHUD: c356980b0cd097f19acec959b49dca5eb8ec31be
-  NewRelicAgent: 36d31c220b7a7fa2c83a71df87c62d48d0c7d1c4
+  NewRelicAgent: 1adba1fb51631f598a2a130e7b1c3be1de715736
   Parse: ffebaecaddd32cb52671010f81567c298ff93d04
   SocketRocket: 79a68ae186063c65e1fe6f638b1ae2927aa5f304
   Underscore.m: f99c166a9fdccfb5069085b6b4263c04b817fc9f
 
-COCOAPODS: 0.33.1
+COCOAPODS: 0.34.4

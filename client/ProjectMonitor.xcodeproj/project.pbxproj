@@ -43,6 +43,7 @@
 		5E3ED1531899F45500632144 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E3ED14A1899F45500632144 /* SystemConfiguration.framework */; };
 		5E3ED156189A089E00632144 /* ParseHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E3ED155189A089E00632144 /* ParseHelper.m */; };
 		5E3F9AB418F082F4004F711B /* PMInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E3F9AB318F082F4004F711B /* PMInfo.m */; };
+		5E51312E1A1D40F700FFC025 /* libPods-ProjectMonitor.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E51312D1A1D40F700FFC025 /* libPods-ProjectMonitor.a */; };
 		5E74B54E18CCC939001CFB60 /* AddBuildOverlayView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E74B54D18CCC939001CFB60 /* AddBuildOverlayView.xib */; };
 		5E74B55518CCE48F001CFB60 /* PreferencesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E74B55418CCE48F001CFB60 /* PreferencesViewController.m */; };
 		5E74B55B18CD6FB4001CFB60 /* Travis.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E74B55A18CD6FB4001CFB60 /* Travis.storyboard */; };
@@ -88,8 +89,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		258BFB445DF166F5134561B4 /* Pods-ProjectMonitorTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProjectMonitorTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ProjectMonitorTests/Pods-ProjectMonitorTests.debug.xcconfig"; sourceTree = "<group>"; };
+		278BFB3DDD0940DF19D2F0B3 /* Pods-ProjectMonitor.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProjectMonitor.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ProjectMonitor/Pods-ProjectMonitor.debug.xcconfig"; sourceTree = "<group>"; };
+		27A45D5BAFD3DA08C4646084 /* Pods-ProjectMonitorTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProjectMonitorTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ProjectMonitorTests/Pods-ProjectMonitorTests.release.xcconfig"; sourceTree = "<group>"; };
 		2B0FF487CBEA473C8D7D223C /* libPods-ProjectMonitorTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ProjectMonitorTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		4DC397F864E74853B41B48C1 /* Pods-ProjectMonitor.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProjectMonitor.xcconfig"; path = "Pods/Pods-ProjectMonitor.xcconfig"; sourceTree = "<group>"; };
 		5E09522818BADB9500689FBA /* SemaphoreBuildFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SemaphoreBuildFactory.h; sourceTree = "<group>"; };
 		5E09522918BADB9500689FBA /* SemaphoreBuildFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SemaphoreBuildFactory.m; sourceTree = "<group>"; };
 		5E09522B18BADDB100689FBA /* SemaphoreBuildFactorySpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SemaphoreBuildFactorySpec.m; sourceTree = "<group>"; };
@@ -132,6 +135,9 @@
 		5E3ED155189A089E00632144 /* ParseHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParseHelper.m; sourceTree = "<group>"; };
 		5E3F9AB218F082F4004F711B /* PMInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMInfo.h; sourceTree = "<group>"; };
 		5E3F9AB318F082F4004F711B /* PMInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMInfo.m; sourceTree = "<group>"; };
+		5E5131291A1D3E0900FFC025 /* libPods-ProjectMonitor.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-ProjectMonitor.a"; path = "Pods/build/Debug-iphoneos/libPods-ProjectMonitor.a"; sourceTree = "<group>"; };
+		5E51312B1A1D3E6800FFC025 /* libPods-ProjectMonitor.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-ProjectMonitor.a"; path = "Pods/build/Debug-iphoneos/libPods-ProjectMonitor.a"; sourceTree = "<group>"; };
+		5E51312D1A1D40F700FFC025 /* libPods-ProjectMonitor.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-ProjectMonitor.a"; path = "Pods/build/Debug-iphoneos/libPods-ProjectMonitor.a"; sourceTree = "<group>"; };
 		5E74B54D18CCC939001CFB60 /* AddBuildOverlayView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddBuildOverlayView.xib; sourceTree = "<group>"; };
 		5E74B55318CCE48F001CFB60 /* PreferencesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreferencesViewController.h; sourceTree = "<group>"; };
 		5E74B55418CCE48F001CFB60 /* PreferencesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreferencesViewController.m; sourceTree = "<group>"; };
@@ -186,6 +192,8 @@
 		5EDBEBBB18D0074500389C7E /* Credentials.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Credentials.h; sourceTree = "<group>"; };
 		5EDBEBBC18D0074500389C7E /* Credentials.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Credentials.m; sourceTree = "<group>"; };
 		841A53FDA145460EA60ED4BF /* libPods-ProjectMonitor.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ProjectMonitor.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E6F9FEF4F1022B10131CEDCD /* Pods-ProjectMonitor.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProjectMonitor.release.xcconfig"; path = "Pods/Target Support Files/Pods-ProjectMonitor/Pods-ProjectMonitor.release.xcconfig"; sourceTree = "<group>"; };
+		FCCD4B3A281628011C1D54E7 /* libPods-ProjectMonitor-ProjectMonitorTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ProjectMonitor-ProjectMonitorTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -217,6 +225,7 @@
 				5E3ED12D1899F15000632144 /* CoreData.framework in Frameworks */,
 				5E3ED12C1899F15000632144 /* UIKit.framework in Frameworks */,
 				5E3ED12B1899F15000632144 /* Foundation.framework in Frameworks */,
+				5E51312E1A1D40F700FFC025 /* libPods-ProjectMonitor.a in Frameworks */,
 				20A950CD295D4BD99D563FD3 /* libPods-ProjectMonitorTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -231,7 +240,7 @@
 				5E3ED0FD1899F14F00632144 /* Products */,
 				5E3ED1071899F14F00632144 /* ProjectMonitor */,
 				5E3ED1301899F15000632144 /* ProjectMonitorTests */,
-				4DC397F864E74853B41B48C1 /* Pods-ProjectMonitor.xcconfig */,
+				678FAD11D89763B78E774F00 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -247,6 +256,9 @@
 		5E3ED0FE1899F14F00632144 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5E51312D1A1D40F700FFC025 /* libPods-ProjectMonitor.a */,
+				5E51312B1A1D3E6800FFC025 /* libPods-ProjectMonitor.a */,
+				5E5131291A1D3E0900FFC025 /* libPods-ProjectMonitor.a */,
 				5E3ED1421899F45500632144 /* AudioToolbox.framework */,
 				5E3ED1431899F45500632144 /* CFNetwork.framework */,
 				5E3ED1441899F45500632144 /* CoreLocation.framework */,
@@ -262,6 +274,7 @@
 				5E3ED1291899F15000632144 /* XCTest.framework */,
 				2B0FF487CBEA473C8D7D223C /* libPods-ProjectMonitorTests.a */,
 				841A53FDA145460EA60ED4BF /* libPods-ProjectMonitor.a */,
+				FCCD4B3A281628011C1D54E7 /* libPods-ProjectMonitor-ProjectMonitorTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -432,6 +445,17 @@
 			name = Parse;
 			sourceTree = "<group>";
 		};
+		678FAD11D89763B78E774F00 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				278BFB3DDD0940DF19D2F0B3 /* Pods-ProjectMonitor.debug.xcconfig */,
+				E6F9FEF4F1022B10131CEDCD /* Pods-ProjectMonitor.release.xcconfig */,
+				258BFB445DF166F5134561B4 /* Pods-ProjectMonitorTests.debug.xcconfig */,
+				27A45D5BAFD3DA08C4646084 /* Pods-ProjectMonitorTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -563,7 +587,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Pods-ProjectMonitorTests-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ProjectMonitorTests/Pods-ProjectMonitorTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		589B1DA26DA14C3082D8A8F3 /* Check Pods Manifest.lock */ = {
@@ -622,7 +646,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Pods-ProjectMonitor-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ProjectMonitor/Pods-ProjectMonitor-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -796,7 +820,7 @@
 		};
 		5E3ED13B1899F15000632144 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4DC397F864E74853B41B48C1 /* Pods-ProjectMonitor.xcconfig */;
+			baseConfigurationReference = 278BFB3DDD0940DF19D2F0B3 /* Pods-ProjectMonitor.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -820,7 +844,7 @@
 		};
 		5E3ED13C1899F15000632144 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4DC397F864E74853B41B48C1 /* Pods-ProjectMonitor.xcconfig */;
+			baseConfigurationReference = E6F9FEF4F1022B10131CEDCD /* Pods-ProjectMonitor.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -845,7 +869,7 @@
 		};
 		5E3ED13E1899F15000632144 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4DC397F864E74853B41B48C1 /* Pods-ProjectMonitor.xcconfig */;
+			baseConfigurationReference = 258BFB445DF166F5134561B4 /* Pods-ProjectMonitorTests.debug.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Project Monitor.app/Project Monitor";
@@ -861,6 +885,10 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = "ProjectMonitorTests/ProjectMonitorTests-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Pods/build/Debug-iphoneos",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
@@ -869,7 +897,7 @@
 		};
 		5E3ED13F1899F15000632144 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4DC397F864E74853B41B48C1 /* Pods-ProjectMonitor.xcconfig */;
+			baseConfigurationReference = 27A45D5BAFD3DA08C4646084 /* Pods-ProjectMonitorTests.release.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Project Monitor.app/Project Monitor";
@@ -881,6 +909,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ProjectMonitor/ProjectMonitor-Prefix.pch";
 				INFOPLIST_FILE = "ProjectMonitorTests/ProjectMonitorTests-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Pods/build/Debug-iphoneos",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;

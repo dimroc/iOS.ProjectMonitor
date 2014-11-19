@@ -1,4 +1,5 @@
 platform :ios, "7.0"
+source 'https://github.com/CocoaPods/Specs.git'
 
 target "ProjectMonitor" do
   pod 'Parse'
@@ -6,13 +7,14 @@ target "ProjectMonitor" do
   pod 'Underscore.m'
   pod 'MBProgressHUD', '~> 0.8'
   pod 'MagicalRecord'
-  pod 'BlocksKit', :git => 'https://github.com/pandamonia/BlocksKit.git', :commit => '95833bd'
+  pod 'BlocksKit'
   pod 'NewRelicAgent'
   pod 'CrashlyticsFramework'
   pod 'libPusher'
-
-  target "ProjectMonitorTests", :exclusive => true do
-    pod 'Kiwi/XCTest'
-  end
 end
 
+target "ProjectMonitorTests" do
+  pod 'Kiwi'
+  pod 'Parse'
+  pod 'CrashlyticsFramework'
+end
