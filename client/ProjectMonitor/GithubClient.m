@@ -11,6 +11,7 @@
 @interface GithubClient ()
 @property (nonatomic, strong) NSString *username;
 @property (nonatomic, strong) NSString *password;
+@property (nonatomic, strong) NSString *token;
 @end
 
 @implementation GithubClient
@@ -20,6 +21,18 @@
     if (self) {
         [self setUsername:username];
         [self setPassword:password];
+        [self setToken:nil];
+    }
+    
+    return self;
+}
+
+- (id)initWithUsername:(NSString*)username andPassword:(NSString*)password  andToken:(NSString *)token{
+    self  = [self init];
+    if (self) {
+        [self setUsername:username];
+        [self setPassword:password];
+        [self setToken:token];
     }
     
     return self;
@@ -33,6 +46,11 @@
     AFJSONRequestSerializer *serializer = [AFJSONRequestSerializer serializer];
     [serializer setValue:@"application/vnd.github.v3+json" forHTTPHeaderField:@"Accept"];
     [serializer setAuthorizationHeaderFieldWithUsername:_username password:_password];
+    
+    if ([_token length] != 0) {
+        [serializer setValue:self.token forHTTPHeaderField:@"X-GitHub-OTP"];
+    }
+    
     [manager setRequestSerializer:serializer];
 
     [manager GET:URLString parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {

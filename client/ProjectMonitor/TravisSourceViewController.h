@@ -13,6 +13,7 @@
 @property (nonatomic, strong) BuildFactory *buildFactory;
 @property (weak, nonatomic) IBOutlet UITextField *usernameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
+@property (weak, nonatomic) IBOutlet UITextField *twoFactorTextField;
 @property (nonatomic) BOOL pro;
 
 @end

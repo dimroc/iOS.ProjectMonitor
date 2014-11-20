@@ -11,6 +11,7 @@
 @interface GithubClient : NSObject
 
 - (id)initWithUsername:(NSString*)username andPassword:(NSString*)password;
+- (id)initWithUsername:(NSString*)username andPassword:(NSString*)password andToken:(NSString*)token;
 - (void)retrieveTokensWithSuccess:(void (^)(NSString* travisToken, NSString* travisProToken)) success failure:(void (^)(NSError *)) failure;
 - (NSDictionary *)parseTokens:(NSDictionary*)input;
 

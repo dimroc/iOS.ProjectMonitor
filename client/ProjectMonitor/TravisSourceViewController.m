@@ -49,7 +49,7 @@
     __weak TravisSourceViewController *that = self;
     
     // Callback hell. Clean up with ReactiveCocoa.
-    GithubClient* client = [[GithubClient alloc] initWithUsername:_usernameTextField.text andPassword:_passwordTextField.text];
+    GithubClient* client = [[GithubClient alloc] initWithUsername:_usernameTextField.text andPassword:_passwordTextField.text andToken:_twoFactorTextField.text];
     [client retrieveTokensWithSuccess:^(NSString *githubTravisToken, NSString *githubTravisProToken) {
         
         NSString *githubToken = _pro ? githubTravisProToken : githubTravisToken;
