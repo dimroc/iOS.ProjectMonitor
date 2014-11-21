@@ -34,7 +34,7 @@ PODS:
     - BlocksKit/Core
     - BlocksKit/DynamicDelegate
   - Bolts (1.1.3)
-  - CrashlyticsFramework (2.2.0)
+  - CrashlyticsFramework (2.2.5.1)
   - Facebook-iOS-SDK (3.20.0):
     - Bolts (~> 1.0)
   - Kiwi (2.3.1)
@@ -68,7 +68,7 @@ SPEC CHECKSUMS:
   AFNetworking: ab63e259fe91eef4519b371ef0a4955af0e73e64
   BlocksKit: 4439e7f30a9f90743462ca63545a15c1f4304cef
   Bolts: 3db0a875235e0c9042b013af13af0f00f79b102c
-  CrashlyticsFramework: 1df72ced1f7744bae1daf141f6e314951a0d9c06
+  CrashlyticsFramework: 195dfef587ade7a3954ce8effd483a3879d35877
   Facebook-iOS-SDK: 5854404b4b651f612a8ef79ca06d766858f4cb8e
   Kiwi: 73e1400209055ee9c8ba78c6012b6b642d0fb9f7
   libPusher: 583326327a72ab7cd0f38692f61f9061cf4be3d9
